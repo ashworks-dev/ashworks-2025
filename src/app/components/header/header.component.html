@@ -2,11 +2,12 @@
 <div class="w-layout-blockcontainer w-container">
   <div class="div-block" style="padding-top: 2em;position: relative;height: 30em">
     <div class="topVideo">
-      <div class="background-video w-background-video w-background-video-atom">
-        <video id="videobg1" autoplay loop="true" style="background-image:url(&quot;https://uploads-ssl.webflow.com/66037b4f909d8fed37407786%2F66bed42c227413db90348c64_sitebg1-poster-00001.jpg&quot;)" muted="muted" controls playsinline data-object-fit="cover">
-        <source type="video/mp4" src="https://ashnet.com.au/video/sitebg.mp4" >
-        <source type="video/webm" src="https://ashnet.com.au/video/sitebg.webm" >
-      </video></div>
+      <vg-player class="background-video w-background-video w-background-video-atom">
+        <video [vgMedia]="$any(media)" #media id="singleVideo" autoplay loop="true" [muted]="true" preload="auto" data-object-fit="cover">
+          <source src="https://ashnet.com.au/video/sitebg.mp4" type="video/mp4">
+      </video>
+      </vg-player>
+      
     </div>
 
     <div class="w-layout-hflex flex-block">
