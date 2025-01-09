@@ -28,10 +28,15 @@
             "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets/",
+              "src/assets/images"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.sass",
+              "src/assets/css/webflow.css",
+              "src/assets/css/normalize.css",
+              "src/assets/css/fm-alt-site.webflow.css"
+              
             ],
             "scripts": []
           },
