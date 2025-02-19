@@ -55,7 +55,7 @@
 .locked1:hover .w-button {
   display: block;
   position: absolute;
-  right: 1em; 
+  right: 1em;
   top:2em
 }
 
@@ -65,7 +65,7 @@
 
 .locked1 .image-6 {
     display: block;
-  
+
 }
 .locked1 .image-7 {
   display: none;
@@ -76,7 +76,7 @@
 
 .locked1:hover .image-6 {
     display: none;
-  
+
 }
 .locked1:hover .image-7 {
   display: block;
@@ -167,7 +167,7 @@
   grid-column-gap: 8px;
   grid-row-gap: 8px;
   flex-flow: column;
-  width: 25.2em;
+  width: 28em;
   display: flex;
 }
 
@@ -188,9 +188,10 @@
 .text-block-4 {
   color: #d5d1de;
   font-family: Julius Sans One, sans-serif;
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 400;
   letter-spacing: 0.01em;
+  margin-bottom: 0.5em;
 }
 
 .div-block-3 {
@@ -978,11 +979,11 @@
 }
 .background-video {
     opacity: .2;
-    
+
     width: 100%;
     max-width: none;
     height: 41vh;
-    
+
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -1005,7 +1006,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  
+
 
 }
 .w-background-video {

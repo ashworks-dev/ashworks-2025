@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
 
     this.apiService.verifyToken(token).subscribe(
       (response) => {
+        console.log("Server connected")
         if (response.accessGranted) {
           this.accessGranted = true;
           this.note = response.note || 'Access granted!';
@@ -32,7 +33,7 @@ export class AppComponent implements OnInit {
         }
       },
       (error) => {
-        this.error = 'Failed to connect to the server.';
+        this.error = '!!!!!!!Failed to connect to the server.';
       }
     );
   }
