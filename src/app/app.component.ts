@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from './services/api.service';
+import { IMediaElement } from '@videogular/ngx-videogular/core'; 
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,8 @@ export class AppComponent implements OnInit {
   accessGranted = false;
   note = '';
   error = '';
+
+  @ViewChild('media', { static: true }) media!: IMediaElement;
 
   constructor(private apiService: ApiService) {}
 
