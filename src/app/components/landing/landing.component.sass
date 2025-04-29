@@ -258,26 +258,52 @@
     overflow: hidden
     
     &.placeholder
-      filter: blur(20px)
+      position: relative
       transform: scale(1.1)  // Prevents blur from showing edges
+      display: flex
+      align-items: center
+      justify-content: center
+      overflow: hidden
+      
+      &::before
+        content: ''
+        position: absolute
+        top: -5%
+        left: -5%
+        width: 110%
+        height: 110%
+        filter: blur(20px)
+        z-index: 0
+      
+      i
+        position: relative
+        color: rgba(255, 255, 255, 0.9)
+        z-index: 2  // Increased to ensure it's above the gradient
+        font-size: 3rem
       
       &.gradient-1
-        background: linear-gradient(45deg, #FF6B6B, #4ECDC4)
+        &::before
+          background: linear-gradient(45deg, #FF6B6B, #4ECDC4)
       
       &.gradient-2
-        background: linear-gradient(45deg, #A8E6CF, #FFD3B6)
+        &::before
+          background: linear-gradient(45deg, #A8E6CF, #FFD3B6)
       
       &.gradient-3
-        background: linear-gradient(45deg, #FF9A8B, #FF6A88)
+        &::before
+          background: linear-gradient(45deg, #FF9A8B, #FF6A88)
       
       &.gradient-4
-        background: linear-gradient(45deg, #36D1DC, #5B86E5)
+        &::before
+          background: linear-gradient(45deg, #36D1DC, #5B86E5)
       
       &.gradient-5
-        background: linear-gradient(45deg, #CB356B, #BD3F32)
+        &::before
+          background: linear-gradient(45deg, #CB356B, #BD3F32)
       
       &.gradient-6
-        background: linear-gradient(45deg, #8E2DE2, #4A00E0)
+        &::before
+          background: linear-gradient(45deg, #8E2DE2, #4A00E0)
     
     img.project-image.full-width
       width: 100%
