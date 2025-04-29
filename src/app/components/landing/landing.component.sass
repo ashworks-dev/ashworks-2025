@@ -1,0 +1,334 @@
+.hero-section
+  height: 100vh
+  position: relative
+  color: #fff
+  overflow: hidden
+
+.topVideo
+  display: block
+  position: absolute
+  width: 100%
+  height: 60vh
+  overflow: hidden
+
+.background-video
+  position: absolute
+  overflow: hidden
+  height: 100%
+  color: white
+  
+  > video
+    background-size: cover
+    background-position: 50% 50%
+    position: absolute
+    margin: auto
+    width: 100%
+    height: 100%
+    right: -100%
+    bottom: -100%
+    top: -100%
+    left: -100%
+    object-fit: cover
+    z-index: -100
+
+.hero-content
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 2rem
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: relative
+  z-index: 1
+  
+  .logo
+    margin-bottom: 2rem
+    
+    .brand-logo
+      width: 80px
+      height: 80px
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))
+  
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 200px
+    background: linear-gradient(to bottom, transparent, #000)
+    pointer-events: none
+  
+  .main-title
+    font-size: 3.5rem
+    line-height: 1.2
+    margin-bottom: 1.5rem
+    
+    .name
+      display: flex
+      align-items: center
+      gap: 1rem
+      font-weight: 300
+      font-size: 2rem
+      margin-bottom: 0.5rem
+      
+      .brand-logo
+        width: 40px
+        height: 40px
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))
+    
+    .title
+      font-weight: 600
+  
+  .subtitle
+    font-size: 1.25rem
+    opacity: 0.9
+    margin-bottom: 2rem
+  
+  .brief-intro
+    max-width: 600px
+    line-height: 1.6
+    margin-bottom: 3rem
+
+.cta-group
+  display: flex
+  gap: 1rem
+  margin-bottom: 3rem
+  
+  button
+    padding: 1rem 2rem
+    border-radius: 4px
+    font-weight: 500
+    transition: all 0.3s ease
+    
+    &.cta-primary
+      background: #0066CC
+      color: white
+      border: none
+      
+      &:hover
+        background: #0052a3
+    
+    &.cta-secondary
+      background: transparent
+      border: 1px solid white
+      color: white
+      
+      &:hover
+        background: rgba(255, 255, 255, 0.1)
+
+.client-showcase
+  padding: 6rem 2rem
+  background: #000
+  position: relative
+  z-index: 2
+  
+  h2
+    text-align: center
+    font-size: 2.5rem
+    margin-bottom: 4rem
+    color: #fff
+    opacity: 0.9
+    font-weight: 600
+
+.client-grid
+  display: flex
+  flex-wrap: wrap
+  gap: 1.5rem
+  justify-content: center
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 1rem
+
+.client-pill
+  background: rgba(255, 255, 255, 0.1)
+  padding: 1rem 2rem
+  border-radius: 2rem
+  font-size: 1rem
+  transition: all 0.3s ease
+  color: #fff
+  font-weight: 500
+  
+  &:hover
+    background: rgba(255, 255, 255, 0.2)
+    transform: translateY(-2px)
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2)
+
+.services-overview
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 2rem
+  padding: 6rem 2rem
+  max-width: 1200px
+  margin: 0 auto
+
+.service-card
+  background: #fff
+  border-radius: 8px
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+  transition: transform 0.3s ease
+  overflow: hidden
+  
+  &:hover
+    transform: translateY(-5px)
+  
+  .service-icon
+    display: flex
+    gap: 1rem
+    justify-content: center
+    
+    &.corporate-video,
+    &.web-dev,
+    &.ai-placeholder
+      height: 240px
+      overflow: hidden
+      
+      img.service-image.full-width
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+        
+    &.ai-placeholder
+      .placeholder-image
+        width: 100%
+        height: 100%
+        background: #1a1a1a
+  
+  .service-content
+    padding: 2rem
+    
+    h3
+      margin-bottom: 1rem
+      font-size: 1.5rem
+    
+    p
+      color: #666
+      line-height: 1.6
+      margin-bottom: 2rem
+
+  .tech-stack
+    padding: 0 2rem 2rem
+    display: flex
+    gap: 1rem
+    justify-content: center
+    flex-wrap: wrap
+    border-top: 1px solid #eee
+    
+    .tech-icon
+      width: 24px
+      height: 24px
+      opacity: 0.7
+      transition: all 0.3s ease
+      object-fit: contain
+      
+      &:hover
+        opacity: 1
+        transform: scale(1.1)
+
+.work-preview
+  padding: 6rem 2rem
+  background: #f5f5f5
+  
+  h2
+    text-align: center
+    margin-bottom: 3rem
+    font-size: 2.5rem
+
+.project-grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  gap: 2rem
+  max-width: 1200px
+  margin: 0 auto
+
+.project-card
+  background: white
+  border-radius: 8px
+  overflow: hidden
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+  transition: transform 0.3s ease
+  
+  &:hover
+    transform: translateY(-5px)
+  
+  .project-image
+    height: 200px
+    overflow: hidden
+    
+    &.placeholder
+      filter: blur(20px)
+      transform: scale(1.1)  // Prevents blur from showing edges
+      
+      &.gradient-1
+        background: linear-gradient(45deg, #FF6B6B, #4ECDC4)
+      
+      &.gradient-2
+        background: linear-gradient(45deg, #A8E6CF, #FFD3B6)
+      
+      &.gradient-3
+        background: linear-gradient(45deg, #FF9A8B, #FF6A88)
+      
+      &.gradient-4
+        background: linear-gradient(45deg, #36D1DC, #5B86E5)
+      
+      &.gradient-5
+        background: linear-gradient(45deg, #CB356B, #BD3F32)
+      
+      &.gradient-6
+        background: linear-gradient(45deg, #8E2DE2, #4A00E0)
+    
+    img.project-image.full-width
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center
+  
+  .service-content
+    padding: 1.5rem
+    
+    .project-info
+      margin-bottom: 1.5rem
+      
+      h4
+        margin: 0 0 0.5rem
+        font-size: 1.25rem
+      
+      p
+        color: #666
+        margin: 0
+    
+    .tech-stack
+      padding-top: 1.5rem
+      display: flex
+      gap: 1rem
+      justify-content: center
+      flex-wrap: wrap
+      border-top: 1px solid #eee
+      
+      .tech-icon
+        width: 24px
+        height: 24px
+        opacity: 0.7
+        transition: all 0.3s ease
+        object-fit: contain
+        
+        &:hover
+          opacity: 1
+          transform: scale(1.1)
+
+  &.web-dev
+    background: #1a1a1a
+    border: 1px solid #333
+    
+    .service-content
+      .project-info
+        h4
+          color: #fff
+        
+        p
+          color: #ccc
+      
+      .tech-stack
+        border-color: #333 

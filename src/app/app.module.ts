@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { AboutComponent } from './components/about/about.component';
+import { LandingComponent } from './components/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
 import {VgCoreModule} from '@videogular/ngx-videogular/core';
 import {VgControlsModule} from '@videogular/ngx-videogular/controls';
@@ -18,7 +19,8 @@ import { IMediaElement } from '@videogular/ngx-videogular/core';
     AppComponent,
     HeaderComponent,
     PortfolioComponent,
-    AboutComponent
+    AboutComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

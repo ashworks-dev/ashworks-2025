@@ -1,0 +1,229 @@
+<!-- Modern, full-viewport landing section -->
+<header class="hero-section">
+  <!-- Subtle video background with overlay -->
+  <div class="topVideo">
+    <vg-player class="background-video w-background-video w-background-video-atom">
+      <video [vgMedia]="$any(media)" #media id="singleVideo" autoplay loop="true" [muted]="true" preload="auto" data-object-fit="cover">
+        <source src="https://ashnet.com.au/video/sitebg.mp4" type="video/mp4">
+      </video>
+    </vg-player>
+  </div>
+
+  <div class="hero-content">
+    <h1 class="main-title">
+      <span class="name">
+        <img src="assets/images/aw-circle.svg" alt="ashworks logo" class="brand-logo">
+        ashworks
+      </span>
+      <span class="title">Developer & Videographer</span>
+    </h1>
+    
+    <div class="subtitle">
+      Corporate Video Production • Web Development • AI Solutions
+    </div>
+
+    <p class="brief-intro">
+      Professional video production and development services for businesses of any size.
+      Based in Melbourne, available for projects Australia-wide.
+    </p>
+
+    <div class="cta-group">
+      <button class="cta-primary">Discuss Your Project</button>
+      <button class="cta-secondary">View Selected Works</button>
+    </div>
+  </div>
+</header>
+
+<!-- Client Showcase Section -->
+<section class="client-showcase">
+  <h2>Selected Clients</h2>
+  <div class="client-grid">
+    <div class="client-pill">Coles Supermarkets</div>
+    <div class="client-pill">PowerCor</div>
+    <div class="client-pill">Australian Catholic University</div>
+    <div class="client-pill">National Australia Bank</div>
+    <div class="client-pill">Department of Education</div>
+    <div class="client-pill">Melbourne University</div>
+    <div class="client-pill">Department of Health</div>
+    <div class="client-pill">Commonwealth Bank</div>
+    <div class="client-pill">Suncorp</div>
+    <div class="client-pill">Australian Assoc. of Social Workers</div>
+    <div class="client-pill">Westpac</div>
+    <div class="client-pill">IBAC</div>
+    <div class="client-pill">Liberate Learning</div>
+    <div class="client-pill">RMIT</div>
+    <div class="client-pill">MONASH UNIVERSITY</div>
+  </div>
+</section>
+
+<!-- Service Pillars Section -->
+<section class="services-overview">
+  <div class="service-card">
+    <div class="service-icon corporate-video">
+      <img src="assets/images/corp-p-500.png" alt="Corporate video setup in a modern office space" class="service-image full-width">
+    </div>
+    <div class="service-content">
+      <h3>Corporate Video</h3>
+      <p>Specializing in the core of corporate video production: authentic interviews and compelling b-roll. As a solo operator with years of experience, I deliver professional results through streamlined processes and focused attention to detail. Perfect for training videos, company updates, and corporate storytelling.</p>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-icon web-dev">
+      <img src="assets/images/codehtml.jpg" alt="CSS and HTML code in a modern IDE" class="service-image full-width">
+    </div>
+    <div class="service-content">
+      <h3>Web Development</h3>
+      <p>Full-stack development with a focus on clean, efficient code and intuitive user experiences. Specializing in Angular and modern web technologies, I build scalable solutions that are both powerful and maintainable. From responsive websites to complex web applications, I deliver results that exceed expectations.</p>
+    </div>
+    <div class="tech-stack">
+      <img src="assets/images/angular-svgrepo-com.svg" alt="Angular" class="tech-icon">
+      <img src="assets/images/react-svgrepo-com.svg" alt="React" class="tech-icon">
+      <img src="assets/images/ts.svg" alt="TypeScript" class="tech-icon">
+      <img src="assets/images/tail.svg" alt="Tailwind CSS" class="tech-icon">
+      <img src="assets/images/html-5-svgrepo-com.svg" alt="HTML5" class="tech-icon">
+      <img src="assets/images/css-3-svgrepo-com.svg" alt="CSS3" class="tech-icon">
+      <img src="assets/images/javascript-svgrepo-com-2.svg" alt="JavaScript" class="tech-icon">
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-icon ai-placeholder">
+      <div class="placeholder-image"></div>
+    </div>
+    <div class="service-content">
+      <h3>AI Integration</h3>
+      <p>Exploring the cutting edge of AI technology to solve real business challenges. Currently prototyping and developing custom AI solutions, from automated content generation to intelligent learning systems. Let's collaborate to discover how AI can enhance your business processes and create new opportunities.</p>
+    </div>
+    <div class="tech-stack">
+      <img src="assets/images/python.svg" alt="Python" class="tech-icon">
+      <img src="assets/images/django-icon-svgrepo-com.svg" alt="Django" class="tech-icon">
+      <img src="assets/images/openai-svgrepo-com.svg" alt="OpenAI" class="tech-icon">
+    </div>
+  </div>
+</section>
+
+<!-- Selected Work Preview -->
+<section class="work-preview">
+  <h2>Selected Projects</h2>
+  <div class="project-grid">
+    <div class="project-card web-dev">
+      <div class="project-image">
+        <!-- High-quality project thumbnail -->
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>AI-Powered Courseware Generator</h4>
+          <p>Developed an innovative eLearning platform that automatically converts storyboards into working courses in the Adapt framework. Using LLM models (both API and open source), custom agents, Python, and Angular, the system analyzes content to detect visual elements, learning intentions, outcomes, and interactions. The AI then maps these elements to the appropriate Adapt framework components, creating fully functional eLearning courses with a single click.</p>
+        </div>
+      </div>
+    </div>
+    <div class="project-card web-dev">
+      <div class="project-image">
+        <img src="assets/images/vet-1-p-500.png" alt="Service2Campus website interface showing university guidance for veterans" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Veterans Support Platform</h4>
+          <p>Developed three interconnected websites for Australian Catholic University to support military veterans transitioning to university life. As the sole developer, I designed the sites in WebFlow, exported them as HTML, and integrated advanced features using React components, including a sophisticated referencing and citations tool. The project involved converting complex data from university-provided spreadsheets into JSON to drive dynamic component functionality, helping veterans navigate their educational journey.</p>
+        </div>
+        <div class="tech-stack">
+          <img src="assets/images/react-svgrepo-com.svg" alt="React" class="tech-icon">
+          <img src="assets/images/ts.svg" alt="TypeScript" class="tech-icon">
+          <img src="assets/images/html-5-svgrepo-com.svg" alt="HTML5" class="tech-icon">
+        </div>
+      </div>
+    </div>
+    <div class="project-card web-dev">
+      <div class="project-image">
+        <img src="assets/images/lp-2-p-500.png" alt="Lesson Planner interface showing calendar and curriculum management" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Lesson Planner Platform</h4>
+          <p>Built an educational platform using Python for curriculum parsing and alignment with the Victorian State Curriculum. The system automatically analyzes and maps content to curriculum requirements, ensuring educational standards are met. Developed with an Angular frontend and Lumen API backend, the project included a WordPress marketplace integration for content distribution. The platform helps teachers efficiently plan and align their lessons with curriculum requirements.</p>
+        </div>
+        <div class="tech-stack">
+          <img src="assets/images/angular-svgrepo-com.svg" alt="Angular" class="tech-icon">
+          <img src="assets/images/python.svg" alt="Python" class="tech-icon">
+          <img src="assets/images/ts.svg" alt="TypeScript" class="tech-icon">
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-image placeholder gradient-1">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Bio Lab Training Series</h4>
+          <p>Created a comprehensive video training series for a leading biological research laboratory. The project involved filming complex laboratory procedures, safety protocols, and equipment demonstrations. Each video was carefully edited to maintain scientific accuracy while ensuring clear communication of critical information. The series has become an essential resource for new researchers and ongoing staff training.</p>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-image">
+        <img src="assets/images/acu1-p-500.png" alt="Students enjoying the ACU campus grounds" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>ACU 360° Virtual Tour</h4>
+          <p>Developed an immersive 360° virtual tour platform for Australian Catholic University, showcasing their state-of-the-art facilities and learning environments. The project combined high-quality 360° photography with interactive elements and detailed information points. The platform provides prospective students with an engaging way to explore the university's campuses and facilities from anywhere in the world.</p>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-image">
+        <img src="assets/images/360-1400w.png" alt="360-degree camera setup in retail environment" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Retail Operations Training</h4>
+          <p>Developed a comprehensive training platform for a major supermarket chain, combining 360° virtual tours with instructional videos. The project covered everything from automated warehousing processes to bakery production and cutting-edge technology like smarter gates and hand scanners. The platform allows staff to virtually explore store layouts and learn procedures through immersive experiences, making training more engaging and effective for employees across the country.</p>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-image placeholder gradient-2">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Customer Service Training Series</h4>
+          <p>Produced a series of training videos for a major supermarket chain, focusing on front-end operations and customer service excellence. The projects covered checkout procedures, customer handling techniques, click-and-collect operations, scanner usage, and smart gate implementation. Each video was carefully crafted to demonstrate best practices while maintaining a focus on customer experience and operational efficiency.</p>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-image">
+        <img src="assets/images/IMG_1865-854x480-1-p-500.png" alt="Professional video production setup with Sony camera and lighting equipment" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Inclusive Education Initiative</h4>
+          <p>Produced an extensive digital learning series for a government education department, focusing on inclusive classroom practices. Over six months, the project involved filming at more than 50 schools and conducting nearly 120 interviews with teachers, students, and education specialists. The comprehensive video series showcases successful inclusion strategies, classroom adaptations, and best practices for supporting diverse learning needs. This valuable resource helps educators create more inclusive and supportive learning environments.</p>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-image placeholder gradient-3">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Recovery Support Program</h4>
+          <p>Produced a series of educational videos for a mental health support organization, focusing on recovery and wellness strategies. The project involved creating sensitive, informative content about coping mechanisms, support systems, and personal development. The videos combine expert guidance with personal stories, providing valuable resources for individuals on their recovery journey while maintaining appropriate sensitivity and privacy.</p>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-image">
+        <img src="assets/images/b2-1.png" alt="Green screen video production setup with camera operator and talent" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>VR Training Environment</h4>
+          <p>Collaborated with a UK-based production house on a complex 360° VR training project for a major Australian supermarket chain. The project involved extensive green screen work and virtual set integration, combining live action footage with immersive VR environments. This innovative approach allowed for the creation of interactive training scenarios that effectively demonstrate retail procedures and customer service protocols in a virtual space.</p>
+        </div>
+      </div>
+    </div>
+    <!-- More project cards... -->
+  </div>
+</section> 
