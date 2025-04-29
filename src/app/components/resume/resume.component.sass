@@ -1,135 +1,166 @@
 .resume-container
-  max-width: 1000px
+  max-width: 1200px
   margin: 0 auto
-  padding: 3rem 2rem
+  padding: 4rem 2rem
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
-  color: #2c3e50
-  background: #fff
-  box-shadow: 0 0 30px rgba(0,0,0,0.05)
-  border-radius: 12px
+  color: #e2e8f0
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%)
+  box-shadow: 0 0 40px rgba(0,0,0,0.2)
+  border-radius: 16px
+  position: relative
+  overflow: hidden
+
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    height: 1px
+    background: linear-gradient(90deg, transparent, #3b82f6, #60a5fa, #3b82f6, transparent)
 
 .resume-header
-  text-align: center
+  text-align: left
   margin-bottom: 4rem
   padding-bottom: 2rem
-  border-bottom: 3px solid #f0f4f8
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1)
+  position: relative
 
   h1
-    font-size: 3rem
+    font-size: 3.5rem
     font-weight: 700
     margin-bottom: 0.5rem
-    color: #1a365d
     letter-spacing: -0.5px
+    line-height: 1.1
+    background: linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
 
   .title
-    font-size: 1.4rem
-    color: #4a5568
-    margin-bottom: 1.5rem
+    font-size: 1.5rem
+    color: #94a3b8
+    margin-bottom: 2rem
     font-weight: 500
+    line-height: 1.4
 
   .contact-info
     display: flex
-    justify-content: center
-    gap: 2rem
     flex-wrap: wrap
+    gap: 1.5rem
+    margin-top: 2rem
 
     .contact-item
-      color: #4a5568
+      color: #94a3b8
       text-decoration: none
       display: flex
       align-items: center
       gap: 0.5rem
-      transition: all 0.3s ease
-      font-size: 1.1rem
+      transition: all 0.2s ease
+      font-size: 1rem
       padding: 0.5rem 1rem
+      background: rgba(148, 163, 184, 0.1)
       border-radius: 8px
-      background: #f8fafc
+      border: 1px solid rgba(148, 163, 184, 0.2)
 
       &:hover
-        color: #1a365d
-        background: #edf2f7
+        color: #f8fafc
+        background: rgba(96, 165, 250, 0.2)
         transform: translateY(-2px)
+        border-color: #60a5fa
 
       .credentials
         font-size: 0.9rem
-        color: #718096
+        color: #64748b
         margin-left: 0.5rem
 
 .summary-section
   .summary-text
     font-size: 1.2rem
-    line-height: 1.6
-    color: #4a5568
-    text-align: center
-    max-width: 800px
-    margin: 0 auto
+    line-height: 1.7
+    color: #94a3b8
+    text-align: left
+    max-width: 900px
+    margin: 0 0 4rem 0
     padding: 2rem
-    background: #f8fafc
+    background: rgba(148, 163, 184, 0.05)
     border-radius: 12px
-    border: 1px solid #e2e8f0
+    border: 1px solid rgba(148, 163, 184, 0.1)
 
 .resume-section
-  margin-bottom: 4rem
+  margin-bottom: 5rem
+  position: relative
 
   h2
-    font-size: 2rem
-    color: #1a365d
+    font-size: 1.75rem
+    color: #f8fafc
     margin-bottom: 2rem
     padding-bottom: 0.5rem
-    border-bottom: 3px solid #f0f4f8
     font-weight: 600
     letter-spacing: -0.5px
+    position: relative
+    display: inline-block
+
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 2px
+      background: linear-gradient(90deg, #3b82f6, #60a5fa, transparent)
 
 .experience-item
-  margin-bottom: 2.5rem
+  margin-bottom: 3rem
   padding: 2rem
-  background: #fff
+  background: rgba(148, 163, 184, 0.05)
   border-radius: 12px
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05)
+  border: 1px solid rgba(148, 163, 184, 0.1)
   transition: all 0.3s ease
-  border: 1px solid #edf2f7
 
   &:hover
     transform: translateY(-4px)
-    box-shadow: 0 8px 12px rgba(0,0,0,0.08)
+    background: rgba(96, 165, 250, 0.1)
+    border-color: #60a5fa
 
   .experience-header
     margin-bottom: 1.5rem
 
     h3
-      font-size: 1.5rem
-      color: #1a365d
+      font-size: 1.4rem
+      color: #f8fafc
       margin-bottom: 0.5rem
       font-weight: 600
+      line-height: 1.3
 
     .company
       font-weight: 500
-      color: #4a5568
+      color: #94a3b8
       margin-right: 1rem
       font-size: 1.1rem
 
     .period
-      color: #718096
-      font-size: 1rem
-      background: #f0f4f8
+      color: #64748b
+      font-size: 0.95rem
+      background: rgba(96, 165, 250, 0.1)
       padding: 0.3rem 0.8rem
       border-radius: 6px
+      font-weight: 500
 
     .location
-      color: #718096
-      font-size: 0.9rem
+      color: #64748b
+      font-size: 0.95rem
       margin-left: 1rem
+      font-weight: 500
 
   .company-description
     font-size: 1rem
     line-height: 1.6
-    color: #4a5568
+    color: #94a3b8
     margin-bottom: 1.5rem
     padding: 1rem
-    background: #f8fafc
+    background: rgba(96, 165, 250, 0.05)
     border-radius: 8px
-    border-left: 4px solid #3182ce
-    font-style: italic
+    border-left: 3px solid #60a5fa
 
 .description-list
   list-style-type: none
@@ -138,16 +169,16 @@
 
   li
     margin-bottom: 0.8rem
-    padding-left: 1.8rem
+    padding-left: 1.5rem
     position: relative
     line-height: 1.6
-    color: #4a5568
+    color: #94a3b8
 
     &:before
       content: "•"
       position: absolute
       left: 0
-      color: #4a5568
+      color: #60a5fa
       font-size: 1.2rem
       line-height: 1.4
 
@@ -161,28 +192,30 @@
     display: flex
     align-items: center
     gap: 0.5rem
-    background: #f0f4f8
+    background: rgba(96, 165, 250, 0.1)
     padding: 0.5rem 1rem
-    border-radius: 20px
+    border-radius: 6px
     font-size: 0.95rem
-    color: #2d3748
+    color: #f8fafc
+    font-weight: 500
+    border: 1px solid rgba(96, 165, 250, 0.2)
 
     i
-      color: #f6ad55
+      color: #60a5fa
 
 .skills-container
   display: grid
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
-  gap: 2.5rem
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  gap: 3rem
 
 .skill-category
   h3
-    font-size: 1.3rem
-    color: #1a365d
+    font-size: 1.2rem
+    color: #f8fafc
     margin-bottom: 1.2rem
     font-weight: 600
     padding-bottom: 0.5rem
-    border-bottom: 2px solid #f0f4f8
+    border-bottom: 1px solid rgba(96, 165, 250, 0.2)
 
 .skill-items
   display: flex
@@ -190,282 +223,102 @@
   gap: 0.8rem
 
 .skill-tag
-  background: #f0f4f8
-  color: #2d3748
+  background: rgba(96, 165, 250, 0.1)
+  color: #f8fafc
   padding: 0.4rem 1rem
-  border-radius: 20px
+  border-radius: 6px
   font-size: 0.95rem
-  transition: all 0.3s ease
+  transition: all 0.2s ease
   font-weight: 500
-  border: 1px solid #e2e8f0
+  border: 1px solid rgba(96, 165, 250, 0.2)
 
   &:hover
-    background: #e2e8f0
+    background: rgba(96, 165, 250, 0.2)
     transform: translateY(-2px)
+    border-color: #60a5fa
 
 .projects-container
   display: grid
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
-  gap: 2rem
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
+  gap: 2.5rem
 
 .project-item
-  padding: 1.5rem
-  background: #fff
+  padding: 2rem
+  background: rgba(148, 163, 184, 0.05)
   border-radius: 12px
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05)
+  border: 1px solid rgba(148, 163, 184, 0.1)
   transition: all 0.3s ease
-  border: 1px solid #edf2f7
 
   &:hover
     transform: translateY(-4px)
-    box-shadow: 0 8px 12px rgba(0,0,0,0.08)
+    background: rgba(96, 165, 250, 0.1)
+    border-color: #60a5fa
 
   .project-header
-    display: flex
-    justify-content: space-between
-    align-items: flex-start
     margin-bottom: 1rem
 
     h3
       font-size: 1.3rem
-      color: #1a365d
+      color: #f8fafc
       font-weight: 600
       margin: 0
+      line-height: 1.3
 
     .period
-      color: #718096
-      font-size: 0.9rem
-      background: #f0f4f8
+      color: #64748b
+      font-size: 0.95rem
+      background: rgba(96, 165, 250, 0.1)
       padding: 0.3rem 0.8rem
       border-radius: 6px
-      white-space: nowrap
+      font-weight: 500
 
   p
-    color: #4a5568
+    color: #94a3b8
     line-height: 1.6
     margin-bottom: 1rem
 
   .project-tech
     display: flex
     flex-wrap: wrap
-    gap: 1rem
+    gap: 0.8rem
     margin-bottom: 1.5rem
 
     .tech-icon
       display: flex
       align-items: center
       gap: 0.5rem
-      padding: 0.5rem 1rem
-      background: #f0f4f8
-      border-radius: 20px
-      transition: all 0.3s ease
+      padding: 0.4rem 0.8rem
+      background: rgba(96, 165, 250, 0.1)
+      border-radius: 6px
+      transition: all 0.2s ease
       cursor: help
+      border: 1px solid rgba(96, 165, 250, 0.2)
 
       i
-        font-size: 1.2rem
-        color: #3182ce
+        font-size: 1.1rem
+        color: #60a5fa
 
       .tech-name
         font-size: 0.9rem
-        color: #2d3748
+        color: #f8fafc
         font-weight: 500
 
       &:hover
-        background: #e2e8f0
+        background: rgba(96, 165, 250, 0.2)
         transform: translateY(-2px)
-
-        i
-          color: #2c5282
+        border-color: #60a5fa
 
   .project-link
     display: inline-flex
     align-items: center
     gap: 0.5rem
-    color: #3182ce
+    color: #60a5fa
     text-decoration: none
     font-weight: 500
-    transition: color 0.3s ease
+    transition: color 0.2s ease
 
     &:hover
-      color: #2c5282
-
-.videography-content
-  .videography-summary
-    font-size: 1.1rem
-    line-height: 1.6
-    color: #4a5568
-    margin-bottom: 2rem
-    padding: 1.5rem
-    background: #f8fafc
-    border-radius: 12px
-    border: 1px solid #e2e8f0
-
-  .videography-skills
-    margin-bottom: 2rem
-
-    h3
-      font-size: 1.3rem
-      color: #1a365d
-      margin-bottom: 1rem
-      font-weight: 600
-
-  .videography-projects
-    margin-bottom: 2rem
-
-    h3
-      font-size: 1.3rem
-      color: #1a365d
-      margin-bottom: 1rem
-      font-weight: 600
-
-  .other-video-projects
-    margin-top: 3rem
-    padding-top: 2rem
-    border-top: 2px solid #f0f4f8
-
-    h3
-      font-size: 1.3rem
-      color: #1a365d
-      margin-bottom: 1.2rem
-      font-weight: 600
-
-    .other-projects-list
-      list-style: none
-      padding: 0
-      margin: 0
-
-      li
-        display: flex
-        justify-content: space-between
-        align-items: flex-start
-        padding: 1rem
-        background: #f8fafc
-        border-radius: 8px
-        margin-bottom: 0.8rem
-        transition: all 0.3s ease
-
-        &:hover
-          background: #edf2f7
-          transform: translateX(4px)
-
-        .project-info
-          display: flex
-          flex-direction: column
-          gap: 0.3rem
-
-          .project-title
-            color: #2d3748
-            font-weight: 500
-            font-size: 1.1rem
-
-          .project-description
-            color: #718096
-            font-size: 0.95rem
-
-        .period
-          color: #718096
-          font-size: 0.9rem
-          background: #fff
-          padding: 0.3rem 0.8rem
-          border-radius: 6px
-          white-space: nowrap
-          margin-left: 1rem
-
-  .videography-clients
-    margin-top: 3rem
-    padding-top: 2rem
-    border-top: 2px solid #f0f4f8
-
-    h3
-      font-size: 1.3rem
-      color: #1a365d
-      margin-bottom: 1rem
-      font-weight: 600
-
-    .client-tags
-      display: flex
-      flex-wrap: wrap
-      gap: 0.8rem
-
-    .client-tag
-      background: #f0f4f8
-      color: #2d3748
-      padding: 0.4rem 1rem
-      border-radius: 20px
-      font-size: 0.95rem
-      transition: all 0.3s ease
-      font-weight: 500
-      border: 1px solid #e2e8f0
-
-      &:hover
-        background: #e2e8f0
-        transform: translateY(-2px)
-
-.awards-list
-  display: flex
-  flex-direction: column
-  gap: 1rem
-
-  .award-item
-    display: flex
-    align-items: center
-    gap: 0.8rem
-    padding: 1rem
-    background: #f8fafc
-    border-radius: 8px
-    transition: all 0.3s ease
-
-    &:hover
-      background: #edf2f7
-      transform: translateX(4px)
-
-    i
-      color: #f6ad55
-      font-size: 1.2rem
-
-    span
-      color: #2d3748
-      font-size: 1.1rem
-      font-weight: 500
-
-.endorsement-section
-  .endorsement-content
-    padding: 2rem
-    background: #f8fafc
-    border-radius: 12px
-    border: 1px solid #e2e8f0
-
-    blockquote
-      margin: 0
-      padding: 0
-      border: none
-      font-style: italic
-      color: #4a5568
-      line-height: 1.6
-      font-size: 1.1rem
-
-      p
-        margin-bottom: 1.5rem
-
-      footer
-        display: flex
-        flex-direction: column
-        gap: 0.3rem
-
-        strong
-          color: #1a365d
-          font-size: 1.1rem
-
-        span
-          color: #4a5568
-
-        a
-          color: #3182ce
-          text-decoration: none
-          transition: color 0.3s ease
-
-          &:hover
-            color: #2c5282
+      color: #93c5fd
 
 .other-projects
   margin-top: 1rem
@@ -480,14 +333,16 @@
       justify-content: space-between
       align-items: flex-start
       padding: 1rem
-      background: #f8fafc
+      background: rgba(148, 163, 184, 0.05)
       border-radius: 8px
       margin-bottom: 0.8rem
       transition: all 0.3s ease
+      border: 1px solid rgba(148, 163, 184, 0.1)
 
       &:hover
-        background: #edf2f7
+        background: rgba(96, 165, 250, 0.1)
         transform: translateX(4px)
+        border-color: #60a5fa
 
       .project-info
         display: flex
@@ -495,38 +350,282 @@
         gap: 0.3rem
 
         .project-title
-          color: #2d3748
+          color: #f8fafc
           font-weight: 500
           font-size: 1.1rem
 
         .project-description
-          color: #718096
+          color: #94a3b8
           font-size: 0.95rem
 
       .project-title
         display: flex
         align-items: center
         gap: 0.5rem
-        color: #2d3748
+        color: #f8fafc
         font-weight: 500
         font-size: 1.1rem
 
         .project-link
-          color: #3182ce
+          color: #60a5fa
           text-decoration: none
-          transition: color 0.3s ease
+          transition: color 0.2s ease
 
           &:hover
-            color: #2c5282
+            color: #93c5fd
 
       .period
-        color: #718096
-        font-size: 0.9rem
-        background: #fff
+        color: #64748b
+        font-size: 0.95rem
+        background: rgba(96, 165, 250, 0.1)
         padding: 0.3rem 0.8rem
         border-radius: 6px
-        white-space: nowrap
+        font-weight: 500
         margin-left: 1rem
+
+.videography-content
+  .videography-summary
+    font-size: 1.1rem
+    line-height: 1.6
+    color: #94a3b8
+    margin-bottom: 2rem
+    padding: 2rem
+    background: rgba(148, 163, 184, 0.05)
+    border-radius: 12px
+    border: 1px solid rgba(148, 163, 184, 0.1)
+
+  .videography-skills
+    margin-bottom: 2rem
+
+    h3
+      font-size: 1.2rem
+      color: #f8fafc
+      margin-bottom: 1rem
+      font-weight: 600
+
+  .videography-clients
+    margin-top: 3rem
+    padding-top: 2rem
+    border-top: 1px solid rgba(96, 165, 250, 0.2)
+
+    h3
+      font-size: 1.2rem
+      color: #f8fafc
+      margin-bottom: 1rem
+      font-weight: 600
+
+    .client-tags
+      display: flex
+      flex-wrap: wrap
+      gap: 0.8rem
+
+    .client-tag
+      background: rgba(96, 165, 250, 0.1)
+      color: #f8fafc
+      padding: 0.4rem 1rem
+      border-radius: 6px
+      font-size: 0.95rem
+      transition: all 0.2s ease
+      font-weight: 500
+      border: 1px solid rgba(96, 165, 250, 0.2)
+
+      &:hover
+        background: rgba(96, 165, 250, 0.2)
+        transform: translateY(-2px)
+        border-color: #60a5fa
+
+.awards-list
+  display: flex
+  flex-direction: column
+  gap: 1rem
+
+  .award-item
+    display: flex
+    align-items: center
+    gap: 0.8rem
+    padding: 1rem
+    background: rgba(148, 163, 184, 0.05)
+    border-radius: 8px
+    transition: all 0.3s ease
+    border: 1px solid rgba(148, 163, 184, 0.1)
+
+    &:hover
+      background: rgba(96, 165, 250, 0.1)
+      transform: translateX(4px)
+      border-color: #60a5fa
+
+    i
+      color: #60a5fa
+      font-size: 1.2rem
+
+    span
+      color: #f8fafc
+      font-size: 1.1rem
+      font-weight: 500
+
+.endorsement-section
+  .endorsement-content
+    padding: 2rem
+    background: rgba(148, 163, 184, 0.05)
+    border-radius: 12px
+    border: 1px solid rgba(148, 163, 184, 0.1)
+
+    blockquote
+      margin: 0
+      padding: 0
+      border: none
+      font-style: italic
+      color: #94a3b8
+      line-height: 1.6
+      font-size: 1.1rem
+
+      p
+        margin-bottom: 1.5rem
+
+      footer
+        display: flex
+        flex-direction: column
+        gap: 0.3rem
+
+        strong
+          color: #f8fafc
+          font-size: 1.1rem
+
+        span
+          color: #94a3b8
+
+        a
+          color: #60a5fa
+          text-decoration: none
+          transition: color 0.2s ease
+
+          &:hover
+            color: #93c5fd
+
+.about-me-content
+  .personal-background
+    margin-bottom: 3rem
+    padding: 2rem
+    background: rgba(96, 165, 250, 0.05)
+    border-radius: 12px
+    border: 1px solid rgba(96, 165, 250, 0.2)
+
+    .background-story, .family-section
+      margin-bottom: 2rem
+
+      h3
+        color: #f8fafc
+        margin-bottom: 1rem
+        font-size: 1.2rem
+        border-bottom: 2px solid #60a5fa
+        padding-bottom: 0.5rem
+
+      p
+        color: #94a3b8
+        line-height: 1.6
+        font-size: 1.1rem
+
+    .interests-section
+      h3
+        color: #f8fafc
+        margin-bottom: 1rem
+        font-size: 1.2rem
+        border-bottom: 2px solid #60a5fa
+        padding-bottom: 0.5rem
+
+      .interests-list
+        list-style: none
+        padding: 0
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+        gap: 1rem
+
+        li
+          display: flex
+          align-items: center
+          padding: 0.8rem
+          background: rgba(148, 163, 184, 0.05)
+          border-radius: 8px
+          border: 1px solid rgba(148, 163, 184, 0.1)
+          transition: all 0.3s ease
+          color: #94a3b8
+
+          &:hover
+            background: rgba(96, 165, 250, 0.1)
+            transform: translateX(4px)
+            border-color: #60a5fa
+
+          i
+            color: #60a5fa
+            margin-right: 0.8rem
+            font-size: 1.1rem
+
+  .about-summary
+    margin-bottom: 2rem
+    p
+      font-size: 1.2rem
+      line-height: 1.6
+      color: #f8fafc
+      padding: 2rem
+      background: rgba(96, 165, 250, 0.1)
+      border-radius: 12px
+      border: 1px solid rgba(96, 165, 250, 0.2)
+
+  .key-attributes
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    gap: 2rem
+    margin-bottom: 2rem
+
+    .attribute-category
+      h3
+        color: #f8fafc
+        margin-bottom: 1rem
+        font-size: 1.2rem
+        border-bottom: 2px solid #60a5fa
+        padding-bottom: 0.5rem
+
+      .attribute-list
+        list-style: none
+        padding: 0
+
+        li
+          display: flex
+          align-items: center
+          margin-bottom: 0.8rem
+          font-size: 1rem
+          color: #94a3b8
+          padding: 0.8rem
+          background: rgba(148, 163, 184, 0.05)
+          border-radius: 8px
+          border: 1px solid rgba(148, 163, 184, 0.1)
+          transition: all 0.3s ease
+
+          &:hover
+            background: rgba(96, 165, 250, 0.1)
+            transform: translateX(4px)
+            border-color: #60a5fa
+
+          i
+            color: #60a5fa
+            margin-right: 0.8rem
+            font-size: 1.1rem
+
+  .career-objectives
+    background: rgba(96, 165, 250, 0.1)
+    padding: 1.5rem
+    border-radius: 8px
+    border-left: 4px solid #60a5fa
+
+    h3
+      color: #f8fafc
+      margin-bottom: 1rem
+      font-size: 1.2rem
+
+    p
+      font-size: 1.1rem
+      line-height: 1.6
+      color: #94a3b8
 
 @media (max-width: 768px)
   .resume-container
@@ -540,7 +639,7 @@
 
   .contact-info
     flex-direction: column
-    align-items: center
+    align-items: flex-start
     gap: 1rem
 
   .skills-container
@@ -548,9 +647,6 @@
 
   .projects-container
     grid-template-columns: 1fr
-
-  .experience-item
-    padding: 1.5rem
 
   .project-header
     flex-direction: column

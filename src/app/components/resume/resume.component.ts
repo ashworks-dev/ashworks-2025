@@ -435,6 +435,43 @@ export class ResumeComponent implements OnInit {
     }
   };
 
+  aboutMe = {
+    summary: `Self-taught web developer and videographer with 20+ years of experience creating high-quality digital solutions. Proven track record of building successful businesses and delivering complex projects both independently and in team environments.`,
+    strengths: [
+      'Completely self-taught in web development, videography, and emerging technologies',
+      'Successfully built and operated a busy videography business (200+ corporate videos)',
+      'Expertise in both solo/remote work and team collaboration environments',
+      'Strong problem-solving and technical troubleshooting abilities',
+      'Excellent communication and client relationship management'
+    ],
+    workStyle: [
+      'Highly adaptable - equally effective working independently or in teams',
+      'Self-motivated with proven ability to manage complex projects solo',
+      'Strong attention to detail and quality assurance',
+      'Proactive in identifying and implementing improvements',
+      'Experienced in both remote and on-site project delivery'
+    ],
+    keyAchievements: [
+      'Built successful videography business producing 200+ corporate training videos',
+      '2023 LearnX Winner – Best eLearning Design',
+      '2023 AITD Finalist – Best Learning Technology',
+      'eLearning Excellence Award Winner 2009 & 2012',
+      'Developed award-winning 360 training environments',
+      'Successfully managed multiple concurrent projects as a solo operator'
+    ],
+    personalBackground: {
+      story: `Born and raised in Melbourne, I've always had a passion for technology and creativity. My journey in web development began in the late 90s when I taught myself HTML and JavaScript to build my first websites. This self-taught approach has been a cornerstone of my career, allowing me to adapt and grow with the ever-evolving tech landscape.`,
+      family: `I'm a proud parent of two children who have grown up watching me build and grow my business. My family has been a constant source of support and inspiration throughout my career journey.`,
+      interests: [
+        'Exploring emerging technologies and their practical applications',
+        'Mentoring young developers and sharing knowledge',
+        'Outdoor photography and nature exploration',
+        'Family time and creating lasting memories'
+      ]
+    },
+    careerObjectives: `Seeking opportunities to leverage my extensive self-taught expertise in web development and videography to create innovative, high-quality digital solutions. Passionate about staying at the forefront of technology and delivering exceptional results for clients and organizations.`
+  };
+
   constructor() { }
 
   ngOnInit(): void {
