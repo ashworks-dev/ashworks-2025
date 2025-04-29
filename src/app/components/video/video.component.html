@@ -69,75 +69,50 @@
 <section class="services-overview">
   <div class="service-cards-container">
     <div class="service-card">
-      <div class="service-icon basic">
-        <img src="assets/images/coles-23.png" alt="Basic video setup" class="service-image full-width">
+      <div class="service-icon videography">
+        <img src="assets/images/corp-p-500.png" alt="Videography services" class="service-image full-width">
       </div>
-      <div class="service-content high-contrast">
-        <h3 class="service-title basic-title">Basic Setup</h3>
-        <p class="service-description">Simple shoot with essential equipment:</p>
+      <div class="service-content">
+        <h3 class="service-title videography-title">Videography</h3>
+        <p class="service-description">Basic shoot day rate includes:</p>
         <ul class="service-list">
-          <li>Single Camera Video</li>
-          <li>Professional Photography</li>
-          <li>360° Photography</li>
-          <li>Basic Audio</li>
-          <li>Minimal Lighting</li>
+          <li>Professional Camera Setup</li>
+          <li>Basic Lighting Kit</li>
+          <li>Professional Audio</li>
           <li>Raw Footage Delivery</li>
         </ul>
         <div class="rate-indicator">
-          <span class="rate">Half Day: $500 | Full Day: $700</span>
-          <span class="note bold">Shoot day rate only - editing charged separately</span>
-        </div>
-        <div class="use-cases">
-          <p class="use-cases-title">Perfect for:</p>
-          <ul class="use-cases-list">
-            <li>Simple talking head videos</li>
-            <li>Basic b-roll capture</li>
-            <li>Real estate photography/video</li>
-            <li>Social media content</li>
-            <li>Quick interviews</li>
-          </ul>
+          <span class="rate">From $500 per half day</span>
+          <span class="note bold">Shoot day rate only - editing available separately</span>
         </div>
       </div>
     </div>
 
     <div class="service-card">
-      <div class="service-icon pro">
-        <img src="assets/images/corp-p-500.png" alt="Professional video setup" class="service-image full-width">
+      <div class="service-icon professional">
+        <img src="assets/images/b2-1.png" alt="Professional video services" class="service-image full-width">
       </div>
-      <div class="service-content high-contrast">
-        <h3 class="service-title pro-title">Professional Setup</h3>
-        <p class="service-description">Full professional equipment package:</p>
+      <div class="service-content">
+        <h3 class="service-title professional-title">Professional</h3>
+        <p class="service-description">Full professional kit includes:</p>
         <ul class="service-list">
-          <li>Professional Lighting</li>
-          <li>High-Quality Audio</li>
-          <li>Multiple Camera Options</li>
-          <li>Teleprompter System</li>
-          <li>Client Monitors (Live Feed)</li>
-          <li>Redundant Backups</li>
+          <li>Multiple Camera Setup</li>
+          <li>Advanced Lighting</li>
+          <li>Professional Audio</li>
           <li>Raw Footage Delivery</li>
         </ul>
         <div class="rate-indicator">
-          <span class="rate">Full Day: $900 - $1,300</span>
-          <span class="note bold">Shoot day rate only - editing charged separately</span>
-        </div>
-        <div class="use-cases">
-          <p class="use-cases-title">Perfect for:</p>
-          <ul class="use-cases-list">
-            <li>Corporate interviews & presentations</li>
-            <li>Marketing videos & commercials</li>
-            <li>Training & educational content</li>
-            <li>Multi-camera events</li>
-            <li>Professional testimonials</li>
-          </ul>
+          <span class="rate">$700 - $1,500 per day</span>
+          <span class="note bold">Shoot day rate only - editing available separately</span>
         </div>
       </div>
     </div>
 
     <div class="service-card">
       <div class="service-icon production">
-        <img src="assets/images/b2-1.png" alt="Production services" class="service-image full-width">
+        <img src="assets/images/IMG_1865-854x480-1-p-500.png" alt="Production services" class="service-image full-width">
       </div>
-      <div class="service-content high-contrast">
+      <div class="service-content">
         <h3 class="service-title production-title">Production</h3>
         <p class="service-description">Full production management and services:</p>
         <ul class="service-list">
@@ -171,39 +146,64 @@
 </div>
 
 <!-- Protected Showreel Section -->
-<div *ngIf="accessGranted" class="showreel-section mt-16">
-  <h2 class="text-3xl font-bold mb-8 text-center">Our Work</h2>
-  
-  <!-- 2023 Showreel -->
-  <div class="video-project mb-16">
-    <h3 class="text-2xl font-semibold mb-4">2023 Showreel</h3>
-    <div class="video-container aspect-video">
-      <iframe width="100%" height="100%" src="https://player.vimeo.com/video/123456789" 
-              frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-    </div>
-    <p class="mt-4 text-gray-700">A collection of our best work from 2023, showcasing our range and capabilities across various industries and project types.</p>
+<section *ngIf="accessGranted" class="showreels-section">
+  <div class="background-effects">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="mesh-overlay"></div>
   </div>
 
-  <!-- Coles and ACU Project -->
-  <div class="video-project mb-16">
-    <h3 class="text-2xl font-semibold mb-4">Coles and ACU</h3>
-    <div class="video-container aspect-video">
-      <iframe width="100%" height="100%" src="https://player.vimeo.com/video/987654321" 
-              frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  <div class="section-content">
+    <h2 class="gradient-text showreel-title">Showreels</h2>
+    <p class="showreel-description">
+      A curated collection of my professional work across various industries. From corporate training to emotional storytelling, 
+      these showreels demonstrate the quality and versatility of my video production services.
+    </p>
+    
+    <div class="showreel-nav">
+      <button 
+        *ngFor="let video of videos" 
+        class="showReelBtn" 
+        [class.active]="activeTabId === video.id"
+        (click)="setActiveTab(video.id)">
+        {{ video.title }}
+      </button>
     </div>
-    <p class="mt-4 text-gray-700">Corporate video production for major Australian brands, demonstrating our ability to deliver high-quality content for enterprise clients.</p>
-  </div>
 
-  <!-- Banking & Finance -->
-  <div class="video-project mb-16">
-    <h3 class="text-2xl font-semibold mb-4">Banking & Finance</h3>
-    <div class="video-container aspect-video">
-      <iframe width="100%" height="100%" src="https://player.vimeo.com/video/456789123" 
-              frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <div class="showreel-container">
+      <div *ngFor="let video of videos" 
+           class="videocont2" 
+           [class.active]="activeTabId === video.id"
+           [id]="'vf-' + video.id">
+        <div class="video-header">
+          <h3 class="video-title">{{ video.title }}</h3>
+          <div class="video-meta">
+            <span class="meta-item" *ngFor="let meta of video.meta">
+              <i class="fas fa-{{ meta.icon }}"></i> {{ meta.text }}
+            </span>
+          </div>
+        </div>
+        <p class="video-description" *ngIf="video.description">{{ video.description }}</p>
+        <div class="video-wrapper">
+          <video 
+            controls 
+            preload="metadata"
+            class="video-player"
+            poster="assets/images/video-placeholder.jpg">
+            <source [src]="video.src" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <!-- Loading indicator -->
+          <div class="video-loading" *ngIf="isVideoLoading">
+            <div class="loading-spinner"></div>
+            <span class="loading-text">Loading video...</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="mt-4 text-gray-700">Professional video content for the banking and finance sector, featuring polished corporate communications and marketing materials.</p>
   </div>
-</div>
+</section>
 
 <!-- Access Denied Message -->
 <section *ngIf="!loading && !accessGranted && !errorMessage" class="access-message-section">
@@ -220,11 +220,11 @@
   </svg>
 
   <div class="content-container">
-    <h2 class="title">Welcome to Our Showreel!</h2>
+    <h2 class="title">Welcome to My Showreels!</h2>
     <div class="message">
-      Thanks for your interest in our work! Our showreel features some of our best projects and demonstrates the quality we bring to every production.
+      Thanks for your interest in my work! My showreels feature selected projects that showcase the quality and professionalism I bring to every production.
       <div class="sub-message">
-        To view this exclusive content, you'll need a special access link.
+        Due to the confidential nature of my corporate client work, these showreels require special access. Please request a private link below.
       </div>
     </div>
     <button class="access-button" (click)="scheduleCall()">
@@ -238,53 +238,68 @@
 
 <!-- Equipment Section -->
 <section class="equipment-showcase">
-  <h2>Professional Equipment</h2>
-  <div class="equipment-grid">
-    <div class="equipment-category">
-      <h3>Camera Systems</h3>
-      <ul class="equipment-list">
-        <li>Sony FX6 Cinema Camera</li>
-        <li>Sony A7S III Mirrorless</li>
-        <li>DJI RS3 Pro Gimbal</li>
-        <li>Extensive Lens Collection</li>
-      </ul>
-    </div>
-    
-    <div class="equipment-category">
-      <h3>Lighting</h3>
-      <ul class="equipment-list">
-        <li>Aputure 600D Pro LED</li>
-        <li>Aputure 300D MK II LED</li>
-        <li>RGB Panel Lights</li>
-        <li>Light Modifiers Suite</li>
-      </ul>
-    </div>
-    
-    <div class="equipment-category">
-      <h3>Audio</h3>
-      <ul class="equipment-list">
-        <li>Sennheiser AVX Wireless</li>
-        <li>RODE NTG Shotgun Mics</li>
-        <li>Sound Devices MixPre</li>
-        <li>Lavalier Collection</li>
-      </ul>
-    </div>
-    
-    <div class="equipment-category">
-      <h3>Support & Motion</h3>
-      <ul class="equipment-list">
-        <li>Sachtler Flowtech Tripod</li>
-        <li>DJI RS3 Pro Gimbal</li>
-        <li>Slider Systems</li>
-        <li>Grip Equipment</li>
-      </ul>
+  <div class="section-content">
+    <h2 class="equipment-title">Tech Stack</h2>
+
+    <div class="equipment-grid">
+      <div class="equipment-category">
+        <div class="category-header">
+          <i class="fas fa-video"></i>
+          <h3>Camera Systems</h3>
+        </div>
+        <ul class="equipment-list">
+          <li>Sony FX6 Cinema Camera</li>
+          <li>Sony A7S III Mirrorless</li>
+          <li>DJI RS3 Pro Gimbal</li>
+          <li>Professional Lens Collection</li>
+        </ul>
+      </div>
+      
+      <div class="equipment-category">
+        <div class="category-header">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Lighting</h3>
+        </div>
+        <ul class="equipment-list">
+          <li>Aputure 600D Pro LED</li>
+          <li>Aputure 300D MK II LED</li>
+          <li>RGB Panel Lights</li>
+          <li>Light Modifiers Suite</li>
+        </ul>
+      </div>
+      
+      <div class="equipment-category">
+        <div class="category-header">
+          <i class="fas fa-microphone-alt"></i>
+          <h3>Audio</h3>
+        </div>
+        <ul class="equipment-list">
+          <li>Sennheiser AVX Wireless</li>
+          <li>RODE NTG Shotgun Mics</li>
+          <li>Sound Devices MixPre</li>
+          <li>Lavalier Collection</li>
+        </ul>
+      </div>
+      
+      <div class="equipment-category">
+        <div class="category-header">
+          <i class="fas fa-cogs"></i>
+          <h3>Support & Motion</h3>
+        </div>
+        <ul class="equipment-list">
+          <li>Sachtler Flowtech Tripod</li>
+          <li>DJI RS3 Pro Gimbal</li>
+          <li>Slider Systems</li>
+          <li>Grip Equipment</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Selected Work Preview -->
 <section class="work-preview">
-  <h2>Selected Video Projects</h2>
+  <h2 class="section-title">Selected Video Projects</h2>
   <div class="project-grid">
     <div class="project-card">
       <div class="project-image">
@@ -481,104 +496,28 @@
   </div>
 </section>
 
-<!-- Rates Section -->
-<section class="rates-section">
-  <h2>Rates & Packages</h2>
-  
-  <div class="rates-grid">
-    <div class="rate-card">
-      <h3>Half-Day Shoot</h3>
-      <div class="price">$900</div>
-      <ul class="rate-features">
-        <li>Up to 4 hours filming</li>
-        <li>Single camera setup</li>
-        <li>Basic lighting kit</li>
-        <li>Professional audio</li>
-        <li>Travel within Melbourne</li>
-      </ul>
-      <div class="rate-note">Perfect for interviews & simple content</div>
-    </div>
-    
-    <div class="rate-card featured">
-      <h3>Full-Day Production</h3>
-      <div class="price">$1,500</div>
-      <ul class="rate-features">
-        <li>Up to 8 hours filming</li>
-        <li>Full camera package</li>
-        <li>Complete lighting setup</li>
-        <li>Professional audio</li>
-        <li>Travel within Melbourne</li>
-      </ul>
-      <div class="rate-note">Ideal for corporate & marketing videos</div>
-    </div>
-    
-    <div class="rate-card">
-      <h3>Custom Projects</h3>
-      <div class="price">Contact for Quote</div>
-      <ul class="rate-features">
-        <li>Multi-day productions</li>
-        <li>Multiple locations</li>
-        <li>Complex setups</li>
-        <li>Agency work</li>
-        <li>Custom requirements</li>
-      </ul>
-      <div class="rate-note">Tailored to your specific needs</div>
-    </div>
-  </div>
-  
-  <div class="rates-note">
-    <p>Additional Services:</p>
-    <ul class="package-includes">
-      <li>Editing & Post-Production (priced per project)</li>
-      <li>Color Grading</li>
-      <li>Audio Mixing</li>
-      <li>Motion Graphics</li>
-      <li>Travel outside Melbourne</li>
-    </ul>
-  </div>
-</section>
-
 <!-- Contact Section -->
 <section class="contact-section">
-  <h2>Start Your Project</h2>
-  <p class="contact-intro">Ready to discuss your video production needs? Let's create something amazing together.</p>
-  
-  <div class="contact-options">
-    <button class="contact-button primary">
-      <i class="fas fa-envelope"></i>
-      Request a Quote
-    </button>
-    <button class="contact-button secondary">
-      <i class="fas fa-phone"></i>
-      Schedule a Call
-    </button>
-  </div>
-  
-  <div class="location-info">
-    <p>Based in Melbourne • Available Australia-wide</p>
-  </div>
-</section>
-
-<div class="video-container">
-  <div class="section-header">
-    <h2>Featured Videos</h2>
-    <p>A selection of my best video production work across various genres and styles</p>
-  </div>
-  
-  <div class="video-grid">
-    <div class="video-card" *ngFor="let video of videos">
-      <img [src]="video.thumbnail" [alt]="video.title" class="video-thumbnail">
-      <div class="video-content">
-        <h3>{{ video.title }}</h3>
-        <p>{{ video.description }}</p>
-        <div class="video-meta">
-          <span class="date">{{ video.date | date:'mediumDate' }}</span>
-          <span class="views">{{ video.views | number }} views</span>
-        </div>
-      </div>
+  <div class="section-content">
+    <h2 class="contact-title">Start Your Project</h2>
+    <p class="contact-intro">Ready to discuss your video production needs? Let's create something amazing together.</p>
+    
+    <div class="contact-options">
+      <button class="contact-button primary">
+        <i class="fas fa-envelope"></i>
+        Request a Quote
+      </button>
+      <button class="contact-button secondary">
+        <i class="fas fa-phone"></i>
+        Schedule a Call
+      </button>
+    </div>
+    
+    <div class="location-info">
+      <p>Based in Melbourne • Available Australia-wide</p>
     </div>
   </div>
-</div>
+</section>
 
 <style>
 /* Override the base gradient styles */
@@ -675,12 +614,23 @@
 .service-icon {
   position: relative;
   overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .service-image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
+}
+
+.service-icon.production {
+  aspect-ratio: 16 / 9;
+}
+
+.service-icon.production .service-image {
+  object-position: center;
 }
 
 .service-content {
@@ -779,12 +729,12 @@
   left: 0;
 }
 
-h3.service-title.basic-title {
+h3.service-title.videography-title {
   color: #4C9EFF !important;  /* Bright blue */
   font-weight: 700;
 }
 
-h3.service-title.pro-title {
+h3.service-title.professional-title {
   color: #FF9F5A !important;  /* Warm orange */
   font-weight: 700;
 }
@@ -1294,122 +1244,505 @@ h3.service-title.production-title {
     padding: 1.25rem 2.5rem;
   }
 }
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.video-container {
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.video-project {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.video-project:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.video-project:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.showreel-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+}
+
+.showReelBtn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.showReelBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.showReelBtn.active {
+  background: linear-gradient(135deg, rgba(76, 158, 255, 0.2), rgba(45, 212, 191, 0.2));
+  border: 1px solid rgba(76, 158, 255, 0.4);
+  color: #4C9EFF;
+  box-shadow: 0 4px 12px rgba(76, 158, 255, 0.2);
+}
+
+.videocont2 {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.videocont2.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.video-header {
+  background: rgba(13, 16, 23, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.video-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #FF9F5A, #FF6B88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.video-meta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-description {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  width: 100%;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.video-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.loading-text {
+  color: #fff;
+  font-size: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.showreel-title {
+  font-size: 2.75rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #FF9F5A, #FF6B88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.showreel-description {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .showreel-title {
+    font-size: 2rem;
+  }
+  
+  .showreel-description {
+    font-size: 1.25rem;
+  }
+}
+
+.equipment-showcase {
+  padding: 4rem 2rem;
+  background: rgba(13, 16, 23, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.equipment-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.equipment-category {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.category-header i {
+  color: #4C9EFF;
+  font-size: 1rem;
+}
+
+.category-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.equipment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.equipment-list li {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.equipment-list li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .equipment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .equipment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.work-preview {
+  padding: 6rem 2rem;
+  background: rgba(13, 16, 23, 0.95);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-bottom: 4rem;
+  line-height: 1.2;
+  padding-top: 0.5rem;
+}
+
+.contact-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, rgba(13, 16, 23, 0.95), rgba(13, 16, 23, 0.98));
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(76, 158, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(45, 212, 191, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.contact-section .section-content {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+}
+
+.contact-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.contact-intro {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.contact-options {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-button i {
+  font-size: 1.2rem;
+}
+
+.contact-button.primary {
+  background: linear-gradient(135deg, #4C9EFF 0%, #2DD4BF 100%);
+  color: white;
+  border: none;
+}
+
+.contact-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(76, 158, 255, 0.3);
+}
+
+.contact-button.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.contact-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.location-info {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+
+.location-info p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-intro {
+    font-size: 1.1rem;
+  }
+
+  .contact-options {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.project-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  padding-bottom: 0;
+}
+
+.spec {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.spec:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM Content Loaded');
   const buttons = document.querySelectorAll('.showReelBtn');
   const videos = document.querySelectorAll('.videocont2');
-  let currentlyLoadingVideo = null;
-
-  // Initialize the first tab immediately
-  const firstButton = document.getElementById('pf-0');
-  const firstVideo = document.getElementById('vf-0');
   
-  if (firstButton && firstVideo) {
-    firstButton.classList.add('active');
-    firstVideo.classList.add('active');
-    // Load the first video immediately
-    loadVideo(firstVideo);
-  }
-
-  // Function to show loading state
-  function showLoading(videoContainer) {
-    const loadingEl = videoContainer.querySelector('.video-loading');
-    if (loadingEl) {
-      loadingEl.style.display = 'flex';
-    }
-  }
-
-  // Function to hide loading state
-  function hideLoading(videoContainer) {
-    const loadingEl = videoContainer.querySelector('.video-loading');
-    if (loadingEl) {
-      loadingEl.style.display = 'none';
-    }
-  }
-
-  // Function to show error state
-  function showError(videoContainer) {
-    const errorEl = videoContainer.querySelector('.video-error');
-    if (errorEl) {
-      errorEl.style.display = 'flex';
-    }
-  }
-
-  // Function to hide error state
-  function hideError(videoContainer) {
-    const errorEl = videoContainer.querySelector('.video-error');
-    if (errorEl) {
-      errorEl.style.display = 'none';
-    }
-  }
-
-  // Function to load video source
-  function loadVideo(videoContainer) {
-    const video = videoContainer.querySelector('video');
-    const source = video.querySelector('source');
-    
-    if (!source || !source.hasAttribute('data-src')) {
-      return;
-    }
-
-    // Reset states
-    hideError(videoContainer);
-    hideLoading(videoContainer);
-
-    if (!source.hasAttribute('src')) {
-      showLoading(videoContainer);
-      currentlyLoadingVideo = video;
-
-      // Set up event listeners for this video
-      const handleLoadedData = () => {
-        if (video === currentlyLoadingVideo) {
-          hideLoading(videoContainer);
-          video.removeEventListener('loadeddata', handleLoadedData);
-        }
-      };
-
-      const handleError = () => {
-        if (video === currentlyLoadingVideo) {
-          hideLoading(videoContainer);
-          showError(videoContainer);
-          video.removeEventListener('error', handleError);
-        }
-      };
-
-      video.addEventListener('loadeddata', handleLoadedData);
-      video.addEventListener('error', handleError);
-
-      // Set the source and load the video
-      source.src = source.getAttribute('data-src');
-      video.load();
-    }
-  }
-
-  // Function to unload video source
-  function unloadVideo(videoContainer) {
-    const video = videoContainer.querySelector('video');
-    const source = video.querySelector('source');
-    
-    if (source && source.hasAttribute('src')) {
-      video.pause();
-      source.removeAttribute('src');
-      video.load(); // This clears the video buffer
-    }
-  }
-
+  console.log('Found buttons:', buttons.length);
+  console.log('Found videos:', videos.length);
+  
   // Function to activate a specific tab
   function activateTab(tabId) {
-    if (!tabId) return; // Guard against undefined tabId
-
+    console.log('Activating tab:', tabId);
+    
     // Remove active class from all buttons and videos
-    buttons.forEach(btn => btn.classList.remove('active'));
+    buttons.forEach(btn => {
+      console.log('Deactivating button:', btn.id);
+      btn.classList.remove('active');
+    });
+    
     videos.forEach(video => {
+      console.log('Deactivating video:', video.id);
       video.classList.remove('active');
-      // Unload inactive videos to free up memory
-      if (video.id !== 'vf-' + tabId) {
-        unloadVideo(video);
+      // Pause any playing videos
+      const videoElement = video.querySelector('video');
+      if (videoElement) {
+        console.log('Pausing video in:', video.id);
+        videoElement.pause();
       }
     });
 
@@ -1417,22 +1750,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedBtn = document.getElementById('pf-' + tabId);
     const selectedVideo = document.getElementById('vf-' + tabId);
     
+    console.log('Selected button:', selectedBtn?.id);
+    console.log('Selected video:', selectedVideo?.id);
+    
     if (selectedBtn && selectedVideo) {
+      console.log('Activating button and video');
       selectedBtn.classList.add('active');
       selectedVideo.classList.add('active');
-      
-      // Load the video for the active tab
-      loadVideo(selectedVideo);
+    } else {
+      console.log('Failed to find button or video elements');
     }
   }
 
   // Add click event listeners to all buttons
   buttons.forEach(button => {
     button.addEventListener('click', function() {
+      console.log('Button clicked:', this.id);
       const tabId = this.id.split('-')[1];
+      console.log('Tab ID extracted:', tabId);
       activateTab(tabId);
     });
   });
+
+  // Initialize the first tab
+  console.log('Initializing first tab');
+  activateTab('0');
 });
 
 // Hide dev note on scroll
