@@ -23,7 +23,7 @@
     </div>
 
     <p class="brief-intro">
-      Professional video production and development services for businesses of any size.
+      Professional video production and web development services for businesses of any size.
       Based in Melbourne, available for projects Australia-wide.
     </p>
 
@@ -36,7 +36,8 @@
 
 <!-- Client Showcase Section -->
 <section class="client-showcase">
-  <h2>Selected Clients</h2>
+  <h2>I've Worked With...</h2>
+  <div class="timeline-subtitle">2016 - Present</div>
   <div class="client-grid">
     <div class="client-pill">Coles Supermarkets</div>
     <div class="client-pill">PowerCor</div>
@@ -53,6 +54,9 @@
     <div class="client-pill">Liberate Learning</div>
     <div class="client-pill">RMIT</div>
     <div class="client-pill">MONASH UNIVERSITY</div>
+  </div>
+  <div class="career-blurb">
+    After two decades of crafting digital solutions, I expanded into video production, combining technical precision with creative storytelling. Since then, I've had the privilege of producing impactful video content for these outstanding organizations.
   </div>
 </section>
 
@@ -110,6 +114,31 @@
 <section class="work-preview">
   <h2>Selected Projects</h2>
   <div class="project-grid">
+    <!-- First 6 cards without additional-card class -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="assets/images/coles-23.png" alt="Point of sale training setup with camera and display screens" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Customer Service Training Series</h4>
+          <p>Produced a series of training videos for a major supermarket chain, focusing on front-end operations and customer service excellence. The projects covered checkout procedures, customer handling techniques, click-and-collect operations, scanner usage, and smart gate implementation. Each video was carefully crafted to demonstrate best practices while maintaining a focus on customer experience and operational efficiency.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image">
+        <img src="assets/images/b2-1.png" alt="Green screen video production setup with camera operator and talent" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>VR Training Environment</h4>
+          <p>Collaborated with a UK-based production house on a complex 360° VR training project for a major Australian supermarket chain. The project involved extensive green screen work and virtual set integration, combining live action footage with immersive VR environments. This innovative approach allowed for the creation of interactive training scenarios that effectively demonstrate retail procedures and customer service protocols in a virtual space.</p>
+        </div>
+      </div>
+    </div>
+
     <div class="project-card web-dev">
       <div class="project-image placeholder gradient-4">
         <i class="fas fa-robot fa-2x"></i>
@@ -126,6 +155,7 @@
         </div>
       </div>
     </div>
+
     <div class="project-card web-dev">
       <div class="project-image">
         <img src="assets/images/vet-1-p-500.png" alt="Service2Campus website interface showing university guidance for veterans" class="project-image full-width">
@@ -142,7 +172,33 @@
         </div>
       </div>
     </div>
-    <div class="project-card web-dev">
+
+    <div class="project-card">
+      <div class="project-image">
+        <img src="assets/images/acu1-p-500.png" alt="Students enjoying the ACU campus grounds" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>ACU 360° Virtual Tour</h4>
+          <p>Developed an immersive 360° virtual tour platform for Australian Catholic University, showcasing their state-of-the-art facilities and learning environments. The project combined high-quality 360° photography with interactive elements and detailed information points. The platform provides prospective students with an engaging way to explore the university's campuses and facilities from anywhere in the world.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image placeholder gradient-1">
+        <i class="fas fa-flask fa-2x"></i>
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Bio Lab Training Series</h4>
+          <p>Created a comprehensive video training series for a leading biological research laboratory. The project involved filming complex laboratory procedures, safety protocols, and equipment demonstrations. Each video was carefully edited to maintain scientific accuracy while ensuring clear communication of critical information. The series has become an essential resource for new researchers and ongoing staff training.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional cards with additional-card class -->
+    <div class="project-card web-dev additional-card" [class.show]="showAllProjects">
       <div class="project-image">
         <img src="assets/images/lp-2-p-500.png" alt="Lesson Planner interface showing calendar and curriculum management" class="project-image full-width">
       </div>
@@ -158,29 +214,8 @@
         </div>
       </div>
     </div>
-    <div class="project-card">
-      <div class="project-image placeholder gradient-1">
-        <i class="fas fa-flask fa-2x"></i>
-      </div>
-      <div class="service-content">
-        <div class="project-info">
-          <h4>Bio Lab Training Series</h4>
-          <p>Created a comprehensive video training series for a leading biological research laboratory. The project involved filming complex laboratory procedures, safety protocols, and equipment demonstrations. Each video was carefully edited to maintain scientific accuracy while ensuring clear communication of critical information. The series has become an essential resource for new researchers and ongoing staff training.</p>
-        </div>
-      </div>
-    </div>
-    <div class="project-card">
-      <div class="project-image">
-        <img src="assets/images/acu1-p-500.png" alt="Students enjoying the ACU campus grounds" class="project-image full-width">
-      </div>
-      <div class="service-content">
-        <div class="project-info">
-          <h4>ACU 360° Virtual Tour</h4>
-          <p>Developed an immersive 360° virtual tour platform for Australian Catholic University, showcasing their state-of-the-art facilities and learning environments. The project combined high-quality 360° photography with interactive elements and detailed information points. The platform provides prospective students with an engaging way to explore the university's campuses and facilities from anywhere in the world.</p>
-        </div>
-      </div>
-    </div>
-    <div class="project-card">
+
+    <div class="project-card additional-card" [class.show]="showAllProjects">
       <div class="project-image">
         <img src="assets/images/360-1400w.png" alt="360-degree camera setup in retail environment" class="project-image full-width">
       </div>
@@ -191,18 +226,8 @@
         </div>
       </div>
     </div>
-    <div class="project-card">
-      <div class="project-image">
-        <img src="assets/images/coles-23.png" alt="Point of sale training setup with camera and display screens" class="project-image full-width">
-      </div>
-      <div class="service-content">
-        <div class="project-info">
-          <h4>Customer Service Training Series</h4>
-          <p>Produced a series of training videos for a major supermarket chain, focusing on front-end operations and customer service excellence. The projects covered checkout procedures, customer handling techniques, click-and-collect operations, scanner usage, and smart gate implementation. Each video was carefully crafted to demonstrate best practices while maintaining a focus on customer experience and operational efficiency.</p>
-        </div>
-      </div>
-    </div>
-    <div class="project-card">
+
+    <div class="project-card additional-card" [class.show]="showAllProjects">
       <div class="project-image">
         <img src="assets/images/IMG_1865-854x480-1-p-500.png" alt="Professional video production setup with Sony camera and lighting equipment" class="project-image full-width">
       </div>
@@ -213,7 +238,8 @@
         </div>
       </div>
     </div>
-    <div class="project-card">
+
+    <div class="project-card additional-card" [class.show]="showAllProjects">
       <div class="project-image placeholder gradient-3">
         <i class="fas fa-heartbeat fa-2x"></i>
       </div>
@@ -224,18 +250,8 @@
         </div>
       </div>
     </div>
-    <div class="project-card">
-      <div class="project-image">
-        <img src="assets/images/b2-1.png" alt="Green screen video production setup with camera operator and talent" class="project-image full-width">
-      </div>
-      <div class="service-content">
-        <div class="project-info">
-          <h4>VR Training Environment</h4>
-          <p>Collaborated with a UK-based production house on a complex 360° VR training project for a major Australian supermarket chain. The project involved extensive green screen work and virtual set integration, combining live action footage with immersive VR environments. This innovative approach allowed for the creation of interactive training scenarios that effectively demonstrate retail procedures and customer service protocols in a virtual space.</p>
-        </div>
-      </div>
-    </div>
-    <div class="project-card web-dev">
+
+    <div class="project-card web-dev additional-card" [class.show]="showAllProjects">
       <div class="project-image">
         <img src="assets/images/compass2-p-500.png" alt="Career Compass interface showing skill comparison charts" class="project-image full-width">
       </div>
@@ -252,7 +268,8 @@
         </div>
       </div>
     </div>
-    <div class="project-card">
+
+    <div class="project-card additional-card" [class.show]="showAllProjects">
       <div class="project-image">
         <img src="assets/images/vlcsnap-2024-01-09-11h53m08s589.png" alt="Professional actors demonstrating customer service scenarios" class="project-image full-width">
       </div>
@@ -263,7 +280,8 @@
         </div>
       </div>
     </div>
-    <div class="project-card">
+
+    <div class="project-card additional-card" [class.show]="showAllProjects">
       <div class="project-image placeholder gradient-2">
         <i class="fas fa-users fa-2x"></i>
       </div>
@@ -274,7 +292,8 @@
         </div>
       </div>
     </div>
-    <div class="project-card">
+
+    <div class="project-card additional-card" [class.show]="showAllProjects">
       <div class="project-image placeholder gradient-5">
         <i class="fas fa-university fa-2x"></i>
       </div>
@@ -285,7 +304,8 @@
         </div>
       </div>
     </div>
-    <div class="project-card">
+
+    <div class="project-card additional-card" [class.show]="showAllProjects">
       <div class="project-image placeholder gradient-6">
         <i class="fas fa-film fa-2x"></i>
       </div>
@@ -296,5 +316,11 @@
         </div>
       </div>
     </div>
+  </div>
+  
+  <div class="show-more-container">
+    <button class="show-more-button" (click)="toggleProjects()">
+      {{ showAllProjects ? 'Show Less' : 'Show More Projects' }}
+    </button>
   </div>
 </section> 

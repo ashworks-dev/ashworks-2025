@@ -9,6 +9,7 @@ import { IMediaElement } from '@videogular/ngx-videogular/core';
 export class LandingComponent implements OnInit {
   @ViewChild('media', { static: true }) media!: IMediaElement;
   videoError = false;
+  showAllProjects = false;
 
   constructor() {}
 
@@ -22,5 +23,9 @@ export class LandingComponent implements OnInit {
   onVideoLoaded(): void {
     console.log('Video loaded successfully');
     this.videoError = false;
+  }
+
+  toggleProjects(): void {
+    this.showAllProjects = !this.showAllProjects;
   }
 } 
