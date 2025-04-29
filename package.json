@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^14.3.0",
     "@angular/router": "^14.3.0",
     "@videogular/ngx-videogular": "^6.0.0",
+    "core-js": "^2.6.12",
     "ngx-videogular": "^13.2.4",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

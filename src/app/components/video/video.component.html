@@ -1,0 +1,677 @@
+<!-- Modern, full-viewport landing section -->
+<header class="hero-section">
+  <!-- Subtle video background with overlay -->
+  <div class="topVideo">
+    <vg-player class="background-video w-background-video w-background-video-atom">
+      <video [vgMedia]="$any(media)" #media id="singleVideo" autoplay loop="true" [muted]="true" preload="auto" data-object-fit="cover">
+        <source src="https://ashnet.com.au/video/sitebg.mp4" type="video/mp4">
+      </video>
+    </vg-player>
+  </div>
+
+  <div class="hero-content">
+    <h1 class="main-title">
+      <span class="name">
+        <img src="assets/images/aw-circle.svg" alt="ashworks logo" class="brand-logo">
+        ashworks
+      </span>
+      <span class="title">Video Production Services</span>
+    </h1>
+    
+    <div class="subtitle">
+      Corporate Video • Marketing Content • Training Production
+    </div>
+
+    <p class="brief-intro">
+      Professional video production services for businesses and agencies. 
+      High-quality corporate videos, marketing content, and training materials delivered with technical precision.
+    </p>
+
+    <div class="cta-group">
+      <button class="cta-primary">Get a Quote</button>
+      <button class="cta-secondary">View Production Reel</button>
+    </div>
+  </div>
+</header>
+
+<!-- Services Section -->
+<section class="services-overview">
+  <div class="service-cards-container">
+    <div class="service-card">
+      <div class="service-icon basic">
+        <img src="assets/images/coles-23.png" alt="Basic video setup" class="service-image full-width">
+      </div>
+      <div class="service-content high-contrast">
+        <h3 class="service-title basic-title">Basic Setup</h3>
+        <p class="service-description">Simple shoot with essential equipment:</p>
+        <ul class="service-list">
+          <li>Single Camera Video</li>
+          <li>Professional Photography</li>
+          <li>360° Photography</li>
+          <li>Basic Audio</li>
+          <li>Minimal Lighting</li>
+          <li>Raw Footage Delivery</li>
+        </ul>
+        <div class="rate-indicator">
+          <span class="rate">Half Day: $500 | Full Day: $700</span>
+          <span class="note bold">Shoot day rate only - editing charged separately</span>
+        </div>
+        <div class="use-cases">
+          <p class="use-cases-title">Perfect for:</p>
+          <ul class="use-cases-list">
+            <li>Simple talking head videos</li>
+            <li>Basic b-roll capture</li>
+            <li>Real estate photography/video</li>
+            <li>Social media content</li>
+            <li>Quick interviews</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon pro">
+        <img src="assets/images/corp-p-500.png" alt="Professional video setup" class="service-image full-width">
+      </div>
+      <div class="service-content high-contrast">
+        <h3 class="service-title pro-title">Professional Setup</h3>
+        <p class="service-description">Full professional equipment package:</p>
+        <ul class="service-list">
+          <li>Professional Lighting</li>
+          <li>High-Quality Audio</li>
+          <li>Multiple Camera Options</li>
+          <li>Teleprompter System</li>
+          <li>Client Monitors (Live Feed)</li>
+          <li>Redundant Backups</li>
+          <li>Raw Footage Delivery</li>
+        </ul>
+        <div class="rate-indicator">
+          <span class="rate">Full Day: $900 - $1,300</span>
+          <span class="note bold">Shoot day rate only - editing charged separately</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon production">
+        <img src="assets/images/b2-1.png" alt="Production services" class="service-image full-width">
+      </div>
+      <div class="service-content high-contrast">
+        <h3 class="service-title production-title">Production</h3>
+        <p class="service-description">Full production management and services:</p>
+        <ul class="service-list">
+          <li>Project Planning</li>
+          <li>Script Development</li>
+          <li>Storyboarding</li>
+          <li>Location Scouting</li>
+          <li>Video Editing</li>
+          <li>Motion Graphics</li>
+          <li>Audio Post-Production</li>
+        </ul>
+        <div class="rate-indicator">
+          <span class="rate">$80 per hour</span>
+          <span class="note bold">Pre and post-production services</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Equipment Section -->
+<section class="equipment-showcase">
+  <h2>Professional Equipment</h2>
+  <div class="equipment-grid">
+    <div class="equipment-category">
+      <h3>Camera Systems</h3>
+      <ul class="equipment-list">
+        <li>Sony FX6 Cinema Camera</li>
+        <li>Sony A7S III Mirrorless</li>
+        <li>DJI RS3 Pro Gimbal</li>
+        <li>Extensive Lens Collection</li>
+      </ul>
+    </div>
+    
+    <div class="equipment-category">
+      <h3>Lighting</h3>
+      <ul class="equipment-list">
+        <li>Aputure 600D Pro LED</li>
+        <li>Aputure 300D MK II LED</li>
+        <li>RGB Panel Lights</li>
+        <li>Light Modifiers Suite</li>
+      </ul>
+    </div>
+    
+    <div class="equipment-category">
+      <h3>Audio</h3>
+      <ul class="equipment-list">
+        <li>Sennheiser AVX Wireless</li>
+        <li>RODE NTG Shotgun Mics</li>
+        <li>Sound Devices MixPre</li>
+        <li>Lavalier Collection</li>
+      </ul>
+    </div>
+    
+    <div class="equipment-category">
+      <h3>Support & Motion</h3>
+      <ul class="equipment-list">
+        <li>Sachtler Flowtech Tripod</li>
+        <li>DJI RS3 Pro Gimbal</li>
+        <li>Slider Systems</li>
+        <li>Grip Equipment</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Selected Work Preview -->
+<section class="work-preview">
+  <h2>Selected Video Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <div class="project-image">
+        <img src="assets/images/coles-23.png" alt="Point of sale training setup with camera and display screens" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Customer Service Training Series</h4>
+          <p>Produced a series of training videos for a major supermarket chain, focusing on front-end operations and customer service excellence. The projects covered checkout procedures, customer handling techniques, click-and-collect operations, scanner usage, and smart gate implementation.</p>
+        </div>
+        <div class="project-specs">
+          <span class="spec">4K Production</span>
+          <span class="spec">Multi-Camera</span>
+          <span class="spec">Custom Graphics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image">
+        <img src="assets/images/b2-1.png" alt="Green screen video production setup with camera operator and talent" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>VR Training Environment</h4>
+          <p>Collaborated with a UK-based production house on a complex 360° VR training project. The project involved extensive green screen work and virtual set integration, combining live action footage with immersive VR environments.</p>
+        </div>
+        <div class="project-specs">
+          <span class="spec">Green Screen</span>
+          <span class="spec">VR Integration</span>
+          <span class="spec">International</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image">
+        <img src="assets/images/acu1-p-500.png" alt="Students enjoying the ACU campus grounds" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>University Marketing Campaign</h4>
+          <p>Created a series of promotional videos for Australian Catholic University, showcasing campus life, student experiences, and academic excellence. The project included aerial footage, student interviews, and dynamic b-roll of university facilities.</p>
+        </div>
+        <div class="project-specs">
+          <span class="spec">Aerial Footage</span>
+          <span class="spec">Interviews</span>
+          <span class="spec">Social Media</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image placeholder gradient-1">
+        <i class="fas fa-flask fa-2x"></i>
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Bio Lab Training Series</h4>
+          <p>Created a comprehensive video training series for a leading biological research laboratory. The project involved filming complex laboratory procedures, safety protocols, and equipment demonstrations. Each video was carefully edited to maintain scientific accuracy while ensuring clear communication of critical information.</p>
+        </div>
+        <div class="project-specs">
+          <span class="spec">Scientific</span>
+          <span class="spec">Training</span>
+          <span class="spec">Documentary</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image">
+        <img src="assets/images/360-1400w.png" alt="360-degree camera setup in retail environment" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Retail Operations Training</h4>
+          <p>Developed a comprehensive training platform for a major supermarket chain, combining 360° virtual tours with instructional videos. The project covered everything from automated warehousing processes to bakery production and cutting-edge technology like smarter gates and hand scanners.</p>
+        </div>
+        <div class="project-specs">
+          <span class="spec">360° Video</span>
+          <span class="spec">Virtual Tour</span>
+          <span class="spec">Training</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image">
+        <img src="assets/images/IMG_1865-854x480-1-p-500.png" alt="Professional video production setup with Sony camera and lighting equipment" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Inclusive Education Initiative</h4>
+          <p>Produced an extensive digital learning series for a government education department, focusing on inclusive classroom practices. Over six months, the project involved filming at more than 50 schools and conducting nearly 120 interviews with teachers, students, and education specialists.</p>
+        </div>
+        <div class="project-specs">
+          <span class="spec">Multi-Location</span>
+          <span class="spec">Documentary</span>
+          <span class="spec">Education</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card additional-card" [class.show]="showAllProjects">
+      <div class="project-image placeholder gradient-3">
+        <i class="fas fa-heartbeat fa-2x"></i>
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Recovery Support Program</h4>
+          <p>Created a series of 15 training videos for Smart Recovery Australia, capturing various stages of counseling sessions performed by staff members. Filmed over two days in Sydney, these videos demonstrate different aspects of the counseling process, providing valuable training resources for recovery support professionals.</p>
+        </div>
+        <div class="project-specs">
+          <span class="spec">Healthcare</span>
+          <span class="spec">Training</span>
+          <span class="spec">Documentary</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card additional-card" [class.show]="showAllProjects">
+      <div class="project-image">
+        <img src="assets/images/vlcsnap-2024-01-09-11h53m08s589.png" alt="Professional actors demonstrating customer service scenarios" class="project-image full-width">
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Financial Services Training Series</h4>
+          <p>Created an extensive series of training videos for a major financial institution, featuring professional actors demonstrating customer engagement techniques and call center interactions. The project included filming at their new hybrid office, recreating realistic customer service scenarios.</p>
+        </div>
+        <div class="project-specs">
+          <span class="spec">Actors</span>
+          <span class="spec">Training</span>
+          <span class="spec">Corporate</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card additional-card" [class.show]="showAllProjects">
+      <div class="project-image placeholder gradient-2">
+        <i class="fas fa-users fa-2x"></i>
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Social Work Training Series</h4>
+          <p>Produced a comprehensive series of educational videos for a national professional body, focusing on risk assessment and case formulation in social work practice. The three-day production involved professional actors performing emotional interviews and staged counseling sessions.</p>
+        </div>
+        <div class="project-specs">
+          <span class="spec">Actors</span>
+          <span class="spec">Education</span>
+          <span class="spec">Professional</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card additional-card" [class.show]="showAllProjects">
+      <div class="project-image placeholder gradient-5">
+        <i class="fas fa-university fa-2x"></i>
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Banking Operations Training</h4>
+          <p>Developed a focused training series for one of Australia's largest financial institutions, demonstrating effective responses to challenging customer situations. The project featured professional actors in an actual branch setting, recreating confrontational scenarios.</p>
+        </div>
+        <div class="project-specs">
+          <span class="spec">Actors</span>
+          <span class="spec">Training</span>
+          <span class="spec">Corporate</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card additional-card" [class.show]="showAllProjects">
+      <div class="project-image placeholder gradient-6">
+        <i class="fas fa-film fa-2x"></i>
+      </div>
+      <div class="service-content">
+        <div class="project-info">
+          <h4>Production House Collaborations</h4>
+          <p>Provided specialized post-production services for established Melbourne production houses, delivering quick-turnaround edits and revisions for corporate clients. Projects included trimming content for social media, implementing client feedback, and creating alternative endings.</p>
+        </div>
+        <div class="project-specs">
+          <span class="spec">Post-Production</span>
+          <span class="spec">Editing</span>
+          <span class="spec">Corporate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="show-more-container">
+    <button class="show-more-button" (click)="toggleProjects()">
+      {{ showAllProjects ? 'Show Less' : 'View More Projects' }}
+    </button>
+  </div>
+</section>
+
+<!-- Rates Section -->
+<section class="rates-section">
+  <h2>Rates & Packages</h2>
+  
+  <div class="rates-grid">
+    <div class="rate-card">
+      <h3>Half-Day Shoot</h3>
+      <div class="price">$900</div>
+      <ul class="rate-features">
+        <li>Up to 4 hours filming</li>
+        <li>Single camera setup</li>
+        <li>Basic lighting kit</li>
+        <li>Professional audio</li>
+        <li>Travel within Melbourne</li>
+      </ul>
+      <div class="rate-note">Perfect for interviews & simple content</div>
+    </div>
+    
+    <div class="rate-card featured">
+      <h3>Full-Day Production</h3>
+      <div class="price">$1,500</div>
+      <ul class="rate-features">
+        <li>Up to 8 hours filming</li>
+        <li>Full camera package</li>
+        <li>Complete lighting setup</li>
+        <li>Professional audio</li>
+        <li>Travel within Melbourne</li>
+      </ul>
+      <div class="rate-note">Ideal for corporate & marketing videos</div>
+    </div>
+    
+    <div class="rate-card">
+      <h3>Custom Projects</h3>
+      <div class="price">Contact for Quote</div>
+      <ul class="rate-features">
+        <li>Multi-day productions</li>
+        <li>Multiple locations</li>
+        <li>Complex setups</li>
+        <li>Agency work</li>
+        <li>Custom requirements</li>
+      </ul>
+      <div class="rate-note">Tailored to your specific needs</div>
+    </div>
+  </div>
+  
+  <div class="rates-note">
+    <p>Additional Services:</p>
+    <ul class="package-includes">
+      <li>Editing & Post-Production (priced per project)</li>
+      <li>Color Grading</li>
+      <li>Audio Mixing</li>
+      <li>Motion Graphics</li>
+      <li>Travel outside Melbourne</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+  <h2>Start Your Project</h2>
+  <p class="contact-intro">Ready to discuss your video production needs? Let's create something amazing together.</p>
+  
+  <div class="contact-options">
+    <button class="contact-button primary">
+      <i class="fas fa-envelope"></i>
+      Request a Quote
+    </button>
+    <button class="contact-button secondary">
+      <i class="fas fa-phone"></i>
+      Schedule a Call
+    </button>
+  </div>
+  
+  <div class="location-info">
+    <p>Based in Melbourne • Available Australia-wide</p>
+  </div>
+</section>
+
+<div class="video-container">
+  <div class="section-header">
+    <h2>Featured Videos</h2>
+    <p>A selection of my best video production work across various genres and styles</p>
+  </div>
+  
+  <div class="video-grid">
+    <div class="video-card" *ngFor="let video of videos">
+      <img [src]="video.thumbnail" [alt]="video.title" class="video-thumbnail">
+      <div class="video-content">
+        <h3>{{ video.title }}</h3>
+        <p>{{ video.description }}</p>
+        <div class="video-meta">
+          <span class="date">{{ video.date | date:'mediumDate' }}</span>
+          <span class="views">{{ video.views | number }} views</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Override the base gradient styles */
+.service-card .service-content h3 {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+/* Specific title colors */
+.service-card:nth-child(1) .service-content h3 {
+  color: #4C9EFF !important;
+  font-weight: 700;
+}
+
+.service-card:nth-child(2) .service-content h3 {
+  color: #FF9F5A !important;
+  font-weight: 700;
+}
+
+.service-card:nth-child(3) .service-content h3 {
+  color: #2DD4BF !important;
+  font-weight: 700;
+}
+
+/* Base service title styles */
+.service-title {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.services-overview {
+  padding: 4rem 0;
+  background: #111827;
+}
+
+.service-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.service-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+/* Video card - blue tint */
+.service-card:nth-child(1) {
+  background: linear-gradient(180deg, rgba(91, 138, 245, 0.15), rgba(13, 16, 23, 0.9));
+  border: 1px solid rgba(91, 138, 245, 0.3);
+}
+
+.service-card:nth-child(1):hover {
+  border-color: rgba(91, 138, 245, 0.4);
+  background: linear-gradient(180deg, rgba(91, 138, 245, 0.2), rgba(13, 16, 23, 0.9));
+}
+
+/* Professional card - purple tint */
+.service-card:nth-child(2) {
+  background: linear-gradient(180deg, rgba(157, 122, 245, 0.15), rgba(13, 16, 23, 0.9));
+  border: 1px solid rgba(157, 122, 245, 0.3);
+}
+
+.service-card:nth-child(2):hover {
+  border-color: rgba(157, 122, 245, 0.4);
+  background: linear-gradient(180deg, rgba(157, 122, 245, 0.2), rgba(13, 16, 23, 0.9));
+}
+
+/* Production card - teal tint */
+.service-card:nth-child(3) {
+  background: linear-gradient(180deg, rgba(78, 205, 196, 0.15), rgba(13, 16, 23, 0.9));
+  border: 1px solid rgba(78, 205, 196, 0.3);
+}
+
+.service-card:nth-child(3):hover {
+  border-color: rgba(78, 205, 196, 0.4);
+  background: linear-gradient(180deg, rgba(78, 205, 196, 0.2), rgba(13, 16, 23, 0.9));
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.service-icon {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.service-content {
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.service-card:nth-child(1) .service-title {
+  color: #6B8EF2;  /* Brighter blue */
+}
+
+.service-card:nth-child(2) .service-title {
+  color: #8B7FF6;  /* Indigo/purple */
+}
+
+.service-card:nth-child(3) .service-title {
+  color: #42E0BA;  /* Bright teal/green */
+}
+
+.service-description {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.service-list li {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.service-list li::before {
+  content: "•";
+  color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  left: 0.5rem;
+}
+
+.rate-indicator {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rate {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.note {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+.use-cases {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.use-cases-title {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.use-cases-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.use-cases-list li {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.use-cases-list li::before {
+  content: "→";
+  color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  left: 0;
+}
+
+h3.service-title.basic-title {
+  color: #4C9EFF !important;  /* Bright blue */
+  font-weight: 700;
+}
+
+h3.service-title.pro-title {
+  color: #FF9F5A !important;  /* Warm orange */
+  font-weight: 700;
+}
+
+h3.service-title.production-title {
+  color: #2DD4BF !important;  /* Bright teal */
+  font-weight: 700;
+}
+</style> 

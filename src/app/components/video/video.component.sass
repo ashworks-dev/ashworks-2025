@@ -1,0 +1,662 @@
+// Import the base styles
+@import '../../../styles/variables'
+@import '../../../styles/mixins'
+
+// Hero Section
+.hero-section
+  height: 100vh
+  position: relative
+  color: #fff
+  overflow: hidden
+
+.topVideo
+  display: block
+  position: absolute
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+.background-video
+  position: absolute
+  overflow: hidden
+  height: 100%
+  color: white
+  opacity: 0.2
+  width: 100%
+  max-width: none
+  margin-left: auto
+  margin-right: auto
+  display: block
+  position: absolute
+  inset: 0 auto auto 0
+  z-index: -1
+  
+  > video
+    background-size: cover
+    background-position: 50% 50%
+    position: absolute
+    margin: auto
+    width: 100%
+    height: 100%
+    right: -100%
+    bottom: -100%
+    top: -100%
+    left: -100%
+    object-fit: cover
+    z-index: -100
+
+.hero-content
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 2rem
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: relative
+  z-index: 1
+  
+  .logo
+    margin-bottom: 2rem
+    
+    .brand-logo
+      width: 80px
+      height: 80px
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))
+  
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 200px
+    background: linear-gradient(to bottom, transparent, #000)
+    pointer-events: none
+  
+  .main-title
+    font-size: 3.5rem
+    line-height: 1.2
+    margin-bottom: 1.5rem
+    
+    .name
+      display: flex
+      align-items: center
+      gap: 1rem
+      font-weight: 300
+      font-size: 2rem
+      margin-bottom: 0.5rem
+      
+      .brand-logo
+        width: 40px
+        height: 40px
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))
+    
+    .title
+      font-weight: 600
+  
+  .subtitle
+    font-size: 1.25rem
+    opacity: 0.9
+    margin-bottom: 2rem
+  
+  .brief-intro
+    max-width: 600px
+    line-height: 1.6
+    margin-bottom: 3rem
+
+// Services Section
+.services-overview
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 1))
+  padding: 6rem 0
+
+  .service-cards-container
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 2rem
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 2rem
+
+.service-card
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a)
+  border-radius: 12px
+  overflow: hidden
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2)
+  transition: transform 0.3s ease, box-shadow 0.3s ease
+  
+  &:hover
+    transform: translateY(-5px)
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3)
+  
+  .service-image
+    height: 200px
+    width: 100%
+    object-fit: cover
+  
+  .service-content
+    padding: 2rem
+    
+    h3
+      color: #ffffff
+      font-size: 1.5rem
+      margin-bottom: 1rem
+      background: linear-gradient(90deg, #6366f1, #8b5cf6)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+    
+    p
+      color: rgba(255, 255, 255, 0.9)
+      margin-bottom: 1rem
+      font-size: 1.1rem
+    
+    .service-list
+      list-style: none
+      padding: 0
+      margin: 1rem 0
+      
+      li
+        color: #b0b0b0
+        margin-bottom: 0.5rem
+        padding-left: 1.5rem
+        position: relative
+        
+        &::before
+          content: '•'
+          position: absolute
+          left: 0
+          color: #6366f1
+    
+    .rate-indicator
+      margin-top: 1.5rem
+      padding-top: 1.5rem
+      border-top: 1px solid rgba(255, 255, 255, 0.1)
+      
+      .rate
+        display: block
+        color: #ffffff
+        font-size: 1.1rem
+        font-weight: 500
+        margin-bottom: 0.25rem
+      
+      .note
+        color: #b0b0b0
+        font-size: 0.9rem
+
+// Equipment Section
+.equipment-showcase
+  background: linear-gradient(180deg, rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.95))
+  padding: 6rem 0
+  
+  h2
+    color: #ffffff
+    text-align: center
+    margin-bottom: 4rem
+    font-size: 2.5rem
+    font-weight: 600
+
+  .equipment-grid
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 2rem
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 2rem
+
+.equipment-category
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02))
+  border-radius: 12px
+  padding: 2rem
+  
+  h3
+    color: #ffffff
+    font-size: 1.25rem
+    margin-bottom: 1.5rem
+    background: linear-gradient(90deg, #6366f1, #8b5cf6)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+  
+  .equipment-list
+    list-style: none
+    padding: 0
+    margin: 0
+    
+    li
+      color: #b0b0b0
+      margin-bottom: 0.75rem
+      padding-left: 1.5rem
+      position: relative
+      
+      &::before
+        content: '•'
+        position: absolute
+        left: 0
+        color: #6366f1
+
+// Rates Section
+.rates-section
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 1))
+  padding: 6rem 0
+  
+  h2
+    color: #ffffff
+    text-align: center
+    margin-bottom: 4rem
+    font-size: 2.5rem
+    font-weight: 600
+
+  .rates-grid
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 2rem
+    max-width: 1200px
+    margin: 0 auto 4rem
+    padding: 0 2rem
+
+.rate-card
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02))
+  border-radius: 12px
+  padding: 2rem
+  text-align: center
+  transition: transform 0.3s ease, box-shadow 0.3s ease
+  
+  &:hover
+    transform: translateY(-5px)
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3)
+  
+  &.featured
+    background: linear-gradient(145deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.05))
+    border: 1px solid rgba(99, 102, 241, 0.2)
+    transform: scale(1.05)
+    
+    &:hover
+      transform: scale(1.05) translateY(-5px)
+  
+  h3
+    color: #ffffff
+    font-size: 1.5rem
+    margin-bottom: 1rem
+  
+  .price
+    font-size: 2.5rem
+    color: #ffffff
+    margin: 1.5rem 0
+    font-weight: 600
+    background: linear-gradient(90deg, #6366f1, #8b5cf6)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+  
+  .rate-features
+    list-style: none
+    padding: 0
+    margin: 2rem 0
+    
+    li
+      color: #b0b0b0
+      margin-bottom: 0.75rem
+      
+  .rate-note
+    color: #b0b0b0
+    font-size: 0.9rem
+    margin-top: 1rem
+
+.rates-note
+  max-width: 800px
+  margin: 0 auto
+  padding: 0 2rem
+  text-align: center
+  
+  p
+    color: #ffffff
+    margin-bottom: 1rem
+  
+  .package-includes
+    list-style: none
+    padding: 0
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 1rem
+    
+    li
+      color: #b0b0b0
+      background: rgba(255, 255, 255, 0.05)
+      padding: 0.5rem 1rem
+      border-radius: 50px
+      font-size: 0.9rem
+
+// Contact Section
+.contact-section
+  background: linear-gradient(180deg, rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.9))
+  padding: 6rem 0
+  text-align: center
+  
+  h2
+    color: #ffffff
+    font-size: 2.5rem
+    margin-bottom: 1rem
+    font-weight: 600
+  
+  .contact-intro
+    color: #b0b0b0
+    max-width: 600px
+    margin: 0 auto 3rem
+    font-size: 1.1rem
+    line-height: 1.6
+
+.contact-options
+  display: flex
+  gap: 1rem
+  justify-content: center
+  margin-bottom: 3rem
+  
+  .contact-button
+    padding: 1rem 2rem
+    border-radius: 50px
+    font-size: 1.1rem
+    font-weight: 500
+    display: flex
+    align-items: center
+    gap: 0.5rem
+    transition: all 0.3s ease
+    
+    i
+      font-size: 1.2rem
+    
+    &.primary
+      background: linear-gradient(90deg, #6366f1, #8b5cf6)
+      color: white
+      border: none
+      
+      &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3)
+    
+    &.secondary
+      background: transparent
+      border: 1px solid rgba(255, 255, 255, 0.2)
+      color: white
+      
+      &:hover
+        background: rgba(255, 255, 255, 0.1)
+        transform: translateY(-2px)
+
+.location-info
+  color: #b0b0b0
+  font-size: 1rem
+  
+  p
+    margin: 0
+
+// Project Cards
+.work-preview
+  background: linear-gradient(180deg, rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.95))
+  padding: 3rem 0
+  
+  h2
+    color: #ffffff
+    text-align: center
+    margin-bottom: 2rem
+
+.project-grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  gap: 2rem
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 2rem
+
+.project-card
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a)
+  position: relative
+  border-radius: 12px
+  overflow: hidden
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2)
+  transition: transform 0.3s ease, box-shadow 0.3s ease
+  display: flex
+  flex-direction: column
+  height: 100%
+  opacity: 0
+  transform: translateY(20px)
+  animation: fadeInUp 0.6s forwards
+  
+  @for $i from 1 through 6
+    &:nth-child(#{$i})
+      animation-delay: #{$i * 0.1}s
+  
+  &.additional-card
+    display: none
+    
+    &.show
+      display: block
+      animation: fadeInUp 0.6s forwards
+  
+  &::before
+    content: ''
+    position: absolute
+    inset: 0
+    border-radius: 12px
+    padding: 1px
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)
+    -webkit-mask-composite: xor
+    mask-composite: exclude
+    pointer-events: none
+  
+  &:hover
+    transform: translateY(-5px)
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3)
+  
+  .project-image
+    height: 200px
+    width: 100%
+    overflow: hidden
+    flex-shrink: 0
+    
+    img.project-image.full-width
+      width: 100%
+      height: 100%
+      object-fit: cover
+    
+    &.placeholder
+      position: relative
+      transform: scale(1.1)
+      display: flex
+      align-items: center
+      justify-content: center
+      
+      &::before
+        content: ''
+        position: absolute
+        top: -5%
+        left: -5%
+        width: 110%
+        height: 110%
+        filter: blur(20px)
+        z-index: 0
+      
+      i
+        position: relative
+        color: rgba(255, 255, 255, 0.9)
+        z-index: 2
+        font-size: 3rem
+      
+      &.gradient-1
+        &::before
+          background: linear-gradient(45deg, #FF6B6B, #4ECDC4)
+      
+      &.gradient-2
+        &::before
+          background: linear-gradient(45deg, #A8E6CF, #FFD3B6)
+      
+      &.gradient-3
+        &::before
+          background: linear-gradient(45deg, #FF9A8B, #FF6A88)
+      
+      &.gradient-4
+        &::before
+          background: linear-gradient(45deg, #36D1DC, #5B86E5)
+      
+      &.gradient-5
+        &::before
+          background: linear-gradient(45deg, #CB356B, #BD3F32)
+      
+      &.gradient-6
+        &::before
+          background: linear-gradient(45deg, #8E2DE2, #4A00E0)
+  
+  .service-content
+    padding: 1.5rem
+    display: flex
+    flex-direction: column
+    flex-grow: 1
+    
+    .project-info
+      margin-bottom: 1.5rem
+      flex-grow: 1
+      
+      h4
+        color: #ffffff
+        margin: 0 0 0.5rem
+        font-size: 1.25rem
+        font-weight: 600
+      
+      p
+        color: #b0b0b0
+        margin: 0
+        line-height: 1.6
+    
+    .project-specs
+      display: flex
+      gap: 0.5rem
+      margin-top: 1rem
+      flex-wrap: wrap
+      
+      .spec
+        background: rgba(99, 102, 241, 0.1)
+        color: #b0b0b0
+        padding: 0.25rem 0.75rem
+        border-radius: 50px
+        font-size: 0.9rem
+        border: 1px solid rgba(99, 102, 241, 0.2)
+
+@keyframes fadeInUp
+  from
+    opacity: 0
+    transform: translateY(20px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+// Responsive Design
+@media (max-width: 1200px)
+  .service-cards-container,
+  .equipment-grid,
+  .rates-grid
+    grid-template-columns: repeat(2, 1fr)
+
+@media (max-width: 768px)
+  .service-cards-container,
+  .equipment-grid,
+  .rates-grid
+    grid-template-columns: 1fr
+  
+  .hero-content
+    .main-title
+      font-size: 2.5rem
+    
+    .subtitle
+      font-size: 1.1rem
+  
+  .contact-options
+    flex-direction: column
+    padding: 0 2rem 
+
+.video-container
+  +container
+  padding-top: $spacing-xxl
+  padding-bottom: $spacing-xxl
+
+.video-grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  gap: $spacing-lg
+  margin-top: $spacing-xl
+
+.video-card
+  +glass-effect
+  border-radius: $border-radius-lg
+  overflow: hidden
+  +hover-lift
+  
+  .video-thumbnail
+    width: 100%
+    aspect-ratio: 16/9
+    object-fit: cover
+    
+  .video-content
+    padding: $spacing-md
+    +flex-column
+    gap: $spacing-sm
+    
+    h3
+      color: $text-light
+      font-size: $font-size-lg
+      font-weight: $font-weight-bold
+      margin: 0
+      +text-truncate
+    
+    p
+      color: $text-muted
+      font-size: $font-size-base
+      margin: 0
+      +text-clamp(2)
+    
+    .video-meta
+      +flex($justify: space-between, $align: center)
+      margin-top: $spacing-sm
+      
+      .date
+        color: $text-muted
+        font-size: $font-size-sm
+      
+      .views
+        color: $text-muted
+        font-size: $font-size-sm
+        
+.section-header
+  text-align: center
+  margin-bottom: $spacing-xl
+  
+  h2
+    color: $text-light
+    font-size: $font-size-2xl
+    font-weight: $font-weight-bold
+    margin-bottom: $spacing-sm
+    +gradient-text
+    
+  p
+    color: $text-muted
+    font-size: $font-size-lg
+    max-width: 600px
+    margin: 0 auto 
+
+.show-more-container
+  display: flex
+  justify-content: center
+  margin-top: 3rem
+  
+  .show-more-button
+    background: linear-gradient(90deg, #6366f1, #8b5cf6)
+    color: white
+    border: none
+    padding: 1rem 2rem
+    border-radius: 50px
+    font-size: 1.1rem
+    font-weight: 500
+    cursor: pointer
+    transition: all 0.3s ease
+    
+    &:hover
+      transform: translateY(-2px)
+      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3) 

@@ -1,0 +1,118 @@
+// Flexbox mixins
+=flex($direction: row, $justify: flex-start, $align: stretch)
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+
+=flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+=flex-column
+  display: flex
+  flex-direction: column
+
+// Media queries
+=breakpoint-up($breakpoint)
+  @media (min-width: $breakpoint)
+    @content
+
+=breakpoint-down($breakpoint)
+  @media (max-width: $breakpoint - 1px)
+    @content
+
+// Typography
+=text-truncate
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+=text-clamp($lines)
+  display: -webkit-box
+  -webkit-line-clamp: $lines
+  -webkit-box-orient: vertical
+  overflow: hidden
+
+// Transitions
+=transition($property: all)
+  transition: $property $transition-base
+
+// Hover effects
+=hover-lift
+  transition: transform $transition-base
+  &:hover
+    transform: translateY(-2px)
+
+=hover-scale
+  transition: transform $transition-base
+  &:hover
+    transform: scale(1.05)
+
+// Glassmorphism
+=glass-effect
+  background: rgba(255, 255, 255, 0.1)
+  backdrop-filter: blur(10px)
+  -webkit-backdrop-filter: blur(10px)
+  border: 1px solid rgba(255, 255, 255, 0.1)
+
+// Gradients
+=gradient-text
+  background: $gradient-primary
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  background-clip: text
+
+// Animations
+=fade-in($duration: 0.3s)
+  animation: fadeIn $duration ease-in
+  @keyframes fadeIn
+    from
+      opacity: 0
+    to
+      opacity: 1
+
+=slide-in($direction: 'up', $distance: 20px, $duration: 0.3s)
+  animation: slideIn $duration ease-out
+  @if $direction == 'up'
+    @keyframes slideIn
+      from
+        opacity: 0
+        transform: translateY($distance)
+      to
+        opacity: 1
+        transform: translateY(0)
+  @else if $direction == 'down'
+    @keyframes slideIn
+      from
+        opacity: 0
+        transform: translateY(-$distance)
+      to
+        opacity: 1
+        transform: translateY(0)
+  @else if $direction == 'left'
+    @keyframes slideIn
+      from
+        opacity: 0
+        transform: translateX($distance)
+      to
+        opacity: 1
+        transform: translateX(0)
+  @else if $direction == 'right'
+    @keyframes slideIn
+      from
+        opacity: 0
+        transform: translateX(-$distance)
+      to
+        opacity: 1
+        transform: translateX(0)
+
+// Container
+=container
+  width: 100%
+  max-width: $container-max-width
+  margin: 0 auto
+  padding: 0 $spacing-md
+  @include breakpoint-up($breakpoint-lg)
+    padding: 0 $spacing-xl 
