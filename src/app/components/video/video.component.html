@@ -32,7 +32,38 @@
       <button class="cta-secondary">View Production Reel</button>
     </div>
   </div>
+
+  <div class="dev-note" [class.hidden]="isDevNoteHidden">
+    <strong>Also a web developer!</strong> Need help with websites or web apps? 
+    <a routerLink="/" class="learn-more">View development services →</a>
+  </div>
 </header>
+
+<!-- Client Showcase Section -->
+<section class="client-showcase">
+  <h2>I've Worked With...</h2>
+  <div class="timeline-subtitle">2016 - Present</div>
+  <div class="client-grid">
+    <div class="client-pill">Coles Supermarkets</div>
+    <div class="client-pill">PowerCor</div>
+    <div class="client-pill">Australian Catholic University</div>
+    <div class="client-pill">National Australia Bank</div>
+    <div class="client-pill">Department of Education</div>
+    <div class="client-pill">Melbourne University</div>
+    <div class="client-pill">Department of Health</div>
+    <div class="client-pill">Commonwealth Bank</div>
+    <div class="client-pill">Suncorp</div>
+    <div class="client-pill">Australian Assoc. of Social Workers</div>
+    <div class="client-pill">Westpac</div>
+    <div class="client-pill">IBAC</div>
+    <div class="client-pill">Liberate Learning</div>
+    <div class="client-pill">RMIT</div>
+    <div class="client-pill">MONASH UNIVERSITY</div>
+  </div>
+  <div class="career-blurb">
+    After two decades of crafting digital solutions, I expanded into video production, combining technical precision with creative storytelling. Since then, I've had the privilege of producing impactful video content for these outstanding organizations.
+  </div>
+</section>
 
 <!-- Services Section -->
 <section class="services-overview">
@@ -89,6 +120,16 @@
           <span class="rate">Full Day: $900 - $1,300</span>
           <span class="note bold">Shoot day rate only - editing charged separately</span>
         </div>
+        <div class="use-cases">
+          <p class="use-cases-title">Perfect for:</p>
+          <ul class="use-cases-list">
+            <li>Corporate interviews & presentations</li>
+            <li>Marketing videos & commercials</li>
+            <li>Training & educational content</li>
+            <li>Multi-camera events</li>
+            <li>Professional testimonials</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -114,6 +155,84 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Loading State -->
+<div *ngIf="loading" class="text-center py-8">
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<!-- Error Message -->
+<div *ngIf="errorMessage" class="text-center py-8 text-red-600">
+  {{ errorMessage }}
+</div>
+
+<!-- Protected Showreel Section -->
+<div *ngIf="accessGranted" class="showreel-section mt-16">
+  <h2 class="text-3xl font-bold mb-8 text-center">Our Work</h2>
+  
+  <!-- 2023 Showreel -->
+  <div class="video-project mb-16">
+    <h3 class="text-2xl font-semibold mb-4">2023 Showreel</h3>
+    <div class="video-container aspect-video">
+      <iframe width="100%" height="100%" src="https://player.vimeo.com/video/123456789" 
+              frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+    <p class="mt-4 text-gray-700">A collection of our best work from 2023, showcasing our range and capabilities across various industries and project types.</p>
+  </div>
+
+  <!-- Coles and ACU Project -->
+  <div class="video-project mb-16">
+    <h3 class="text-2xl font-semibold mb-4">Coles and ACU</h3>
+    <div class="video-container aspect-video">
+      <iframe width="100%" height="100%" src="https://player.vimeo.com/video/987654321" 
+              frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+    <p class="mt-4 text-gray-700">Corporate video production for major Australian brands, demonstrating our ability to deliver high-quality content for enterprise clients.</p>
+  </div>
+
+  <!-- Banking & Finance -->
+  <div class="video-project mb-16">
+    <h3 class="text-2xl font-semibold mb-4">Banking & Finance</h3>
+    <div class="video-container aspect-video">
+      <iframe width="100%" height="100%" src="https://player.vimeo.com/video/456789123" 
+              frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+    <p class="mt-4 text-gray-700">Professional video content for the banking and finance sector, featuring polished corporate communications and marketing materials.</p>
+  </div>
+</div>
+
+<!-- Access Denied Message -->
+<section *ngIf="!loading && !accessGranted && !errorMessage" class="access-message-section">
+  <!-- Background Elements -->
+  <div class="orb-container">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Large Camera Icon -->
+  <svg class="camera-icon" viewBox="0 0 24 24" width="600" height="600">
+    <path fill="currentColor" d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z"/>
+  </svg>
+
+  <div class="content-container">
+    <h2 class="title">Welcome to Our Showreel!</h2>
+    <div class="message">
+      Thanks for your interest in our work! Our showreel features some of our best projects and demonstrates the quality we bring to every production.
+      <div class="sub-message">
+        To view this exclusive content, you'll need a special access link.
+      </div>
+    </div>
+    <button class="access-button" (click)="scheduleCall()">
+      <svg class="play-icon" viewBox="0 0 24 24" width="24" height="24">
+        <path fill="currentColor" d="M8 5v14l11-7z"/>
+      </svg>
+      Request Showreel Access
+    </button>
   </div>
 </section>
 
@@ -674,4 +793,662 @@ h3.service-title.production-title {
   color: #2DD4BF !important;  /* Bright teal */
   font-weight: 700;
 }
-</style> 
+
+/* Client Showcase Styles */
+.client-showcase {
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.95));
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated gradient mesh background */
+.client-showcase::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.15) 0%, transparent 25%);
+  background-image: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.15) 0%, transparent 25%), 
+                    radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 25%), 
+                    radial-gradient(circle at 20% 20%, rgba(45, 212, 191, 0.15) 0%, transparent 25%);
+  animation: gradientMove 20s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* Top border */
+.client-showcase::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  z-index: 1;
+}
+
+/* Bottom border */
+.client-showcase .bottom-border {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  z-index: 1;
+}
+
+.client-showcase h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.client-showcase h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 25%;
+  right: 25%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.timeline-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin: 2rem 0 4rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 1px;
+}
+
+.timeline-subtitle::before,
+.timeline-subtitle::after {
+  content: '●';
+  margin: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.5rem;
+  vertical-align: middle;
+}
+
+.client-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.client-pill {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.client-pill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.client-pill:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+.client-pill:hover::before {
+  transform: translateX(100%);
+}
+
+.career-blurb {
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+  padding: 0 2rem;
+}
+
+.career-blurb strong {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+@keyframes gradientMove {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-10%, 10%);
+  }
+  50% {
+    transform: translate(10%, -10%);
+  }
+  75% {
+    transform: translate(-10%, -10%);
+  }
+}
+
+.dev-note {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(145deg, rgba(13, 16, 23, 0.95), rgba(13, 16, 23, 0.85));
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  z-index: 100;
+  width: 100%;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.dev-note.hidden {
+  transform: translate(-50%, 100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dev-note strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.dev-note .learn-more {
+  color: #4C9EFF;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.dev-note .learn-more:hover {
+  color: #6BB2FF;
+  text-decoration: underline;
+}
+
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.cta-group button {
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.cta-primary {
+  background: #0066CC;
+  color: white;
+  border: none;
+}
+
+.cta-primary:hover {
+  background: #0052a3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.cta-secondary {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.showreels-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, rgba(13, 16, 23, 0.95), rgba(13, 16, 23, 0.98));
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #4C9EFF 0%, #2DD4BF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, #4C9EFF 0%, #2DD4BF 100%);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(76, 158, 255, 0.3);
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: orbFloat 20s infinite ease-in-out;
+}
+
+.orb-1 {
+  background: radial-gradient(circle at center, rgba(76, 158, 255, 0.3), transparent 70%);
+  width: 50vw;
+  height: 50vw;
+  top: -25%;
+  left: -10%;
+  animation-delay: -5s;
+}
+
+.orb-2 {
+  background: radial-gradient(circle at center, rgba(45, 212, 191, 0.3), transparent 70%);
+  width: 45vw;
+  height: 45vw;
+  top: 30%;
+  right: -15%;
+  animation-delay: -2s;
+}
+
+.orb-3 {
+  background: radial-gradient(circle at center, rgba(139, 127, 246, 0.3), transparent 70%);
+  width: 40vw;
+  height: 40vw;
+  bottom: -20%;
+  left: 20%;
+  animation-delay: -8s;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(5%, 5%) scale(1.1); }
+  50% { transform: translate(-5%, 2%) scale(0.9); }
+  75% { transform: translate(2%, -5%) scale(1.05); }
+}
+
+.mesh-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(13, 16, 23, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 16, 23, 0.2) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.access-message-section {
+  min-height: 80vh;
+  background: linear-gradient(to bottom, rgba(13, 16, 23, 0.95), rgba(13, 16, 23, 0.98));
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.orb-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.orb-1 {
+  width: 80vw;
+  height: 80vw;
+  background: radial-gradient(circle at center, rgba(76, 158, 255, 0.3), transparent 70%);
+  top: -40%;
+  left: -20%;
+  animation: float 20s infinite ease-in-out;
+}
+
+.orb-2 {
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle at center, rgba(45, 212, 191, 0.3), transparent 70%);
+  bottom: -30%;
+  right: -10%;
+  animation: float 25s infinite ease-in-out reverse;
+}
+
+.orb-3 {
+  width: 70vw;
+  height: 70vw;
+  background: radial-gradient(circle at center, rgba(139, 127, 246, 0.3), transparent 70%);
+  top: 20%;
+  right: -30%;
+  animation: float 30s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(5%, 5%) scale(1.1); }
+  50% { transform: translate(-5%, 2%) scale(0.9); }
+  75% { transform: translate(2%, -5%) scale(1.05); }
+}
+
+.camera-icon {
+  position: absolute;
+  right: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.content-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #4C9EFF 0%, #2DD4BF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.message {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+.sub-message {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 1.5rem;
+}
+
+.access-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #4C9EFF 0%, #2DD4BF 100%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.5rem 3rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.access-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.access-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(76, 158, 255, 0.3);
+}
+
+.access-button:hover::before {
+  opacity: 1;
+}
+
+.play-icon {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+  
+  .message {
+    font-size: 1.5rem;
+  }
+  
+  .sub-message {
+    font-size: 1.25rem;
+  }
+  
+  .access-button {
+    font-size: 1.25rem;
+    padding: 1.25rem 2.5rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.showReelBtn');
+  const videos = document.querySelectorAll('.videocont2');
+  let currentlyLoadingVideo = null;
+
+  // Initialize the first tab immediately
+  const firstButton = document.getElementById('pf-0');
+  const firstVideo = document.getElementById('vf-0');
+  
+  if (firstButton && firstVideo) {
+    firstButton.classList.add('active');
+    firstVideo.classList.add('active');
+    // Load the first video immediately
+    loadVideo(firstVideo);
+  }
+
+  // Function to show loading state
+  function showLoading(videoContainer) {
+    const loadingEl = videoContainer.querySelector('.video-loading');
+    if (loadingEl) {
+      loadingEl.style.display = 'flex';
+    }
+  }
+
+  // Function to hide loading state
+  function hideLoading(videoContainer) {
+    const loadingEl = videoContainer.querySelector('.video-loading');
+    if (loadingEl) {
+      loadingEl.style.display = 'none';
+    }
+  }
+
+  // Function to show error state
+  function showError(videoContainer) {
+    const errorEl = videoContainer.querySelector('.video-error');
+    if (errorEl) {
+      errorEl.style.display = 'flex';
+    }
+  }
+
+  // Function to hide error state
+  function hideError(videoContainer) {
+    const errorEl = videoContainer.querySelector('.video-error');
+    if (errorEl) {
+      errorEl.style.display = 'none';
+    }
+  }
+
+  // Function to load video source
+  function loadVideo(videoContainer) {
+    const video = videoContainer.querySelector('video');
+    const source = video.querySelector('source');
+    
+    if (!source || !source.hasAttribute('data-src')) {
+      return;
+    }
+
+    // Reset states
+    hideError(videoContainer);
+    hideLoading(videoContainer);
+
+    if (!source.hasAttribute('src')) {
+      showLoading(videoContainer);
+      currentlyLoadingVideo = video;
+
+      // Set up event listeners for this video
+      const handleLoadedData = () => {
+        if (video === currentlyLoadingVideo) {
+          hideLoading(videoContainer);
+          video.removeEventListener('loadeddata', handleLoadedData);
+        }
+      };
+
+      const handleError = () => {
+        if (video === currentlyLoadingVideo) {
+          hideLoading(videoContainer);
+          showError(videoContainer);
+          video.removeEventListener('error', handleError);
+        }
+      };
+
+      video.addEventListener('loadeddata', handleLoadedData);
+      video.addEventListener('error', handleError);
+
+      // Set the source and load the video
+      source.src = source.getAttribute('data-src');
+      video.load();
+    }
+  }
+
+  // Function to unload video source
+  function unloadVideo(videoContainer) {
+    const video = videoContainer.querySelector('video');
+    const source = video.querySelector('source');
+    
+    if (source && source.hasAttribute('src')) {
+      video.pause();
+      source.removeAttribute('src');
+      video.load(); // This clears the video buffer
+    }
+  }
+
+  // Function to activate a specific tab
+  function activateTab(tabId) {
+    if (!tabId) return; // Guard against undefined tabId
+
+    // Remove active class from all buttons and videos
+    buttons.forEach(btn => btn.classList.remove('active'));
+    videos.forEach(video => {
+      video.classList.remove('active');
+      // Unload inactive videos to free up memory
+      if (video.id !== 'vf-' + tabId) {
+        unloadVideo(video);
+      }
+    });
+
+    // Add active class to selected button and video
+    const selectedBtn = document.getElementById('pf-' + tabId);
+    const selectedVideo = document.getElementById('vf-' + tabId);
+    
+    if (selectedBtn && selectedVideo) {
+      selectedBtn.classList.add('active');
+      selectedVideo.classList.add('active');
+      
+      // Load the video for the active tab
+      loadVideo(selectedVideo);
+    }
+  }
+
+  // Add click event listeners to all buttons
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      const tabId = this.id.split('-')[1];
+      activateTab(tabId);
+    });
+  });
+});
+
+// Hide dev note on scroll
+let lastScroll = 0;
+const devNote = document.getElementById('devNote');
+const scrollThreshold = 100;
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  
+  if (currentScroll > scrollThreshold) {
+    devNote?.classList.add('hidden');
+  } else {
+    devNote?.classList.remove('hidden');
+  }
+  
+  lastScroll = currentScroll;
+});
+</script> 

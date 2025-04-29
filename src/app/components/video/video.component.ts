@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { IMediaElement } from '@videogular/ngx-videogular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 interface Video {
   title: string;
@@ -41,10 +43,36 @@ export class VideoComponent implements OnInit {
       views: 2800
     }
   ];
+  isDevNoteHidden = false;
+  private scrollThreshold = 100;
+  accessGranted = false;
+  errorMessage = '';
+  loading = true;
 
-  constructor() {}
+  constructor(
+    private route: ActivatedRoute,
+    private apiService: ApiService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      const token = params['token'];
+      if (token) {
+        this.apiService.verifyToken(token).subscribe({
+          next: (response) => {
+            this.accessGranted = response.valid;
+            this.loading = false;
+          },
+          error: (error) => {
+            this.errorMessage = 'Invalid or expired token. Please request a new link.';
+            this.loading = false;
+          }
+        });
+      } else {
+        this.loading = false;
+      }
+    });
+  }
 
   onVideoError(event: any): void {
     console.error('Video error:', event);
@@ -75,5 +103,11 @@ export class VideoComponent implements OnInit {
   scheduleCall(): void {
     // Implement call scheduling logic here
     console.log('Opening call scheduler');
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this.isDevNoteHidden = currentScroll > this.scrollThreshold;
   }
 } 
