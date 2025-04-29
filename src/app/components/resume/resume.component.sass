@@ -1,0 +1,575 @@
+.resume-container
+  max-width: 1000px
+  margin: 0 auto
+  padding: 3rem 2rem
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+  color: #2c3e50
+  background: #fff
+  box-shadow: 0 0 30px rgba(0,0,0,0.05)
+  border-radius: 12px
+
+.resume-header
+  text-align: center
+  margin-bottom: 4rem
+  padding-bottom: 2rem
+  border-bottom: 3px solid #f0f4f8
+
+  h1
+    font-size: 3rem
+    font-weight: 700
+    margin-bottom: 0.5rem
+    color: #1a365d
+    letter-spacing: -0.5px
+
+  .title
+    font-size: 1.4rem
+    color: #4a5568
+    margin-bottom: 1.5rem
+    font-weight: 500
+
+  .contact-info
+    display: flex
+    justify-content: center
+    gap: 2rem
+    flex-wrap: wrap
+
+    .contact-item
+      color: #4a5568
+      text-decoration: none
+      display: flex
+      align-items: center
+      gap: 0.5rem
+      transition: all 0.3s ease
+      font-size: 1.1rem
+      padding: 0.5rem 1rem
+      border-radius: 8px
+      background: #f8fafc
+
+      &:hover
+        color: #1a365d
+        background: #edf2f7
+        transform: translateY(-2px)
+
+      .credentials
+        font-size: 0.9rem
+        color: #718096
+        margin-left: 0.5rem
+
+.summary-section
+  .summary-text
+    font-size: 1.2rem
+    line-height: 1.6
+    color: #4a5568
+    text-align: center
+    max-width: 800px
+    margin: 0 auto
+    padding: 2rem
+    background: #f8fafc
+    border-radius: 12px
+    border: 1px solid #e2e8f0
+
+.resume-section
+  margin-bottom: 4rem
+
+  h2
+    font-size: 2rem
+    color: #1a365d
+    margin-bottom: 2rem
+    padding-bottom: 0.5rem
+    border-bottom: 3px solid #f0f4f8
+    font-weight: 600
+    letter-spacing: -0.5px
+
+.experience-item
+  margin-bottom: 2.5rem
+  padding: 2rem
+  background: #fff
+  border-radius: 12px
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05)
+  transition: all 0.3s ease
+  border: 1px solid #edf2f7
+
+  &:hover
+    transform: translateY(-4px)
+    box-shadow: 0 8px 12px rgba(0,0,0,0.08)
+
+  .experience-header
+    margin-bottom: 1.5rem
+
+    h3
+      font-size: 1.5rem
+      color: #1a365d
+      margin-bottom: 0.5rem
+      font-weight: 600
+
+    .company
+      font-weight: 500
+      color: #4a5568
+      margin-right: 1rem
+      font-size: 1.1rem
+
+    .period
+      color: #718096
+      font-size: 1rem
+      background: #f0f4f8
+      padding: 0.3rem 0.8rem
+      border-radius: 6px
+
+    .location
+      color: #718096
+      font-size: 0.9rem
+      margin-left: 1rem
+
+  .company-description
+    font-size: 1rem
+    line-height: 1.6
+    color: #4a5568
+    margin-bottom: 1.5rem
+    padding: 1rem
+    background: #f8fafc
+    border-radius: 8px
+    border-left: 4px solid #3182ce
+    font-style: italic
+
+.description-list
+  list-style-type: none
+  padding: 0
+  margin: 0 0 1.5rem 0
+
+  li
+    margin-bottom: 0.8rem
+    padding-left: 1.8rem
+    position: relative
+    line-height: 1.6
+    color: #4a5568
+
+    &:before
+      content: "•"
+      position: absolute
+      left: 0
+      color: #4a5568
+      font-size: 1.2rem
+      line-height: 1.4
+
+.achievements
+  display: flex
+  flex-wrap: wrap
+  gap: 1rem
+  margin-top: 1rem
+
+  .achievement-item
+    display: flex
+    align-items: center
+    gap: 0.5rem
+    background: #f0f4f8
+    padding: 0.5rem 1rem
+    border-radius: 20px
+    font-size: 0.95rem
+    color: #2d3748
+
+    i
+      color: #f6ad55
+
+.skills-container
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+  gap: 2.5rem
+
+.skill-category
+  h3
+    font-size: 1.3rem
+    color: #1a365d
+    margin-bottom: 1.2rem
+    font-weight: 600
+    padding-bottom: 0.5rem
+    border-bottom: 2px solid #f0f4f8
+
+.skill-items
+  display: flex
+  flex-wrap: wrap
+  gap: 0.8rem
+
+.skill-tag
+  background: #f0f4f8
+  color: #2d3748
+  padding: 0.4rem 1rem
+  border-radius: 20px
+  font-size: 0.95rem
+  transition: all 0.3s ease
+  font-weight: 500
+  border: 1px solid #e2e8f0
+
+  &:hover
+    background: #e2e8f0
+    transform: translateY(-2px)
+
+.projects-container
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  gap: 2rem
+
+.project-item
+  padding: 1.5rem
+  background: #fff
+  border-radius: 12px
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05)
+  transition: all 0.3s ease
+  border: 1px solid #edf2f7
+
+  &:hover
+    transform: translateY(-4px)
+    box-shadow: 0 8px 12px rgba(0,0,0,0.08)
+
+  .project-header
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    margin-bottom: 1rem
+
+    h3
+      font-size: 1.3rem
+      color: #1a365d
+      font-weight: 600
+      margin: 0
+
+    .period
+      color: #718096
+      font-size: 0.9rem
+      background: #f0f4f8
+      padding: 0.3rem 0.8rem
+      border-radius: 6px
+      white-space: nowrap
+
+  p
+    color: #4a5568
+    line-height: 1.6
+    margin-bottom: 1rem
+
+  .project-tech
+    display: flex
+    flex-wrap: wrap
+    gap: 1rem
+    margin-bottom: 1.5rem
+
+    .tech-icon
+      display: flex
+      align-items: center
+      gap: 0.5rem
+      padding: 0.5rem 1rem
+      background: #f0f4f8
+      border-radius: 20px
+      transition: all 0.3s ease
+      cursor: help
+
+      i
+        font-size: 1.2rem
+        color: #3182ce
+
+      .tech-name
+        font-size: 0.9rem
+        color: #2d3748
+        font-weight: 500
+
+      &:hover
+        background: #e2e8f0
+        transform: translateY(-2px)
+
+        i
+          color: #2c5282
+
+  .project-link
+    display: inline-flex
+    align-items: center
+    gap: 0.5rem
+    color: #3182ce
+    text-decoration: none
+    font-weight: 500
+    transition: color 0.3s ease
+
+    &:hover
+      color: #2c5282
+
+.videography-content
+  .videography-summary
+    font-size: 1.1rem
+    line-height: 1.6
+    color: #4a5568
+    margin-bottom: 2rem
+    padding: 1.5rem
+    background: #f8fafc
+    border-radius: 12px
+    border: 1px solid #e2e8f0
+
+  .videography-skills
+    margin-bottom: 2rem
+
+    h3
+      font-size: 1.3rem
+      color: #1a365d
+      margin-bottom: 1rem
+      font-weight: 600
+
+  .videography-projects
+    margin-bottom: 2rem
+
+    h3
+      font-size: 1.3rem
+      color: #1a365d
+      margin-bottom: 1rem
+      font-weight: 600
+
+  .other-video-projects
+    margin-top: 3rem
+    padding-top: 2rem
+    border-top: 2px solid #f0f4f8
+
+    h3
+      font-size: 1.3rem
+      color: #1a365d
+      margin-bottom: 1.2rem
+      font-weight: 600
+
+    .other-projects-list
+      list-style: none
+      padding: 0
+      margin: 0
+
+      li
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        padding: 1rem
+        background: #f8fafc
+        border-radius: 8px
+        margin-bottom: 0.8rem
+        transition: all 0.3s ease
+
+        &:hover
+          background: #edf2f7
+          transform: translateX(4px)
+
+        .project-info
+          display: flex
+          flex-direction: column
+          gap: 0.3rem
+
+          .project-title
+            color: #2d3748
+            font-weight: 500
+            font-size: 1.1rem
+
+          .project-description
+            color: #718096
+            font-size: 0.95rem
+
+        .period
+          color: #718096
+          font-size: 0.9rem
+          background: #fff
+          padding: 0.3rem 0.8rem
+          border-radius: 6px
+          white-space: nowrap
+          margin-left: 1rem
+
+  .videography-clients
+    margin-top: 3rem
+    padding-top: 2rem
+    border-top: 2px solid #f0f4f8
+
+    h3
+      font-size: 1.3rem
+      color: #1a365d
+      margin-bottom: 1rem
+      font-weight: 600
+
+    .client-tags
+      display: flex
+      flex-wrap: wrap
+      gap: 0.8rem
+
+    .client-tag
+      background: #f0f4f8
+      color: #2d3748
+      padding: 0.4rem 1rem
+      border-radius: 20px
+      font-size: 0.95rem
+      transition: all 0.3s ease
+      font-weight: 500
+      border: 1px solid #e2e8f0
+
+      &:hover
+        background: #e2e8f0
+        transform: translateY(-2px)
+
+.awards-list
+  display: flex
+  flex-direction: column
+  gap: 1rem
+
+  .award-item
+    display: flex
+    align-items: center
+    gap: 0.8rem
+    padding: 1rem
+    background: #f8fafc
+    border-radius: 8px
+    transition: all 0.3s ease
+
+    &:hover
+      background: #edf2f7
+      transform: translateX(4px)
+
+    i
+      color: #f6ad55
+      font-size: 1.2rem
+
+    span
+      color: #2d3748
+      font-size: 1.1rem
+      font-weight: 500
+
+.endorsement-section
+  .endorsement-content
+    padding: 2rem
+    background: #f8fafc
+    border-radius: 12px
+    border: 1px solid #e2e8f0
+
+    blockquote
+      margin: 0
+      padding: 0
+      border: none
+      font-style: italic
+      color: #4a5568
+      line-height: 1.6
+      font-size: 1.1rem
+
+      p
+        margin-bottom: 1.5rem
+
+      footer
+        display: flex
+        flex-direction: column
+        gap: 0.3rem
+
+        strong
+          color: #1a365d
+          font-size: 1.1rem
+
+        span
+          color: #4a5568
+
+        a
+          color: #3182ce
+          text-decoration: none
+          transition: color 0.3s ease
+
+          &:hover
+            color: #2c5282
+
+.other-projects
+  margin-top: 1rem
+
+  .other-projects-list
+    list-style: none
+    padding: 0
+    margin: 0
+
+    li
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+      padding: 1rem
+      background: #f8fafc
+      border-radius: 8px
+      margin-bottom: 0.8rem
+      transition: all 0.3s ease
+
+      &:hover
+        background: #edf2f7
+        transform: translateX(4px)
+
+      .project-info
+        display: flex
+        flex-direction: column
+        gap: 0.3rem
+
+        .project-title
+          color: #2d3748
+          font-weight: 500
+          font-size: 1.1rem
+
+        .project-description
+          color: #718096
+          font-size: 0.95rem
+
+      .project-title
+        display: flex
+        align-items: center
+        gap: 0.5rem
+        color: #2d3748
+        font-weight: 500
+        font-size: 1.1rem
+
+        .project-link
+          color: #3182ce
+          text-decoration: none
+          transition: color 0.3s ease
+
+          &:hover
+            color: #2c5282
+
+      .period
+        color: #718096
+        font-size: 0.9rem
+        background: #fff
+        padding: 0.3rem 0.8rem
+        border-radius: 6px
+        white-space: nowrap
+        margin-left: 1rem
+
+@media (max-width: 768px)
+  .resume-container
+    padding: 2rem 1rem
+    margin: 1rem
+    border-radius: 8px
+
+  .resume-header
+    h1
+      font-size: 2.5rem
+
+  .contact-info
+    flex-direction: column
+    align-items: center
+    gap: 1rem
+
+  .skills-container
+    grid-template-columns: 1fr
+
+  .projects-container
+    grid-template-columns: 1fr
+
+  .experience-item
+    padding: 1.5rem
+
+  .project-header
+    flex-direction: column
+    gap: 0.5rem
+
+    .period
+      align-self: flex-start
+
+  .other-projects
+    .other-projects-list
+      li
+        flex-direction: column
+        align-items: flex-start
+        gap: 0.5rem
+
+        .period
+          align-self: flex-start
+          margin-left: 0
+
+  .awards-list
+    .award-item
+      padding: 0.8rem 

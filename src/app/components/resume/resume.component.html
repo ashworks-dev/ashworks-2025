@@ -1,0 +1,200 @@
+<div class="resume-container">
+  <header class="resume-header">
+    <h1>Ashley Norriss</h1>
+    <p class="title">Senior Web Developer / Videographer</p>
+    <div class="contact-info">
+      <span class="contact-item">
+        <i class="fas fa-map-marker-alt"></i> {{ contact.location }}
+      </span>
+      <a href="tel:{{ contact.phone }}" class="contact-item">
+        <i class="fas fa-phone"></i> {{ contact.phone }}
+      </a>
+      <a href="mailto:{{ contact.email }}" class="contact-item">
+        <i class="fas fa-envelope"></i> {{ contact.email }}
+      </a>
+      <a href="{{ contact.linkedin }}" class="contact-item" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="{{ contact.portfolio }}" class="contact-item" target="_blank">
+        <i class="fas fa-briefcase"></i> Portfolio
+        <span class="credentials">({{ contact.portfolioCredentials.user }}/{{ contact.portfolioCredentials.pass }})</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="resume-section summary-section">
+    <p class="summary-text">{{ summary }}</p>
+  </section>
+
+  <section class="resume-section">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-category" *ngFor="let skill of skills">
+        <h3>{{ skill.category }}</h3>
+        <div class="skill-items">
+          <span class="skill-tag" *ngFor="let item of skill.items">{{ item }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2>Career Experience</h2>
+    <div class="experience-item" *ngFor="let exp of experiences">
+      <div class="experience-header">
+        <h3>{{ exp.position }}</h3>
+        <span class="company">{{ exp.company }}</span>
+        <span class="period">{{ exp.period }}</span>
+        <span class="location" *ngIf="exp.location">{{ exp.location }}</span>
+      </div>
+      <p class="company-description" *ngIf="exp.companyDescription">{{ exp.companyDescription }}</p>
+      <ul class="description-list">
+        <li *ngFor="let desc of exp.description">{{ desc }}</li>
+      </ul>
+      <div class="achievements" *ngIf="exp.achievements">
+        <div class="achievement-item" *ngFor="let achievement of exp.achievements">
+          <i class="fas fa-star"></i> {{ achievement }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2>Key Projects & Highlights</h2>
+    <div class="projects-container">
+      <div class="project-item" *ngFor="let project of projects">
+        <div class="project-header">
+          <h3>{{ project.title }}</h3>
+          <span class="period">{{ project.period }}</span>
+        </div>
+        <p>{{ project.description }}</p>
+        <div class="project-tech">
+          <div class="tech-icon" *ngFor="let tech of project.technologies" [title]="tech.name">
+            <i [class]="tech.icon"></i>
+            <span class="tech-name">{{ tech.name }}</span>
+          </div>
+        </div>
+        <a *ngIf="project.link" [href]="project.link" target="_blank" class="project-link">
+          <i class="fas fa-external-link-alt"></i> View Project
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2>Technical R&D Fun</h2>
+    <div class="projects-container">
+      <div class="project-item" *ngFor="let project of rndProjects">
+        <div class="project-header">
+          <h3>{{ project.title }}</h3>
+          <span class="period">{{ project.period }}</span>
+        </div>
+        <p>{{ project.description }}</p>
+        <div class="project-tech">
+          <div class="tech-icon" *ngFor="let tech of project.technologies" [title]="tech.name">
+            <i [class]="tech.icon"></i>
+            <span class="tech-name">{{ tech.name }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2>Videography</h2>
+    <div class="videography-content">
+      <p class="videography-summary">{{ videography.summary }}</p>
+      
+      <div class="videography-skills">
+        <h3>Capabilities</h3>
+        <ul class="description-list">
+          <li *ngFor="let skill of videography.skills">{{ skill }}</li>
+        </ul>
+      </div>
+
+      <div class="videography-projects">
+        <h3>Notable Projects</h3>
+        <div class="projects-container">
+          <div class="project-item" *ngFor="let project of videography.projects">
+            <div class="project-header">
+              <h3>{{ project.title }}</h3>
+              <span class="period">{{ project.period }}</span>
+            </div>
+            <p>{{ project.description }}</p>
+            <div class="project-tech">
+              <div class="tech-icon" *ngFor="let tech of project.technologies" [title]="tech.name">
+                <i [class]="tech.icon"></i>
+                <span class="tech-name">{{ tech.name }}</span>
+              </div>
+            </div>
+            <a *ngIf="project.link" [href]="project.link" target="_blank" class="project-link">
+              <i class="fas fa-external-link-alt"></i> View Project
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="videography-clients">
+        <h3>Notable Clients</h3>
+        <div class="client-tags">
+          <span class="client-tag" *ngFor="let client of videography.clients">{{ client }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2>Other Web Development Projects</h2>
+    <div class="other-projects">
+      <ul class="other-projects-list">
+        <li *ngFor="let project of otherWebProjects">
+          <span class="project-title">
+            {{ project.title }}
+            <a *ngIf="project.link" [href]="project.link" target="_blank" class="project-link">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </span>
+          <span class="period">{{ project.period }}</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2>Other Video Projects</h2>
+    <div class="other-projects">
+      <ul class="other-projects-list">
+        <li *ngFor="let project of videography.otherProjects">
+          <div class="project-info">
+            <span class="project-title">{{ project.title }}</span>
+            <span class="project-description">{{ project.description }}</span>
+          </div>
+          <span class="period">{{ project.period }}</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2>Honors & Awards</h2>
+    <div class="awards-list">
+      <div class="award-item" *ngFor="let award of awards">
+        <i class="fas fa-star"></i> {{ award }}
+      </div>
+    </div>
+  </section>
+
+  <section class="resume-section endorsement-section">
+    <h2>Endorsement</h2>
+    <div class="endorsement-content">
+      <blockquote>
+        <p>{{ endorsement.text }}</p>
+        <footer>
+          <strong>{{ endorsement.author }}</strong>
+          <span>{{ endorsement.position }}</span>
+          <a href="mailto:{{ endorsement.email }}">{{ endorsement.email }}</a>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+</div> 
