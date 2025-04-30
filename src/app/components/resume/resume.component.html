@@ -119,48 +119,39 @@
           <p>{{ aboutMe.personalBackground.family }}</p>
         </div>
         
-        <div class="interests-section">
-          <h3>Personal Interests</h3>
-          <ul class="interests-list">
-            <li *ngFor="let interest of aboutMe.personalBackground.interests">
-              <i class="fas fa-heart"></i> {{ interest }}
-            </li>
-          </ul>
-        </div>
-      </div>
+        <div class="key-attributes">
+          <div class="attribute-category">
+            <h3>Professional Strengths</h3>
+            <ul class="attribute-list">
+              <li *ngFor="let strength of aboutMe.strengths">
+                <i class="fas fa-check-circle"></i> {{ strength }}
+              </li>
+            </ul>
+          </div>
 
-      <div class="key-attributes">
-        <div class="attribute-category">
-          <h3>Professional Strengths</h3>
-          <ul class="attribute-list">
-            <li *ngFor="let strength of aboutMe.strengths">
-              <i class="fas fa-check-circle"></i> {{ strength }}
-            </li>
-          </ul>
+          <div class="attribute-category">
+            <h3>Work Style</h3>
+            <ul class="attribute-list">
+              <li *ngFor="let style of aboutMe.workStyle">
+                <i class="fas fa-user-check"></i> {{ style }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="attribute-category">
+            <h3>Key Achievements</h3>
+            <ul class="attribute-list">
+              <li *ngFor="let achievement of aboutMe.keyAchievements">
+                <i class="fas fa-trophy"></i> {{ achievement }}
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="attribute-category">
-          <h3>Work Style</h3>
-          <ul class="attribute-list">
-            <li *ngFor="let style of aboutMe.workStyle">
-              <i class="fas fa-user-check"></i> {{ style }}
-            </li>
-          </ul>
+        <div class="career-objectives">
+          <h3>Career Objectives</h3>
+          <p>{{ aboutMe.careerObjectives }}</p>
         </div>
-
-        <div class="attribute-category">
-          <h3>Key Achievements</h3>
-          <ul class="attribute-list">
-            <li *ngFor="let achievement of aboutMe.keyAchievements">
-              <i class="fas fa-trophy"></i> {{ achievement }}
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="career-objectives">
-        <h3>Career Objectives</h3>
-        <p>{{ aboutMe.careerObjectives }}</p>
       </div>
     </div>
   </section>

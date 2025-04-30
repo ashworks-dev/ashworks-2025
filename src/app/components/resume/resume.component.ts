@@ -39,7 +39,7 @@ interface OtherProject {
   styleUrls: ['./resume.component.sass']
 })
 export class ResumeComponent implements OnInit {
-  summary = `Experienced web/application developer (20+ years) and videographer (8+ years) with a passion for creating high-quality corporate training, educational, and promotional content. Self-taught, adaptable, and obsessed with emerging tech — from Flash to Angular, from digital tape videos to virtual tours, from AWS hosting to implementing AI models. Currently seeking new opportunities to leverage my skills in web development and videography to create innovative, high-quality digital solutions.`;
+  summary = `Senior web/application developer (20+ years) and videographer (8+ years) with a proven track record of delivering high-impact corporate training, educational, and promotional content. Combines deep technical expertise with business acumen to create practical, scalable solutions. Passionate about emerging technologies while maintaining a pragmatic approach to implementation. From Flash to Angular, digital tape to virtual tours, AWS to AI models - consistently delivers innovative solutions that balance technical excellence with business requirements. Seeking contract opportunities to leverage extensive experience in web development and videography for forward-thinking organizations.`;
 
   experiences: Experience[] = [
     
@@ -349,44 +349,38 @@ export class ResumeComponent implements OnInit {
   };
 
   aboutMe = {
-    summary: `Self-taught web developer and videographer with 20+ years of experience creating high-quality digital solutions. Proven track record of building successful businesses and delivering complex projects both independently and in team environments.`,
+    summary: `Senior technology professional with 20+ years of hands-on experience in web development and digital media production. Combines technical expertise with business acumen to deliver practical, scalable solutions. Proven track record of successfully managing complex projects and building sustainable business operations.`,
     strengths: [
-      'Completely self-taught in web development, videography, and emerging technologies',
-      'Successfully built and operated a busy videography business (200+ corporate videos)',
-      'Expertise in both solo/remote work and team collaboration environments',
-      'Strong problem-solving and technical troubleshooting abilities',
-      'Excellent communication and client relationship management'
+      'Extensive hands-on experience in emerging technologies while maintaining focus on practical business applications',
+      'Proven ability to balance innovation with real-world constraints and business requirements',
+      'Strong track record of delivering complex projects on time and within budget',
+      'Extensive experience in cross-functional communication, effectively collaborating with graphic designers, developers, instructional designers, management, and external stakeholders',
+      'Ability to translate complex technical concepts into clear, accessible language for diverse audiences'
     ],
     workStyle: [
-      'Highly adaptable - equally effective working independently or in teams',
-      'Self-motivated with proven ability to manage complex projects solo',
-      'Strong attention to detail and quality assurance',
-      'Proactive in identifying and implementing improvements',
-      'Experienced in both remote and on-site project delivery'
+      'Hands-on approach to problem-solving and implementation',
+      'Strong focus on delivering measurable business value',
+      'Proven ability to work effectively in both remote and on-site environments',
+      'Experienced in managing complex projects with multiple stakeholders',
+      'Balances technical innovation with practical business considerations'
     ],
     keyAchievements: [
-      'Built successful videography business producing 200+ corporate training videos',
-      '2023 LearnX Winner – Best eLearning Design',
-      '2023 AITD Finalist – Best Learning Technology',
-      'eLearning Excellence Award Winner 2009 & 2012',
-      'Developed award-winning 360 training environments',
-      'Successfully managed multiple concurrent projects as a solo operator'
+      'Independently invested in and operated a successful video production service, delivering 200+ corporate training videos for major Australian organizations',
+      'Projects have received numerous industry awards and recognition for innovation and quality, often as the sole developer.',
+      'Evolved into a trusted technology consultant as the industry shifted towards emerging technologies, primarily through self-directed learning and implementation',
+      'Became the preferred developer or videographer for several major Australian corporations and their projects',
+      'Developed award-winning 360 training environments for major corporations through solo development and production',
+      'Maintained successful business operations (for my primary client) while independently delivering complex technical projects'
     ],
     personalBackground: {
-      story: `Born and raised in Melbourne, I've always had a passion for technology and creativity. My journey in web development began in the late 90s when I taught myself HTML and JavaScript to build my first websites. This self-taught approach has been a cornerstone of my career, allowing me to adapt and grow with the ever-evolving tech landscape.`,
-      family: `I'm a proud parent of two children who have grown up watching me build and grow my business. My family has been a constant source of support and inspiration throughout my career journey.`,
-      interests: [
-        'Exploring emerging technologies and their practical applications',
-        'Mentoring young developers and sharing knowledge',
-        'Outdoor photography and nature exploration',
-        'Family time and creating lasting memories'
-      ]
+      story: `With over two decades in the technology industry, I've maintained a hands-on approach to development while building a deep understanding of business requirements and constraints. My journey began in the late 90s, and I've consistently adapted to technological changes while focusing on delivering practical, business-focused solutions. After years of desk-based development work, I recognized the value of direct client interaction and expanded into video production, allowing me to combine technical expertise with face-to-face client engagement. The growing demand for high-quality video content in the corporate training and educational sectors provided the perfect opportunity to leverage my technical background while meeting market needs.`,
+      family: `Based in Melbourne, I've built a successful career while maintaining a strong work-life balance. My family has been a constant source of support throughout my professional journey. The flexibility of remote work has allowed me to be more present for my family, attending important events and providing support while maintaining professional commitments.`
     },
-    careerObjectives: `Seeking opportunities to leverage my extensive self-taught expertise in web development and videography to create innovative, high-quality digital solutions. Passionate about staying at the forefront of technology and delivering exceptional results for clients and organizations.`
+    careerObjectives: `Seeking longer-term projects with creative businesses where I can deeply engage with innovative concepts, or short-term development work to assist with general technical needs. While video production remains a separate service offering, I'm particularly interested in opportunities that combine both technical development and video production capabilities. Thriving in hands-on technical roles where I can experiment and innovate, bringing a 'mad scientist' approach to solving complex problems. Comfortable collaborating with specialized teams, able to understand and discuss technical concepts across different domains while focusing on my core expertise. Focused on delivering innovative, practical solutions that balance technical excellence with business requirements. Preference for remote work arrangements that allow for flexible engagement while maintaining high-quality delivery.`
   };
 
   constructor() { }
 
   ngOnInit(): void {
   }
-} 
+}
