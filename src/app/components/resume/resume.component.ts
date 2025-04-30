@@ -12,7 +12,10 @@ interface Experience {
 
 interface Skill {
   category: string;
-  items: string[];
+  subcategories: {
+    name: string;
+    items: string[];
+  }[];
 }
 
 interface Project {
@@ -118,27 +121,78 @@ export class ResumeComponent implements OnInit {
 
   skills: Skill[] = [
     {
-      category: 'Web & Application Development',
-      items: [
-        'Languages/Frameworks: Angular (10y), HTML/JS/CSS/SASS/PUG (15y), React, Python/Pydantic, Node.js, PHP (Laravel, Lumen), Three.js',
-        'eLearning: (15y) Storyline, Lectora, Moodle, SCORM/xAPI, LMS setup/debugging',
-        'Cloud/Servers: AWS, Google Cloud, Azure, Linux (CentOS), VPS management (40+ accounts), NAS, BackBlaze B2, Cloudflare R2',
-        'Mobile: Cordova (iOS/Android apps), Titanium, PhoneGap (old tech)',
-        'AI Development: LLM integration, RAG implementations, AI workflow automation, Stable Diffusion/ControlNet, Whisper voice processing, custom AI model training and deployment',
-        'Design Platforms: Figma, Webflow',
-        'AI coding assists: VS-Code, Cursor, Github Copilot'
+      category: 'Development',
+      subcategories: [
+        {
+          name: 'Languages',
+          items: ['TypeScript/JavaScript', 'Python', 'PHP', 'HTML/CSS/SASS']
+        },
+        {
+          name: 'Frameworks',
+          items: ['Angular (10y)', 'React', 'Node.js', 'Laravel/Lumen', 'Three.js']
+        },
+        {
+          name: 'Cloud/DevOps',
+          items: ['AWS', 'Google Cloud', 'Azure', 'Linux', 'VPS management']
+        },
+        {
+          name: 'Mobile',
+          items: ['Cordova (iOS/Android)', 'React Native']
+        },
+        {
+          name: 'AI/ML',
+          items: ['LLM integration', 'RAG implementations', 'Stable Diffusion', 'Custom model training']
+        }
       ]
     },
     {
-      category: 'Videography & Media',
-      items: [
-        'Corporate and Training Video Production: 200+ assets (8y)',
-        '360 Photography',
-        'Production: audio wired/wireless setups, lighting setups & modifiers, grip, green screen studio production, directing, camera operation, script supervision.',
-        'Pre-Production: Storyboarding, script reviews, shotlisting, scheduling',
-        'Editing: Davinci Resolve, Adobe Premiere Pro, After Effects, Photoshop, Audition etc. Handover, rough assemblies or full editing, local and cloud backups.',
-        'Logistics: Travel ready (local or interstate) with full production kit; White Card certified (construction/industrial)',
-        "AI Generation: ComfyUI, Stable Diffusion, Runway, Kling, HeyGen (aiming for commerical avatar generation)",
+      category: 'eLearning & Media',
+      subcategories: [
+        {
+          name: 'eLearning Platforms',
+          items: ['Adapt Framework', 'Storyline', 'Lectora', 'Moodle', 'SCORM/xAPI', 'Custom built solutions']
+        },
+        {
+          name: 'Video Production',
+          items: ['200+ corporate/training videos', '360° photography','Concepting', 'Script reviews/breakdowns', 'Shotlists', 'Scheduling/Call Sheets']
+        },
+        {
+          name: 'Onsite / Studio',
+          items: ['Professional cinema camera operator (SONY)', 'S-Log or quick delivery formats', 'Audio: wired/wireless setup', 'Lighting setups', 'Green screen workflow', 'DOP/Directing', 'Script supervision','Multiple camera setups']
+        },
+        {
+          name: 'Post-Production',
+          items: ['Davinci Resolve', 'Premiere Pro', 'After Effects']
+        },
+        {
+          name: 'AI Media',
+          items: ['ComfyUI', 'Stable Diffusion', 'Runway', 'HeyGen', 'Suno']
+        }
+      ]
+    },
+    {
+      category: 'Tools & Design',
+      subcategories: [
+        {
+          name: 'Design',
+          items: ['Figma', 'Webflow', 'Adobe Creative Suite', 'Canva', 'Affinity Designer', 'Affinity Photo']
+        },
+        {
+          name: 'Development',
+          items: ['VS Code', 'Cursor', 'WebStorm','PyCharm','PHPStorm']
+        },
+        {
+          name: 'AI Coding',
+          items: ['GitHub Copilot', 'Cursor', 'Roo', 'Continue']
+        },
+        {
+          name: 'Project Management / Comms',
+          items: ['ClickUp', 'Trello', 'Asana', 'Avaza', 'Slack']
+        },
+        {
+          name: 'Version Control',
+          items: ['Git', 'GitHub', 'Bitbucket']
+        }
       ]
     }
   ];

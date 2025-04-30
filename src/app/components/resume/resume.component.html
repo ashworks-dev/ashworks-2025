@@ -31,8 +31,13 @@
     <div class="skills-container">
       <div class="skill-category" *ngFor="let skill of skills">
         <h3>{{ skill.category }}</h3>
-        <div class="skill-items">
-          <span class="skill-tag" *ngFor="let item of skill.items">{{ item }}</span>
+        <div class="subcategories">
+          <div class="subcategory" *ngFor="let subcategory of skill.subcategories">
+            <h4>{{ subcategory.name }}</h4>
+            <div class="skill-tags">
+              <span class="skill-tag" *ngFor="let item of subcategory.items">{{ item }}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

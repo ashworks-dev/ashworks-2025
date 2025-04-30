@@ -87,27 +87,26 @@
     border: 1px solid rgba(148, 163, 184, 0.1)
 
 .resume-section
-  margin-bottom: 5rem
+  margin-bottom: 3rem
   position: relative
 
   h2
     font-size: 1.75rem
-    color: #f8fafc
-    margin-bottom: 2rem
-    padding-bottom: 0.5rem
+    color: var(--primary-color)
+    margin-bottom: 1.5rem
     font-weight: 600
     letter-spacing: -0.5px
-    position: relative
-    display: inline-block
+    display: flex
+    align-items: center
+    gap: 0.75rem
 
-    &:after
+    &:before
       content: ''
-      position: absolute
-      bottom: 0
-      left: 0
-      width: 100%
-      height: 2px
-      background: linear-gradient(90deg, #3b82f6, #60a5fa, transparent)
+      display: inline-block
+      width: 4px
+      height: 1.75rem
+      background: var(--primary-color)
+      border-radius: 2px
 
 .experience-item
   margin-bottom: 3rem
@@ -206,36 +205,68 @@
 .skills-container
   display: grid
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
-  gap: 3rem
+  gap: 2rem
 
 .skill-category
+  margin-bottom: 2rem
+  
   h3
-    font-size: 1.2rem
-    color: #f8fafc
-    margin-bottom: 1.2rem
+    font-size: 1.1rem
+    color: #60a5fa
+    margin-bottom: 1.5rem
     font-weight: 600
-    padding-bottom: 0.5rem
-    border-bottom: 1px solid rgba(96, 165, 250, 0.2)
+    display: flex
+    align-items: center
+    gap: 0.5rem
+    text-transform: uppercase
+    letter-spacing: 0.5px
 
-.skill-items
-  display: flex
-  flex-wrap: wrap
-  gap: 0.8rem
+    &:before
+      content: ''
+      display: inline-block
+      width: 3px
+      height: 1.1rem
+      background: #60a5fa
+      border-radius: 1.5px
 
-.skill-tag
-  background: rgba(96, 165, 250, 0.1)
-  color: #f8fafc
-  padding: 0.4rem 1rem
-  border-radius: 6px
-  font-size: 0.95rem
-  transition: all 0.2s ease
-  font-weight: 500
-  border: 1px solid rgba(96, 165, 250, 0.2)
+  .subcategories
+    display: flex
+    flex-direction: column
+    gap: 1.5rem
 
-  &:hover
-    background: rgba(96, 165, 250, 0.2)
-    transform: translateY(-2px)
-    border-color: #60a5fa
+    .subcategory
+      h4
+        font-size: 0.95rem
+        color: #94a3b8
+        margin-bottom: 0.75rem
+        font-weight: 500
+        display: flex
+        align-items: center
+        gap: 0.5rem
+
+        &:before
+          display: none
+
+      .skill-tags
+        display: flex
+        flex-wrap: wrap
+        gap: 0.5rem
+
+        .skill-tag
+          background: rgba(96, 165, 250, 0.05)
+          color: #f8fafc
+          padding: 0.35rem 0.8rem
+          border-radius: 1rem
+          font-size: 0.9rem
+          border: 1px solid rgba(96, 165, 250, 0.1)
+          transition: all 0.2s ease
+          font-weight: 500
+          
+          &:hover
+            background: rgba(96, 165, 250, 0.1)
+            transform: translateY(-1px)
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05)
+            border-color: rgba(96, 165, 250, 0.2)
 
 .projects-container
   display: grid
