@@ -79,6 +79,7 @@
         </a>
       </div>
     </div>
+    <p class="projects-note">In addition to these key projects, I've been developing eLearning courses and exploring tech since 2008, producing corporate/training videos since 2017, with numerous other projects for clients including BankWest, BHP, Target, CGU Insurance, Dept of Education, Aust MultiCultural Assoc, Suncorp, and Nissan.</p>
   </section>
 
   <section class="resume-section">
@@ -101,49 +102,6 @@
   </section>
 
   <section class="resume-section">
-    <h2>Videography</h2>
-    <div class="videography-content">
-      <p class="videography-summary">{{ videography.summary }}</p>
-      
-      <div class="videography-skills">
-        <h3>Capabilities</h3>
-        <ul class="description-list">
-          <li *ngFor="let skill of videography.skills">{{ skill }}</li>
-        </ul>
-      </div>
-
-      <div class="videography-projects">
-        <h3>Notable Projects</h3>
-        <div class="projects-container">
-          <div class="project-item" *ngFor="let project of videography.projects">
-            <div class="project-header">
-              <h3>{{ project.title }}</h3>
-              <span class="period">{{ project.period }}</span>
-            </div>
-            <p>{{ project.description }}</p>
-            <div class="project-tech">
-              <div class="tech-icon" *ngFor="let tech of project.technologies" [title]="tech.name">
-                <i [class]="tech.icon"></i>
-                <span class="tech-name">{{ tech.name }}</span>
-              </div>
-            </div>
-            <a *ngIf="project.link" [href]="project.link" target="_blank" class="project-link">
-              <i class="fas fa-external-link-alt"></i> View Project
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="videography-clients">
-        <h3>Notable Clients</h3>
-        <div class="client-tags">
-          <span class="client-tag" *ngFor="let client of videography.clients">{{ client }}</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="resume-section">
     <h2>Other Web Development Projects</h2>
     <div class="other-projects">
       <ul class="other-projects-list">
@@ -154,21 +112,6 @@
               <i class="fas fa-external-link-alt"></i>
             </a>
           </span>
-          <span class="period">{{ project.period }}</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="resume-section">
-    <h2>Other Video Projects</h2>
-    <div class="other-projects">
-      <ul class="other-projects-list">
-        <li *ngFor="let project of videography.otherProjects">
-          <div class="project-info">
-            <span class="project-title">{{ project.title }}</span>
-            <span class="project-description">{{ project.description }}</span>
-          </div>
           <span class="period">{{ project.period }}</span>
         </li>
       </ul>

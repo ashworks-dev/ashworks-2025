@@ -39,21 +39,10 @@ interface OtherProject {
   styleUrls: ['./resume.component.sass']
 })
 export class ResumeComponent implements OnInit {
-  summary = `Experienced web developer (20+ years) and videographer (8+ years) with a passion for creating high-quality corporate training, educational, and promotional content. Self-taught, adaptable, and obsessed with emerging tech — from Flash to Angular, from DSLR video to VR tours, from AWS hosting to training AI models privately.`;
+  summary = `Experienced web/application developer (20+ years) and videographer (8+ years) with a passion for creating high-quality corporate training, educational, and promotional content. Self-taught, adaptable, and obsessed with emerging tech — from Flash to Angular, from digital tape videos to virtual tours, from AWS hosting to implementing AI models. Currently seeking new opportunities to leverage my skills in web development and videography to create innovative, high-quality digital solutions.`;
 
   experiences: Experience[] = [
-    {
-      company: 'Self-Employed',
-      position: 'Freelance Web Developer / Videographer',
-      period: '2014–Present',
-      location: 'Melbourne, Australia',
-      description: [
-        'Produced 200+ short-form corporate/training videos across Australia',
-        'Built and deployed Angular web apps, portals, 360 tours, mobile apps',
-        'Developed internal business tools for lesson planning, chatbots, R&D prototypes',
-        'R&D projects: custom LLM training, volumetric 3D video rendering, Whisper voice-to-GPT'
-      ]
-    },
+    
     {
       company: 'Liberate Learning',
       position: 'Web Applications Developer / Videographer',
@@ -61,10 +50,14 @@ export class ResumeComponent implements OnInit {
       location: 'Remote Contractor',
       companyDescription: 'A leading Australian eLearning company specializing in custom learning solutions, corporate training, and educational technology. Known for innovative approaches to digital learning and award-winning courseware.',
       description: [
-        'Created custom web tools, portals, video modules for major Australian universities, banks, and gov departments',
+        'Built and deployed Angular web apps, portals, 360 tours, mobile apps for major Australian universities, banks, and gov departments',
         'Led multi-year Angular / Laravel / Lumen projects',
         'Developed award-winning 360 training environments and video-first learning modules',
-        'Embedded R&D for emerging tech: VR, AI chatbots, cloud infrastructure'
+        'Embedded R&D for emerging tech: VR, AI chatbots, cloud infrastructure',
+        'Produced 200+ short-form corporate/training videos across Australia',
+        
+        'Developed internal business tools for lesson planning, chatbots',
+        'R&D and tech consulting on projects: custom LLM uses, volumetric 3D video rendering, AI avatars, AI courseware generation'
       ],
       achievements: [
         '2023 LearnX Winner – Best eLearning Design',
@@ -79,6 +72,7 @@ export class ResumeComponent implements OnInit {
       companyDescription: 'A pioneering eLearning company that specialized in creating interactive learning solutions using Flash and 3D technologies. Known for developing innovative training tools and compliance courses for major Australian corporations.',
       description: [
         'Built hundreds of interactive Flash/HTML training sites',
+        'Developed custom and reusable courseware frameworks in HTML/JS',
         'Created mobile apps for training medical registrars',
         'Managed small dev teams, offshored production, 3D avatar development',
         'Heavy focus on accessibility, LMS integration, cross-browser compliance'
@@ -126,22 +120,25 @@ export class ResumeComponent implements OnInit {
     {
       category: 'Web & Application Development',
       items: [
-        'Languages/Frameworks: Angular, HTML/JS/CSS, React, Python, Node.js, PHP (Laravel, Lumen)',
-        'eLearning: Storyline, Lectora, Moodle, SCORM/xAPI, LMS setup/debugging',
-        'Cloud/Servers: AWS, Google Cloud, Azure, Linux (CentOS), VPS management (40+ accounts)',
-        'Mobile: Cordova (iOS/Android apps), Titanium, PhoneGap',
-        'Web R&D: Three.js, OpenCL experiments, Google Sheets-driven courseware',
-        'AI R&D: Stable Diffusion, Whisper, LLM hosting, Chatbot building'
+        'Languages/Frameworks: Angular (10y), HTML/JS/CSS/SASS/PUG (15y), React, Python/Pydantic, Node.js, PHP (Laravel, Lumen), Three.js',
+        'eLearning: (15y) Storyline, Lectora, Moodle, SCORM/xAPI, LMS setup/debugging',
+        'Cloud/Servers: AWS, Google Cloud, Azure, Linux (CentOS), VPS management (40+ accounts), NAS, BackBlaze B2, Cloudflare R2',
+        'Mobile: Cordova (iOS/Android apps), Titanium, PhoneGap (old tech)',
+        'AI Development: LLM integration, RAG implementations, AI workflow automation, Stable Diffusion/ControlNet, Whisper voice processing, custom AI model training and deployment',
+        'Design Platforms: Figma, Webflow',
+        'AI coding assists: VS-Code, Cursor, Github Copilot'
       ]
     },
     {
       category: 'Videography & Media',
       items: [
-        'Corporate and Training Video Production: 200+ assets',
-        '360 Photography & Video',
-        'Editing: Davinci Resolve, Adobe Premiere Pro, After Effects',
-        'Green Screen Production, Motion Design, 3D Overlay in 360',
-        'Travel ready with full kit; White Card certified (construction/industrial)'
+        'Corporate and Training Video Production: 200+ assets (8y)',
+        '360 Photography',
+        'Production: audio wired/wireless setups, lighting setups & modifiers, grip, green screen studio production, directing, camera operation, script supervision.',
+        'Pre-Production: Storyboarding, script reviews, shotlisting, scheduling',
+        'Editing: Davinci Resolve, Adobe Premiere Pro, After Effects, Photoshop, Audition etc. Handover, rough assemblies or full editing, local and cloud backups.',
+        'Logistics: Travel ready (local or interstate) with full production kit; White Card certified (construction/industrial)',
+        "AI Generation: ComfyUI, Stable Diffusion, Runway, Kling, HeyGen (aiming for commerical avatar generation)",
       ]
     }
   ];
@@ -149,8 +146,8 @@ export class ResumeComponent implements OnInit {
   projects: Project[] = [
     {
       title: 'AI Courseware Generator',
-      description: 'Developing an AI-powered system for Coles that automatically generates interactive training modules from existing documentation and video content. Uses LLMs to create engaging learning experiences with minimal human intervention.',
-      period: '2024',
+      description: 'Developing an AI-powered system for Coles that automatically generates interactive training modules in the Adapt Framework. The system processes existing eLearning content or AI-generated storyboards through a sophisticated pipeline: initially using LLMs to parse and generate intermediate data files, followed by an extensive storyboard-to-courseware processor. Features include review capabilities, block and text editing, image upload functionality, and comprehensive user and process/build queue management. The final output can be previewed within the tool or exported to the Adapt Authoring tool for further refinement.',
+      period: '2024-present',
       technologies: [
         { icon: 'fas fa-robot', name: 'AI/LLM' },
         { icon: 'fab fa-python', name: 'Python' },
@@ -159,29 +156,62 @@ export class ResumeComponent implements OnInit {
       ]
     },
     {
-      title: 'Department of Education Inclusion',
-      description: '50 videos shot at 20 schools, 140 interviews of teachers, principals, staff and students. Used to assist teachers and staff in creating inclusive classrooms for students with a variety of disabilities. Project spanned three months shooting and six months of editing.',
-      period: '2021',
+      title: 'Coles Training Series',
+      description: 'Long-term collaboration (2019-2024) producing comprehensive training content including: 360° store walkthroughs for new store layouts and safety procedures, green screen training modules for customer service and compliance, VR training experiences for warehouse operations, and complex scene alignment for procedural training. Projects involved extensive pre-production planning, multi-camera setups, and post-production workflows to ensure consistent quality across all deliverables.',
+      period: '2019–2024',
       technologies: [
         { icon: 'fas fa-video', name: 'Video Production' },
-        { icon: 'fas fa-microphone', name: 'Interviews' },
-        { icon: 'fas fa-film', name: 'Documentary' }
+        { icon: 'fas fa-cube', name: '3D/VR' },
+        { icon: 'fas fa-camera', name: '360° Video' }
       ]
     },
     {
-      title: 'Suncorp Insurance Fraud Training',
-      description: 'Training aimed at educating home and motor insurance assessors in what to look for when conducting an assessment. Interviews, presenters (actors), staged scenes, shot in homes & motor warehouses.',
-      period: '2020',
+      title: 'Suncorp Insurance Training Series',
+      description: 'Comprehensive training and management video series (2020-2023) including: insurance fraud training with professional actors in staged scenarios, management communication videos, and 360° virtual tours of offices. Projects spanned multiple locations across Victoria, New South Wales, and Queensland, involving complex logistics, multi-camera setups, and professional actors. Content included both procedural training and executive communications, with a focus on maintaining consistent quality across all deliverables.',
+      period: '2020-2023',
       technologies: [
         { icon: 'fas fa-video', name: 'Video Production' },
         { icon: 'fas fa-theater-masks', name: 'Acting' },
-        { icon: 'fas fa-map-marker-alt', name: 'Location' }
+        { icon: 'fas fa-map-marker-alt', name: 'Location' },
+        { icon: 'fas fa-camera', name: '360° Video' }
+      ]
+    },
+    {
+      title: 'ACU Melbourne 360 Tour',
+      description: 'Combined on-location presenter video and 360 footage to create an immersive virtual tour of the ACU Melbourne campus. The project integrated high-quality video production with interactive 360° photography to provide an engaging experience for prospective students.',
+      period: '2020',
+      technologies: [
+        { icon: 'fas fa-camera', name: '360° Video' },
+        { icon: 'fas fa-video', name: 'Video Production' },
+        { icon: 'fas fa-map-marked-alt', name: 'Virtual Tour' }
+      ]
+    },
+    {
+      title: 'Lesson Planner',
+      description: 'A comprehensive web-based lesson planning tool that helps teachers create, organize, and share lesson plans. Features include curriculum mapping, resource management, and collaborative planning capabilities via an interactive calendar. A PHP/Laravel backend with an Angular frontend and a modified Wordpress marketplace. Project was about two months from beta testing when the project was cancelled due to a company merger.',
+      period: '2022-2024',
+      technologies: [
+        { icon: 'fab fa-angular', name: 'Angular' },
+        { icon: 'fas fa-database', name: 'Database' },
+        { icon: 'fas fa-users', name: 'Collaboration' },
+        { icon: 'fas fa-graduation-cap', name: 'Education' }
+      ]
+    },
+    {
+      title: 'Department of Education Inclusion',
+      description: 'Comprehensive video series (2021-2022) covering multiple educational initiatives: 50+ videos on inclusive classroom practices, teaching strategies, and professional development. Project included 140+ interviews with teachers, principals, staff, and students across 20 schools, plus additional content on innovative teaching methodologies and professional development programs. The project spanned three months of shooting and six months of editing, resulting in a rich library of educational resources.',
+      period: '2021-2022',
+      technologies: [
+        { icon: 'fas fa-video', name: 'Video Production' },
+        { icon: 'fas fa-microphone', name: 'Interviews' },
+        { icon: 'fas fa-film', name: 'Documentary' },
+        { icon: 'fas fa-graduation-cap', name: 'Education' }
       ]
     },
     {
       title: '360 Virtual Tours',
-      description: 'Photographer and developer of a custom built 360 panoramic onboarding solution for Coles and Suncorp.',
-      period: '2020',
+      description: 'Photographer and developer of a custom built 360 panoramic onboarding solution for Coles, NAB, Suncorp, ACU, Monash and Dept of Health.',
+      period: '2020-2023',
       technologies: [
         { icon: 'fas fa-camera', name: '360° Photography' },
         { icon: 'fas fa-code', name: 'Web Development' }
@@ -208,7 +238,7 @@ export class ResumeComponent implements OnInit {
     },
     {
       title: 'Suncorp Career Compass',
-      description: 'Web based tool to compare the skills of various job roles using interactive charts and data. Staff would compare their current role to a future role and the app would compile a catalogue of training assets required to pursue the role.',
+      description: 'Web based tool (Flash) to compare the skills of various job roles using interactive charts and data. Staff would compare their current role to a future role and the app would compile a catalogue of training assets required to pursue the role.',
       period: '2014',
       technologies: [
         { icon: 'fas fa-chart-line', name: 'Charts' },
@@ -218,7 +248,7 @@ export class ResumeComponent implements OnInit {
     },
     {
       title: 'Dr. MCQ',
-      description: 'Native iOS and Android app for training medical registrars to sit their exam.',
+      description: 'Native iOS and Android app for training medical registrars to sit their exam. Only reached prototype stage.',
       period: '2012',
       technologies: [
         { icon: 'fas fa-mobile-alt', name: 'Mobile' },
@@ -240,26 +270,31 @@ export class ResumeComponent implements OnInit {
 
   rndProjects: Project[] = [
     {
-      title: 'Private LLM Training',
-      description: 'Privately trained LLMs for secure document Q&A (Python)',
-      period: '2024',
+      title: 'Personal Finance & Accounting System',
+      description: 'A comprehensive personal and business finance system built to test AI coding capabilities. Features include: GST/PAYG monthly tracking, EOFY tax estimates, invoice generation, recurring budget management, live bank feed integration, financial analytics, and interactive charts. Built with Python and Django, with plans to integrate AI-driven financial analysis and automated email notifications for business and family financial tracking.',
+      period: '2024-present',
+      technologies: [
+        { icon: 'fab fa-python', name: 'Python' },
+        { icon: 'fas fa-database', name: 'Django' },
+        { icon: 'fas fa-chart-line', name: 'Analytics' },
+        { icon: 'fas fa-robot', name: 'AI Integration' }
+      ]
+    },
+    {
+      title: 'AI Development Playground',
+      description: 'A focused environment for experimenting with and staying current on LLM technologies. Includes private hosting and API integration of various LLM models, RAG implementations for secure data handling, agentic workflows, and custom model fine-tuning. Regularly testing and implementing new AI capabilities as they emerge, with a particular focus on practical business applications and workflow automation.',
+      period: '2023-present',
       technologies: [
         { icon: 'fas fa-robot', name: 'AI/LLM' },
-        { icon: 'fab fa-python', name: 'Python' }
+        { icon: 'fab fa-python', name: 'Python' },
+        { icon: 'fas fa-image', name: 'AI Art' },
+        { icon: 'fas fa-microphone', name: 'Voice AI' }
       ]
     },
-    {
-      title: 'Volumetric 3D Video',
-      description: 'Volumetric 3D scanned video rendering in browsers',
-      period: '2023',
-      technologies: [
-        { icon: 'fas fa-cube', name: '3D' },
-        { icon: 'fas fa-video', name: 'Video' }
-      ]
-    },
+    
     {
       title: 'AI Voice Assistant',
-      description: 'Whisper → ChatGPT → AI Voice (like a cheap version of the Star Trek computer)',
+      description: 'Before it really became mainstream, I was testing a Whisper based → ChatGPT → AI Voice (like a cheap version of the Star Trek computer)',
       period: '2023',
       technologies: [
         { icon: 'fas fa-robot', name: 'AI' },
@@ -267,9 +302,9 @@ export class ResumeComponent implements OnInit {
       ]
     },
     {
-      title: 'Stable Diffusion Workflows',
-      description: 'Stable Diffusion/ControlNet workflows to match strict brand briefs',
-      period: '2023',
+      title: 'AI image Workflows',
+      description: 'On going experiments with ComfyUI, Stable Diffusion and the big video generation platforms. Mainly focused on finding commerical workflows using ControlNet and other techniques to match client brand briefs and post editing. Almost there!',
+      period: '2023-present',
       technologies: [
         { icon: 'fas fa-image', name: 'AI Art' },
         { icon: 'fas fa-paint-brush', name: 'Design' }
@@ -277,7 +312,7 @@ export class ResumeComponent implements OnInit {
     },
     {
       title: '360 Environment Overlays',
-      description: 'Transparent video and 3D overlays inside browser-based 360 environments',
+      description: "After the success of the 360 tours we wanted to do more. As an ongoing project to enhance the platform with transparent video and 3D overlays inside browser-based 360 environments.  This project would lean on three.js. Work on this stopped nearly three years ago, but with the new AI agents I'm interested to see when we can start work on V2.",
       period: '2022',
       technologies: [
         { icon: 'fas fa-cube', name: '3D' },
@@ -288,12 +323,7 @@ export class ResumeComponent implements OnInit {
 
   otherWebProjects: OtherProject[] = [
     {
-      title: 'Custom CMS Backend (Python/Django)',
-      period: '2013',
-      description: 'Custom CMS backend web application with AWS cloud storage for mobile content authoring and publishing. Integrated AWS video transcoding for mobile delivery.'
-    },
-    {
-      title: 'St John Ambulance Compliance',
+      title: 'St John Ambulance Compliance (Flash)',
       period: '2012'
     },
     {
@@ -305,106 +335,16 @@ export class ResumeComponent implements OnInit {
       period: '2010'
     },
     {
-      title: 'JobFind eLearning',
+      title: 'JobFind eLearning (Flash)',
+      description: 'Custom e-learning for JobFind, a job search website incorporating 3D avatars and video nd 40+ hours of training.',
       period: '2009'
     },
     {
-      title: 'Target Staff Training',
-      period: '2008'
+      title: 'Various e-learning projects',
+      description: 'Custom e-learning for various clients including BankWest, BHP, Target, CGU Insurance, Dept of Education, Aust MultiCultural Assoc, Suncorp, Nissan,.',
+      period: '2008-2016'
     }
   ];
-
-  videography = {
-    summary: '8 years of professional videography with 200+ video assets for training and corporate use. Trusted by brands like Coles, ACU, NAB, Dept of Education, and Powercor. Experience includes promotional DVDs for thoroughbred racehorse trainers in Victoria.',
-    skills: [
-      'Shoot planning, script breakdowns, call sheets',
-      'Directing, camera operation, lighting, audio',
-      'Green screen, 360 photography, b-roll, drone work',
-      'Post-production using Davinci Resolve, Adobe Premiere, After Effects, Vegas, Encore',
-      'Solo operator with full kit, available for interstate travel'
-    ],
-    clients: ['ACU', 'RMIT', 'Suncorp', 'NAB', 'CBA', 'IBAC', 'Slater & Gordon', 'Safe Recovery Aust', 'Westpac', 'Thoroughbred Racehorse Trainers'],
-    projects: [
-      {
-        title: 'Coles Training',
-        description: '360 walkthroughs, green screen, VR shoots, complex scene alignment.',
-        period: '2019–2024',
-        technologies: [
-          { icon: 'fas fa-video', name: 'Video Production' },
-          { icon: 'fas fa-cube', name: '3D/VR' },
-          { icon: 'fas fa-camera', name: '360° Video' }
-        ]
-      },
-      {
-        title: 'Dept. of Ed. Inclusion',
-        description: '50 videos, 140 interviews, 20 schools — 3-month shoot, 6-month edit.',
-        period: '2021',
-        technologies: [
-          { icon: 'fas fa-video', name: 'Video Production' },
-          { icon: 'fas fa-microphone', name: 'Interviews' },
-          { icon: 'fas fa-film', name: 'Documentary' }
-        ]
-      },
-      {
-        title: 'Suncorp Insurance Fraud',
-        description: 'Training videos with actors, location/staged scenes.',
-        period: '2020',
-        technologies: [
-          { icon: 'fas fa-video', name: 'Video Production' },
-          { icon: 'fas fa-theater-masks', name: 'Acting' },
-          { icon: 'fas fa-map-marker-alt', name: 'Location' }
-        ]
-      },
-      {
-        title: 'ACU Melbourne 360 Tour',
-        description: 'Combined on-location presenter video and 360 footage.',
-        link: 'https://webapps.acu.edu.au/acu360/',
-        period: '2020',
-        technologies: [
-          { icon: 'fas fa-camera', name: '360° Video' },
-          { icon: 'fas fa-video', name: 'Video Production' },
-          { icon: 'fas fa-map-marked-alt', name: 'Virtual Tour' }
-        ]
-      }
-    ],
-    otherProjects: [
-      {
-        title: 'NAB Branch Training Series',
-        period: '2023',
-        description: 'Series of 12 training videos for branch staff'
-      },
-      {
-        title: 'Powercor Safety Procedures',
-        period: '2022',
-        description: 'Safety training videos for field staff'
-      },
-      {
-        title: 'RMIT Student Services',
-        period: '2021',
-        description: 'Student orientation and support videos'
-      },
-      {
-        title: 'Westpac Branch Training',
-        period: '2020',
-        description: 'Customer service training series'
-      },
-      {
-        title: 'Slater & Gordon Legal Training',
-        period: '2019',
-        description: 'Legal compliance and procedure videos'
-      },
-      {
-        title: 'Safe Recovery Australia',
-        period: '2018',
-        description: 'Recovery and support training series'
-      },
-      {
-        title: 'Thoroughbred Racehorse Promotional DVDs',
-        period: '2013',
-        description: 'Promotional DVDs for thoroughbred racehorse trainers in Victoria'
-      }
-    ]
-  };
 
   awards: string[] = [
     'Australian Good Design Selection',
