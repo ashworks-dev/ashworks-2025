@@ -166,14 +166,15 @@
   </section>
 
   <section class="resume-section endorsement-section">
-    <h2>Endorsement</h2>
-    <div class="endorsement-content">
+    <h2>Endorsements</h2>
+    <div class="endorsement-content" *ngFor="let endorsement of endorsements">
       <blockquote>
         <p>{{ endorsement.text }}</p>
         <footer>
           <strong>{{ endorsement.author }}</strong>
           <span>{{ endorsement.position }}</span>
           <a href="mailto:{{ endorsement.email }}">{{ endorsement.email }}</a>
+          <span *ngIf="endorsement.phone">{{ endorsement.phone }}</span>
         </footer>
       </blockquote>
     </div>

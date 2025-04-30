@@ -329,19 +329,28 @@ export class ResumeComponent implements OnInit {
     'Life Long Learning Award 2011 – Budda Jitcha & You Can Work'
   ];
 
-  endorsement = {
-    text: '"Ashley has become an invaluable technical advisor, providing guidance and expertise in emerging technologies. His extensive experience in web, eLearning, video, and creative technology, combined with his enthusiasm, has added significant value and innovation to our offerings."',
-    author: 'Rodney Beach',
-    position: 'Group Managing Director, Liberate Learning',
-    email: 'rodney@liberatelearning.com.au'
-  };
+  endorsements = [
+    {
+      text: '"Ashley has become an invaluable developer and technical advisor, providing hands-on expertise and guidance in emerging technologies. His extensive experience in web, eLearning, video, and creative technology, combined with his enthusiasm, has added significant value and innovation to our offerings. His work has been recognized with multiple industry awards, including LearnX and AITD Excellence awards, reflecting the high quality and innovation of his contributions."',
+      author: 'Rodney Beach',
+      position: 'Group Managing Director, Liberate Learning',
+      email: 'rodney@liberatelearning.com.au',
+      phone: '0413 082 712'
+    },
+    {
+      text: '"Ashley has been a key partner in our digital learning initiatives, consistently delivering high-quality projects across our organization. Through his work with Liberate Learning, he has produced numerous video projects across multiple states in Australia, from interactive eLearning modules to immersive 360° training environments. His recent work in AI-driven learning solutions, particularly his development of an AI-powered system for automated courseware generation in the Adapt Framework, has brought innovative approaches to our training programs. His ability to manage complex logistics while maintaining consistent quality, combined with his forward-thinking approach to emerging technologies, has made him an invaluable resource for our learning and development needs."',
+      author: 'Siva Kulasingam',
+      position: 'Digital Learning Manager | Culture & Capability, People & Culture',
+      email: 'Sivayogan.Kulasingam@coles.com.au'
+    }
+  ];
 
   contact = {
     phone: '0412 884 283',
     email: 'ash@ashworks.com.au',
     location: 'Melbourne, Australia',
     linkedin: 'https://www.linkedin.com/in/ashley-norriss-2033621b/',
-    portfolio: 'https://framedvideo.com/portfolio',
+    portfolio: 'https://framedvideo.com',
     portfolioCredentials: {
       user: 'guest',
       pass: 'framed101'
