@@ -287,11 +287,9 @@ export class ResumeComponent implements OnInit {
       technologies: [
         { icon: 'fas fa-robot', name: 'AI/LLM' },
         { icon: 'fab fa-python', name: 'Python' },
-        { icon: 'fas fa-image', name: 'AI Art' },
-        { icon: 'fas fa-microphone', name: 'Voice AI' }
+        { icon: 'fas fa-brain', name: 'Model Training' }
       ]
     },
-    
     {
       title: 'AI Voice Assistant',
       description: 'Before it really became mainstream, I was testing a Whisper based → ChatGPT → AI Voice (like a cheap version of the Star Trek computer)',
@@ -312,37 +310,12 @@ export class ResumeComponent implements OnInit {
     },
     {
       title: '360 Environment Overlays',
-      description: "After the success of the 360 tours we wanted to do more. As an ongoing project to enhance the platform with transparent video and 3D overlays inside browser-based 360 environments.  This project would lean on three.js. Work on this stopped nearly three years ago, but with the new AI agents I'm interested to see when we can start work on V2.",
+      description: 'Transparent video and 3D overlays inside browser-based 360 environments. After the success of the Coles and Suncorp 360 tours, I was aiming at the next level of interactivity in 360 environments including 3D models and aloha based video.',
       period: '2022',
       technologies: [
         { icon: 'fas fa-cube', name: '3D' },
         { icon: 'fas fa-video', name: '360° Video' }
       ]
-    }
-  ];
-
-  otherWebProjects: OtherProject[] = [
-    {
-      title: 'St John Ambulance Compliance (Flash)',
-      period: '2012'
-    },
-    {
-      title: 'BankWest Training',
-      period: '2011'
-    },
-    {
-      title: 'CGU Insurance Training',
-      period: '2010'
-    },
-    {
-      title: 'JobFind eLearning (Flash)',
-      description: 'Custom e-learning for JobFind, a job search website incorporating 3D avatars and video nd 40+ hours of training.',
-      period: '2009'
-    },
-    {
-      title: 'Various e-learning projects',
-      description: 'Custom e-learning for various clients including BankWest, BHP, Target, CGU Insurance, Dept of Education, Aust MultiCultural Assoc, Suncorp, Nissan,.',
-      period: '2008-2016'
     }
   ];
 
@@ -365,7 +338,7 @@ export class ResumeComponent implements OnInit {
 
   contact = {
     phone: '0412 884 283',
-    email: 'ash@framedvideo.com',
+    email: 'ash@ashworks.com.au',
     location: 'Melbourne, Australia',
     linkedin: 'https://www.linkedin.com/in/ashley-norriss-2033621b/',
     portfolio: 'https://framedvideo.com/portfolio',
