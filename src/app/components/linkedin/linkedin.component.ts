@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 interface Experience {
   company: string;
@@ -29,25 +29,41 @@ interface Project {
   }[];
 }
 
-interface OtherProject {
-  title: string;
-  period: string;
-  link?: string;
-  description?: string;
+interface Endorsement {
+  text: string;
+  author: string;
+  position: string;
+  email?: string;
+  phone?: string;
+}
+
+interface AboutMe {
+  summary: string;
+  strengths: string[];
+  workStyle: string[];
+  keyAchievements: string[];
+  personalBackground: {
+    story: string;
+    family: string;
+  };
+  careerObjectives: string;
 }
 
 @Component({
-  selector: 'app-resume',
-  templateUrl: './resume.component.html',
-  styleUrls: ['./resume.component.sass']
+  selector: 'app-linkedin',
+  templateUrl: './linkedin.component.html',
+  styleUrls: ['./linkedin.component.sass']
 })
-export class ResumeComponent implements OnInit {
-  summary = `20+ years building web and eLearning apps, 8+ years shooting video and exploring all the tech that has come and gone over the years. Entirely self-taught, I make stuff work, often in tricky situations. From disks to CDs, to USB and now cloud servers, traditional coding to commanding my AI agents - I've seen the trends come and go, dodged the hype, and focused on what actually works for the industries I have served. Currently focused on AI integration and video production.
+export class LinkedInComponent {
+  today = new Date();
 
-#AvailableForContractWork`;
+  printResume() {
+    window.print();
+  }
+
+  summary = `20+ years building web and eLearning apps, 8+ years shooting video and exploring all the tech that has come and gone over the years. Entirely self-taught, I make stuff work, often in tricky situations. From disks to CDs, to USB and now cloud servers, traditional coding to commanding my AI agents - I've seen the trends come and go, dodged the hype, and focused on what actually works for the industries I have served. Currently focused on AI integration and video production.`;
 
   experiences: Experience[] = [
-    
     {
       company: 'Liberate Learning',
       position: 'Web Applications Developer / Videographer',
@@ -60,7 +76,6 @@ export class ResumeComponent implements OnInit {
         'Developed award-winning 360 training environments and video-first learning modules',
         'Embedded R&D for emerging tech: VR, AI chatbots, cloud infrastructure',
         'Produced 200+ short-form corporate/training videos across Australia',
-        
         'Developed internal business tools for lesson planning, chatbots',
         'R&D and tech consulting on projects: custom LLM uses, volumetric 3D video rendering, AI avatars, AI courseware generation'
       ],
@@ -369,7 +384,7 @@ export class ResumeComponent implements OnInit {
   rndProjects: Project[] = [
     {
       title: 'Personal Finance & Accounting System',
-      description: 'A comprehensive personal and business finance system built to test AI coding capabilities. Features include: GST/PAYG monthly tracking, EOFY tax estimates, invoice generation, recurring budget management, live bank feed integration, financial analytics, and interactive charts. Built with Python and Django, with plans to integrate AI-driven financial analysis and automated email notifications for business and family financial tracking.',
+      description: 'A comprehensive personal and business finance system built to test AI coding capabilities.',
       period: '2024-present',
       technologies: [
         { icon: 'fab fa-python', name: 'Python' },
@@ -379,40 +394,16 @@ export class ResumeComponent implements OnInit {
       ]
     },
     {
-      title: 'AI Development Playground',
-      description: 'A focused environment for experimenting with and staying current on LLM technologies. Includes private hosting and API integration of various LLM models, RAG implementations for secure data handling, agentic workflows, and custom model fine-tuning. Regularly testing and implementing new AI capabilities as they emerge, with a particular focus on practical business applications and workflow automation.',
-      period: '2023-present',
+      title: 'AI-Powered Learning Platform',
+      description: 'Developed an innovative AI-driven system for automated courseware generation in the Adapt Framework. Implemented machine learning algorithms for content optimization and personalized learning paths. Reduced course development time by 40% while maintaining high quality standards.',
+      period: '2024-present',
       technologies: [
-        { icon: 'fas fa-robot', name: 'AI/LLM' },
+        { icon: 'fab fa-angular', name: 'Angular' },
         { icon: 'fab fa-python', name: 'Python' },
-        { icon: 'fas fa-brain', name: 'Model Training' }
-      ]
-    },
-    {
-      title: 'AI Voice Assistant',
-      description: 'Before it really became mainstream, I was testing a Whisper based → ChatGPT → AI Voice (like a cheap version of the Star Trek computer)',
-      period: '2023',
-      technologies: [
-        { icon: 'fas fa-robot', name: 'AI' },
-        { icon: 'fas fa-microphone', name: 'Voice' }
-      ]
-    },
-    {
-      title: 'AI image Workflows',
-      description: 'On going experiments with ComfyUI, Stable Diffusion and the big video generation platforms. Mainly focused on finding commerical workflows using ControlNet and other techniques to match client brand briefs and post editing. Almost there!',
-      period: '2023-present',
-      technologies: [
-        { icon: 'fas fa-image', name: 'AI Art' },
-        { icon: 'fas fa-paint-brush', name: 'Design' }
-      ]
-    },
-    {
-      title: '360 Environment Overlays',
-      description: 'Transparent video and 3D overlays inside browser-based 360 environments. After the success of the Coles and Suncorp 360 tours, I was aiming at the next level of interactivity in 360 environments including 3D models and aloha based video.',
-      period: '2022',
-      technologies: [
-        { icon: 'fas fa-cube', name: '3D' },
-        { icon: 'fas fa-video', name: '360° Video' }
+        { icon: 'fas fa-robot', name: 'AI/ML' },
+        { icon: 'fab fa-aws', name: 'AWS' },
+        { icon: 'fab fa-node-js', name: 'Node.js' },
+        { icon: 'fas fa-database', name: 'MongoDB' }
       ]
     }
   ];
@@ -427,7 +418,7 @@ export class ResumeComponent implements OnInit {
     'Life Long Learning Award 2011 – Budda Jitcha & You Can Work'
   ];
 
-  endorsements = [
+  endorsements: Endorsement[] = [
     {
       text: '"Ash has become an invaluable developer and technical advisor, providing hands-on expertise and guidance in emerging technologies. His extensive experience in web, eLearning, video, and creative technology, combined with his enthusiasm, has added significant value and innovation to our offerings. His work has been recognized with multiple industry awards, including LearnX and AITD Excellence awards, reflecting the high quality and innovation of his contributions."',
       author: 'Rodney Beach',
@@ -455,7 +446,7 @@ export class ResumeComponent implements OnInit {
     }
   };
 
-  aboutMe = {
+  aboutMe: AboutMe = {
     summary: `A technology professional with two decades of experience in web development and digital media production, specializing in creating bespoke solutions within constrained environments. Known for rapidly mastering new technologies and finding innovative ways to push existing platforms beyond their intended use. Combines self-taught expertise with practical problem-solving to transform concepts into production-ready applications. From custom eLearning platforms to immersive training experiences, consistently delivers solutions that work within real-world technical limitations while exceeding client expectations.`,
     strengths: [
       'Extensive hands-on experience in emerging technologies while maintaining focus on practical business applications',
@@ -485,9 +476,4 @@ export class ResumeComponent implements OnInit {
     },
     careerObjectives: `Seeking longer-term projects with creative businesses where I can deeply engage with innovative concepts, or short-term development work to assist with general technical needs. While video production remains a separate service offering, I'm particularly interested in opportunities that combine both technical development and video production capabilities. Thriving in hands-on technical roles where I can experiment and innovate, bringing a <i class="fas fa-flask"></i> 'mad scientist' approach to solving complex problems. Comfortable collaborating with specialized teams, able to understand and discuss technical concepts across different domains while focusing on my core expertise. Focused on delivering innovative, practical solutions that balance technical excellence with business requirements. Preference for remote work arrangements that allow for flexible engagement while maintaining high-quality delivery.`
   };
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-}
+} 

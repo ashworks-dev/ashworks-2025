@@ -1,0 +1,20 @@
+<nav [class.nav-hidden]="!isNavVisible">
+  <a routerLink="/" class="nav-brand">
+    <img src="assets/images/aw-circle.svg" alt="ashworks logo" class="brand-logo">
+    <span class="brand-text">ashworks</span>
+  </a>
+  <div class="nav-links">
+    <a routerLink="/video" routerLinkActive="active">
+      <i class="fas fa-video"></i>
+      Video Services
+    </a>
+    <a routerLink="/client-login" class="client-login-button">
+      <i class="fas fa-user"></i>
+      Client Login
+    </a>
+    <button *ngIf="isLinkedInPage" class="print-button" (click)="printResume()">
+      <i class="fas fa-print"></i>
+      Print Resume
+    </button>
+  </div>
+</nav> 

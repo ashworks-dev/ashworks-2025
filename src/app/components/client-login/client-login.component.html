@@ -1,0 +1,38 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <img src="assets/images/aw-circle.svg" alt="ashworks logo" class="brand-logo">
+      <h1>Client Login</h1>
+    </div>
+
+    <div class="login-content">
+      <div *ngIf="loading" class="loading-state">
+        <div class="spinner"></div>
+        <p>Verifying access...</p>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        <i class="fas fa-exclamation-circle"></i>
+        {{ errorMessage }}
+      </div>
+
+      <div *ngIf="!loading && !errorMessage && !accessGranted" class="login-form">
+        <p class="login-description">
+          Please enter your access token to view client content.
+        </p>
+        <div class="input-group">
+          <input 
+            type="text" 
+            placeholder="Enter access token" 
+            [(ngModel)]="token"
+            (keyup.enter)="verifyToken(token)"
+          >
+          <button (click)="verifyToken(token)" [disabled]="!token">
+            <i class="fas fa-sign-in-alt"></i>
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
