@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IMediaElement } from '@videogular/ngx-videogular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -11,7 +12,7 @@ export class LandingComponent implements OnInit {
   videoError = false;
   showAllProjects = false;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -27,5 +28,21 @@ export class LandingComponent implements OnInit {
 
   toggleProjects(): void {
     this.showAllProjects = !this.showAllProjects;
+  }
+
+  navigateToVideo(): void {
+    this.router.navigate(['/video']);
+  }
+
+  openEmail(type: 'hire' | 'consulting'): void {
+    const subject = type === 'hire' 
+      ? 'Web Development Project Inquiry'
+      : 'AI Tech Consulting Inquiry';
+    const body = type === 'hire'
+      ? 'I would like to discuss a web development project with you.'
+      : 'I would like to discuss AI tech consulting opportunities with you.';
+    
+    const mailtoLink = `mailto:ash@ashnet.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
   }
 } 

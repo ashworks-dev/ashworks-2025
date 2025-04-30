@@ -68,9 +68,23 @@
         <img src="assets/images/corp-p-500.png" alt="Corporate video setup in a modern office space" class="service-image full-width">
       </div>
       <div class="service-content">
-        <h3>Corporate Video</h3>
+        <h3>Video Production</h3>
         <p>Specializing in the core of corporate video production: authentic interviews and compelling b-roll. As a solo operator with years of experience, I deliver professional results through streamlined processes and focused attention to detail. Perfect for training videos, company updates, and corporate storytelling.</p>
-        <a routerLink="/video" class="learn-more">View Video Services →</a>
+      </div>
+      <div class="button-container">
+        <button (click)="navigateToVideo()" class="service-button">
+          <i class="fas fa-video"></i>
+          <span>Video Services</span>
+        </button>
+      </div>
+      <div class="tech-stack">
+        <img src="assets/images/premiere.svg" alt="Adobe Premiere Pro" class="tech-icon" style="opacity: 0;">
+        <img src="assets/images/after-effects.svg" alt="Adobe After Effects" class="tech-icon" style="opacity: 0;">
+        <img src="assets/images/audition.svg" alt="Adobe Audition" class="tech-icon" style="opacity: 0;">
+        <img src="assets/images/illustrator.svg" alt="Adobe Illustrator" class="tech-icon" style="opacity: 0;">
+        <img src="assets/images/photoshop.svg" alt="Adobe Photoshop" class="tech-icon" style="opacity: 0;">
+        <img src="assets/images/davinci.svg" alt="DaVinci Resolve" class="tech-icon" style="opacity: 0;">
+        <img src="assets/images/camera.svg" alt="Professional Camera" class="tech-icon" style="opacity: 0;">
       </div>
     </div>
 
@@ -82,7 +96,13 @@
         <h3>Web Development</h3>
         <p>Full-stack development with over two decades of experience across diverse platforms and technologies. Specializing in modern frameworks like Angular and React, while bringing deep expertise in eLearning platforms including Adapt, Articulate, and custom LMS solutions. From responsive websites to complex web applications, I deliver scalable, maintainable solutions that combine technical excellence with intuitive user experiences.</p>
       </div>
-      <div class="tech-stack" style="padding-top: 1.5rem;">
+      <div class="button-container">
+        <button (click)="openEmail('hire')" class="service-button web-button">
+          <i class="fas fa-code"></i>
+          <span>Hire Me</span>
+        </button>
+      </div>
+      <div class="tech-stack">
         <img src="assets/images/angular-svgrepo-com.svg" alt="Angular" class="tech-icon">
         <img src="assets/images/react-svgrepo-com.svg" alt="React" class="tech-icon">
         <img src="assets/images/ts.svg" alt="TypeScript" class="tech-icon">
@@ -102,7 +122,13 @@
         <h3>AI Integration</h3>
         <p>Exploring the cutting edge of AI technology to solve real business challenges. Currently prototyping and developing custom AI solutions, from automated content generation to intelligent learning systems. Let's collaborate to discover how AI can enhance your business processes and create new opportunities.</p>
       </div>
-      <div class="tech-stack" style="padding-top: 1.5rem;">
+      <div class="button-container">
+        <button (click)="openEmail('consulting')" class="service-button ai-button">
+          <i class="fas fa-robot"></i>
+          <span>Tech Consulting</span>
+        </button>
+      </div>
+      <div class="tech-stack">
         <img src="assets/images/python.svg" alt="Python" class="tech-icon">
         <img src="assets/images/django-icon-svgrepo-com.svg" alt="Django" class="tech-icon">
         <img src="assets/images/openai-svgrepo-com.svg" alt="OpenAI" class="tech-icon">
