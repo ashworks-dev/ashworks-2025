@@ -35,7 +35,10 @@
           <div class="subcategory" *ngFor="let subcategory of skill.subcategories">
             <h4>{{ subcategory.name }}</h4>
             <div class="skill-tags">
-              <span class="skill-tag" *ngFor="let item of subcategory.items">{{ item }}</span>
+              <div *ngFor="let item of subcategory.items" class="skill-tag">
+                {{ item.split('(')[0] }}
+                <span *ngIf="item.includes('(')" class="years">{{ item.split('(')[1].replace(')', '') }}</span>
+              </div>
             </div>
           </div>
         </div>

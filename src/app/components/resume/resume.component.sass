@@ -253,20 +253,30 @@
         gap: 0.5rem
 
         .skill-tag
-          background: rgba(96, 165, 250, 0.05)
-          color: #f8fafc
+          display: inline-flex
+          align-items: center
           padding: 0.35rem 0.8rem
-          border-radius: 1rem
-          font-size: 0.9rem
-          border: 1px solid rgba(96, 165, 250, 0.1)
-          transition: all 0.2s ease
-          font-weight: 500
-          
+          margin: 0.15rem
+          background: rgba(255, 255, 255, 0.05)
+          border: 1px solid rgba(255, 255, 255, 0.1)
+          border-radius: 1.5rem
+          font-size: 0.85rem
+          transition: all 0.3s ease
+          cursor: pointer
+          gap: 0.35rem
+
           &:hover
-            background: rgba(96, 165, 250, 0.1)
+            background: rgba(255, 255, 255, 0.1)
             transform: translateY(-1px)
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05)
-            border-color: rgba(96, 165, 250, 0.2)
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+
+          .years
+            font-size: 0.75rem
+            color: rgba(255, 255, 255, 0.6)
+            background: rgba(255, 255, 255, 0.1)
+            padding: 0.1rem 0.4rem
+            border-radius: 0.8rem
+            margin-left: 0.15rem
 
 .projects-container
   display: grid

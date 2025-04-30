@@ -125,7 +125,7 @@ export class ResumeComponent implements OnInit {
       subcategories: [
         {
           name: 'Languages',
-          items: ['TypeScript/JavaScript', 'Python', 'PHP', 'HTML/CSS/SASS']
+          items: ['TypeScript/JavaScript (20y)', 'Python (3y)', 'PHP (2y)', 'HTML/CSS/SASS (25y)']
         },
         {
           name: 'Frameworks',
@@ -162,7 +162,7 @@ export class ResumeComponent implements OnInit {
         },
         {
           name: 'Post-Production',
-          items: ['Davinci Resolve', 'Premiere Pro', 'After Effects']
+          items: ['Davinci Resolve (8y)', 'Premiere Pro (15y)', 'After Effects']
         },
         {
           name: 'AI Media',
@@ -175,7 +175,7 @@ export class ResumeComponent implements OnInit {
       subcategories: [
         {
           name: 'Design',
-          items: ['Figma', 'Webflow', 'Adobe Creative Suite', 'Canva', 'Affinity Designer', 'Affinity Photo']
+          items: ['Figma', 'Webflow', 'Adobe Creative Suite (15y)', 'Canva', 'Affinity Designer', 'Affinity Photo', 'Blender']
         },
         {
           name: 'Development',
@@ -198,6 +198,29 @@ export class ResumeComponent implements OnInit {
   ];
 
   projects: Project[] = [
+    {
+      title: 'National Australia Bank (NAB)',
+      description: 'Long-term collaboration (2018-2023) delivering both video production and custom web development solutions. Video production focused on customer relations content, including: professional actor-based scenarios, initiative launches, and a comprehensive 360° virtual tour of NAB\'s new Sydney offices. Web development focused on creating custom applications integrated with NAB\'s SharePoint environment, including: interactive training portals, compliance tracking systems, and team collaboration tools. Projects required strict security compliance, complex SharePoint integration, and adherence to NAB\'s design and development standards.',
+      period: '2018-2023',
+      technologies: [
+        { icon: 'fas fa-video', name: 'Video Production' },
+        { icon: 'fas fa-theater-masks', name: 'Acting' },
+        { icon: 'fas fa-camera', name: '360° Video' },
+        { icon: 'fab fa-angular', name: 'Angular' },
+        { icon: 'fas fa-share-alt', name: 'SharePoint' }
+      ]
+    },
+    {
+      title: 'Powercor Safety Training Series',
+      description: 'Comprehensive safety training video series (2021-2023) for Powercor, Australia\'s largest electricity distribution company. Produced 50+ safety training videos covering critical topics including: high-voltage safety procedures, emergency response protocols, and field operation guidelines. Projects involved complex technical scenarios, safety demonstrations, and on-location filming at various power stations and field sites. Content included both procedural training and safety awareness videos, with a focus on maintaining strict safety standards while delivering engaging training content.',
+      period: '2021-2023',
+      technologies: [
+        { icon: 'fas fa-video', name: 'Video Production' },
+        { icon: 'fas fa-hard-hat', name: 'Safety Training' },
+        { icon: 'fas fa-bolt', name: 'Technical' },
+        { icon: 'fas fa-camera', name: 'On-location' }
+      ]
+    },
     {
       title: 'AI Courseware Generator',
       description: 'Developing an AI-powered system for Coles that automatically generates interactive training modules in the Adapt Framework. The system processes existing eLearning content or AI-generated storyboards through a sophisticated pipeline: initially using LLMs to parse and generate intermediate data files, followed by an extensive storyboard-to-courseware processor. Features include review capabilities, block and text editing, image upload functionality, and comprehensive user and process/build queue management. The final output can be previewed within the tool or exported to the Adapt Authoring tool for further refinement.',
@@ -232,12 +255,13 @@ export class ResumeComponent implements OnInit {
     },
     {
       title: 'ACU Melbourne 360 Tour',
-      description: 'Combined on-location presenter video and 360 footage to create an immersive virtual tour of the ACU Melbourne campus. The project integrated high-quality video production with interactive 360° photography to provide an engaging experience for prospective students.',
+      description: 'Created an immersive virtual tour showcasing both the ACU Melbourne campus and key tourist locations throughout Melbourne CBD, designed to attract international students during COVID-19 travel restrictions. The project combined on-location presenter video with 360° photography, shot during challenging pandemic conditions. The tour highlighted campus facilities, student life, and Melbourne\'s vibrant city culture, providing prospective international students with a comprehensive virtual experience of both university life and the surrounding city. The project played a crucial role in student recruitment during a period when physical campus visits were impossible.',
       period: '2020',
       technologies: [
         { icon: 'fas fa-camera', name: '360° Video' },
         { icon: 'fas fa-video', name: 'Video Production' },
-        { icon: 'fas fa-map-marked-alt', name: 'Virtual Tour' }
+        { icon: 'fas fa-map-marked-alt', name: 'Virtual Tour' },
+        { icon: 'fas fa-graduation-cap', name: 'Education' }
       ]
     },
     {
@@ -263,22 +287,25 @@ export class ResumeComponent implements OnInit {
       ]
     },
     {
-      title: '360 Virtual Tours',
-      description: 'Photographer and developer of a custom built 360 panoramic onboarding solution for Coles, NAB, Suncorp, ACU, Monash and Dept of Health.',
+      title: 'Interactive 360 Platform',
+      description: 'Developed a custom Angular and Three.js-based 360° panoramic platform that served as the foundation for multiple client projects including Coles, NAB, Suncorp, ACU, Monash and Dept of Health. The framework featured interactive hotspots, custom navigation, and seamless integration with client branding. Future development plans include integration of 3D models and alpha-channel video for embedded presenters, enhancing the immersive experience. The platform demonstrated the ability to scale across different industries while maintaining consistent quality and user experience.',
       period: '2020-2023',
       technologies: [
         { icon: 'fas fa-camera', name: '360° Photography' },
+        { icon: 'fab fa-angular', name: 'Angular' },
+        { icon: 'fas fa-cube', name: 'Three.js' },
         { icon: 'fas fa-code', name: 'Web Development' }
       ]
     },
     {
       title: 'Respect Now Always',
-      description: 'iOS, Android & Web application for Monash University and Western Sydney University. Built so it could be rebranded to other universities to promote a safe campus.',
+      description: 'Developed a web-based application for Monash University and Western Sydney University to promote campus safety, wrapped in iOS and Android native containers. The project gained significant media attention and was promoted across various news outlets. The application featured interactive safety resources, emergency contact information, and reporting tools. Built with a responsive web application core, then packaged for mobile platforms to ensure consistent functionality across all devices while maintaining native app store presence.',
       period: '2022',
       technologies: [
         { icon: 'fab fa-apple', name: 'iOS' },
         { icon: 'fab fa-android', name: 'Android' },
-        { icon: 'fas fa-mobile-alt', name: 'Mobile' }
+        { icon: 'fas fa-mobile-alt', name: 'Mobile' },
+        { icon: 'fas fa-newspaper', name: 'Media Coverage' }
       ]
     },
     {
@@ -292,32 +319,47 @@ export class ResumeComponent implements OnInit {
     },
     {
       title: 'Suncorp Career Compass',
-      description: 'Web based tool (Flash) to compare the skills of various job roles using interactive charts and data. Staff would compare their current role to a future role and the app would compile a catalogue of training assets required to pursue the role.',
+      description: 'Developed a sophisticated web-based career development tool (Flash) that processed extensive data entirely in the browser: nearly 500 job roles and 800 training resources stored in a flat database file. The application featured interactive charts and data visualization to help staff compare their current role with potential future roles. All data processing, filtering, and visualization was handled client-side with no backend requirements, demonstrating efficient browser-based data management. The tool automatically compiled personalized training catalogs based on role comparisons, helping employees plan their career progression.',
       period: '2014',
       technologies: [
         { icon: 'fas fa-chart-line', name: 'Charts' },
+        { icon: 'fas fa-database', name: 'Client-side DB' },
         { icon: 'fas fa-code', name: 'Web App' },
         { icon: 'fas fa-users', name: 'HR' }
       ]
     },
     {
-      title: 'Dr. MCQ',
-      description: 'Native iOS and Android app for training medical registrars to sit their exam. Only reached prototype stage.',
-      period: '2012',
+      title: 'AMF Cyberparent',
+      description: 'Developed a comprehensive anti-bullying platform for the Australian Multicultural Foundation, consisting of 15 iOS and Android mobile applications in multiple languages, each with supporting web versions. The project involved converting a web-based application into native mobile platforms, requiring careful management of multiple app store submissions and updates. Handled complex logistics of publishing and maintaining applications across different languages and platforms, ensuring consistent user experience and content delivery. The platform provided resources and tools to help parents and educators address online bullying in culturally sensitive ways.',
+      period: '2016',
       technologies: [
-        { icon: 'fas fa-mobile-alt', name: 'Mobile' },
-        { icon: 'fas fa-graduation-cap', name: 'eLearning' },
-        { icon: 'fas fa-award', name: 'Award Winner' }
+        { icon: 'fab fa-apple', name: 'iOS' },
+        { icon: 'fab fa-android', name: 'Android' },
+        { icon: 'fas fa-globe', name: 'Multilingual' },
+        { icon: 'fas fa-mobile-alt', name: 'Mobile' }
       ]
     },
     {
       title: 'Budda Jitcha & You Can Work',
-      description: 'Flash based e-learning each consisting of over 40 hours of 3D avatars, video and puzzles.',
+      description: 'Developed two comprehensive Flash-based e-learning courses, each containing over 40 hours of interactive content. Featured custom-built 3D avatars, professional voice acting, and interactive puzzles. The courses were designed to teach Indigenous Australians about workplace safety and employment opportunities, combining cultural sensitivity with engaging learning experiences. Included branching scenarios, interactive assessments, and progress tracking. The project won the Life Long Learning Award in 2011 for its innovative approach to Indigenous education.',
       period: '2011',
       technologies: [
         { icon: 'fas fa-gamepad', name: 'Games' },
         { icon: 'fas fa-cube', name: '3D' },
-        { icon: 'fas fa-user-circle', name: 'Avatars' }
+        { icon: 'fas fa-user-circle', name: 'Avatars' },
+        { icon: 'fas fa-graduation-cap', name: 'eLearning' }
+      ]
+    },
+    {
+      title: 'Department of Health',
+      description: 'Comprehensive food safety and health education project (2020-2023) delivering multiple content types: food safety training videos, interactive 360° virtual tours of commercial kitchens using a custom-built platform, and a two-part documentary series following environmental health officers in the field. During COVID-19, produced rapid-response hand hygiene training videos. The project combined technical video production with interactive web development, creating an engaging learning experience for food safety professionals and the public.',
+      period: '2020-2023',
+      technologies: [
+        { icon: 'fas fa-video', name: 'Video Production' },
+        { icon: 'fas fa-camera', name: '360° Video' },
+        { icon: 'fas fa-utensils', name: 'Food Safety' },
+        { icon: 'fas fa-code', name: 'Web Platform' },
+        { icon: 'fas fa-film', name: 'Documentary' }
       ]
     }
   ];
@@ -394,7 +436,7 @@ export class ResumeComponent implements OnInit {
     {
       text: '"Ashley has been a key partner in our digital learning initiatives, consistently delivering high-quality projects across our organization. Through his work with Liberate Learning, he has produced numerous video projects across multiple states in Australia, from interactive eLearning modules to immersive 360° training environments. His recent work in AI-driven learning solutions, particularly his development of an AI-powered system for automated courseware generation in the Adapt Framework, has brought innovative approaches to our training programs. His ability to manage complex logistics while maintaining consistent quality, combined with his forward-thinking approach to emerging technologies, has made him an invaluable resource for our learning and development needs."',
       author: 'Siva Kulasingam',
-      position: 'Digital Learning Manager | Culture & Capability, People & Culture',
+      position: 'Digital Learning Manager | Culture & Capability, People & Culture | Coles Supermarkets',
       email: 'Sivayogan.Kulasingam@coles.com.au'
     }
   ];
