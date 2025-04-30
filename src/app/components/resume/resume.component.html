@@ -22,12 +22,20 @@
     </div>
   </header>
 
-  <section class="resume-section summary-section">
-    <p class="summary-text">{{ summary }}</p>
+  <section class="resume-section">
+    <h2 class="summary-title">TL;DR</h2>
+    <div class="summary">
+      {{ summary }}
+      <div class="hashtags">
+        <span class="hashtag">#AvailableForContractWork</span>
+        <span class="hashtag">#WebDeveloper</span>
+        <span class="hashtag">#VideoProduction</span>
+      </div>
+    </div>
   </section>
 
   <section class="resume-section">
-    <h2>Skills</h2>
+    <h2 class="skills-title">Skills</h2>
     <div class="skills-container">
       <div class="skill-category" *ngFor="let skill of skills">
         <h3>{{ skill.category }}</h3>
@@ -47,7 +55,7 @@
   </section>
 
   <section class="resume-section">
-    <h2>Career Experience</h2>
+    <h2 class="experience-title">Career Experience</h2>
     <div class="experience-item" *ngFor="let exp of experiences">
       <div class="experience-header">
         <h3>{{ exp.position }}</h3>
@@ -68,7 +76,7 @@
   </section>
 
   <section class="resume-section">
-    <h2>Key Projects & Highlights</h2>
+    <h2 class="projects-title">Key Projects & Highlights</h2>
     <div class="projects-container">
       <div class="project-item" *ngFor="let project of projects">
         <div class="project-header">
@@ -91,7 +99,7 @@
   </section>
 
   <section class="resume-section">
-    <h2>Technical R&D Fun</h2>
+    <h2 class="rnd-title">Technical R&D Fun</h2>
     <div class="projects-container">
       <div class="project-item" *ngFor="let project of rndProjects">
         <div class="project-header">
@@ -110,7 +118,7 @@
   </section>
 
   <section class="resume-section">
-    <h2>About Me</h2>
+    <h2 class="about-title">About Me</h2>
     <div class="about-me-content">
       <div class="about-summary">
         <p>{{ aboutMe.summary }}</p>
@@ -158,14 +166,16 @@
 
         <div class="career-objectives">
           <h3>Career Objectives</h3>
-          <p>{{ aboutMe.careerObjectives }}</p>
+          <p>
+            Having enjoyed a fulfilling career so far, I remain actively engaged in seeking innovative projects, particularly those leveraging emerging AI technologies. While video production remains a separate service offering, I'm particularly interested in opportunities that combine both technical development and video production capabilities. Thriving in hands-on technical roles where I can experiment and innovate, bringing a <i class="fas fa-flask"></i> 'mad scientist' approach to solving complex problems. Comfortable collaborating with specialized teams, able to understand and discuss technical concepts across different domains while focusing on my core expertise. Focused on delivering innovative, practical solutions that balance technical excellence with business requirements. Preference for remote work arrangements that allow for flexible engagement while maintaining high-quality delivery.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="resume-section">
-    <h2>Honors & Awards</h2>
+    <h2 class="awards-title">Honors & Awards</h2>
     <div class="awards-list">
       <div class="award-item" *ngFor="let award of awards">
         <i class="fas fa-star"></i> {{ award }}
@@ -173,18 +183,22 @@
     </div>
   </section>
 
-  <section class="resume-section endorsement-section">
-    <h2>Endorsements</h2>
-    <div class="endorsement-content" *ngFor="let endorsement of endorsements">
-      <blockquote>
-        <p>{{ endorsement.text }}</p>
-        <footer>
-          <strong>{{ endorsement.author }}</strong>
-          <span>{{ endorsement.position }}</span>
-          <a href="mailto:{{ endorsement.email }}">{{ endorsement.email }}</a>
-          <span *ngIf="endorsement.phone">{{ endorsement.phone }}</span>
-        </footer>
-      </blockquote>
+  <section class="resume-section">
+    <h2 class="endorsement-title">Endorsements</h2>
+    <div class="endorsements-container">
+      <div class="endorsement-card" *ngFor="let endorsement of endorsements">
+        <div class="quote-content">
+          <p>{{ endorsement.text }}</p>
+        </div>
+        <div class="endorser-info">
+          <div class="endorser-name">{{ endorsement.author }}</div>
+          <div class="endorser-title">{{ endorsement.position }}</div>
+          <div class="endorser-contact">
+            <a href="mailto:{{ endorsement.email }}" class="email-link">{{ endorsement.email }}</a>
+            <span *ngIf="endorsement.phone" class="phone">{{ endorsement.phone }}</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </div> 

@@ -74,7 +74,15 @@
         margin-left: 0.5rem
 
 .summary-section
-  .summary-text
+  h2
+    color: #00b4d8
+    font-size: 2rem
+    margin-bottom: 1rem
+    font-weight: 700
+    letter-spacing: -0.5px
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)
+
+  .summary
     font-size: 1.2rem
     line-height: 1.7
     color: #94a3b8
@@ -85,6 +93,32 @@
     background: rgba(148, 163, 184, 0.05)
     border-radius: 12px
     border: 1px solid rgba(148, 163, 184, 0.1)
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+    transition: all 0.3s ease
+
+    &:hover
+      transform: translateY(-2px)
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15)
+      border-color: #60a5fa
+
+    .hashtags
+      display: flex
+      flex-wrap: wrap
+      gap: 0.8rem
+      margin-top: 1rem
+      padding-top: 1rem
+      border-top: 1px solid rgba(96, 165, 250, 0.2)
+
+      .hashtag
+        font-size: 0.9rem
+        color: #60a5fa
+        font-weight: 500
+        letter-spacing: 0.5px
+        transition: all 0.2s ease
+
+        &:hover
+          color: #93c5fd
+          transform: translateY(-1px)
 
 .resume-section
   margin-bottom: 3rem
@@ -92,21 +126,36 @@
 
   h2
     font-size: 1.75rem
-    color: var(--primary-color)
     margin-bottom: 1.5rem
     font-weight: 600
     letter-spacing: -0.5px
     display: flex
     align-items: center
-    gap: 0.75rem
+    padding-left: 0
 
-    &:before
-      content: ''
-      display: inline-block
-      width: 4px
-      height: 1.75rem
-      background: var(--primary-color)
-      border-radius: 2px
+  .summary-title
+    color: #00b4d8
+
+  .skills-title
+    color: #2ecc71
+
+  .experience-title
+    color: #9b59b6
+
+  .projects-title
+    color: #e67e22
+
+  .rnd-title
+    color: #e74c3c
+
+  .about-title
+    color: #3498db
+
+  .awards-title
+    color: #f1c40f
+
+  .endorsement-title
+    color: #1abc9c
 
 .experience-item
   margin-bottom: 3rem
@@ -206,28 +255,40 @@
   display: grid
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
   gap: 2rem
+  position: relative
 
-.skill-category
-  margin-bottom: 2rem
-  
-  h3
-    font-size: 1.1rem
-    color: #60a5fa
-    margin-bottom: 1.5rem
-    font-weight: 600
-    display: flex
-    align-items: center
-    gap: 0.5rem
-    text-transform: uppercase
-    letter-spacing: 0.5px
-
-    &:before
+  .skill-category
+    margin-bottom: 2rem
+    position: relative
+    
+    &:not(:last-child)::after
       content: ''
-      display: inline-block
-      width: 3px
-      height: 1.1rem
-      background: #60a5fa
-      border-radius: 1.5px
+      position: absolute
+      right: -1rem
+      top: 0
+      bottom: 0
+      width: 1px
+      background: linear-gradient(to bottom, rgba(96, 165, 250, 0.1), rgba(96, 165, 250, 0.3), rgba(96, 165, 250, 0.1))
+      opacity: 0.5
+
+    h3
+      font-size: 1.1rem
+      color: #60a5fa
+      margin-bottom: 1.5rem
+      font-weight: 600
+      display: flex
+      align-items: center
+      gap: 0.5rem
+      text-transform: uppercase
+      letter-spacing: 0.5px
+
+      &:before
+        content: ''
+        display: inline-block
+        width: 3px
+        height: 1.1rem
+        background: #60a5fa
+        border-radius: 1.5px
 
   .subcategories
     display: flex
@@ -250,13 +311,13 @@
       .skill-tags
         display: flex
         flex-wrap: wrap
-        gap: 0.5rem
+        gap: 0.3rem
 
         .skill-tag
           display: inline-flex
           align-items: center
-          padding: 0.35rem 0.8rem
-          margin: 0.15rem
+          padding: 0.25rem 0.6rem
+          margin: 0.1rem
           background: rgba(255, 255, 255, 0.05)
           border: 1px solid rgba(255, 255, 255, 0.1)
           border-radius: 1.5rem
@@ -274,7 +335,7 @@
             font-size: 0.75rem
             color: rgba(255, 255, 255, 0.6)
             background: rgba(255, 255, 255, 0.1)
-            padding: 0.1rem 0.4rem
+            padding: 0.1rem 0.3rem
             border-radius: 0.8rem
             margin-left: 0.15rem
 
@@ -516,44 +577,73 @@
       font-size: 1.1rem
       font-weight: 500
 
-.endorsement-section
-  .endorsement-content
-    padding: 2rem
-    background: rgba(148, 163, 184, 0.05)
-    border-radius: 12px
-    border: 1px solid rgba(148, 163, 184, 0.1)
+.endorsements-container
+  display: flex
+  flex-direction: column
+  gap: 2rem
 
-    blockquote
-      margin: 0
-      padding: 0
-      border: none
-      font-style: italic
-      color: #94a3b8
-      line-height: 1.6
+.endorsement-card
+  background: #1e293b
+  border-radius: 12px
+  border-left: 4px solid #3b82f6
+  overflow: hidden
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+  transition: transform 0.2s ease, box-shadow 0.2s ease
+
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15)
+
+  .quote-content
+    padding: 2rem 2rem 1.5rem 2rem
+    
+    p
+      color: #f8fafc
       font-size: 1.1rem
+      line-height: 1.8
+      margin: 0
+      position: relative
 
-      p
-        margin-bottom: 1.5rem
+  .endorser-info
+    background: rgba(59, 130, 246, 0.1)
+    padding: 1.5rem 2rem
+    border-top: 1px solid rgba(59, 130, 246, 0.2)
 
-      footer
-        display: flex
-        flex-direction: column
-        gap: 0.3rem
+    .endorser-name
+      color: #f8fafc
+      font-size: 1.1rem
+      font-weight: 600
+      margin-bottom: 0.5rem
 
-        strong
-          color: #f8fafc
-          font-size: 1.1rem
+    .endorser-title
+      color: #94a3b8
+      font-size: 1rem
+      margin-bottom: 1rem
 
-        span
-          color: #94a3b8
+    .endorser-contact
+      display: flex
+      gap: 1rem
+      align-items: center
+      flex-wrap: wrap
 
-        a
-          color: #60a5fa
-          text-decoration: none
-          transition: color 0.2s ease
+      .email-link
+        display: inline-flex
+        align-items: center
+        background: #3b82f6
+        color: #ffffff
+        text-decoration: none
+        padding: 0.5rem 1rem
+        border-radius: 6px
+        font-size: 0.95rem
+        font-weight: 500
+        transition: background 0.2s ease
 
-          &:hover
-            color: #93c5fd
+        &:hover
+          background: #60a5fa
+
+      .phone
+        color: #94a3b8
+        font-size: 0.95rem
 
 .about-me-content
   .personal-background
@@ -679,6 +769,26 @@
       font-size: 1.1rem
       line-height: 1.6
       color: #94a3b8
+
+      i.fa-flask
+        color: #60a5fa
+        margin: 0 0.3rem
+        font-size: 1.2rem
+        vertical-align: middle
+
+.summary
+  margin-bottom: 2rem
+  line-height: 1.6
+  color: var(--text-color)
+  font-size: 1.1rem
+
+  .hashtag
+    display: block
+    margin-top: 0.5rem
+    font-size: 0.9rem
+    color: var(--accent-color)
+    font-weight: 500
+    letter-spacing: 0.5px
 
 @media (max-width: 768px)
   .resume-container
