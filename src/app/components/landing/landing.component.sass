@@ -540,13 +540,13 @@
       flex-grow: 1
       
       h4
-        color: #ffffff
+        color: rgba(255, 255, 255, 0.9)
         margin: 0 0 0.5rem
         font-size: 1.25rem
         font-weight: 600
       
       p
-        color: rgba(255, 255, 255, 0.9)
+        color: rgba(255, 255, 255, 0.7)
         margin: 0
         line-height: 1.6
 
@@ -747,4 +747,16 @@
       box-shadow: 0 2px 8px rgba(45, 212, 191, 0.2)
 
     &:focus
-      box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.3) 
+      box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.3)
+
+.project-card
+  &.additional-card
+    display: none
+    opacity: 0
+    transform: translateY(20px)
+    transition: all 0.3s ease
+
+    &.show
+      display: block
+      opacity: 1
+      transform: translateY(0) 
