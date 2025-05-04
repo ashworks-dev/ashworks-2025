@@ -20,6 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "/",
             "outputPath": "dist/frameworks-site",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -29,7 +30,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets/",
-              "src/assets/images"
+              "src/assets/images",
+              "src/_redirects"
             ],
             "styles": [
               "src/styles.sass",
@@ -50,8 +52,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "20kb",
+                  "maximumError": "40kb"
                 }
               ],
               "fileReplacements": [

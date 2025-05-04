@@ -30,4 +30,9 @@ export class NavComponent {
   printResume() {
     window.print();
   }
+
+  openClientLogin() {
+    // For now, just navigate to /client-login
+    this.router.navigate(['/client-login']);
+  }
 } 

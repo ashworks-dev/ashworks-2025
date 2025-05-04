@@ -32,11 +32,28 @@ $print-line-height: 1.4
       margin: 0 0 0.5rem 0
       line-height: 1.2
 
-    h2
-      font-size: 1.5rem
-      color: $light-gray
-      margin: 0 0 0.5rem 0
-      font-weight: normal
+    .subheading
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 0.5rem
+
+      h2
+        font-size: 1.5rem
+        color: $light-gray
+        margin: 0
+        font-weight: normal
+
+      .location
+        display: flex
+        align-items: center
+        gap: 0.5rem
+        color: $light-gray
+        font-size: 0.85rem
+
+        i
+          color: $primary-color
+          font-size: 0.85rem
 
     .punchline
       font-size: 1.1rem

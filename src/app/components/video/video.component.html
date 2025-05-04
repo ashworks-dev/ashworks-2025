@@ -565,52 +565,62 @@
       </button>
     </div>
     
-    <form (ngSubmit)="onSubmit($event)" class="quote-form">
-      <!-- Replace this with your actual access key from Web3Forms -->
-      <input type="hidden" name="access_key" value="70d8ed64-02eb-406f-8097-102d11df246d">
-      <input type="hidden" name="redirect" value="https://frameworks.video/thank-you">
-      
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required placeholder="Your name">
-      </div>
-      
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="your@email.com">
-      </div>
-      
-      <div class="form-group">
-        <label for="phone">Phone (optional)</label>
-        <input type="tel" id="phone" name="phone" placeholder="Your phone number">
-      </div>
-      
-      <div class="form-group">
-        <label for="project_type">Project Type</label>
-        <select id="project_type" name="project_type" required>
-          <option value="">Select a project type</option>
-          <option value="Corporate Video">Corporate Video</option>
-          <option value="Training Video">Training Video</option>
-          <option value="Marketing Content">Marketing Content</option>
-          <option value="360° Video">360° Video</option>
-          <option value="Documentary">Documentary</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      
-      <div class="form-group">
-        <label for="message">Project Details</label>
-        <textarea id="message" name="message" required placeholder="Tell us about your project, timeline, and any specific requirements"></textarea>
-      </div>
-      
-      <!-- Honeypot field to prevent spam -->
-      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-      
-      <button type="submit" class="submit-button">
-        <i class="fas fa-paper-plane"></i>
-        Send Request
+    <div *ngIf="!showSuccessMessage">
+      <form (ngSubmit)="onSubmit($event)" class="quote-form">
+        <input type="hidden" name="access_key" value="70d8ed64-02eb-406f-8097-102d11df246d">
+        
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+        </div>
+        
+        <div class="form-group">
+          <label for="project_type">Project Type</label>
+          <select id="project_type" name="project_type" required>
+            <option value="">Select a project type</option>
+            <option value="Corporate Video">Corporate Video</option>
+            <option value="Training Video">Training Video</option>
+            <option value="Marketing Content">Marketing Content</option>
+            <option value="360° Video">360° Video</option>
+            <option value="Documentary">Documentary</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Project Details</label>
+          <textarea id="message" name="message" required placeholder="Tell us about your project, timeline, and any specific requirements"></textarea>
+        </div>
+        
+        <!-- Honeypot field to prevent spam -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        
+        <button type="submit" class="submit-button">
+          <i class="fas fa-paper-plane"></i>
+          Send Request
+        </button>
+      </form>
+    </div>
+
+    <div *ngIf="showSuccessMessage" class="success-message">
+      <i class="fas fa-check-circle"></i>
+      <h3>Thank You!</h3>
+      <p>Your message has been sent successfully. We'll get back to you shortly.</p>
+      <button class="submit-button" (click)="closeQuoteForm()">
+        <i class="fas fa-times"></i>
+        Close
       </button>
-    </form>
+    </div>
   </div>
 </div>
 
@@ -624,38 +634,49 @@
       </button>
     </div>
     
-    <form (ngSubmit)="onShowreelSubmit($event)" class="quote-form">
-      <input type="hidden" name="access_key" value="70d8ed64-02eb-406f-8097-102d11df246d">
-      <input type="hidden" name="redirect" value="https://frameworks.video/thank-you">
-      
-      <div class="form-group">
-        <label for="showreel_name">Name</label>
-        <input type="text" id="showreel_name" name="name" required placeholder="Your name">
-      </div>
-      
-      <div class="form-group">
-        <label for="showreel_email">Email</label>
-        <input type="email" id="showreel_email" name="email" required placeholder="your@email.com">
-      </div>
-      
-      <div class="form-group">
-        <label for="showreel_company">Company (optional)</label>
-        <input type="text" id="showreel_company" name="company" placeholder="Your company name">
-      </div>
-      
-      <div class="form-group">
-        <label for="showreel_message">Message (optional)</label>
-        <textarea id="showreel_message" name="message" placeholder="Tell us about your interest in our work"></textarea>
-      </div>
-      
-      <!-- Honeypot field to prevent spam -->
-      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-      
-      <button type="submit" class="submit-button">
-        <i class="fas fa-film"></i>
-        Request Access
+    <div *ngIf="!showShowreelSuccessMessage">
+      <form (ngSubmit)="onShowreelSubmit($event)" class="quote-form">
+        <input type="hidden" name="access_key" value="70d8ed64-02eb-406f-8097-102d11df246d">
+        
+        <div class="form-group">
+          <label for="showreel_name">Name</label>
+          <input type="text" id="showreel_name" name="name" required placeholder="Your name">
+        </div>
+        
+        <div class="form-group">
+          <label for="showreel_email">Email</label>
+          <input type="email" id="showreel_email" name="email" required placeholder="your@email.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="showreel_company">Company (optional)</label>
+          <input type="text" id="showreel_company" name="company" placeholder="Your company name">
+        </div>
+        
+        <div class="form-group">
+          <label for="showreel_message">Message (optional)</label>
+          <textarea id="showreel_message" name="message" placeholder="Tell us about your interest in our work"></textarea>
+        </div>
+        
+        <!-- Honeypot field to prevent spam -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        
+        <button type="submit" class="submit-button">
+          <i class="fas fa-film"></i>
+          Request Access
+        </button>
+      </form>
+    </div>
+
+    <div *ngIf="showShowreelSuccessMessage" class="success-message">
+      <i class="fas fa-check-circle"></i>
+      <h3>Thank You!</h3>
+      <p>Your message has been sent successfully. We'll get back to you shortly.</p>
+      <button class="submit-button" (click)="closeShowreelForm()">
+        <i class="fas fa-times"></i>
+        Close
       </button>
-    </form>
+    </div>
   </div>
 </div>
 
@@ -2018,6 +2039,19 @@ h3.service-title.production-title {
   .modal-header h3 {
     font-size: 1.5rem;
   }
+}
+
+.success-message {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.success-message i {
+  margin-right: 0.5rem;
 }
 </style>
 

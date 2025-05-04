@@ -10,13 +10,15 @@
   <!-- Header -->
   <header class="resume-header">
     <h1>Ashley Norriss</h1>
-    <h2>Senior Web Developer / Videographer</h2>
-    <div class="punchline">Specializing in eLearning solutions, video production, and emerging technologies</div>
-    <div class="contact-info">
-      <div class="contact-item">
+    <div class="subheading">
+      <h2>Senior Web Developer / Videographer</h2>
+      <div class="location">
         <i class="fas fa-map-marker-alt"></i>
         {{ contact.location }}
       </div>
+    </div>
+    <div class="punchline">Specializing in eLearning solutions, video production, and emerging technologies</div>
+    <div class="contact-info">
       <div class="contact-item">
         <i class="fas fa-phone"></i>
         <a href="tel:{{ contact.phone }}">{{ contact.phone }}</a>
@@ -30,8 +32,8 @@
         <a href="{{ contact.linkedin }}" target="_blank">LinkedIn</a>
       </div>
       <div class="contact-item">
-        <i class="fas fa-briefcase"></i>
-        <a href="{{ contact.portfolio }}" target="_blank">Portfolio</a>
+        <i class="fas fa-globe"></i>
+        <a href="https://framedvideo.com" target="_blank">framedvideo.com</a>
       </div>
     </div>
   </header>

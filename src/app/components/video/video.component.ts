@@ -27,6 +27,8 @@ export class VideoComponent implements OnInit {
   showAllProjects = false;
   showQuoteModal = false;
   showShowreelModal = false;
+  showSuccessMessage = false;
+  showShowreelSuccessMessage = false;
   videos: Video[] = [
     {
       id: 0,
@@ -143,6 +145,7 @@ export class VideoComponent implements OnInit {
 
   closeQuoteForm(): void {
     this.showQuoteModal = false;
+    this.showSuccessMessage = false;
     document.body.style.overflow = 'auto'; // Restore scrolling
   }
 
@@ -213,8 +216,8 @@ export class VideoComponent implements OnInit {
     .then(response => response.json())
     .then(data => {
       if (data.success) {
-        this.closeQuoteForm();
-        this.router.navigate(['/thank-you']);
+        this.showSuccessMessage = true;
+        form.reset();
       } else {
         console.error('Form submission failed:', data);
         alert('There was an error submitting the form. Please try again.');
@@ -233,6 +236,7 @@ export class VideoComponent implements OnInit {
 
   closeShowreelForm(): void {
     this.showShowreelModal = false;
+    this.showShowreelSuccessMessage = false;
     document.body.style.overflow = 'auto';
   }
 
@@ -248,8 +252,8 @@ export class VideoComponent implements OnInit {
     .then(response => response.json())
     .then(data => {
       if (data.success) {
-        this.closeShowreelForm();
-        this.router.navigate(['/thank-you']);
+        this.showShowreelSuccessMessage = true;
+        form.reset();
       } else {
         console.error('Form submission failed:', data);
         alert('There was an error submitting the form. Please try again.');

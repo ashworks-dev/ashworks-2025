@@ -6,15 +6,15 @@
   <div class="nav-links">
     <a routerLink="/video" routerLinkActive="active">
       <i class="fas fa-video"></i>
-      Video Services
-    </a>
-    <a routerLink="/client-login" class="client-login-button">
-      <i class="fas fa-user"></i>
-      Client Login
+      <span>Video Services</span>
     </a>
     <button *ngIf="isLinkedInPage" class="print-button" (click)="printResume()">
       <i class="fas fa-print"></i>
       Print Resume
+    </button>
+    <button class="client-login-button" (click)="openClientLogin()">
+      <i class="fas fa-user"></i>
+      <span>Client Login</span>
     </button>
   </div>
 </nav> 

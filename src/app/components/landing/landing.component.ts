@@ -12,6 +12,7 @@ export class LandingComponent implements OnInit {
   videoError = false;
   showAllProjects = false;
   showQuoteModal = false;
+  showSuccessMessage = false;
 
   constructor(private router: Router) {}
 
@@ -63,6 +64,7 @@ export class LandingComponent implements OnInit {
 
   closeQuoteForm(): void {
     this.showQuoteModal = false;
+    this.showSuccessMessage = false;
     document.body.style.overflow = 'auto';
   }
 
@@ -78,8 +80,8 @@ export class LandingComponent implements OnInit {
     .then(response => response.json())
     .then(data => {
       if (data.success) {
-        this.closeQuoteForm();
-        this.router.navigate(['/thank-you']);
+        this.showSuccessMessage = true;
+        form.reset();
       } else {
         console.error('Form submission failed:', data);
         alert('There was an error submitting the form. Please try again.');

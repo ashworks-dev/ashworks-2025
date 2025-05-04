@@ -1098,3 +1098,82 @@
         background: linear-gradient(135deg, #3D8EFF 0%, #1DC4AF 100%)
         transform: translateY(-2px)
         box-shadow: 0 4px 12px rgba(76, 158, 255, 0.3) 
+
+.submit-button
+  background: linear-gradient(135deg, #4C9EFF 0%, #2DD4BF 100%)
+  color: white
+  border: none
+  border-radius: 6px
+  padding: 1rem
+  font-size: 1rem
+  font-weight: 600
+  cursor: pointer
+  transition: all 0.3s ease
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 0.5rem
+
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 8px 30px rgba(76, 158, 255, 0.3)
+
+  i
+    font-size: 1.1rem
+
+.success-message
+  text-align: center
+  padding: 2rem 0
+
+  i
+    font-size: 3rem
+    color: #2DD4BF
+    margin-bottom: 1rem
+
+  h3
+    color: #ffffff
+    font-size: 1.75rem
+    margin-bottom: 1rem
+
+  p
+    color: rgba(255, 255, 255, 0.9)
+    margin-bottom: 2rem
+    line-height: 1.5
+
+  .submit-button
+    margin: 0 auto
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    color: rgba(255, 255, 255, 0.9)
+    padding: 0.85rem 2rem
+    border-radius: 12px
+    font-size: 1rem
+    font-weight: 500
+    backdrop-filter: blur(12px)
+    -webkit-backdrop-filter: blur(12px)
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2)
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+
+    &:hover
+      transform: translateY(-2px)
+      border-color: rgba(255, 255, 255, 0.2)
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3)
+      color: #ffffff
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1))
+
+    &:active
+      transform: translateY(1px)
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2)
+
+    i
+      font-size: 1rem
+      margin: 0
+      color: rgba(255, 255, 255, 0.9)
+
+@media (max-width: 768px)
+  .modal-content
+    padding: 1.5rem
+    width: 95%
+  
+  .modal-header h3
+    font-size: 1.5rem 
