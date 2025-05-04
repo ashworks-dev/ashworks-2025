@@ -62,6 +62,7 @@
 
 <!-- Service Pillars Section -->
 <section class="services-overview">
+  <h2 class="section-title">What I Do</h2>
   <div class="service-cards-container">
     <div class="service-card">
       <div class="service-icon corporate-video">
@@ -69,7 +70,7 @@
       </div>
       <div class="service-content">
         <h3>Video Production</h3>
-        <p>Specializing in the core of corporate video production: authentic interviews and compelling b-roll. As a solo operator with years of experience, I deliver professional results through streamlined processes and focused attention to detail. Perfect for training videos, company updates, and corporate storytelling.</p>
+        <p><span class="phrase-highlight">Available for hire</span> and specializing in the core of corporate video production: authentic interviews and compelling b-roll. As a solo operator with years of experience, I deliver professional results through streamlined processes and focused attention to detail. Perfect for training videos, company updates, marketing videos, and corporate storytelling. Competitive rates and easy to work with for quick turnarounds.</p>
       </div>
       <div class="button-container">
         <button (click)="navigateToVideo()" class="service-button">
@@ -94,12 +95,13 @@
       </div>
       <div class="service-content">
         <h3>Web Development</h3>
-        <p>Full-stack development with over two decades of experience across diverse platforms and technologies. Specializing in modern frameworks like Angular and React, while bringing deep expertise in eLearning platforms including Adapt, Articulate, and custom LMS solutions. From responsive websites to complex web applications, I deliver scalable, maintainable solutions that combine technical excellence with intuitive user experiences.</p>
+        <p><span class="phrase-highlight">Available for Remote contractor work</span> with over two decades of experience across diverse platforms and technologies. Specializing in modern frameworks like Angular and React, while bringing deep expertise in eLearning platforms including Adapt, Articulate, and custom LMS solutions. From responsive websites to complex web applications, I deliver solutions that combine technical excellence with intuitive user experiences. Additional expertise includes Python development, PHP applications, and server management.</p>
+        <p>CV available upon request.</p>
       </div>
       <div class="button-container">
         <button (click)="openEmail('hire')" class="service-button web-button">
           <i class="fas fa-code"></i>
-          <span>Hire Me</span>
+          <span>Request Resume</span>
         </button>
       </div>
       <div class="tech-stack">
@@ -119,8 +121,8 @@
         <i class="fas fa-robot fa-4x" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
       </div>
       <div class="service-content">
-        <h3>AI Integration</h3>
-        <p>Exploring the cutting edge of AI technology to solve real business challenges. Currently prototyping and developing custom AI solutions, from automated content generation to intelligent learning systems. Let's collaborate to discover how AI can enhance your business processes and create new opportunities.</p>
+        <h3>AI ... the big sell</h3>
+        <p>Beyond the hype, fancy images and scary job replacement crap I'm exploring the cutting edge of AI technology to solve real business challenges. Currently prototyping and developing custom AI solutions, from automated content generation to intelligent learning systems. Diving into advanced image and video generation, and the latest in open source models with ComfyUI. Always looking for new projects to work on where real world applications are a priority, not just the click bait fancy AI stuff. Beyond UGC, CapCut editors and iPhone videographers ... it isn't quite there yet, but why not get ready for where AI fits into your business.</p>
       </div>
       <div class="button-container">
         <button (click)="openEmail('consulting')" class="service-button ai-button">
@@ -139,7 +141,7 @@
 
 <!-- Selected Work Preview -->
 <section class="work-preview">
-  <h2>Selected Projects</h2>
+  <h2>Projects I've worked on</h2>
   <div class="project-grid">
     <!-- First 6 cards without additional-card class -->
     <div class="project-card">
@@ -149,7 +151,12 @@
       <div class="service-content">
         <div class="project-info">
           <h4>Customer Service Training Series</h4>
-          <p>Produced a series of training videos for a major supermarket chain, focusing on front-end operations and customer service excellence. The projects covered checkout procedures, customer handling techniques, click-and-collect operations, scanner usage, and smart gate implementation. Each video was carefully crafted to demonstrate best practices while maintaining a focus on customer experience and operational efficiency.</p>
+          <p>Produced numerous series of training videos over many years for a major supermarket chain, focusing on front-end operations, backend logistics and customer service excellence. The projects covered checkout procedures, customer handling techniques, click-and-collect operations, scanner usage, warehouse operations, equipment handling, safety, ergonmonics and smart gate implementation. Each video was carefully crafted to demonstrate best practices while maintaining a focus on customer experience and operational efficiency.</p>
+        </div>
+        <div class="project-tech-stack">
+          <i class="fas fa-video fa-lg" style="color: #2DD4BF;"></i>
+          <i class="fas fa-clapperboard fa-lg" style="color: #F59E0B;"></i>
+          <i class="fas fa-cut fa-lg" style="color: #EC4899;"></i>
         </div>
       </div>
     </div>
@@ -163,6 +170,11 @@
           <h4>VR Training Environment</h4>
           <p>Collaborated with a UK-based production house on a complex 360° VR training project for a major Australian supermarket chain. The project involved extensive green screen work and virtual set integration, combining live action footage with immersive VR environments. This innovative approach allowed for the creation of interactive training scenarios that effectively demonstrate retail procedures and customer service protocols in a virtual space.</p>
         </div>
+        <div class="project-tech-stack">
+          <i class="fas fa-video fa-lg" style="color: #2DD4BF;"></i>
+          <i class="fas fa-clapperboard fa-lg" style="color: #F59E0B;"></i>
+          <i class="fas fa-compass fa-lg" style="color: #4F46E5;"></i>
+        </div>
       </div>
     </div>
 
@@ -173,9 +185,9 @@
       <div class="service-content">
         <div class="project-info">
           <h4>AI-Powered Courseware Generator</h4>
-          <p>Developed an innovative eLearning platform that automatically converts storyboards into working courses in the Adapt framework. Using LLM models (both API and open source), custom agents, Python, and Angular, the system analyzes content to detect visual elements, learning intentions, outcomes, and interactions. The AI then maps these elements to the appropriate Adapt framework components, creating fully functional eLearning courses with a single click.</p>
+          <p>Soley developed an innovative eLearning platform that automatically converts storyboards into working courses in the Adapt framework. Using LLM models (both API and open source), custom agents, Python, and Angular, the system analyzes content to detect visual elements, learning intentions, outcomes, and interactions. The AI then maps these elements to the appropriate Adapt framework components, creating fully functional eLearning courses with a single click.</p>
         </div>
-        <div class="tech-stack" style="padding-top: 1.5rem;">
+        <div class="project-tech-stack">
           <img src="assets/images/python.svg" alt="Python" class="tech-icon">
           <img src="assets/images/angular-svgrepo-com.svg" alt="Angular" class="tech-icon">
           <img src="assets/images/openai-svgrepo-com.svg" alt="OpenAI" class="tech-icon">
@@ -192,7 +204,7 @@
           <h4>Veterans Support Platform</h4>
           <p>Developed three interconnected websites for Australian Catholic University to support military veterans transitioning to university life. As the sole developer, I designed the sites in WebFlow, exported them as HTML, and integrated advanced features using React components, including a sophisticated referencing and citations tool. The project involved converting complex data from university-provided spreadsheets into JSON to drive dynamic component functionality, helping veterans navigate their educational journey.</p>
         </div>
-        <div class="tech-stack" style="padding-top: 1.5rem;">
+        <div class="project-tech-stack">
           <img src="assets/images/react-svgrepo-com.svg" alt="React" class="tech-icon">
           <img src="assets/images/ts.svg" alt="TypeScript" class="tech-icon">
           <img src="assets/images/html-5-svgrepo-com.svg" alt="HTML5" class="tech-icon">
@@ -207,7 +219,13 @@
       <div class="service-content">
         <div class="project-info">
           <h4>ACU 360° Virtual Tour</h4>
-          <p>Developed an immersive 360° virtual tour platform for Australian Catholic University, showcasing their state-of-the-art facilities and learning environments. The project combined high-quality 360° photography with interactive elements and detailed information points. The platform provides prospective students with an engaging way to explore the university's campuses and facilities from anywhere in the world.</p>
+          <p>Leveraging the existing 360 platfrom I developed we created an immersive 360° virtual tour platform for Australian Catholic University, showcasing their state-of-the-art facilities and learning environments. The project combined high-quality 360° photography with interactive elements and detailed information points. The platform provides prospective students with an engaging way to explore the university's campuses and facilities from anywhere in the world.</p>
+        </div>
+        <div class="project-tech-stack">
+          <img src="assets/images/angular-svgrepo-com.svg" alt="Angular" class="tech-icon">
+          <img src="assets/images/ts.svg" alt="TypeScript" class="tech-icon">
+          <i class="fas fa-video fa-lg" style="color: #2DD4BF;"></i>
+          <i class="fas fa-compass fa-lg" style="color: #4F46E5;"></i>
         </div>
       </div>
     </div>
@@ -219,7 +237,12 @@
       <div class="service-content">
         <div class="project-info">
           <h4>Bio Lab Training Series</h4>
-          <p>Created a comprehensive video training series for a leading biological research laboratory. The project involved filming complex laboratory procedures, safety protocols, and equipment demonstrations. Each video was carefully edited to maintain scientific accuracy while ensuring clear communication of critical information. The series has become an essential resource for new researchers and ongoing staff training.</p>
+          <p>Created a comprehensive video training series for a leading biological research laboratory. The project involved filming complex laboratory procedures, safety protocols, and equipment demonstrations. Like many of my video projects its about getting in and involved with the client's world and creating a series of videos that are authentic and engaging. Each video was carefully edited to maintain scientific accuracy while ensuring clear communication of critical information. The series has become an essential resource for new researchers and ongoing staff training.</p>
+        </div>
+        <div class="project-tech-stack">
+          <i class="fas fa-video fa-lg" style="color: #2DD4BF;"></i>
+          <i class="fas fa-clapperboard fa-lg" style="color: #F59E0B;"></i>
+          <i class="fas fa-cut fa-lg" style="color: #EC4899;"></i>
         </div>
       </div>
     </div>
@@ -232,9 +255,9 @@
       <div class="service-content">
         <div class="project-info">
           <h4>Lesson Planner Platform</h4>
-          <p>Built an educational platform using Python for curriculum parsing and alignment with the Victorian State Curriculum. The system automatically analyzes and maps content to curriculum requirements, ensuring educational standards are met. Developed with an Angular frontend and Lumen API backend, the project included a WordPress marketplace integration for content distribution. The platform helps teachers efficiently plan and align their lessons with curriculum requirements.</p>
+          <p>Designed and built an educational platform with two other developers using Python for curriculum parsing and alignment with the Victorian State Curriculum. The system automatically analyzes and maps content to curriculum requirements, ensuring educational standards are met. Developed with an Angular frontend and Lumen API backend, the project included a WordPress marketplace integration for content distribution. The platform helps teachers efficiently plan and align their lessons with curriculum requirements.</p>
         </div>
-        <div class="tech-stack" style="padding-top: 1.5rem;">
+        <div class="project-tech-stack">
           <img src="assets/images/angular-svgrepo-com.svg" alt="Angular" class="tech-icon">
           <img src="assets/images/python.svg" alt="Python" class="tech-icon">
           <img src="assets/images/ts.svg" alt="TypeScript" class="tech-icon">
@@ -251,6 +274,11 @@
           <h4>Retail Operations Training</h4>
           <p>Developed a comprehensive training platform for a major supermarket chain, combining 360° virtual tours with instructional videos. The project covered everything from automated warehousing processes to bakery production and cutting-edge technology like smarter gates and hand scanners. The platform allows staff to virtually explore store layouts and learn procedures through immersive experiences, making training more engaging and effective for employees across the country.</p>
         </div>
+        <div class="project-tech-stack">
+          <i class="fas fa-video fa-lg" style="color: #2DD4BF;"></i>
+          <i class="fas fa-clapperboard fa-lg" style="color: #F59E0B;"></i>
+          <i class="fas fa-cut fa-lg" style="color: #EC4899;"></i>
+        </div>
       </div>
     </div>
 
@@ -262,6 +290,11 @@
         <div class="project-info">
           <h4>Inclusive Education Initiative</h4>
           <p>Produced an extensive digital learning series for a government education department, focusing on inclusive classroom practices. Over six months, the project involved filming at more than 50 schools and conducting nearly 120 interviews with teachers, students, and education specialists. The comprehensive video series showcases successful inclusion strategies, classroom adaptations, and best practices for supporting diverse learning needs. This valuable resource helps educators create more inclusive and supportive learning environments.</p>
+        </div>
+        <div class="project-tech-stack">
+          <i class="fas fa-video fa-lg" style="color: #2DD4BF;"></i>
+          <i class="fas fa-clapperboard fa-lg" style="color: #F59E0B;"></i>
+          <i class="fas fa-cut fa-lg" style="color: #EC4899;"></i>
         </div>
       </div>
     </div>
@@ -275,6 +308,11 @@
           <h4>Recovery Support Program</h4>
           <p>Created a series of 15 training videos for Smart Recovery Australia, capturing various stages of counseling sessions performed by staff members. Filmed over two days in Sydney, these videos demonstrate different aspects of the counseling process, providing valuable training resources for recovery support professionals. The project focused on delivering clear, practical examples while maintaining appropriate sensitivity and professionalism throughout the sessions.</p>
         </div>
+        <div class="project-tech-stack">
+          <i class="fas fa-video fa-lg" style="color: #2DD4BF;"></i>
+          <i class="fas fa-clapperboard fa-lg" style="color: #F59E0B;"></i>
+          <i class="fas fa-cut fa-lg" style="color: #EC4899;"></i>
+        </div>
       </div>
     </div>
 
@@ -287,7 +325,7 @@
           <h4>Career Compass Platform</h4>
           <p>Developed a sophisticated web-based tool that enables staff to compare skills required for various job roles using interactive charts and data visualization. The platform allows employees to compare their current role with potential future positions and automatically generates personalized training pathways. The system processes comprehensive spreadsheets of available resources to create tailored learning curricula for career advancement.</p>
         </div>
-        <div class="tech-stack" style="padding-top: 1.5rem;">
+        <div class="project-tech-stack">
           <img src="assets/images/html-5-svgrepo-com.svg" alt="HTML5" class="tech-icon">
           <img src="assets/images/javascript-svgrepo-com-2.svg" alt="JavaScript" class="tech-icon">
           <img src="assets/images/css-3-svgrepo-com.svg" alt="CSS3" class="tech-icon">
@@ -304,6 +342,11 @@
         <div class="project-info">
           <h4>Financial Services Training Series</h4>
           <p>Created an extensive series of training videos for a major financial institution, featuring professional actors demonstrating customer engagement techniques and call center interactions. The project included filming at their new hybrid office, recreating realistic customer service scenarios, and producing staff testimonials. The series covers everything from professional appearance guidelines to specialist customer handover procedures, providing comprehensive training resources for financial services staff.</p>
+        </div>
+        <div class="project-tech-stack">
+          <i class="fas fa-video fa-lg" style="color: #2DD4BF;"></i>
+          <i class="fas fa-clapperboard fa-lg" style="color: #F59E0B;"></i>
+          <i class="fas fa-cut fa-lg" style="color: #EC4899;"></i>
         </div>
       </div>
     </div>

@@ -117,7 +117,11 @@
       
       &:hover
         background: rgba(255, 255, 255, 0.1)
-
+.phrase-highlight
+  color: #e3e3e3
+  font-weight: 600
+  font-size: 1rem
+  
 .client-showcase
   background: linear-gradient(180deg, rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.95))
   padding: 6rem 0
@@ -218,40 +222,38 @@
   z-index: 2
 
 .client-pill
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03))
-  border: 1px solid rgba(255, 255, 255, 0.1)
-  color: rgba(255, 255, 255, 0.9)
-  padding: 1rem 2rem
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(139, 92, 246, 0.8) 100%)
+  color: white
+  padding: 0.75rem 1.5rem
   border-radius: 50px
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
-  position: relative
-  overflow: hidden
+  font-size: 0.95rem
   font-weight: 500
-  letter-spacing: 0.5px
-  backdrop-filter: blur(12px)
-  -webkit-backdrop-filter: blur(12px)
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
-  
-  &::before
-    content: ''
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent)
-    transform: translateX(-100%)
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)
-  
+  transition: all 0.3s ease
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15)
+  cursor: default
+  border: none
+  text-align: center
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  max-width: 100%
+
+  &:nth-child(odd)
+    background: linear-gradient(135deg, rgba(45, 212, 191, 0.8) 0%, rgba(52, 211, 153, 0.8) 100%)
+    box-shadow: 0 2px 8px rgba(45, 212, 191, 0.15)
+
+  &:nth-child(3n)
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.8) 0%, rgba(217, 119, 6, 0.8) 100%)
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15)
+
+  &:nth-child(3n+1)
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.8) 0%, rgba(219, 39, 119, 0.8) 100%)
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.15)
+
   &:hover
-    transform: translateY(-5px)
-    border-color: rgba(255, 255, 255, 0.2)
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
-    color: #ffffff
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))
-    
-    &::before
-      transform: translateX(100%)
+    transform: translateY(-2px)
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+    filter: brightness(1.1)
 
 @keyframes gradientMove
   0%, 100%
@@ -264,16 +266,27 @@
     transform: translate(-10%, -10%)
 
 .services-overview
-  background: linear-gradient(180deg, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 1))
-  padding: 3rem 0
-  
-  .service-cards-container
-    display: grid
-    grid-template-columns: repeat(3, 1fr)
-    gap: 2rem
-    max-width: 1200px
-    margin: 0 auto
-    padding: 0 2rem
+  padding: 4rem 0
+  background: #111827
+
+  .section-title
+    text-align: center
+    font-size: 2.5rem
+    font-weight: 700
+    margin-bottom: 3rem
+    letter-spacing: -0.02em
+    background: linear-gradient(135deg, #FF9F5A 0%, #FF6B88 50%, #8B7FF6 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    position: relative
+
+.service-cards-container
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 2rem
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 2rem
 
 .service-card
   background: linear-gradient(145deg, #1a1a1a, #2a2a2a)
@@ -382,6 +395,7 @@
       margin-bottom: 0
   
   .tech-stack
+    margin-top: auto
     padding: 1.5rem
     background: rgba(0, 0, 0, 0.2)
     border-top: 1px solid rgba(255, 255, 255, 0.1)
@@ -390,10 +404,18 @@
     align-items: center
     justify-content: center
     width: 100%
-    
+
+    i
+      font-size: 1.25rem
+      width: 1.25rem
+      height: 1.25rem
+      display: flex
+      align-items: center
+      justify-content: center
+
     .tech-icon
-      width: 24px
-      height: 24px
+      width: 1.25rem
+      height: 1.25rem
       opacity: 0.7
       transition: opacity 0.3s ease
       object-fit: contain
@@ -437,60 +459,33 @@
   padding: 0 2rem
 
 .project-card
-  background: linear-gradient(145deg, #1a1a1a, #2a2a2a)
-  position: relative
-  border-radius: 12px
+  background: rgba(17, 24, 39, 0.7)
+  border-radius: 1rem
   overflow: hidden
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2)
-  transition: transform 0.3s ease, box-shadow 0.3s ease
+  transition: all 0.3s ease
+  position: relative
   display: flex
   flex-direction: column
   height: 100%
-  opacity: 0
-  transform: translateY(20px)
-  animation: fadeInUp 0.6s forwards
-  
-  @for $i from 1 through 6
-    &:nth-child(#{$i})
-      animation-delay: #{$i * 0.1}s
-  
-  &.additional-card
-    display: none
-    
-    &.show
-      display: block
-      animation: fadeInUp 0.6s forwards
-  
-  &::before
-    content: ''
-    position: absolute
-    inset: 0
-    border-radius: 12px
-    padding: 1px
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)
-    -webkit-mask-composite: xor
-    mask-composite: exclude
-    pointer-events: none
-  
+
   &:hover
     transform: translateY(-5px)
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3)
-  
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
+
   .project-image
-    height: 200px
+    position: relative
     width: 100%
+    height: 200px
     overflow: hidden
-    flex-shrink: 0
-    
-    img.project-image.full-width
+
+    img
       width: 100%
       height: 100%
       object-fit: cover
+      transition: transform 0.3s ease
     
     &.placeholder
       position: relative
-      transform: scale(1.1)  // Prevents blur from showing edges
       display: flex
       align-items: center
       justify-content: center
@@ -498,10 +493,10 @@
       &::before
         content: ''
         position: absolute
-        top: -5%
-        left: -5%
-        width: 110%
-        height: 110%
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
         filter: blur(20px)
         z-index: 0
       
@@ -534,15 +529,14 @@
       &.gradient-6
         &::before
           background: linear-gradient(45deg, #8E2DE2, #4A00E0)
-  
+
   .service-content
     padding: 1.5rem
+    flex-grow: 1
     display: flex
     flex-direction: column
-    flex-grow: 1
-    
+
     .project-info
-      margin-bottom: 1.5rem
       flex-grow: 1
       
       h4
@@ -552,56 +546,42 @@
         font-weight: 600
       
       p
-        color: #b0b0b0
+        color: rgba(255, 255, 255, 0.9)
         margin: 0
         line-height: 1.6
+
+.project-tech-stack
+  margin-left: -1.5rem
+  margin-right: -1.5rem
+  margin-bottom: -1.5rem
+  margin-top: 1em
+  height: 60px
+  padding: 0 1.5rem
+  background: rgba(0, 0, 0, 0.2)
+  border-top: 1px solid rgba(255, 255, 255, 0.1)
+  display: flex
+  gap: 1rem
+  align-items: center
+  justify-content: center
+  width: calc(100% + 3rem)
+
+  img.tech-icon
+    width: 24px
+    height: 24px
+    opacity: 0.7
+    transition: opacity 0.3s ease
+    object-fit: contain
     
-    .tech-stack
-      padding: 1.5rem
-      background: rgba(0, 0, 0, 0.2)
-      border-top: 1px solid rgba(255, 255, 255, 0.1)
-      display: flex
-      gap: 1rem
-      align-items: center
-      justify-content: center
-      margin: 0 -1.5rem -1.5rem
-      width: calc(100% + 3rem)
-      
-      .tech-icon
-        width: 24px
-        height: 24px
-        opacity: 0.7
-        transition: opacity 0.3s ease
-        object-fit: contain
-        
-        &:hover
-          opacity: 1
-  
-  &.web-dev
-    background: linear-gradient(145deg, #1a1a1a, #2d2338)
+    &:hover
+      opacity: 1
+
+  i.fas
+    font-size: 16px
+    opacity: 0.7
+    transition: opacity 0.3s ease
     
-    &::before
-      background: linear-gradient(45deg, rgba(79, 70, 229, 0.3), rgba(139, 92, 246, 0.3))
-      animation: borderRotate2 3s ease-in-out infinite
-    
-    .project-info
-      h4
-        background: linear-gradient(90deg, #6366f1, #8b5cf6)
-        -webkit-background-clip: text
-        -webkit-text-fill-color: transparent
-        font-weight: 600
-    
-    .tech-stack
-      background: rgba(79, 70, 229, 0.05)
-      border-top: 1px solid rgba(79, 70, 229, 0.3)
-      
-      .tech-icon
-        opacity: 0.9
-        
-        &:hover
-          opacity: 1
-          transform: scale(1.1)
-          transition: all 0.3s ease 
+    &:hover
+      opacity: 1
 
 .career-blurb
   color: rgba(255, 255, 255, 0.85)

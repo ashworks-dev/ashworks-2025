@@ -812,3 +812,140 @@
       color: rgba(255, 255, 255, 0.6)
       background: none
       -webkit-text-fill-color: rgba(255, 255, 255, 0.6) 
+
+.client-showcase
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.95))
+  padding: 6rem 0
+  position: relative
+  overflow: hidden
+  
+  // Animated gradient mesh background
+  &::before
+    content: ''
+    position: absolute
+    top: -50%
+    left: -50%
+    right: -50%
+    bottom: -50%
+    width: 200%
+    height: 200%
+    background: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.15) 0%, transparent 25%)
+    background-image: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.15) 0%, transparent 25%), radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 25%), radial-gradient(circle at 20% 20%, rgba(45, 212, 191, 0.15) 0%, transparent 25%)
+    animation: gradientMove 20s ease-in-out infinite
+    z-index: 0
+  
+  // Top border
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    height: 1px
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent)
+    z-index: 1
+  
+  h2
+    color: #ffffff
+    text-align: center
+    margin-bottom: 1rem
+    font-size: 2.5rem
+    font-weight: 600
+    position: relative
+    display: inline-block
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 2
+    
+    &::after
+      content: ''
+      position: absolute
+      bottom: -1rem
+      left: 25%
+      right: 25%
+      height: 2px
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)
+
+  .timeline-subtitle
+    color: rgba(255, 255, 255, 0.7)
+    text-align: center
+    margin: 2rem 0 4rem
+    font-size: 1.1rem
+    font-weight: 400
+    position: relative
+    z-index: 2
+    letter-spacing: 1px
+    
+    &::before
+      content: '●'
+      margin: 0 0.5rem
+      color: rgba(255, 255, 255, 0.4)
+      font-size: 0.5rem
+      vertical-align: middle
+    
+    &::after
+      content: '●'
+      margin: 0 0.5rem
+      color: rgba(255, 255, 255, 0.4)
+      font-size: 0.5rem
+      vertical-align: middle
+
+.client-grid
+  display: flex
+  flex-wrap: wrap
+  gap: 2rem
+  justify-content: center
+  max-width: 1200px
+  margin: 0 auto 3rem
+  padding: 0 2rem
+  position: relative
+  z-index: 2
+
+.client-pill
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(139, 92, 246, 0.8) 100%)
+  color: white
+  padding: 0.75rem 1.5rem
+  border-radius: 50px
+  font-size: 0.95rem
+  font-weight: 500
+  transition: all 0.3s ease
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15)
+  cursor: default
+  border: none
+  text-align: center
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  max-width: 100%
+
+  &:nth-child(odd)
+    background: linear-gradient(135deg, rgba(45, 212, 191, 0.8) 0%, rgba(52, 211, 153, 0.8) 100%)
+    box-shadow: 0 2px 8px rgba(45, 212, 191, 0.15)
+
+  &:nth-child(3n)
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.8) 0%, rgba(217, 119, 6, 0.8) 100%)
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15)
+
+  &:nth-child(3n+1)
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.8) 0%, rgba(219, 39, 119, 0.8) 100%)
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.15)
+
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+    filter: brightness(1.1)
+
+.career-blurb
+  color: rgba(255, 255, 255, 0.85)
+  text-align: center
+  max-width: 800px
+  margin: 0 auto 4rem
+  font-size: 1.1rem
+  line-height: 1.6
+  position: relative
+  z-index: 2
+  padding: 0 2rem
+  
+  strong
+    color: rgba(255, 255, 255, 0.95)
+    font-weight: 500 

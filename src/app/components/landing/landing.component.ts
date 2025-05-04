@@ -31,7 +31,9 @@ export class LandingComponent implements OnInit {
   }
 
   navigateToVideo(): void {
-    this.router.navigate(['/video']);
+    this.router.navigate(['/video']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
   openEmail(type: 'hire' | 'consulting'): void {
