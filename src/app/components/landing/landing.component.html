@@ -28,8 +28,7 @@
     </p>
 
     <div class="cta-group">
-      <button class="cta-primary">Discuss Your Project</button>
-      <button class="cta-secondary">View Selected Works</button>
+      <button class="cta-primary" (click)="openQuoteForm()">Discuss Your Project</button>
     </div>
   </div>
 </header>
@@ -117,8 +116,8 @@
         <i class="fas fa-robot fa-4x" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
       </div>
       <div class="service-content">
-        <h3>AI ... the big sell</h3>
-        <p>Beyond the hype, fancy images and scary job replacement crap I'm exploring the cutting edge of AI technology to solve real business challenges. Currently prototyping and developing custom AI solutions, from automated content generation to intelligent learning systems. Diving into advanced image and video generation, and the latest in open source models with ComfyUI. Always looking for new projects to work on where real world applications are a priority, not just the click bait fancy AI stuff. Beyond UGC, CapCut editors and iPhone videographers ... it isn't quite there yet, but why not get ready for where AI fits into your business.</p>
+        <h3>AI ... what's next?</h3>
+        <p>Beyond the hype, fancy images and scary job replacement fears I'm exploring the cutting edge of AI technology to solve real business challenges. Currently prototyping and developing custom AI solutions, from automated content generation to intelligent learning systems. Diving into advanced image and video generation, and the latest in open source models with ComfyUI. Always looking for new projects to work on where real world applications are a priority, not just the click bait fancy AI stuff. Beyond UGC, CapCut editors and iPhone videographers ... it isn't quite there yet, but why not get ready for where AI fits into your business.</p>
       </div>
       <div class="button-container">
         <button (click)="openEmail('consulting')" class="service-button ai-button">
@@ -136,7 +135,7 @@
 </section>
 
 <!-- Selected Work Preview -->
-<section class="work-preview">
+<section class="work-preview" id="projects">
   <h2>Projects I've worked on</h2>
   <div class="project-grid">
     <!-- First 6 cards without additional-card class -->
@@ -403,4 +402,61 @@
       {{ showAllProjects ? 'Show Less' : 'Show More Projects' }}
     </button>
   </div>
-</section> 
+</section>
+
+<!-- Quote Request Modal -->
+<div class="modal" [class.show]="showQuoteModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Request a Quote</h3>
+      <button class="close-button" (click)="closeQuoteForm()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <form (ngSubmit)="onSubmit($event)" class="quote-form">
+      <input type="hidden" name="access_key" value="70d8ed64-02eb-406f-8097-102d11df246d">
+      <input type="hidden" name="redirect" value="https://frameworks.video/thank-you">
+      
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="your@email.com">
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Phone (optional)</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+      </div>
+      
+      <div class="form-group">
+        <label for="project_type">Project Type</label>
+        <select id="project_type" name="project_type" required>
+          <option value="">Select a project type</option>
+          <option value="Web Development">Web Development</option>
+          <option value="AI Solutions">AI Solutions</option>
+          <option value="Video Production">Video Production</option>
+          <option value="Training Content">Training Content</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Project Details</label>
+        <textarea id="message" name="message" required placeholder="Tell us about your project, timeline, and any specific requirements"></textarea>
+      </div>
+      
+      <!-- Honeypot field to prevent spam -->
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+      
+      <button type="submit" class="submit-button">
+        <i class="fas fa-paper-plane"></i>
+        Send Request
+      </button>
+    </form>
+  </div>
+</div> 

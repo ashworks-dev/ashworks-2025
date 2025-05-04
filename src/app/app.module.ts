@@ -17,6 +17,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { ClientLoginComponent } from './components/client-login/client-login.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ThankYouComponent } from './components/thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FooterComponent } from './components/footer/footer.component';
     LandingComponent,
     ClientLoginComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,

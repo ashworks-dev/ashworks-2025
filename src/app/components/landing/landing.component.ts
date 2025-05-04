@@ -11,6 +11,7 @@ export class LandingComponent implements OnInit {
   @ViewChild('media', { static: true }) media!: IMediaElement;
   videoError = false;
   showAllProjects = false;
+  showQuoteModal = false;
 
   constructor(private router: Router) {}
 
@@ -30,6 +31,13 @@ export class LandingComponent implements OnInit {
     this.showAllProjects = !this.showAllProjects;
   }
 
+  scrollToProjects(): void {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   navigateToVideo(): void {
     this.router.navigate(['/video']).then(() => {
       window.scrollTo(0, 0);
@@ -46,5 +54,40 @@ export class LandingComponent implements OnInit {
     
     const mailtoLink = `mailto:ash@ashnet.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
+  }
+
+  openQuoteForm(): void {
+    this.showQuoteModal = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeQuoteForm(): void {
+    this.showQuoteModal = false;
+    document.body.style.overflow = 'auto';
+  }
+
+  onSubmit(event: Event): void {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        this.closeQuoteForm();
+        this.router.navigate(['/thank-you']);
+      } else {
+        console.error('Form submission failed:', data);
+        alert('There was an error submitting the form. Please try again.');
+      }
+    })
+    .catch(error => {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting the form. Please try again.');
+    });
   }
 } 

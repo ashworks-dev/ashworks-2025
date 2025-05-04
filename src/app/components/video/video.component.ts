@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { IMediaElement } from '@videogular/ngx-videogular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 
 interface VideoMeta {
@@ -25,6 +25,8 @@ export class VideoComponent implements OnInit {
   @ViewChild('media', { static: true }) media!: IMediaElement;
   videoError = false;
   showAllProjects = false;
+  showQuoteModal = false;
+  showShowreelModal = false;
   videos: Video[] = [
     {
       id: 0,
@@ -41,27 +43,39 @@ export class VideoComponent implements OnInit {
       src: 'https://ashnet.com.au/video/pf-1.mp4',
       meta: [
         { icon: 'building', text: 'Corporate' },
-        { icon: 'graduation-cap', text: 'Education' }
+        { icon: 'graduation-cap', text: 'Education' },
+        { icon: 'theater-masks', text: 'Customer Scenarios' }
       ],
       description: 'Two of my busiest clients over the years. Interviews with students, teachers, staff and management at Coles and many explainer videos for processes, how-tos and customer relations. Additionally, I have developed 360 tours and interactive training combining the videos and web development.'
     },
     {
       id: 2,
-      title: 'Banking & Finance',
+      title: 'Dept. of Health & PowerCor',
       src: 'https://ashnet.com.au/video/pf-2.mp4',
       meta: [
-        { icon: 'chart-line', text: 'Corporate' },
-        { icon: 'users', text: 'Training' }
+        { icon: 'shield-alt', text: 'Safety Training' },
+        { icon: 'hard-hat', text: 'Technical' },
+        { icon: 'compass', text: '360° Video' }
+      ],
+      description: 'Two major projects running in parallel: For the Department of Health, produced comprehensive food safety training videos and created interactive 360° virtual tours of commercial kitchens. During COVID-19, delivered rapid-response hand hygiene training videos. For Powercor, Australia\'s largest electricity distributor, produced 50+ safety training videos covering critical topics including high-voltage safety procedures, emergency response protocols, and field operation guidelines. Both projects involved complex technical scenarios, safety demonstrations, and on-location filming across multiple sites.'
+    },
+    {
+      id: 3,
+      title: 'Banking and Finance',
+      src: 'https://ashnet.com.au/video/pf-3.mp4',
+      meta: [
+        { icon: 'chart-line', text: 'Finance' },
+        { icon: 'theater-masks', text: 'Customer Scenarios' }
       ],
       description: 'The very corporate world of finance has resulted in many interviews, promos for in house initiatives and a series of staged scenario videos often with paid actors from sales to dealing with angry customers.'
     },
     {
-      id: 3,
+      id: 4,
       title: 'Social Work & Therapy',
-      src: 'https://ashnet.com.au/video/pf-3.mp4',
+      src: 'https://ashnet.com.au/video/pf-4.mp4',
       meta: [
-        { icon: 'heart', text: 'Healthcare' },
-        { icon: 'theater-masks', text: 'Scenarios' }
+        { icon: 'heart', text: 'Health & Wellbeing' },
+        { icon: 'theater-masks', text: 'Client Scenarios' }
       ],
       description: 'Usually working with paid actors, or staff, these videos are more emotional with heavily scripted multi angle scenes often focused around intense conversations.'
     }
@@ -76,7 +90,8 @@ export class VideoComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -122,19 +137,34 @@ export class VideoComponent implements OnInit {
   }
 
   openQuoteForm(): void {
-    // Implement quote form logic here
-    console.log('Opening quote form');
+    this.showQuoteModal = true;
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+
+  closeQuoteForm(): void {
+    this.showQuoteModal = false;
+    document.body.style.overflow = 'auto'; // Restore scrolling
   }
 
   scheduleCall(): void {
-    // Implement call scheduling logic here
-    console.log('Opening call scheduler');
+    // Open email client with pre-filled subject and body
+    const subject = 'Video Production Project Discussion';
+    const body = 'I would like to schedule a call to discuss a video production project.';
+    const mailtoLink = `mailto:ash@ashnet.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
   }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.isDevNoteHidden = currentScroll > this.scrollThreshold;
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === 'Escape' && this.showQuoteModal) {
+      this.closeQuoteForm();
+    }
   }
 
   setActiveTab(tabId: number) {
@@ -169,5 +199,65 @@ export class VideoComponent implements OnInit {
         newVideo.load();
       }
     }, 100);
+  }
+
+  onSubmit(event: Event): void {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        this.closeQuoteForm();
+        this.router.navigate(['/thank-you']);
+      } else {
+        console.error('Form submission failed:', data);
+        alert('There was an error submitting the form. Please try again.');
+      }
+    })
+    .catch(error => {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting the form. Please try again.');
+    });
+  }
+
+  openShowreelForm(): void {
+    this.showShowreelModal = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeShowreelForm(): void {
+    this.showShowreelModal = false;
+    document.body.style.overflow = 'auto';
+  }
+
+  onShowreelSubmit(event: Event): void {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        this.closeShowreelForm();
+        this.router.navigate(['/thank-you']);
+      } else {
+        console.error('Form submission failed:', data);
+        alert('There was an error submitting the form. Please try again.');
+      }
+    })
+    .catch(error => {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting the form. Please try again.');
+    });
   }
 } 

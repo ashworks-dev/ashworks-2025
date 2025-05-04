@@ -5,13 +5,15 @@ import { ResumeComponent } from './components/resume/resume.component';
 import { LinkedInComponent } from './components/linkedin/linkedin.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { ClientLoginComponent } from './components/client-login/client-login.component';
+import { ThankYouComponent } from './components/thank-you/thank-you.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'video', component: VideoComponent },
   { path: 'resume', component: ResumeComponent },
   { path: 'linkedin', component: LinkedInComponent },
-  { path: 'client-login', component: ClientLoginComponent }
+  { path: 'client-login', component: ClientLoginComponent },
+  { path: 'thank-you', component: ThankYouComponent }
 ];
 
 @NgModule({
