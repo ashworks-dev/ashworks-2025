@@ -61,7 +61,9 @@
           <p>{{ exp.companyDescription }}</p>
         </div>
         <ul class="experience-details">
-          <li *ngFor="let detail of exp.description">{{ detail }}</li>
+          <li *ngFor="let detail of exp.description" [ngClass]="{'section-header': detail.startsWith('SECTION_HEADER:')}">
+            {{ detail.startsWith('SECTION_HEADER:') ? detail.replace('SECTION_HEADER:', '') : detail }}
+          </li>
         </ul>
         <div class="achievements" *ngIf="exp.achievements">
           <h5>Key Achievements:</h5>
@@ -97,8 +99,10 @@
     <div class="projects-container">
       <div class="project-item" *ngFor="let project of projects">
         <div class="project-header">
-          <h4>{{ project.title }}</h4>
-          <span class="period">{{ project.period }}</span>
+          <div>
+            <h4>{{ project.title }}</h4>
+            <div class="period">{{ project.period }}</div>
+          </div>
         </div>
         <p>{{ project.description }}</p>
         <div class="project-tech">

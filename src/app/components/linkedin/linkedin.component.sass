@@ -140,19 +140,52 @@ $print-line-height: 1.4
         font-size: 0.9rem
 
     .experience-details
-      margin: 0
-      padding-left: 1.2rem
+      list-style-type: none
+      padding: 0
+      margin: 0 0 1.5rem 0
 
       li
-        margin-bottom: 0.5rem
+        margin-bottom: 0.8rem
+        padding-left: 1.5rem
+        position: relative
+        line-height: 1.6
+        color: $text-color
+
+        &:before
+          content: "•"
+          position: absolute
+          left: 0
+          color: #60a5fa
+          font-size: 1.2rem
+          line-height: 1.4
+
+        &.section-header
+          font-weight: 700
+          color: $text-color
+          font-size: 1.1rem
+          margin-top: 1.5rem
+          margin-bottom: 1rem
+          padding-left: 0
+
+          &:before
+            content: none
 
   // Projects section
   .project-item
     margin-bottom: 1.5rem
 
-    h4
-      color: $text-color
+    .project-header
       margin-bottom: 0.5rem
+
+      h4
+        color: $text-color
+        margin-bottom: 0.25rem
+
+      .period
+        color: $text-color
+        font-size: 0.9rem
+        font-weight: 500
+        margin-bottom: 0.5rem
 
     p
       margin-bottom: 0.5rem

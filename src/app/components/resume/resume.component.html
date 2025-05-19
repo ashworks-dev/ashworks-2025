@@ -65,7 +65,9 @@
       </div>
       <p class="company-description" *ngIf="exp.companyDescription">{{ exp.companyDescription }}</p>
       <ul class="description-list">
-        <li *ngFor="let desc of exp.description">{{ desc }}</li>
+        <li *ngFor="let desc of exp.description" [ngClass]="{'section-header': desc.startsWith('SECTION_HEADER:')}">
+          {{ desc.startsWith('SECTION_HEADER:') ? desc.replace('SECTION_HEADER:', '') : desc }}
+        </li>
       </ul>
       <div class="achievements" *ngIf="exp.achievements">
         <div class="achievement-item" *ngFor="let achievement of exp.achievements">
@@ -167,7 +169,7 @@
         <div class="career-objectives">
           <h3>Career Objectives</h3>
           <p>
-            Having enjoyed a fulfilling career so far, I remain actively engaged in seeking innovative projects, particularly those leveraging emerging AI technologies. While video production remains a separate service offering, I'm particularly interested in opportunities that combine both technical development and video production capabilities. Thriving in hands-on technical roles where I can experiment and innovate, bringing a <i class="fas fa-flask"></i> 'mad scientist' approach to solving complex problems. Comfortable collaborating with specialized teams, able to understand and discuss technical concepts across different domains while focusing on my core expertise. Focused on delivering innovative, practical solutions that balance technical excellence with business requirements. Preference for remote work arrangements that allow for flexible engagement while maintaining high-quality delivery.
+            Having enjoyed a fulfilling career so far, I remain actively engaged in seeking innovative projects, particularly those leveraging emerging AI technologies or focused on video production. I'm particularly interested in opportunities that combine both technical development and video production capabilities. Thriving in hands-on technical roles where I can experiment and innovate, bringing a <i class="fas fa-flask"></i> 'mad scientist' approach to solving complex problems. Comfortable collaborating with specialized teams, able to understand and discuss technical concepts across different domains while focusing on my core expertise. Focused on delivering innovative, practical solutions that balance technical excellence with business requirements. Preference for remote work arrangements that allow for flexible engagement while maintaining high-quality delivery.
           </p>
         </div>
       </div>
