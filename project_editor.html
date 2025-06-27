@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Editor - Frameworks Site</title>
+    <link rel="stylesheet" href="./editor/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Project Editor</h1>
+            <p>Enhanced project editor with multiple media support</p>
+        </div>
+
+        <div class="status" id="status"></div>
+
+        <div class="controls">
+            <div class="stats" id="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalClients">0</div>
+                    <div class="stat-label">Total Clients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalProjects">0</div>
+                    <div class="stat-label">Total Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalVideos">0</div>
+                    <div class="stat-label">Video Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalWeb">0</div>
+                    <div class="stat-label">Web Projects</div>
+                </div>
+            </div>
+
+            <input type="text" class="search-box" id="searchBox" placeholder="Search clients or projects...">
+            
+            <button class="btn btn-success" onclick="projectManager.loadProjects()">Load Projects</button>
+            <button class="btn" onclick="clientManager.addNewClient()">Add New Client</button>
+            <button class="btn btn-warning" onclick="projectManager.saveProjects()">Save Projects</button>
+            <button class="btn btn-success" onclick="projectManager.publishProjects()">Publish to Angular</button>
+            <button class="btn" onclick="projectManager.exportData()">Export JSON</button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+
+        <div class="clients-container" id="clientsContainer">
+            <div class="empty-state">
+                <h3>No projects loaded</h3>
+                <p>Click "Load Projects" to get started</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client Modal -->
+    <div id="clientModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="clientModalTitle">Add New Client</h2>
+                <span class="close" onclick="uiManager.closeModal('clientModal')">&times;</span>
+            </div>
+            <form id="clientForm">
+                <div class="form-group">
+                    <label for="clientName">Client Name</label>
+                    <input type="text" id="clientName" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Save Client</button>
+                    <button type="button" class="btn" onclick="uiManager.closeModal('clientModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="projectModalTitle">Add New Project</h2>
+                <span class="close" onclick="uiManager.closeModal('projectModal')">&times;</span>
+            </div>
+            <form id="projectForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="projectName">Project Name</label>
+                        <input type="text" id="projectName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectType">Type</label>
+                        <select id="projectType" required>
+                            <option value="Video">Video</option>
+                            <option value="Web">Web</option>
+                            <option value="Video/Web">Video/Web</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="projectYear">Year</label>
+                        <input type="text" id="projectYear" placeholder="e.g., 2024 or 2021-2023">
+                    </div>
+                    <div class="form-group">
+                        <label for="projectClient">Client</label>
+                        <select id="projectClient" required>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="projectDescription">Description</label>
+                    <textarea id="projectDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="projectFeatured">
+                        <span class="checkmark"></span>
+                        Featured Project (appears at top)
+                    </label>
+                </div>
+
+                <!-- Media Management Section -->
+                <div id="mediaManagerContainer"></div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Save Project</button>
+                    <button type="button" class="btn" onclick="uiManager.closeModal('projectModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Load component scripts -->
+    <script src="./editor/utils.js"></script>
+    <script src="./editor/ui-manager.js"></script>
+    <script src="./editor/media-manager.js"></script>
+    <script src="./editor/client-manager.js"></script>
+    <script src="./editor/project-manager.js"></script>
+    <script src="./editor/app.js"></script>
+</body>
+</html>

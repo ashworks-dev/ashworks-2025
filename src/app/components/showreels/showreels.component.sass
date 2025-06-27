@@ -1,0 +1,1720 @@
+// Loading, Success, and Error Message Styles
+.loading-section
+  position: relative
+  min-height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)
+  
+  .loading-container
+    text-align: center
+    color: #fff
+    
+    .loading-spinner
+      width: 60px
+      height: 60px
+      border: 4px solid rgba(255, 255, 255, 0.3)
+      border-top: 4px solid #667eea
+      border-radius: 50%
+      animation: spin 1s linear infinite
+      margin: 0 auto 1rem
+    
+    .loading-text
+      font-size: 1.1rem
+      color: #b8c5d6
+
+.success-message-section
+  position: relative
+  min-height: 50vh
+  display: flex
+  align-items: center
+  justify-content: center
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)
+  padding: 2rem 0
+  
+  .success-container
+    text-align: center
+    color: #fff
+    max-width: 600px
+    padding: 2rem
+    
+    .success-icon
+      font-size: 4rem
+      color: #4ade80
+      margin-bottom: 1rem
+    
+    .success-title
+      font-size: 2.5rem
+      font-weight: 700
+      margin-bottom: 1rem
+      background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      background-clip: text
+    
+    .success-message
+      font-size: 1.1rem
+      color: #b8c5d6
+      line-height: 1.6
+
+.error-message-section
+  position: relative
+  min-height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)
+  
+  .error-container
+    text-align: center
+    color: #fff
+    max-width: 600px
+    padding: 2rem
+    
+    .error-icon
+      font-size: 4rem
+      color: #f87171
+      margin-bottom: 1rem
+    
+    .error-title
+      font-size: 2.5rem
+      font-weight: 700
+      margin-bottom: 1rem
+      background: linear-gradient(135deg, #f87171 0%, #ef4444 100%)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      background-clip: text
+    
+    .error-message
+      font-size: 1.1rem
+      color: #fca5a5
+      margin-bottom: 1rem
+      font-weight: 500
+    
+    .error-help
+      font-size: 1rem
+      color: #b8c5d6
+      line-height: 1.6
+      margin-bottom: 2rem
+    
+    .retry-button
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+      border: none
+      color: #fff
+      padding: 12px 24px
+      border-radius: 25px
+      cursor: pointer
+      transition: all 0.3s ease
+      font-size: 1rem
+      font-weight: 500
+      display: inline-flex
+      align-items: center
+      gap: 0.5rem
+      
+      &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4)
+
+// Showreels Section Styles
+.showreels-section
+  position: relative
+  min-height: 100vh
+  padding: 140px 0 80px
+  overflow: hidden
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)
+  
+  .background-effects
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    pointer-events: none
+    z-index: 1
+    
+    .gradient-orb
+      position: absolute
+      border-radius: 50%
+      filter: blur(40px)
+      opacity: 0.3
+      animation: float 6s ease-in-out infinite
+      
+      &.orb-1
+        width: 300px
+        height: 300px
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4)
+        top: 10%
+        left: 10%
+        animation-delay: 0s
+        
+      &.orb-2
+        width: 200px
+        height: 200px
+        background: linear-gradient(45deg, #a8edea, #fed6e3)
+        top: 60%
+        right: 15%
+        animation-delay: 2s
+        
+      &.orb-3
+        width: 250px
+        height: 250px
+        background: linear-gradient(45deg, #ffecd2, #fcb69f)
+        bottom: 20%
+        left: 20%
+        animation-delay: 4s
+    
+    .mesh-overlay
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0)
+      background-size: 50px 50px
+      opacity: 0.3
+
+  .section-content
+    position: relative
+    z-index: 2
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 20px
+
+  .showreel-title
+    font-size: 3.5rem
+    font-weight: 700
+    text-align: center
+    margin-bottom: 1rem
+    line-height: 45px
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    background-clip: text
+
+  .showreel-description
+    font-size: 1.2rem
+    text-align: center
+    color: #b8c5d6
+    margin-bottom: 3rem
+    max-width: 800px
+    margin-left: auto
+    margin-right: auto
+    line-height: 1.6
+
+  .showreel-nav
+    display: flex
+    justify-content: center
+    gap: 1rem
+    margin-bottom: 3rem
+    flex-wrap: wrap
+    
+    .showReelBtn
+      background: rgba(255, 255, 255, 0.1)
+      border: 1px solid rgba(255, 255, 255, 0.2)
+      color: #fff
+      padding: 12px 24px
+      border-radius: 25px
+      cursor: pointer
+      transition: all 0.3s ease
+      font-size: 0.9rem
+      font-weight: 500
+      backdrop-filter: blur(10px)
+      
+      &:hover
+        background: rgba(255, 255, 255, 0.2)
+        transform: translateY(-2px)
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3)
+      
+      &.active
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+        border-color: transparent
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4)
+
+  .showreel-container
+    position: relative
+    
+    .videocont2
+      display: none
+      animation: fadeIn 0.5s ease-in-out
+      
+      &.active
+        display: block
+      
+      .video-header
+        margin-bottom: 1.5rem
+        
+        .video-title
+          font-size: 2rem
+          font-weight: 600
+          color: #fff
+          margin-bottom: 0.5rem
+        
+        .video-meta
+          display: flex
+          gap: 1rem
+          flex-wrap: wrap
+          
+          .meta-item
+            display: flex
+            align-items: center
+            gap: 0.5rem
+            background: rgba(255, 255, 255, 0.1)
+            padding: 6px 12px
+            border-radius: 15px
+            font-size: 0.85rem
+            color: #b8c5d6
+            
+            i
+              color: #667eea
+      
+      .video-description
+        color: #b8c5d6
+        line-height: 1.6
+        margin-bottom: 2rem
+        font-size: 1rem
+      
+      .video-wrapper
+        position: relative
+        border-radius: 15px
+        overflow: hidden
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3)
+        
+        .video-player
+          width: 100%
+          height: auto
+          display: block
+        
+        .video-loading
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          display: flex
+          flex-direction: column
+          align-items: center
+          gap: 1rem
+          background: rgba(0, 0, 0, 0.8)
+          padding: 2rem
+          border-radius: 10px
+          
+          .loading-spinner
+            width: 40px
+            height: 40px
+            border: 3px solid rgba(255, 255, 255, 0.3)
+            border-top: 3px solid #667eea
+            border-radius: 50%
+            animation: spin 1s linear infinite
+          
+          .loading-text
+            color: #fff
+            font-size: 0.9rem
+
+// Access Message Section
+.access-message-section
+  position: relative
+  min-height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)
+  overflow: hidden
+  
+  .orb-container
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    pointer-events: none
+    
+    .orb
+      position: absolute
+      border-radius: 50%
+      filter: blur(60px)
+      opacity: 0.2
+      animation: float 8s ease-in-out infinite
+      
+      &.orb-1
+        width: 400px
+        height: 400px
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4)
+        top: 20%
+        left: 10%
+        animation-delay: 0s
+        
+      &.orb-2
+        width: 300px
+        height: 300px
+        background: linear-gradient(45deg, #a8edea, #fed6e3)
+        top: 60%
+        right: 20%
+        animation-delay: 3s
+        
+      &.orb-3
+        width: 350px
+        height: 350px
+        background: linear-gradient(45deg, #ffecd2, #fcb69f)
+        bottom: 30%
+        left: 30%
+        animation-delay: 6s
+
+  .camera-icon
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    opacity: 0.05
+    color: #667eea
+    z-index: 1
+
+  .content-container
+    position: relative
+    z-index: 2
+    text-align: center
+    max-width: 600px
+    padding: 0 20px
+    
+    .title
+      font-size: 3rem
+      font-weight: 700
+      color: #fff
+      margin-bottom: 2rem
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      background-clip: text
+    
+    .message
+      font-size: 1.2rem
+      color: #b8c5d6
+      line-height: 1.6
+      margin-bottom: 2rem
+      
+      .sub-message
+        margin-top: 1rem
+        font-size: 1rem
+        color: #8b9bb4
+        font-style: italic
+    
+    .access-button
+      display: inline-flex
+      align-items: center
+      gap: 0.75rem
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+      color: #fff
+      border: none
+      padding: 15px 30px
+      border-radius: 30px
+      font-size: 1.1rem
+      font-weight: 600
+      cursor: pointer
+      transition: all 0.3s ease
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3)
+      
+      &:hover
+        transform: translateY(-3px)
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4)
+      
+      .play-icon
+        width: 20px
+        height: 20px
+
+// Modal Styles
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.8)
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 1000
+  opacity: 0
+  visibility: hidden
+  transition: all 0.3s ease
+  
+  &.show
+    opacity: 1
+    visibility: visible
+  
+  .modal-content
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)
+    border-radius: 20px
+    padding: 1.5rem
+    max-width: 500px
+    width: 90%
+    position: relative
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5)
+    
+    h3
+      color: #fff
+      font-size: 1.5rem
+      margin-bottom: 1.5rem
+      text-align: center
+    
+    .close-button
+      position: absolute
+      top: 1rem
+      right: 1rem
+      background: none
+      border: none
+      color: #b8c5d6
+      font-size: 1.2rem
+      cursor: pointer
+      padding: 0.5rem
+      border-radius: 50%
+      transition: all 0.3s ease
+      
+      &:hover
+        background: rgba(255, 255, 255, 0.1)
+        color: #fff
+
+  .quote-form
+    .form-group
+      margin-bottom: 1.5rem
+      
+      label
+        display: block
+        color: #b8c5d6
+        margin-bottom: 0.5rem
+        font-weight: 500
+      
+      input, textarea
+        width: 100%
+        padding: 12px 16px
+        border: 1px solid rgba(255, 255, 255, 0.2)
+        border-radius: 10px
+        background: rgba(255, 255, 255, 0.05)
+        color: #fff
+        font-size: 1rem
+        transition: all 0.3s ease
+        
+        &:focus
+          outline: none
+          border-color: #667eea
+          box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1)
+        
+        &::placeholder
+          color: #8b9bb4
+      
+      textarea
+        resize: vertical
+        min-height: 100px
+    
+    .submit-button
+      width: 100%
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+      color: #fff
+      border: none
+      padding: 15px
+      border-radius: 10px
+      font-size: 1rem
+      font-weight: 600
+      cursor: pointer
+      transition: all 0.3s ease
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: 0.5rem
+      
+      &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3)
+
+  .success-message
+    text-align: center
+    color: #fff
+    
+    i
+      font-size: 3rem
+      color: #4ecdc4
+      margin-bottom: 1rem
+    
+    h4
+      font-size: 1.5rem
+      margin-bottom: 1rem
+    
+    p
+      color: #b8c5d6
+      line-height: 1.6
+      margin-bottom: 2rem
+
+// Animations
+@keyframes float
+  0%, 100%
+    transform: translateY(0px)
+  50%
+    transform: translateY(-20px)
+
+@keyframes fadeIn
+  from
+    opacity: 0
+    transform: translateY(20px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+// Responsive Design
+@media (max-width: 768px)
+  .showreels-section
+    padding: 100px 0 60px
+    
+    .showreel-title
+      font-size: 2.5rem
+    
+    .showreel-description
+      font-size: 1rem
+    
+    .showreel-nav
+      flex-direction: column
+      align-items: center
+      
+      .showReelBtn
+        width: 100%
+        max-width: 300px
+    
+    .videocont2
+      .video-header
+        .video-title
+          font-size: 1.5rem
+        
+        .video-meta
+          justify-content: center
+
+  .access-message-section
+    .content-container
+      .title
+        font-size: 2rem
+      
+      .message
+        font-size: 1rem
+
+  .modal
+    .modal-content
+      padding: 1.5rem
+      margin: 20px
+
+// Portfolio Section Styles
+.work-preview
+  padding: 4rem 0
+  
+  h2
+    text-align: center
+    font-size: 3.5rem
+    font-weight: 700
+    margin-bottom: 3rem
+    letter-spacing: -0.02em
+    background: linear-gradient(135deg, #FF9F5A 0%, #FF6B88 50%, #8B7FF6 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    position: relative
+    padding-bottom: 1.5rem
+    
+    &::after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+      width: 100px
+      height: 3px
+      background: linear-gradient(90deg, #FF9F5A, #FF6B88)
+      border-radius: 2px
+      box-shadow: 0 2px 10px rgba(255, 107, 136, 0.3)
+
+    &::before
+      content: 'Portfolio'
+      position: absolute
+      top: -2.5rem
+      left: 50%
+      transform: translateX(-50%)
+      font-size: 1rem
+      font-weight: 500
+      text-transform: uppercase
+      letter-spacing: 0.2em
+      color: rgba(255, 255, 255, 0.6)
+      background: none
+      -webkit-text-fill-color: rgba(255, 255, 255, 0.6)
+
+.show-more-container
+  display: flex
+  justify-content: center
+  margin-top: 3rem
+  
+  .show-more-button
+    background: linear-gradient(90deg, #6366f1, #8b5cf6)
+    color: white
+    border: none
+    padding: 1rem 2rem
+    border-radius: 50px
+    font-size: 1.1rem
+    font-weight: 500
+    cursor: pointer
+    transition: all 0.3s ease
+    
+    &:hover
+      transform: translateY(-2px)
+      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3)
+
+.project-grid
+  display: flex
+  flex-direction: column
+  gap: 1.5rem
+  max-width: 1400px
+  margin: 0 auto
+  padding: 0 2rem
+
+.project-row
+  display: flex
+  align-items: flex-start
+  gap: 2rem
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a)
+  border-radius: 12px
+  padding: 1.5rem
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3)
+  transition: all 0.3s ease
+  border: 1px solid rgba(255, 255, 255, 0.1)
+  
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4)
+    border-color: rgba(255, 255, 255, 0.2)
+  
+  &.expanded
+    border-color: rgba(102, 126, 234, 0.3)
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2)
+  
+  &.additional-row
+    display: none
+    opacity: 0
+    transform: translateY(20px)
+    transition: all 0.3s ease
+
+    &.show
+      display: flex
+      opacity: 1
+      transform: translateY(0)
+
+  .project-image
+    flex-shrink: 0
+    width: 200px
+    height: 120px
+    border-radius: 8px
+    overflow: hidden
+    position: relative
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      transition: transform 0.3s ease
+
+    &.placeholder
+      display: flex
+      align-items: center
+      justify-content: center
+      
+      i
+        color: rgba(255, 255, 255, 0.7)
+        
+      &.gradient-1
+        background: linear-gradient(135deg, rgba(79, 70, 229, 0.3), rgba(45, 212, 191, 0.3))
+      
+      &.gradient-2
+        background: linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(245, 158, 11, 0.3))
+      
+      &.gradient-3
+        background: linear-gradient(135deg, rgba(45, 212, 191, 0.3), rgba(79, 70, 229, 0.3))
+      
+      &.gradient-4
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(236, 72, 153, 0.3))
+      
+      &.gradient-5
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(45, 212, 191, 0.3))
+      
+      &.gradient-6
+        background: linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(79, 70, 229, 0.3))
+
+  .project-content
+    flex: 1
+    display: flex
+    flex-direction: column
+    gap: 1rem
+    
+    .project-header
+      display: flex
+      align-items: baseline
+      gap: 1rem
+      flex-wrap: wrap
+      
+      h4
+        font-size: 1.5rem
+        font-weight: 600
+        color: #ffffff
+        margin: 0
+        line-height: 1.2
+      
+      .project-date
+        font-size: 0.9rem
+        color: rgba(255, 255, 255, 0.5)
+        font-weight: 500
+        letter-spacing: 0.02em
+    
+    .project-description
+      color: rgba(255, 255, 255, 0.7)
+      line-height: 1.6
+      margin: 0
+      font-size: 0.95rem
+    
+    .project-specs
+      display: flex
+      gap: 0.75rem
+      flex-wrap: wrap
+      margin-top: 0.5rem
+      
+      .spec
+        background: rgba(255, 255, 255, 0.1)
+        padding: 0.5rem 1rem
+        border-radius: 4px
+        color: rgba(255, 255, 255, 0.8)
+        font-size: 0.85rem
+        font-weight: 500
+        transition: all 0.2s ease
+        
+        &:hover
+          background: rgba(255, 255, 255, 0.15)
+          transform: translateY(-1px)
+    
+    .expandable-content
+      margin-top: 1.5rem
+      padding-top: 1.5rem
+      border-top: 1px solid rgba(255, 255, 255, 0.1)
+      animation: fadeIn 0.3s ease-in-out
+      
+      .additional-images
+        margin-bottom: 1rem
+        
+      .detailed-info
+        color: rgba(255, 255, 255, 0.8)
+        line-height: 1.6
+
+  .project-actions
+    flex-shrink: 0
+    display: flex
+    align-items: flex-start
+    
+    .expand-button
+      background: rgba(255, 255, 255, 0.1)
+      border: 1px solid rgba(255, 255, 255, 0.2)
+      color: rgba(255, 255, 255, 0.8)
+      width: 40px
+      height: 40px
+      border-radius: 50%
+      display: flex
+      align-items: center
+      justify-content: center
+      cursor: pointer
+      transition: all 0.3s ease
+      
+      &:hover
+        background: rgba(255, 255, 255, 0.2)
+        border-color: rgba(255, 255, 255, 0.3)
+        transform: scale(1.1)
+      
+      i
+        font-size: 0.9rem
+        transition: transform 0.3s ease
+      
+      &:hover i
+        transform: scale(1.1)
+
+@media (max-width: 768px)
+  .work-preview
+    .project-grid
+      padding: 0 1rem
+      
+      .project-row
+        flex-direction: column
+        gap: 1rem
+        padding: 1rem
+        
+        .project-image
+          width: 100%
+          height: 200px
+        
+        .project-content
+          .project-header
+            flex-direction: column
+            align-items: flex-start
+            gap: 0.5rem
+            
+            h4
+              font-size: 1.25rem
+            
+            .project-date
+              font-size: 0.8rem
+          
+          .project-description
+            font-size: 0.9rem
+          
+          .project-specs
+            gap: 0.5rem
+            
+            .spec
+              font-size: 0.8rem
+              padding: 0.4rem 0.8rem
+        
+        .project-actions
+          align-self: flex-end
+          margin-top: 0.5rem
+
+// Additional Media Styles
+.additional-media
+  margin-top: 1.5rem
+  padding-top: 1.5rem
+  border-top: 1px solid rgba(255, 255, 255, 0.2)
+
+  h5
+    font-size: 1.1rem
+    font-weight: 600
+    margin-bottom: 1rem
+    color: #fff
+
+  .media-section
+    margin-bottom: 1.5rem
+
+    h6
+      font-size: 0.9rem
+      font-weight: 600
+      margin-bottom: 0.75rem
+      color: #b8c5d6
+      text-transform: uppercase
+      letter-spacing: 0.5px
+
+.media-grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+  gap: 1rem
+  margin-bottom: 1rem
+
+.media-item
+  border-radius: 8px
+  overflow: hidden
+  transition: transform 0.2s ease, box-shadow 0.2s ease
+  background: transparent !important
+  border: none !important
+
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3)
+
+  img, video
+    width: 100%
+    height: 200px
+    object-fit: cover
+    display: block
+    border-radius: 8px
+
+.media-caption
+  display: none
+
+.media-links
+  display: flex
+  flex-direction: column
+  gap: 0.5rem
+
+.media-link
+  display: inline-flex
+  align-items: center
+  gap: 0.5rem
+  padding: 0.75rem 1rem
+  background: rgba(255, 255, 255, 0.1)
+  border: 1px solid rgba(255, 255, 255, 0.2)
+  border-radius: 6px
+  text-decoration: none
+  color: #fff
+  font-size: 0.9rem
+  transition: all 0.2s ease
+  backdrop-filter: blur(10px)
+
+  &:hover
+    background: rgba(255, 255, 255, 0.2)
+    border-color: rgba(255, 255, 255, 0.3)
+    transform: translateY(-1px)
+
+  i
+    font-size: 0.8rem
+    color: #667eea
+
+.no-media
+  text-align: center
+  padding: 2rem
+  color: #b8c5d6
+  font-style: italic
+  background: rgba(255, 255, 255, 0.05)
+  border-radius: 8px
+  border: 1px dashed rgba(255, 255, 255, 0.2)
+
+// Project Image Container
+.project-image-container
+  flex-shrink: 0
+  width: 160px
+  height: 90px
+  margin-right: 1rem
+
+  .project-image
+    width: 100%
+    height: 100%
+    border-radius: 8px
+    display: flex
+    align-items: center
+    justify-content: center
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
+    &.placeholder
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+
+      &.gradient-1
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+
+      &.gradient-2
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)
+
+      &.gradient-3
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)
+
+      &.gradient-4
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)
+
+      &.gradient-5
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)
+
+      &.gradient-6
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)
+
+    i
+      color: white
+      opacity: 0.8
+
+// Responsive adjustments for media content
+@media (max-width: 768px)
+  .media-grid
+    grid-template-columns: 1fr
+    gap: 0.75rem
+
+  .media-image,
+  .media-video
+    height: 150px
+
+  .media-links
+    .media-link
+      padding: 0.5rem 0.75rem
+      font-size: 0.85rem
+
+  .additional-media
+    h5
+      font-size: 1rem
+
+    .media-section h6
+      font-size: 0.8rem
+
+// Edit Mode Styles
+.edit-mode-header
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+  color: white
+  padding: 20px 30px
+  margin-top: 80px
+  border-radius: 0 0 12px 12px
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1)
+
+  .edit-controls
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 15px
+
+    h2
+      margin: 0
+      font-size: 24px
+      font-weight: 600
+
+  .edit-actions
+    display: flex
+    align-items: center
+    gap: 15px
+
+  .publish-button
+    background: #28a745
+    color: white
+    border: none
+    padding: 12px 24px
+    border-radius: 8px
+    font-size: 14px
+    font-weight: 500
+    cursor: pointer
+    transition: all 0.2s ease
+    display: flex
+    align-items: center
+    gap: 8px
+
+    &:hover:not(:disabled)
+      background: #218838
+      transform: translateY(-1px)
+
+    &:disabled
+      background: #6c757d
+      cursor: not-allowed
+      transform: none
+
+    i
+      font-size: 16px
+
+  .unsaved-indicator
+    display: flex
+    align-items: center
+    gap: 5px
+    color: #ffc107
+    font-size: 14px
+    font-weight: 500
+
+    i
+      color: #ffc107
+
+  .edit-instructions
+    margin: 0
+    font-size: 14px
+    opacity: 0.9
+    line-height: 1.5
+
+// Edit Mode Project Styles
+.project-row.editing
+  border: 2px solid #667eea
+  background: #f8f9ff
+  border-radius: 12px
+  padding: 1rem
+
+.edit-fields
+  display: grid
+  grid-template-columns: 1fr auto auto auto
+  gap: 0.75rem
+  margin-bottom: 1rem
+
+  .edit-input
+    padding: 0.5rem
+    border: 1px solid #ddd
+    border-radius: 4px
+    font-size: 0.9rem
+    color: #000
+    background: #fff
+
+    &.project-name-input
+      grid-column: 1 / -1
+      font-weight: 600
+      font-size: 1rem
+
+    &.year-input
+      width: 80px
+
+    &.type-select
+      width: 120px
+
+    &.poster-input
+      grid-column: 1 / -1
+
+.edit-description
+  margin-bottom: 1rem
+
+  .edit-textarea
+    width: 100%
+    min-height: 80px
+    padding: 0.75rem
+    border: 1px solid #ddd
+    border-radius: 4px
+    font-size: 0.9rem
+    resize: vertical
+    color: #000
+    background: #fff
+
+// Edit Controls
+.project-actions
+  .edit-controls
+    display: flex
+    gap: 0.5rem
+
+  .edit-button,
+  .save-button,
+  .cancel-button
+    width: 40px
+    height: 40px
+    border: none
+    border-radius: 50%
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all 0.2s ease
+
+  .edit-button
+    background: #007bff
+    color: white
+
+    &:hover
+      background: #0056b3
+      transform: scale(1.1)
+
+  .save-button
+    background: #28a745
+    color: white
+
+    &:hover
+      background: #218838
+      transform: scale(1.1)
+
+  .cancel-button
+    background: #dc3545
+    color: white
+
+    &:hover
+      background: #c82333
+      transform: scale(1.1)
+
+// Media Management
+.media-management
+  .media-item
+    border: 1px solid rgba(255, 255, 255, 0.2)
+    border-radius: 8px
+    padding: 1rem
+    margin-bottom: 1rem
+    background: rgba(255, 255, 255, 0.05)
+
+  .media-edit-controls
+    display: grid
+    grid-template-columns: auto 1fr auto auto
+    gap: 0.75rem
+    align-items: center
+
+    .media-type-select
+      width: 100px
+      padding: 0.5rem
+      border: 1px solid #ddd
+      border-radius: 4px
+
+    .media-url-input,
+    .media-title-input
+      padding: 0.5rem
+      border: 1px solid #ddd
+      border-radius: 4px
+      font-size: 0.9rem
+
+    .remove-media-btn
+      background: #dc3545
+      color: white
+      border: none
+      border-radius: 4px
+      padding: 0.5rem
+      cursor: pointer
+      transition: background 0.2s ease
+
+      &:hover
+        background: #c82333
+
+  .add-media-btn
+    background: #007bff
+    color: white
+    border: none
+    padding: 0.75rem 1rem
+    border-radius: 6px
+    cursor: pointer
+    transition: all 0.2s ease
+    display: flex
+    align-items: center
+    gap: 0.5rem
+    font-size: 0.9rem
+
+    &:hover
+      background: #0056b3
+      transform: translateY(-1px)
+
+// Responsive adjustments for edit mode
+@media (max-width: 768px)
+  .edit-mode-header
+    padding: 1.5rem
+
+    .edit-controls
+      flex-direction: column
+      gap: 1rem
+      align-items: stretch
+
+    .edit-actions
+      justify-content: center
+
+  .edit-fields
+    grid-template-columns: 1fr
+    gap: 0.5rem
+
+    .year-input,
+    .type-select
+      width: 100%
+
+  .media-edit-controls
+    grid-template-columns: 1fr
+    gap: 0.5rem
+
+    .media-type-select
+      width: 100%
+
+// Media Collection Styles
+.media-section
+  margin-top: 20px
+  padding: 20px
+  background: transparent
+  border-radius: 8px
+
+  h4
+    margin-bottom: 15px
+    color: #333
+    font-weight: 600
+
+.media-grid
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+  gap: 15px
+  margin-bottom: 15px
+
+.media-item
+  background: white
+  border-radius: 8px
+  overflow: hidden
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1)
+  border: 1px solid #dee2e6
+
+  img, video
+    width: 100%
+    height: 120px
+    object-fit: cover
+    display: block
+
+.media-info
+  padding: 10px
+
+  .edit-input
+    width: 100%
+    margin-bottom: 8px
+    padding: 6px 8px
+    border: 1px solid #ddd
+    border-radius: 4px
+    font-size: 12px
+
+.media-actions
+  display: flex
+  gap: 5px
+  margin-top: 8px
+
+  .set-poster-btn
+    flex: 1
+    padding: 4px 8px
+    background: #007bff
+    color: white
+    border: none
+    border-radius: 4px
+    font-size: 11px
+    cursor: pointer
+
+    &:hover
+      background: #0056b3
+
+  .remove-btn
+    padding: 4px 8px
+    background: #dc3545
+    color: white
+    border: none
+    border-radius: 4px
+    font-size: 11px
+    cursor: pointer
+
+    &:hover
+      background: #c82333
+
+.add-media-btn
+  width: 100%
+  padding: 10px
+  background: #28a745
+  color: white
+  border: none
+  border-radius: 6px
+  font-size: 14px
+  cursor: pointer
+  margin-bottom: 15px
+
+  &:hover
+    background: #218838
+
+  i
+    margin-right: 8px
+
+// Drag and Drop Zone
+.drag-drop-zone
+  border: 2px dashed #007bff
+  border-radius: 8px
+  padding: 30px
+  text-align: center
+  background: #f8f9ff
+  transition: all 0.3s ease
+  cursor: pointer
+
+  &:hover, &.drag-over
+    background: #e3f2fd
+    border-color: #0056b3
+
+  i
+    font-size: 48px
+    color: #007bff
+    margin-bottom: 15px
+    display: block
+
+  p
+    color: #666
+    margin: 0
+    font-size: 14px
+
+  .uploading-text
+    color: #007bff
+    font-weight: 500
+
+    i
+      margin-right: 8px
+
+// Drag Over State
+.portfolio-card.drag-over
+  border-color: #007bff
+  background: #f8f9ff
+  transform: scale(1.02)
+  transition: all 0.2s ease
+
+// Edit Mode Styles
+.edit-input, .edit-textarea
+  width: 100%
+  padding: 8px 12px
+  border: 1px solid #ddd
+  border-radius: 4px
+  font-size: 14px
+  background: white
+  color: #333
+
+  &:focus
+    outline: none
+    border-color: #007bff
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25)
+
+.edit-textarea
+  resize: vertical
+  min-height: 80px
+
+.image-overlay
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(0,0,0,0.3)
+  display: flex
+  align-items: flex-start
+  justify-content: flex-end
+  padding: 10px
+  opacity: 0
+  transition: opacity 0.3s ease
+
+  &:hover
+    opacity: 1
+
+  .edit-input
+    background: white
+    color: #333
+    border: 1px solid #ddd
+    border-radius: 4px
+    padding: 6px 8px
+    font-size: 11px
+    width: 200px
+    max-width: 80%
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2)
+
+.project-image
+  position: relative
+  overflow: hidden
+  border-radius: 8px
+
+  &:hover .image-overlay
+    opacity: 1
+
+.poster-url-input
+  margin: 10px 0
+  padding: 10px
+  background: #f8f9fa
+  border-radius: 6px
+  border: 1px solid #dee2e6
+
+  label
+    display: block
+    font-size: 12px
+    font-weight: 600
+    color: #495057
+    margin-bottom: 5px
+
+  .edit-input
+    width: 100%
+    font-size: 13px
+    padding: 8px 10px
+
+// Edit Modal Styles
+.edit-modal
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.7)
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 1000
+  opacity: 0
+  visibility: hidden
+  transition: all 0.3s ease
+
+  &.show
+    opacity: 1
+    visibility: visible
+
+.edit-modal-content
+  background: white
+  border-radius: 12px
+  width: 90%
+  max-width: 800px
+  max-height: 90vh
+  overflow: hidden
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3)
+  transform: scale(0.9)
+  transition: transform 0.3s ease
+
+  .edit-modal.show &
+    transform: scale(1)
+
+.edit-modal-header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 20px 30px
+  border-bottom: 1px solid #e9ecef
+  background: #f8f9fa
+
+  h3
+    margin: 0
+    color: #333
+    font-size: 20px
+    font-weight: 600
+
+  .close-button
+    background: none
+    border: none
+    font-size: 20px
+    color: #666
+    cursor: pointer
+    padding: 5px
+    border-radius: 4px
+    transition: all 0.2s ease
+
+    &:hover
+      background: #e9ecef
+      color: #333
+
+.edit-modal-body
+  padding: 30px
+  max-height: 70vh
+  overflow-y: auto
+
+.form-section
+  margin-bottom: 30px
+
+  h4
+    margin: 0 0 15px 0
+    color: #333
+    font-size: 16px
+    font-weight: 600
+    border-bottom: 2px solid #007bff
+    padding-bottom: 5px
+
+.form-row
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+  gap: 15px
+  margin-bottom: 15px
+
+.form-group
+  margin-bottom: 15px
+
+  label
+    display: block
+    margin-bottom: 5px
+    color: #495057
+    font-weight: 500
+    font-size: 14px
+
+  .edit-input, .edit-textarea
+    width: 100%
+    padding: 10px 12px
+    border: 1px solid #ddd
+    border-radius: 6px
+    font-size: 14px
+    background: white
+    color: #333
+    transition: border-color 0.2s ease
+
+    &:focus
+      outline: none
+      border-color: #007bff
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1)
+
+.edit-textarea
+  resize: vertical
+  min-height: 100px
+
+.poster-section
+  display: grid
+  grid-template-columns: 200px 1fr
+  gap: 20px
+  align-items: start
+
+.poster-preview
+  img
+    width: 100%
+    height: 150px
+    object-fit: cover
+    border-radius: 8px
+    border: 2px solid #e9ecef
+
+.poster-input
+  .edit-input
+    margin-top: 5px
+
+.edit-modal-footer
+  display: flex
+  justify-content: flex-end
+  gap: 10px
+  padding: 20px 30px
+  border-top: 1px solid #e9ecef
+  background: #f8f9fa
+
+  .cancel-btn, .save-btn
+    padding: 10px 20px
+    border: none
+    border-radius: 6px
+    font-size: 14px
+    font-weight: 500
+    cursor: pointer
+    transition: all 0.2s ease
+
+  .cancel-btn
+    background: #6c757d
+    color: white
+
+    &:hover
+      background: #5a6268
+
+  .save-btn
+    background: #007bff
+    color: white
+
+    &:hover
+      background: #0056b3
+
+// Responsive Design
+@media (max-width: 768px)
+  .edit-modal-content
+    width: 95%
+    margin: 20px
+
+  .edit-modal-body
+    padding: 20px
+
+  .poster-section
+    grid-template-columns: 1fr
+    gap: 15px
+
+  .form-row
+    grid-template-columns: 1fr
+
+  .edit-modal-footer
+    flex-direction: column-reverse
+
+    .cancel-btn, .save-btn
+      width: 100%
+
+// Upload Progress Styles
+.uploading-text
+  display: flex
+  align-items: center
+  justify-content: center
+  color: #007bff
+  font-weight: 500
+
+  i
+    margin-right: 8px
+    animation: spin 1s linear infinite
+
+@keyframes spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+.upload-success-text
+  color: #28a745
+  font-weight: 500
+
+  i
+    margin-right: 8px
+
+// Force remove any white backgrounds from media containers
+.additional-media .media-grid .media-item,
+.media-section .media-grid .media-item
+  background: transparent !important
+  border: none !important
+  box-shadow: none !important
+  outline: none !important
+
+// Ensure media sections don't have white backgrounds
+.additional-media,
+.media-section
+  background: transparent !important
+
+// Project Info Blurb
+.project-info-blurb
+  max-width: 800px
+  margin: 0 auto 2rem
+  padding: 1.5rem
+  background: rgba(255, 255, 255, 0.05)
+  border: 1px solid rgba(255, 255, 255, 0.1)
+  border-radius: 12px
+  backdrop-filter: blur(10px)
+  
+  p
+    color: #b8c5d6
+    line-height: 1.6
+    margin: 0
+    font-size: 0.95rem
+    
+    strong
+      color: #fff
+      font-weight: 600

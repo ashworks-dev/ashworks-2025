@@ -1,0 +1,1018 @@
+{
+  "projects": [
+    {
+      "client": "Department of Education (Vic)",
+      "projects": [
+        {
+          "description": "Comprehensive project across 50+ schools, involving over 90 interviews with students, teachers, and administration staff to explore inclusive aspects of today's classrooms in both urban and rural Victoria.",
+          "featured": true,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-12h09m36s077.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h09m36s077_20250625_161940_optimized.jpg"
+            },
+            {
+              "title": "Screenshot 2024-01-09 at 11.12.24 am.png",
+              "type": "image",
+              "url": "/assets/images/Screenshot_2024-01-09_at_11.12.24_am_20250625_161944_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "Screenshot 2024-01-09 at 11.10.31 am.png",
+              "type": "image",
+              "url": "/assets/images/Screenshot_2024-01-09_at_11.10.31_am_20250625_161947_optimized.jpg"
+            },
+            {
+              "title": "Screenshot 2024-01-09 at 11.07.41 am.png",
+              "type": "image",
+              "url": "/assets/images/Screenshot_2024-01-09_at_11.07.41_am_20250625_161949_optimized.jpg"
+            },
+            {
+              "title": "Screenshot 2024-01-09 at 11.02.35 am.png",
+              "type": "image",
+              "url": "/assets/images/Screenshot_2024-01-09_at_11.02.35_am_20250625_161954_optimized.jpg"
+            },
+            {
+              "title": "Screenshot 2024-01-09 at 11.02.03 am.png",
+              "type": "image",
+              "url": "/assets/images/Screenshot_2024-01-09_at_11.02.03_am_20250625_161954_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h17m05s200.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h17m05s200_20250625_161958_optimized.jpg"
+            },
+            {
+              "title": "Screenshot 2024-01-09 at 11.13.46 am.png",
+              "type": "image",
+              "url": "/assets/images/Screenshot_2024-01-09_at_11.13.46_am_20250625_162007_optimized.jpg"
+            }
+          ],
+          "project_name": "Inclusive Classrooms",
+          "type": "Video",
+          "year": "2019 - 2020"
+        },
+        {
+          "description": "Three-day road trip to produce 8 videos at multiple schools across Victoria, interviewing teachers for insights on Personal Development.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-12h15m17s226.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h15m17s226_20250625_162135_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h15m25s323.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h15m25s323_20250625_162141_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h15m36s863.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h15m36s863_20250625_162146_optimized.jpg"
+            }
+          ],
+          "project_name": "Professional Development",
+          "type": "Video",
+          "year": "2020"
+        },
+        {
+          "description": "One-day shoot at DET, capturing interviews and b-roll of key players at work. Managed solo as cameraman.",
+          "featured": false,
+          "media": [
+            {
+              "title": "DSC09849.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC09849_20250625_162049_optimized.jpg"
+            },
+            {
+              "title": "DSC09804.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC09804_20250625_162058_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "DSC09816.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC09816_20250625_162115_optimized.jpg"
+            }
+          ],
+          "project_name": "Sustainability",
+          "type": "Video",
+          "year": "2024"
+        },
+        {
+          "description": "Produced six videos with interviews and b-roll, discussing approaches to modifying student behaviour.",
+          "featured": false,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-12h18m42s293.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h18m42s293_20250625_161740_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h17m53s358.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h17m53s358_20250625_161745_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-12h19m49s734.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h19m49s734_20250625_161751_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h19m22s504.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h19m22s504_20250625_161801_optimized.jpg"
+            }
+          ],
+          "project_name": "Behaviour",
+          "type": "Video",
+          "year": "2021"
+        },
+        {
+          "description": "Created two videos focused on using the Boardmaker tool in schools.",
+          "featured": false,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-12h16m43s870.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h16m43s870_20250625_161842_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-12h14m55s856.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h14m55s856_20250625_161858_optimized.jpg"
+            }
+          ],
+          "project_name": "Boardmaker",
+          "type": "Video",
+          "year": "2019"
+        },
+        {
+          "description": "Video project at Sunshine Harvester Primary School promoting inclusive environments.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "Screenshot 2024-01-09 at 11.15.47 am.png",
+              "type": "image",
+              "url": "/assets/images/Screenshot_2024-01-09_at_11.15.47_am_20250625_161915_optimized.jpg"
+            }
+          ],
+          "project_name": "Whole school approach to teaching literacy",
+          "type": "Video",
+          "year": "2020"
+        }
+      ]
+    },
+    {
+      "client": "Australian Catholic University",
+      "projects": [
+        {
+          "description": "Produced 10 promotional videos over two days, focusing on international student experiences.",
+          "featured": false,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-13h33m52s289.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-13h33m52s289_20250625_151235_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-13h35m10s910.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-13h35m10s910_20250625_151239_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-13h36m14s476.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-13h36m14s476_20250625_151248_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-13h35m24s883.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-13h35m24s883_20250625_151254_optimized.jpg"
+            }
+          ],
+          "project_name": "International Student Promo",
+          "type": "Video",
+          "year": "2023"
+        },
+        {
+          "description": "Video production, web development, and 360 photography showcasing tourist sites in Melbourne CBD. Includes quizzes to attract overseas students.",
+          "featured": true,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-12h28m16s956.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h28m16s956_20250625_151448_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h09m00s603.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h09m00s603_20250625_151452_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h08m46s703.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h08m46s703_20250625_151456_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h07m50s717.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h07m50s717_20250625_151504_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-12h07m36s396.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h07m36s396_20250625_151508_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h07m29s702.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h07m29s702_20250625_151511_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h07m20s338.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h07m20s338_20250625_151517_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-11h50m11s978.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h50m11s978_20250625_151521_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-11h50m58s939.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h50m58s939_20250625_151525_optimized.jpg"
+            }
+          ],
+          "project_name": "ACU 360 Virtual Tour",
+          "type": "Video/Web",
+          "year": "2020"
+        },
+        {
+          "description": "Produced promotional videos featuring interviews and student testimonials about student services.",
+          "featured": false,
+          "media": [
+            {
+              "title": "Screenshot 2024-01-09 at 3.37.21 pm.png",
+              "type": "image",
+              "url": "/assets/images/Screenshot_2024-01-09_at_3.37.21_pm_20250625_161622_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-14h12m44s232.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-14h12m44s232_20250625_161635_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-13h52m43s990.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-13h52m43s990_20250625_161639_optimized.jpg"
+            }
+          ],
+          "project_name": "Student Services",
+          "type": "Video",
+          "year": "2022"
+        }
+      ]
+    },
+    {
+      "client": "Powercor",
+      "projects": [
+        {
+          "description": "Two-day road trip interviewing power line workers about returning home safely.",
+          "featured": true,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "DSC08821.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC08821_20250625_160924_optimized.jpg"
+            },
+            {
+              "title": "DSC08785.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC08785_20250625_160934_optimized.jpg"
+            },
+            {
+              "title": "DSC08631.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC08631_20250625_160948_optimized.jpg"
+            }
+          ],
+          "project_name": "Live Safely, Lead Safely",
+          "type": "Video",
+          "year": "2022"
+        },
+        {
+          "description": "Produced 12 safety videos over two months at various depots and work sites in Melbourne, including underground substations and crane shots.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "pc-9.JPG",
+              "type": "image",
+              "url": "/assets/images/pc-9_20250625_161029_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2023-09-14-15h43m44s733.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2023-09-14-15h43m44s733_20250625_161034_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-11h41m07s264.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h41m07s264_20250625_161038_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-11h27m44s298.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h27m44s298_20250625_161043_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-11h25m38s800.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h25m38s800_20250625_161048_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-11h43m36s160.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h43m36s160_20250625_161052_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-11h40m05s600.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h40m05s600_20250625_161107_optimized.jpg"
+            }
+          ],
+          "project_name": "Safety At Work",
+          "type": "Video",
+          "year": "2022"
+        },
+        {
+          "description": "Produced 4 safety videos highlighting safety requirements and procedures for hazardous environments.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-11h42m42s436.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h42m42s436_20250625_161002_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2023-09-14-15h43m44s733.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2023-09-14-15h43m44s733_20250625_161008_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-11h42m36s072.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h42m36s072_20250625_161015_optimized.jpg"
+            }
+          ],
+          "project_name": "Safety Training: JSEA",
+          "type": "Video",
+          "year": "2022"
+        }
+      ]
+    },
+    {
+      "client": "Coles",
+      "projects": [
+        {
+          "description": "Three-day shoot at an automated distribution warehouse in QLD, one of many planned for 2024.",
+          "featured": false,
+          "media": [
+            {
+              "title": "DSC08463.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC08463_20250625_150508_optimized.jpg"
+            },
+            {
+              "title": "DSC08435.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC08435_20250625_150925_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "DSC08402.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC08402_20250625_153642_optimized.jpg"
+            }
+          ],
+          "project_name": "ADC Training QLD",
+          "type": "Video",
+          "year": "2025"
+        },
+        {
+          "description": "Three days filming interviews and training videos on automated warehousing in bakery and fresh produce. Involving many step by step procedures for operrations of commerical bakery, fresh produce processing equipment and operations.",
+          "featured": false,
+          "media": [
+            {
+              "title": "DSC08549.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC08549_20250625_153846_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "DSC08567.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC08567_20250625_153939_optimized.jpg"
+            }
+          ],
+          "project_name": "CFC Training NSW",
+          "type": "Video",
+          "year": "2025"
+        },
+        {
+          "description": "One-day shoot focusing on bakery section procedures.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-14h59m58s986.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-14h59m58s986_20250625_153511_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-14h56m10s082.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-14h56m10s082_20250625_153520_optimized.jpg"
+            }
+          ],
+          "project_name": "Intro to Bakery Production & Planning",
+          "type": "Video",
+          "year": "2023"
+        },
+        {
+          "description": "One-day shoot highlighting new hi-tech gate technology.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-15h04m04s053.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-15h04m04s053_20250625_154003_optimized.jpg"
+            }
+          ],
+          "project_name": "Smarter Gates",
+          "type": "Video",
+          "year": "2023"
+        },
+        {
+          "description": "Training video guiding staff on Click and Collect procedures.",
+          "featured": false,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-15h07m35s946.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-15h07m35s946_20250625_153227_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-15h08m31s346.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-15h08m31s346_20250625_153237_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-15h06m15s752.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-15h06m15s752_20250625_153454_optimized.jpg"
+            }
+          ],
+          "project_name": "Click and Collect",
+          "type": "Video",
+          "year": "2024"
+        },
+        {
+          "description": "Checkout procedures video using new benches and register updates.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "IMG_1743.jpeg",
+              "type": "image",
+              "url": "/assets/images/IMG_1743_20250625_152634_optimized.jpg"
+            }
+          ],
+          "project_name": "Transform",
+          "type": "Video",
+          "year": "2022"
+        },
+        {
+          "description": "Videos on correct manual handling procedures at a distribution centre.",
+          "featured": false,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-15h16m49s061 Medium.jpeg",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-15h16m49s061_Medium_20250625_154051_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2023-09-14-15h45m43s972.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2023-09-14-15h45m43s972_20250625_154101_optimized.jpg"
+            }
+          ],
+          "project_name": "Manual Handling",
+          "type": "Video",
+          "year": "2021"
+        },
+        {
+          "description": "Training video and interviews for new Covid response checkouts.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2023-09-14-15h44m15s893.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2023-09-14-15h44m15s893_20250625_154139_optimized.jpg"
+            },
+            {
+              "title": "coles-taco.JPG",
+              "type": "image",
+              "url": "/assets/images/coles-taco_20250625_154151_optimized.jpg"
+            }
+          ],
+          "project_name": "Covid response checkouts",
+          "type": "Video",
+          "year": "2021"
+        },
+        {
+          "description": "Equipment and forklift training videos.",
+          "featured": false,
+          "media": [],
+          "project_name": "MDC",
+          "type": "Video",
+          "year": "2021"
+        },
+        {
+          "description": "Green screen shoots for a 360 VR project with actors directed remotely.",
+          "featured": true,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "b2.png",
+              "type": "image",
+              "url": "/assets/images/b2_20250625_152402_optimized.jpg"
+            }
+          ],
+          "project_name": "Coles VR",
+          "type": "Video",
+          "year": "2022"
+        },
+        {
+          "description": "Three-day shoot for staff training videos at checkout.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "coles-1.JPG",
+              "type": "image",
+              "url": "/assets/images/coles-1_20250625_152806_optimized.jpg"
+            }
+          ],
+          "project_name": "Checkout 101",
+          "type": "Video",
+          "year": "2020"
+        },
+        {
+          "description": "Interviews and videos focusing on self-service area security.",
+          "featured": true,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-15h22m32s822.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-15h22m32s822_20250625_152829_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "b6 2.png",
+              "type": "image",
+              "url": "/assets/images/b6_2_20250625_152835_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-13h15m08s468.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-13h15m08s468_20250625_152848_optimized.jpg"
+            }
+          ],
+          "project_name": "AOC Self Service",
+          "type": "Video",
+          "year": "2023"
+        },
+        {
+          "description": "Two-day shoot for interviews and training on hand scanner procedures.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "DSC04917.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC04917_20250625_153115_optimized.jpg"
+            }
+          ],
+          "project_name": "Gap Scanning",
+          "type": "Video",
+          "year": "2023"
+        },
+        {
+          "description": "Shoot in South Australia covering receiving and dispatch procedures at a distribution center.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-15h10m34s201.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-15h10m34s201_20250625_162528_optimized.jpg"
+            }
+          ],
+          "project_name": "My Distribution Centre: Dispatch",
+          "type": "Video",
+          "year": "2024"
+        },
+        {
+          "description": "Interactive 360° virtual tours for new store layouts and safety procedures, combining video production with web development.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "coles360.jpg",
+              "type": "image",
+              "url": "/assets/images/coles360_20250625_154403_optimized.jpg"
+            }
+          ],
+          "project_name": "360 Virtual Stores",
+          "type": "Video/Web",
+          "year": "2020"
+        },
+        {
+          "description": "Three day shoot onsite with actors and several staff. A variety of videos with a range of difficult customers and techniques to handle them.",
+          "featured": true,
+          "media": [
+            {
+              "title": "DSC04942.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC04942_20250625_154641_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "DSC04985.JPG",
+              "type": "image",
+              "url": "/assets/images/DSC04985_20250625_154653_optimized.jpg"
+            },
+            {
+              "title": "Screenshot 2024-01-09 at 3.36.43 pm.png",
+              "type": "image",
+              "url": "/assets/images/Screenshot_2024-01-09_at_3.36.43_pm_20250625_154714_optimized.jpg"
+            },
+            {
+              "title": "Screenshot 2024-01-09 at 3.36.11 pm.png",
+              "type": "image",
+              "url": "/assets/images/Screenshot_2024-01-09_at_3.36.11_pm_20250625_154718_optimized.jpg"
+            }
+          ],
+          "project_name": "Difficult Customers at the Register",
+          "type": "Video",
+          "year": "2022"
+        }
+      ]
+    },
+    {
+      "client": "National Australia Bank (NAB)",
+      "projects": [
+        {
+          "description": "Video and 360-degree shoot at NAB's new hybrid office building in Sydney, with accompanying website.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2023-09-14-15h45m23s058.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2023-09-14-15h45m23s058_20250625_155723_optimized.jpg"
+            }
+          ],
+          "project_name": "360 Tour New Sydney office",
+          "type": "Video/Web",
+          "year": "2022"
+        },
+        {
+          "description": "Actors demonstrate techniques for engaging customers.",
+          "featured": false,
+          "media": [
+            {
+              "title": "DSC05792_1-800x450.jpg",
+              "type": "image",
+              "url": "/assets/images/DSC05792_1-800x450_20250625_155323_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-11h58m20s922.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h58m20s922_20250625_155338_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-11h51m40s405.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h51m40s405_20250625_155553_optimized.jpg"
+            }
+          ],
+          "project_name": "NAB Inspire: Engaging the customer",
+          "type": "Video",
+          "year": "2019"
+        },
+        {
+          "description": "Video recreating a customer call center scenario.",
+          "featured": true,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-11h53m47s960.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h53m47s960_20250625_155523_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-11h55m14s448.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h55m14s448_20250625_155532_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2023-09-14-15h49m13s090.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2023-09-14-15h49m13s090_20250625_155743_optimized.jpg"
+            }
+          ],
+          "project_name": "Hybrid Discover",
+          "type": "Video",
+          "year": "2019"
+        },
+        {
+          "description": "Staff testimonials on the Inspire suite's impact.",
+          "featured": false,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-12h11m24s713.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h11m24s713_20250625_155430_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h11m36s565.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h11m36s565_20250625_155438_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h25m28s908.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h25m28s908_20250625_155442_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h11m19s157.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h11m19s157_20250625_155648_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-12h25m56s891.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h25m56s891_20250625_155701_optimized.jpg"
+            }
+          ],
+          "project_name": "NAB Inspire: Direct",
+          "type": "Video",
+          "year": "2018"
+        },
+        {
+          "description": "Video focusing on customer handover to specialists.",
+          "featured": false,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-12h05m29s122.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h05m29s122_20250625_155610_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-12h06m18s135.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h06m18s135_20250625_155620_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h06m43s150.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h06m43s150_20250625_155624_optimized.jpg"
+            }
+          ],
+          "project_name": "Handover",
+          "type": "Video",
+          "year": "2018"
+        },
+        {
+          "description": "Testimonial videos about professional appearance.",
+          "featured": false,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-11h57m04s444.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h57m04s444_20250625_155358_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-11h56m54s416.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h56m54s416_20250625_155402_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-11h56m34s878.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-11h56m34s878_20250625_155406_optimized.jpg"
+            }
+          ],
+          "project_name": "Professional Appearance",
+          "type": "Video",
+          "year": "2017"
+        },
+        {
+          "description": "Developed interactive intranet portals on SharePoint with media-rich interactions and dynamic features.",
+          "project_name": "NAB Portals",
+          "type": "Web",
+          "year": "2015-2016"
+        },
+        {
+          "description": "Award-winning site focused on home and work ergonomics.",
+          "project_name": "NAB Hybrid Working",
+          "type": "Web",
+          "year": 2020
+        }
+      ]
+    },
+    {
+      "client": "Dept of Health and Human Services",
+      "projects": [
+        {
+          "description": "Short video created during COVID, demonstrating hand sanitizing procedures.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "Screenshot 2024-01-09 at 4.33.28 pm.png",
+              "type": "image",
+              "url": "/assets/images/Screenshot_2024-01-09_at_4.33.28_pm_20250625_160527_optimized.jpg"
+            }
+          ],
+          "project_name": "Cleaner Hands",
+          "type": "Video",
+          "year": "2020"
+        },
+        {
+          "description": "Documented Environmental Health Officers conducting inspections at various locations.",
+          "featured": true,
+          "media": [
+            {
+              "title": "tatts.jpg",
+              "type": "image",
+              "url": "/assets/images/tatts_20250625_160541_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2023-09-14-15h48m17s185.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2023-09-14-15h48m17s185_20250625_160547_optimized.jpg"
+            },
+            {
+              "title": "Screenshot 2024-01-09 at 4.32.54 pm.png",
+              "type": "image",
+              "url": "/assets/images/Screenshot_2024-01-09_at_4.32.54_pm_20250625_160558_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "b9-1.png",
+              "type": "image",
+              "url": "/assets/images/b9-1_20250625_160604_optimized.jpg"
+            }
+          ],
+          "project_name": "Day in the Life of a EHO",
+          "type": "Video",
+          "year": "2023"
+        },
+        {
+          "description": "Virtual training solution for food safety officers, shot at a Melbourne cafe with 360 and standard video.",
+          "featured": false,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-12h12m32s724.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h12m32s724_20250625_155826_optimized.jpg"
+            },
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-12h13m26s993.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h13m26s993_20250625_155833_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h12m57s420.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h12m57s420_20250625_155838_optimized.jpg"
+            },
+            {
+              "title": "b11a-1.png",
+              "type": "image",
+              "url": "/assets/images/b11a-1_20250625_155843_optimized.jpg"
+            }
+          ],
+          "project_name": "Food Safety",
+          "type": "Video",
+          "year": "2023"
+        },
+        {
+          "description": "Virtual training solution for food safety focusing on allergens, using a cafe setting.",
+          "featured": false,
+          "media": [],
+          "project_name": "Allergens",
+          "type": "Video",
+          "year": "2023"
+        },
+        {
+          "description": "360-degree photos at the main meal supplier for Melbourne hospitals.",
+          "featured": false,
+          "media": [],
+          "project_name": "Monash Commercial Kitchen",
+          "type": "Video",
+          "year": "2023"
+        },
+        {
+          "description": "Interviews with parents about communication improvements in hospitals.",
+          "featured": false,
+          "media": [],
+          "project_name": "Safer Care",
+          "type": "Video",
+          "year": "2023"
+        }
+      ]
+    },
+    {
+      "client": "Suncorp",
+      "projects": [
+        {
+          "description": "Insurance fraud training with professional actors in staged scenarios across multiple locations.",
+          "featured": false,
+          "media": [],
+          "project_name": "Insurance Fraud Training",
+          "type": "Video",
+          "year": "2019"
+        },
+        {
+          "description": "asdasd",
+          "featured": false,
+          "media": [],
+          "project_name": "Onboarding 360",
+          "type": "Video/Web",
+          "year": "2019"
+        }
+      ]
+    },
+    {
+      "client": "Suncorp",
+      "projects": [
+        {
+          "description": "Management communication videos and 360° virtual tours of offices.",
+          "featured": false,
+          "media": [],
+          "project_name": "Management Communications",
+          "type": "Video",
+          "year": "2018"
+        }
+      ]
+    },
+    {
+      "client": "Melba NDIS",
+      "projects": [
+        {
+          "project_name": "NDIS Landscape",
+          "type": "Video",
+          "year": "2025",
+          "description": "Three day shoot and edit at various Melba offices and support centres. Interviews with staff and clients and b-roll. Coverage of the financial and human aspects of the services they provide",
+          "featured": false,
+          "media": []
+        },
+        {
+          "project_name": "Financial Management",
+          "type": "Video",
+          "year": "2025",
+          "description": "Quick half day corporate interviews.",
+          "featured": false,
+          "media": []
+        }
+      ]
+    }
+  ]
+}

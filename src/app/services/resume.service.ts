@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { PROJECT_DATA } from './project-data';
 
 export interface Experience {
   company: string;
@@ -14,7 +15,10 @@ export interface Skill {
   category: string;
   subcategories: {
     name: string;
-    items: string[];
+    items: {
+      name: string;
+      isPrimary?: boolean;
+    }[];
   }[];
 }
 
@@ -23,6 +27,8 @@ export interface Project {
   description: string;
   linkedinDescription?: string;  // Optional brief description for LinkedIn
   link?: string;
+  videoOnly?: boolean;
+  webDescription?: string;
   period: string;
   technologies: {
     icon: string;
@@ -36,6 +42,25 @@ export interface Endorsement {
   position: string;
   email?: string;
   phone?: string;
+}
+
+export interface DetailedProject {
+  type: string;
+  project_name: string;
+  year: number | string | null;
+  description: string;
+  posterImage?: string | null;
+  media?: {
+    type: string;
+    url: string;
+    title?: string;
+    description?: string;
+  }[];
+}
+
+export interface ClientProject {
+  client: string;
+  projects: DetailedProject[];
 }
 
 export interface AboutMe {
@@ -55,85 +80,93 @@ export interface AboutMe {
 })
 export class ResumeService {
   summary = `20+ years building web and eLearning applications, with expertise spanning front-end development, backend systems, and cloud infrastructure. Complemented by 8+ years of successful video production that has delivered 200+ corporate and training videos for major Australian organizations. Entirely self-taught, I've demonstrated a unique ability to master complex emerging technologies, from AI and machine learning to advanced video production techniques. My journey from traditional web development to becoming a sought-after video producer showcases my adaptability and commitment to growth. Currently focused on AI integration and video production, I combine technical expertise with creative problem-solving to deliver innovative solutions that meet real business needs. My success in both technical development and video production reflects my ability to rapidly grasp and implement cutting-edge technologies while maintaining a practical, business-focused approach.`;
-
+  
+  webSummary = 'Experienced Senior Web Developer with over 20 years of expertise in modern web technologies, backend frameworks and platforms. Specialised in creating L&D solutions, websites, tools and applications using Angular, React, Node.js, cloud technologies, elearning authoring tools and more recently a revival in Python to jump onto the AI technology boom and now a heavy user of AI coding tools. Proven track record of delivering high-quality digital solutions for enterprise clients, with strong focus on performance optimization, accessibility, and emerging web technologies. With addtional skills in media asset production and professional corporate video production for seven years, where I blend my technical expertise with my passion for creative media I\'ve delivered engaging, high-quality web and video content for businesses and educational institutions.';
+  
+  videoSummary = "After decades of working with technology and building web applications, I pursued a passion of mine to enter into video production - self-funded and running the entire operation myself for my main employer. This has allowed them to offer professional video services to their clients and has been a solid partnership for nearly a decade. This transition has led to over 7 years of expertise in corporate video production, training content creation, and multimedia storytelling. Specialized in creating engaging, professional video content for businesses, educational institutions, and training programs. Proven track record of delivering high-quality video solutions that effectively communicate complex messages and drive engagement. My background in technology has given me a unique perspective on digital content delivery, allowing me to create videos that are not only visually compelling but also optimized for various platforms and audiences.";
+  
+  aiAdoption = `I've embraced AI as a natural evolution of my work, just as I've adapted to every technological advancement throughout my career. While I've successfully implemented AI solutions in commercial projects like Coles' courseware generation system, I maintain an exploratory approach to emerging AI technologies. Like many developers, I'm actively experimenting with AI tools in image, video, and audio generation, constantly adapting to new capabilities and limitations. I now code exclusively using AI coding tools. This includes using AI for code generation, content creation using the leading video gen platforms, while developing custom solutions for projects. My approach balances practical implementation with ongoing experimentation, recognizing that the AI landscape is rapidly evolving and requires continuous learning and adaptation.`;
+  aiVideoSummary = `I've embraced AI as a natural evolution of my work, just as I've adapted to every technological advancement throughout my career. While I've successfully implemented AI solutions in commercial projects like Coles' courseware generation system, I maintain an exploratory approach to emerging AI technologies. Like many developers, I'm actively experimenting with AI tools in image, video, and audio generation, constantly adapting to new capabilities and limitations. I now code exclusively using AI coding tools. This includes using AI for code generation, content creation using the leading video gen platforms, while developing custom solutions for projects. My approach balances practical implementation with ongoing experimentation, recognizing that the AI landscape is rapidly evolving and requires continuous learning and adaptation.`;
   experiences: Experience[] = [
     {
       company: 'Liberate Learning',
-      position: 'Web Applications Developer / Videographer',
-      period: '2014–Present',
-      location: 'Remote Freelancer',
-      companyDescription: 'A leading Australian eLearning company specializing in custom learning solutions, corporate training, and educational technology. Known for innovative approaches to digital learning and award-winning courseware.',
+      position: 'Video Producer & Web Developer (Remote Contractor)',
+      period: '2013–Present',
+      location: 'Melbourne, Australia',
       description: [
-        'SECTION_HEADER:Development',
-        'Built and deployed Angular web apps, portals, 360 tours, mobile apps for major Australian universities, banks, and gov departments',
-        'Led multi-year Angular / Laravel / Lumen projects',
-        'Developed award-winning 360 training environments and video-first learning modules',
-        'Embedded R&D for emerging tech: VR, AI chatbots, cloud infrastructure',
-        'Developed internal business tools for lesson planning, chatbots',
-        'R&D and tech consulting on projects: custom LLM uses, volumetric 3D video rendering, AI avatars, AI courseware generation',
-        'SECTION_HEADER:Videography',
-        'Produced 200+ corporate/training videos for major clients including NAB, Coles, Suncorp, Powercor, and Department of Education',
-        'Created comprehensive video series including safety training, customer service scenarios, and management communications',
-        'Developed immersive 360° virtual tours and VR training experiences for multiple organizations',
-        'Produced documentary-style content with professional actors and multi-camera setups',
-        'Managed complex logistics across multiple states, including on-location filming at various sites',
-        'Specialized in green screen training modules and complex scene alignment for procedural training'
+        'Produced 200+ corporate and training videos for major Australian organizations including Coles, NAB, Powercor, and Department of Health.',
+        'Developed custom web applications and interactive 360° virtual tours using Angular, Three.js, and modern web technologies.',
+        'Specialized in safety training videos, customer service scenarios, and educational content with professional actors and complex technical scenarios.',
+        'Created comprehensive video production workflows from pre-production planning through post-production delivery.',
+        'Integrated video content with web platforms for interactive training experiences and virtual tours.'
       ],
       achievements: [
-        '2023 LearnX Winner – Best eLearning Design',
-        '2023 AITD Finalist – Best Learning Technology'
+        'Delivered 50+ safety training videos for Powercor covering critical high-voltage procedures',
+        'Created 360° virtual tours for ACU campuses during COVID-19 travel restrictions',
+        'Developed AI-powered courseware generation system for Coles training content',
+        'Produced rapid-response hand hygiene training during COVID-19 pandemic'
+      ],
+      companyDescription: 'Leading eLearning company specializing in corporate training solutions, where I serve as a senior developer and technical advisor providing expertise in web development, video production, and emerging technologies.'
+    },
+    {
+      company: 'Omni',
+      position: 'Senior Web Developer',
+      period: '2005–2013',
+      location: 'Melbourne, Australia',
+      companyDescription: 'A pioneering eLearning company that specialized in creating interactive learning solutions using Flash and 3D technologies. Known for developing innovative training tools and compliance courses for major Australian corporations.',
+      description: [
+        'Built hundreds of interactive Flash/HTML training sites',
+        'Developed custom and reusable courseware frameworks in HTML/JS',
+        'Created mobile apps for training medical registrars',
+        'Managed small dev teams, offshored production, 3D avatar development',
+        'Heavy focus on accessibility, LMS integration, cross-browser compliance'
       ]
     },
-    // ... other experiences remain the same
+    {
+      company: 'CSIRO Multimedia',
+      position: 'Lead Multimedia Developer',
+      companyDescription: 'Australia\'s national science agency and one of the largest and most diverse research agencies in the world. The Multimedia division focused on creating educational content and documentaries to make science accessible to the public.',
+      period: '2000–2005',
+      location: 'Melbourne, Australia',
+      description: [
+        'Built Flash-based science and math learning modules for primary and secondary students',
+        'Assisted in CSIRO video documentary productions as a cameraman'
+      ]
+    },
+    {
+      company: 'Adacel',
+      position: 'Web / eLearning Developer',
+      companyDescription: 'A global technology company specializing in air traffic management, simulation, and training solutions. Known for developing advanced software systems for aviation and defense industries.',
+      period: '1998–2000',
+      location: 'Melbourne, Australia',
+      description: [
+        'Built national training systems during ANZ\'s upgrade from DOS to Windows 2000',
+        'Worked alongside software dev teams to create learning support tools for 20,000+ staff'
+      ]
+    },
+    {
+      company: 'Access Net Australia',
+      position: 'Systems Developer / ISP Admin',
+      period: '1998–1999',
+      location: 'Melbourne, Australia',
+      companyDescription: 'An early internet service provider and web development company in Australia, focusing on providing internet access and web solutions for businesses during the early days of commercial internet.',
+      description: [
+        'Managed early Mac-based web servers, Unix servers, and Lasso scripting',
+        'ISP server administration and maintenance'
+      ]
+    }
   ];
 
   projects: Project[] = [
     {
-      title: 'Cell Therapies',
-      description: 'Intensive two-day video production in a high bio-safety environment, documenting critical facility procedures. Captured detailed footage of facility cleaning protocols, air quality monitoring, and surface testing procedures while operating in full PPE. The project required meticulous planning to safely document these sensitive processes while maintaining strict bio-safety protocols. Successfully documented the complex and critical nature of maintaining a sterile environment in a cell therapy manufacturing facility.',
-      linkedinDescription: 'Intensive two-day video production in a high bio-safety environment, documenting critical facility procedures including cleaning protocols, air quality monitoring, and surface testing while operating in full PPE. Successfully captured the complex and critical nature of maintaining a sterile environment in a cell therapy manufacturing facility.',
-      period: '2025',
-      technologies: [
-        { icon: 'fas fa-video', name: 'Video Production' },
-        { icon: 'fas fa-biohazard', name: 'Bio-safety' },
-        { icon: 'fas fa-shield-alt', name: 'PPE' },
-        { icon: 'fas fa-vial', name: 'Testing' }
-      ]
-    },
-    {
-      title: 'Australian Association of Social Workers (AASW) Training Series',
-      description: 'Ongoing collaboration producing professional training content across multiple shoots. First project (Dec 2023) focused on eLearning content featuring emotionally charged counselling sessions and sensitive interviews with professional actors. Second project (Mar 2024) expanded to include versatile studio production, transforming a North Melbourne conference room into multiple settings: an interview space, two distinct meeting rooms, and an apartment. The project focused on suicide prevention training, combining staff and professional actors to create authentic scenarios. These videos were integrated with an extensive eLearning course, demonstrating successful collaboration between video production and eLearning development. The client quickly adapted to video production techniques, resulting in highly effective training content.',
-      linkedinDescription: 'Produced suicide prevention training content, transforming a conference room into multiple professional settings. Combined staff and actors to create authentic scenarios, integrated with an extensive eLearning course. Successfully guided the client through video production techniques.',
-      period: '2023-2024',
-      technologies: [
-        { icon: 'fas fa-video', name: 'Video Production' },
-        { icon: 'fas fa-theater-masks', name: 'Acting' },
-        { icon: 'fas fa-users', name: 'Stakeholder Management' },
-        { icon: 'fas fa-film', name: 'Direction' },
-        { icon: 'fas fa-graduation-cap', name: 'eLearning' }
-      ]
-    },
-    {
-      title: 'Melba Support Services (NDIS)',
-      description: 'Comprehensive video production project for Melba, an NDIS support organization, documenting their services and impact across multiple locations. The project involved two major shoots at their Ballarat and Melbourne offices, capturing interviews with staff, management, and clients. Included extensive b-roll footage of support workers assisting clients in their homes, showcasing the organization\'s commitment to personalized care and community support. The final deliverables included both promotional content and internal training materials, highlighting Melba\'s dedication to quality disability support services.',
-      linkedinDescription: 'Comprehensive video production for an NDIS support organization, including interviews with staff, management, and clients at their Ballarat and Melbourne offices. Captured b-roll footage of support workers assisting clients in their homes, showcasing the organization\'s commitment to personalized care and community support.',
-      period: '2024',
-      technologies: [
-        { icon: 'fas fa-video', name: 'Video Production' },
-        { icon: 'fas fa-microphone', name: 'Interviews' },
-        { icon: 'fas fa-users', name: 'Client Stories' },
-        { icon: 'fas fa-map-marker-alt', name: 'Multi-location' }
-      ]
-    },
-    {
-      title: 'AI Courseware Generator',
+      title: 'Coles AI Courseware Generator',
       description: 'Developing an AI-powered system for Coles that automatically generates interactive training modules in the Adapt Framework. The system processes existing eLearning content or AI-generated storyboards through a sophisticated pipeline: initially using LLMs to parse and generate intermediate data files, followed by an extensive storyboard-to-courseware processor. Features include review capabilities, block and text editing, image upload functionality, and comprehensive user and process/build queue management. The final output can be previewed within the tool or exported to the Adapt Authoring tool for further refinement.',
       linkedinDescription: 'Developing an AI-powered system for automated courseware generation in the Adapt Framework, featuring LLM integration, review capabilities, and comprehensive build management. The system processes existing content through a sophisticated pipeline, generating interactive training modules with minimal manual intervention.',
       period: '2024-present',
       technologies: [
         { icon: 'fas fa-robot', name: 'AI/LLM' },
         { icon: 'fab fa-python', name: 'Python' },
-        { icon: 'fas fa-brain', name: 'Machine Learning' },
+        { icon: 'fab fa-angular', name: 'Angular' },
         { icon: 'fas fa-graduation-cap', name: 'eLearning' }
       ]
     },
@@ -142,6 +175,7 @@ export class ResumeService {
       description: 'Long-term collaboration (2019-2024) producing comprehensive training content including: 360° store walkthroughs for new store layouts and safety procedures, green screen training modules for customer service and compliance, VR training experiences for warehouse operations, and complex scene alignment for procedural training. Projects involved extensive pre-production planning, multi-camera setups, and post-production workflows to ensure consistent quality across all deliverables.',
       linkedinDescription: 'Long-term collaboration producing comprehensive training content including 360° store walkthroughs, green screen training modules, and VR training experiences for warehouse operations. Projects involved extensive pre-production planning and multi-camera setups to ensure consistent quality across all deliverables.',
       period: '2019–2025',
+      videoOnly: true,
       technologies: [
         { icon: 'fas fa-video', name: 'Video Production' },
         { icon: 'fas fa-cube', name: '3D/VR' },
@@ -151,13 +185,13 @@ export class ResumeService {
     {
       title: 'National Australia Bank (NAB)',
       description: 'Long-term collaboration (2018-2023) delivering both video production and custom web development solutions. Video production focused on customer relations content, including: professional actor-based scenarios, initiative launches, and a comprehensive 360° virtual tour of NAB\'s new Sydney offices. Web development focused on creating custom applications integrated with NAB\'s SharePoint environment, including: interactive training portals, compliance tracking systems, and team collaboration tools. Projects required strict security compliance, complex SharePoint integration, and adherence to NAB\'s design and development standards.',
+      webDescription: 'Long-term collaboration delivering custom web development solutions and video production. Over many years I created 360° virtual tours, data rich SharePoint-integrated applications, bespoke web portals and compliance tracking systems while maintaining strict security standards.',
       linkedinDescription: 'Long-term collaboration delivering video production and custom web development solutions, including professional actor-based scenarios, 360° virtual tours, and SharePoint-integrated applications. Created custom training portals and compliance tracking systems while maintaining strict security standards.',
       period: '2018-2023',
       technologies: [
-        { icon: 'fas fa-video', name: 'Video Production' },
-        { icon: 'fas fa-theater-masks', name: 'Acting' },
-        { icon: 'fas fa-camera', name: '360° Video' },
         { icon: 'fab fa-angular', name: 'Angular' },
+        { icon: 'fas fa-video', name: 'Video Production' },
+        { icon: 'fas fa-camera', name: '360° Video' },
         { icon: 'fas fa-share-alt', name: 'SharePoint' }
       ]
     },
@@ -166,6 +200,7 @@ export class ResumeService {
       description: 'Comprehensive safety training video series (2021-2023) for Powercor, Australia\'s largest electricity distribution company. Produced 50+ safety training videos covering critical topics including: high-voltage safety procedures, emergency response protocols, and field operation guidelines. Projects involved complex technical scenarios, safety demonstrations, and on-location filming at various power stations and field sites. Content included both procedural training and safety awareness videos, with a focus on maintaining strict safety standards while delivering engaging training content.',
       linkedinDescription: 'Produced a series of safety training videos for Powercor, covering high-voltage safety procedures, emergency response protocols, and field operation guidelines. Filmed on-location at various power stations and field sites, combining technical accuracy with engaging content delivery.',
       period: '2021-2023',
+      videoOnly: true,
       technologies: [
         { icon: 'fas fa-video', name: 'Video Production' },
         { icon: 'fas fa-hard-hat', name: 'Safety Training' },
@@ -178,6 +213,7 @@ export class ResumeService {
       description: 'Comprehensive training and management video series (2020-2023) including: insurance fraud training with professional actors in staged scenarios, management communication videos, and 360° virtual tours of offices. Projects spanned multiple locations across Victoria, New South Wales, and Queensland, involving complex logistics, multi-camera setups, and professional actors. Content included both procedural training and executive communications, with a focus on maintaining consistent quality across all deliverables.',
       linkedinDescription: 'Produced comprehensive training and management video series, including insurance fraud training with professional actors, management communications, and 360° virtual tours. Projects spanned multiple locations across Victoria, New South Wales, and Queensland, involving complex logistics and multi-camera setups.',
       period: '2020-2023',
+      videoOnly: true,
       technologies: [
         { icon: 'fas fa-video', name: 'Video Production' },
         { icon: 'fas fa-theater-masks', name: 'Acting' },
@@ -188,9 +224,11 @@ export class ResumeService {
     {
       title: 'Australian Catholic University (ACU)',
       description: 'Comprehensive video production and virtual tour project for ACU, spanning multiple campuses and initiatives. Created immersive virtual tours showcasing campus facilities and key locations throughout Melbourne CBD, designed to attract international students during COVID-19 travel restrictions. Produced a series of promotional and training videos featuring student testimonials, campus life, and educational programs. The project combined on-location presenter video with 360° photography, shot during challenging pandemic conditions. The content highlighted campus facilities, student life, and Melbourne\'s vibrant city culture, providing prospective international students with a comprehensive virtual experience of both university life and the surrounding city.',
+      webDescription: 'Comprehensive virtual tour project for ACU, spanning multiple campuses and initiatives. Based on the interactive 360 platform I developed, it delviered immersive virtual tours showcasing campus facilities and key tourist locations throughout Melbourne CBD, designed to attract international students during COVID-19 travel restrictions. The project combined on-location presenter video with 360° photography, shot during challenging pandemic conditions. The content highlighted campus facilities, student life, and Melbourne\'s vibrant city culture, providing prospective international students with a comprehensive virtual experience of both university life and the surrounding city.',
       linkedinDescription: 'Created immersive virtual tours and promotional videos for ACU, showcasing campus facilities and Melbourne CBD locations for international students during COVID-19. Combined on-location presenter video with 360° photography to provide a comprehensive virtual experience of university life.',
       period: '2020-2024',
       technologies: [
+        { icon: 'fab fa-angular', name: 'Angular' },
         { icon: 'fas fa-camera', name: '360° Video' },
         { icon: 'fas fa-video', name: 'Video Production' },
         { icon: 'fas fa-map-marked-alt', name: 'Virtual Tour' },
@@ -204,6 +242,9 @@ export class ResumeService {
       period: '2022-2024',
       technologies: [
         { icon: 'fab fa-angular', name: 'Angular' },
+        { icon: 'fab fa-php', name: 'PHP' },
+        { icon: 'fab fa-laravel', name: 'Laravel' },
+        { icon: 'fab fa-wordpress', name: 'WordPress' },
         { icon: 'fas fa-database', name: 'Database' },
         { icon: 'fas fa-users', name: 'Collaboration' },
         { icon: 'fas fa-graduation-cap', name: 'Education' }
@@ -214,6 +255,7 @@ export class ResumeService {
       description: 'Comprehensive video series (2021-2022) covering multiple educational initiatives: 50+ videos on inclusive classroom practices, teaching strategies, and professional development. Project included 140+ interviews with teachers, principals, staff, and students across 20 schools, plus additional content on innovative teaching methodologies and professional development programs. The project spanned three months of shooting and six months of editing, resulting in a rich library of educational resources.',
       linkedinDescription: 'Produced 50+ videos on inclusive classroom practices and teaching strategies, including 140+ interviews across 20 schools. Created a rich library of educational resources covering innovative teaching methodologies and professional development programs.',
       period: '2021-2022',
+      videoOnly: true,
       technologies: [
         { icon: 'fas fa-video', name: 'Video Production' },
         { icon: 'fas fa-microphone', name: 'Interviews' },
@@ -224,6 +266,7 @@ export class ResumeService {
     {
       title: 'Interactive 360 Platform',
       description: 'Developed a custom Angular and Three.js-based 360° panoramic platform that served as the foundation for multiple client projects including Coles, NAB, Suncorp, ACU, Monash and Dept of Health. The framework featured interactive hotspots, custom navigation, and seamless integration with client branding. Future development plans include integration of 3D models and alpha-channel video for embedded presenters, enhancing the immersive experience. The platform demonstrated the ability to scale across different industries while maintaining consistent quality and user experience.',
+      
       linkedinDescription: 'Developed a custom Angular and Three.js-based 360° panoramic platform with interactive hotspots and custom navigation for multiple major clients. The framework featured seamless integration with client branding and demonstrated scalability across different industries.',
       period: '2020-2023',
       technologies: [
@@ -261,6 +304,7 @@ export class ResumeService {
       linkedinDescription: 'Developed a browser-based career development tool processing 500 job roles and 800 training resources, featuring interactive charts and personalized training catalogs. All data processing and visualization was handled client-side, demonstrating efficient browser-based data management.',
       period: '2014',
       technologies: [
+        { icon: 'fab fa-angular', name: 'AngularJS' },
         { icon: 'fas fa-chart-line', name: 'Charts' },
         { icon: 'fas fa-database', name: 'Client-side DB' },
         { icon: 'fas fa-code', name: 'Web App' },
@@ -276,7 +320,7 @@ export class ResumeService {
         { icon: 'fab fa-apple', name: 'iOS' },
         { icon: 'fab fa-android', name: 'Android' },
         { icon: 'fas fa-globe', name: 'Multilingual' },
-        { icon: 'fas fa-mobile-alt', name: 'Mobile' }
+        { icon: 'fab fa-mobile-alt', name: 'Mobile' }
       ]
     },
     {
@@ -294,6 +338,7 @@ export class ResumeService {
     {
       title: 'Department of Health',
       description: 'Comprehensive food safety and health education project (2020-2023) delivering multiple content types: food safety training videos, interactive 360° virtual tours of commercial kitchens using a custom-built platform, and a two-part documentary series following environmental health officers in the field. During COVID-19, produced rapid-response hand hygiene training videos. The project combined technical video production with interactive web development, creating an engaging learning experience for food safety professionals and the public.',
+      webDescription: 'Comprehensive food safety and health education project (2020-2023) delivering multiple content types: food safety training videos, interactive 360° virtual tours of commercial kitchens using a custom-built platform.  During COVID-19, produced rapid-response hand hygiene training videos. The project combined technical video production with interactive web development, creating an engaging learning experience for food safety professionals and the public.',
       linkedinDescription: 'Produced food safety training videos, 360° virtual tours of commercial kitchens, and a documentary series following environmental health officers. During COVID-19, created rapid-response hand hygiene training videos, combining technical video production with interactive web development.',
       period: '2020-2023',
       technologies: [
@@ -308,27 +353,64 @@ export class ResumeService {
 
   skills: Skill[] = [
     {
-      category: 'Development',
+      category: 'Development IDE',
       subcategories: [
         {
+          name: 'AI coding (Vibe/No Code)',
+          items: [
+            { name: 'Cursor', isPrimary: true },
+            { name: 'Claude Code' },
+            { name: 'GitHub Copilot' },
+            { name: 'Roo' },
+            { name: 'Continue' }
+          ]
+        },
+        {
           name: 'Languages',
-          items: ['TypeScript/JavaScript (20y)', 'Python (3y)', 'PHP (2y)', 'HTML/CSS/SASS (25y)']
+          items: [
+            { name: 'TypeScript/JavaScript (20y)', isPrimary: true },
+            { name: 'Python (3y)' },
+            { name: 'PHP (2y)' },
+            { name: 'HTML/CSS/SASS (25y)', isPrimary: true }
+          ]
         },
         {
           name: 'Frameworks',
-          items: ['Angular (10y)', 'React', 'Node.js', 'Laravel/Lumen', 'Three.js']
+          items: [
+            { name: 'Angular (10y)', isPrimary: true },
+            { name: 'React' },
+            { name: 'Node.js' },
+            { name: 'Laravel/Lumen' },
+            { name: 'Three.js' }
+          ]
         },
         {
           name: 'Cloud/DevOps',
-          items: ['AWS', 'Google Cloud', 'Azure', 'Linux', 'VPS management']
+          items: [
+            { name: 'AWS' },
+            { name: 'Google Cloud' },
+            { name: 'Azure' },
+            { name: 'Linux' },
+            { name: 'VPS management' }
+          ]
         },
         {
           name: 'Mobile',
-          items: ['Cordova (iOS/Android)', 'React Native']
+          items: [
+            { name: 'Cordova (iOS/Android)' },
+            { name: 'React Native' }
+          ]
         },
         {
           name: 'AI/ML',
-          items: ['LLM integration', 'RAG implementations', 'Stable Diffusion', 'Custom model training']
+          items: [
+            { name: 'LLM integration' },
+            { name: 'RAG implementations' },
+            { name: 'Stable Diffusion' },
+            { name: 'Custom model training' },
+            { name: 'OpenAI (API)', isPrimary: true },
+            { name: 'Agent tools/functions' }
+          ]
         }
       ]
     },
@@ -337,23 +419,65 @@ export class ResumeService {
       subcategories: [
         {
           name: 'eLearning Platforms',
-          items: ['Adapt Framework', 'Storyline', 'Lectora', 'Moodle', 'SCORM/xAPI', 'Custom built solutions']
+          items: [
+            { name: 'Adapt Framework' },
+            { name: 'Storyline', isPrimary: true },
+            { name: 'Lectora' },
+            { name: 'Moodle', isPrimary: true },
+            { name: 'SCORM/xAPI', isPrimary: true },
+            { name: 'Custom built solutions' }
+          ]
         },
         {
           name: 'Video Production',
-          items: ['200+ corporate/training videos', '360° photography','Concepting', 'Script reviews/breakdowns', 'Shotlists', 'Scheduling/Call Sheets']
+          items: [
+            { name: '200+ corporate/training videos', isPrimary: true },
+            { name: 'Concepting' },
+            { name: 'Script reviews/breakdowns' },
+            { name: 'Shotlists' },
+            { name: 'Scheduling/Call Sheets' },
+            { name: 'Logistics' },
+            { name: 'Equipment reviews' },
+            { name: 'Purchasing' },
+            { name: 'Talent acquisition' },
+            { name: 'Project scoping' }
+          ]
         },
         {
           name: 'Onsite / Studio',
-          items: ['Professional cinema camera operator (SONY)', 'S-Log or quick delivery formats', 'Audio: wired/wireless setup', 'Lighting setups', 'Green screen workflow', 'DOP/Directing', 'Script supervision','Multiple camera setups']
+          items: [
+            { name: 'Professional cinema camera operator (SONY)' },
+            { name: 'S-Log or quick delivery formats' },
+            { name: 'Audio: wired/wireless setup' },
+            { name: 'Lighting setups' },
+            { name: 'Green screen workflow' },
+            { name: 'DOP/Directing' },
+            { name: 'Script supervision' },
+            { name: 'Multiple camera setups' },
+            { name: '360° photography' }
+          ]
         },
         {
           name: 'Post-Production',
-          items: ['Davinci Resolve (8y)', 'Premiere Pro (15y)', 'After Effects']
+          items: [
+            { name: 'Davinci Resolve (8y)', isPrimary: true },
+            { name: 'Premiere Pro (15y)', isPrimary: true },
+            { name: 'After Effects' },
+            { name: 'Stakeholder reviews' },
+            { name: 'RAW footage management' },
+            { name: 'Cataloging' },
+            { name: 'Local and cloud backups' }
+          ]
         },
         {
           name: 'AI Media',
-          items: ['ComfyUI', 'Stable Diffusion', 'Runway', 'HeyGen', 'Suno']
+          items: [
+            { name: 'ComfyUI', isPrimary: true },
+            { name: 'Stable Diffusion' },
+            { name: 'Runway' },
+            { name: 'HeyGen' },
+            { name: 'Suno' }
+          ]
         }
       ]
     },
@@ -362,23 +486,43 @@ export class ResumeService {
       subcategories: [
         {
           name: 'Design',
-          items: ['Figma', 'Webflow', 'Adobe Creative Suite (15y)', 'Canva', 'Affinity Designer', 'Affinity Photo', 'Blender']
+          items: [
+            { name: 'Figma' },
+            { name: 'Webflow' },
+            { name: 'Adobe Creative Suite (15y)', isPrimary: true },
+            { name: 'Canva' },
+            { name: 'Affinity Designer' },
+            { name: 'Affinity Photo' },
+            { name: 'Blender' }
+          ]
         },
         {
           name: 'Development',
-          items: ['VS Code', 'Cursor', 'WebStorm','PyCharm','PHPStorm']
-        },
-        {
-          name: 'AI Coding',
-          items: ['GitHub Copilot', 'Cursor', 'Roo', 'Continue']
+          items: [
+            { name: 'VS Code' },
+            { name: 'Cursor' },
+            { name: 'WebStorm' },
+            { name: 'PyCharm' },
+            { name: 'PHPStorm' }
+          ]
         },
         {
           name: 'Project Management / Comms',
-          items: ['ClickUp', 'Trello', 'Asana', 'Avaza', 'Slack']
+          items: [
+            { name: 'ClickUp' },
+            { name: 'Trello' },
+            { name: 'Asana' },
+            { name: 'Avaza' },
+            { name: 'Slack' }
+          ]
         },
         {
           name: 'Version Control',
-          items: ['Git', 'GitHub', 'Bitbucket']
+          items: [
+            { name: 'Git' },
+            { name: 'GitHub' },
+            { name: 'Bitbucket' }
+          ]
         }
       ]
     }
@@ -449,15 +593,12 @@ export class ResumeService {
     {
       text: '"Ash has become an invaluable developer and technical advisor, providing hands-on expertise and guidance in emerging technologies. His extensive experience in web, eLearning, video, and creative technology, combined with his enthusiasm, has added significant value and innovation to our offerings. His work has been recognized with multiple industry awards, including LearnX and AITD Excellence awards, reflecting the high quality and innovation of his contributions."',
       author: 'Rodney Beach',
-      position: 'Group Managing Director, Liberate Learning',
-      email: 'rodney@liberatelearning.com.au',
-      phone: '0413 082 712'
+      position: 'Group Managing Director, Liberate Learning'
     },
     {
       text: '"Ash has been a key partner in our digital learning initiatives, consistently delivering high-quality projects across our organization. Through his work with Liberate Learning, he has produced numerous video projects across multiple states in Australia, from interactive eLearning modules to immersive 360° training environments. His recent work in AI-driven learning solutions, particularly his development of an AI-powered system for automated courseware generation in the Adapt Framework, has brought innovative approaches to our training programs. His ability to manage complex logistics while maintaining consistent quality, combined with his forward-thinking approach to emerging technologies, has made him an invaluable resource for our learning and development needs."',
       author: 'Siva Kulasingam',
-      position: 'Digital Learning Manager | Culture & Capability, People & Culture | Coles Supermarkets',
-      email: 'Sivayogan.Kulasingam@coles.com.au'
+      position: 'Digital Learning Manager | Culture & Capability, People & Culture | Coles Supermarkets'
     }
   ];
 
@@ -474,45 +615,67 @@ export class ResumeService {
   };
 
   aboutMe = {
-    summary: `A technology professional with two decades of experience in web development and digital media production, specializing in creating bespoke solutions within constrained environments. Known for rapidly mastering new technologies and finding innovative ways to push existing platforms beyond their intended use. Combines self-taught expertise with practical problem-solving to transform concepts into production-ready applications. From custom eLearning platforms to immersive training experiences, consistently delivers solutions that work within real-world technical limitations while exceeding client expectations.`,
+    summary: `20+ years building web and eLearning applications, with expertise spanning front-end development, backend systems, and cloud infrastructure. Complemented by 8+ years of successful video production that has delivered 200+ corporate and training videos for major Australian organizations. Entirely self-taught, I've demonstrated a unique ability to master complex emerging technologies, from AI and machine learning to advanced video production techniques. My journey from traditional web development to becoming a sought-after video producer showcases my adaptability and commitment to growth. Currently focused on AI integration and video production, I combine technical expertise with creative problem-solving to deliver innovative solutions that meet real business needs. My success in both technical development and video production reflects my ability to rapidly grasp and implement cutting-edge technologies while maintaining a practical, business-focused approach.`,
     strengths: [
-      'Extensive hands-on experience in emerging technologies while maintaining focus on practical business applications',
-      'Proven ability to balance innovation with real-world constraints and business requirements',
-      'Strong track record of delivering complex projects on time and within budget',
-      'Extensive experience in cross-functional communication, effectively collaborating with graphic designers, developers, instructional designers, management, and external stakeholders',
-      'Ability to translate complex technical concepts into clear, accessible language for diverse audiences'
+      'Rapid technology adoption and mastery',
+      'End-to-end project delivery',
+      'Creative problem-solving',
+      'Strong client relationships',
+      'Technical and creative balance'
     ],
     workStyle: [
-      'Hands-on approach to problem-solving and implementation',
-      'Strong focus on delivering measurable business value',
-      'Proven ability to work effectively in both remote and on-site environments',
-      'Experienced in managing complex projects with multiple stakeholders',
-      'Balances technical innovation with practical business considerations'
+      'Self-directed and proactive',
+      'Detail-oriented quality focus',
+      'Adaptable to changing requirements',
+      'Collaborative team player',
+      'Continuous learning mindset'
     ],
     keyAchievements: [
-      'Independently invested in and operated a successful video production service, delivering 200+ corporate training videos for major Australian organizations',
-      'Projects have received numerous industry awards and recognition for innovation and quality, often as the sole developer.',
-      'Evolved into a trusted technology consultant as the industry shifted towards emerging technologies, primarily through self-directed learning and implementation',
-      'Became the preferred developer or videographer for several major Australian corporations and their projects',
-      'Developed award-winning 360 training environments for major corporations through solo development and production',
-      'Maintained successful business operations (for my primary client) while independently delivering complex technical projects'
+      '200+ corporate videos produced',
+      'Award-winning eLearning projects',
+      'Successful AI integration',
+      'Multi-state project delivery',
+      'Long-term client partnerships'
     ],
     personalBackground: {
-      story: `With over two decades in the technology industry, I've maintained a hands-on approach to development while building a deep understanding of business requirements and constraints. My journey began in the late 90s, and I've consistently adapted to technological changes while focusing on delivering practical, business-focused solutions. After years of desk-based development work, I recognized the value of direct client interaction and expanded into video production, allowing me to combine technical expertise with face-to-face client engagement. The growing demand for high-quality video content in the corporate training and educational sectors provided the perfect opportunity to leverage my technical background while meeting market needs.`,
-      family: `Based in Melbourne, I've built a successful career while maintaining a strong work-life balance. My professional journey has evolved from working in busy corporate offices and development teams to embracing the flexibility of freelance remote work. This transition has allowed me to be more present for my family, attending important events and providing support while maintaining professional commitments. The flexibility of remote work has enabled a better integration of work and family life.`
+      story: `My journey began in web development, where I spent over 15 years building interactive applications and eLearning solutions. The transition to video production was a natural evolution, combining my technical skills with creative storytelling. This unique combination has allowed me to deliver comprehensive solutions that bridge the gap between technology and human communication.`,
+      family: `Based in Melbourne with my family, I balance professional growth with personal development. My work ethic and commitment to quality are driven by a desire to provide for my family while pursuing my passion for technology and creativity.`
     },
-    careerObjectives: `Seeking longer-term projects with creative businesses where I can deeply engage with innovative concepts, or short-term development work to assist with general technical needs. While video production remains a separate service offering, I'm particularly interested in opportunities that combine both technical development and video production capabilities. Thriving in hands-on technical roles where I can experiment and innovate, bringing a <i class="fas fa-flask"></i> 'mad scientist' approach to solving complex problems. Comfortable collaborating with specialized teams, able to understand and discuss technical concepts across different domains while focusing on my core expertise. Focused on delivering innovative, practical solutions that balance technical excellence with business requirements. Preference for remote work arrangements that allow for flexible engagement while maintaining high-quality delivery.`
+    careerObjectives: `To continue evolving as both a technical developer and video producer, leveraging emerging technologies like AI to create innovative solutions. I aim to maintain my position as a trusted partner for major Australian organizations while exploring new opportunities in AI integration and advanced video production techniques. My goal is to demonstrate that technical expertise and creative vision can coexist, delivering exceptional results that exceed client expectations.`
   };
+
+  detailedProjects: ClientProject[] = [...PROJECT_DATA.projects];
 
   constructor() { }
 
   getProjects(includeLinkedInDescription: boolean = false): Project[] {
-    if (!includeLinkedInDescription) {
-      return this.projects;
-    }
     return this.projects.map(project => ({
       ...project,
-      description: project.linkedinDescription || project.description
+      description: includeLinkedInDescription && project.linkedinDescription 
+        ? project.linkedinDescription 
+        : project.description
     }));
+  }
+
+  getDetailedProjects(): ClientProject[] {
+    return this.detailedProjects;
+  }
+
+  getProjectsByClient(clientName: string): DetailedProject[] {
+    const client = this.detailedProjects.find(cp => cp.client === clientName);
+    return client ? client.projects : [];
+  }
+
+  getProjectsByYear(year: number): DetailedProject[] {
+    const projects: DetailedProject[] = [];
+    this.detailedProjects.forEach(clientProject => {
+      clientProject.projects.forEach((project: DetailedProject) => {
+        const projectYear = typeof project.year === 'number' ? project.year : parseInt(project.year?.toString() || '0');
+        if (projectYear === year) {
+          projects.push(project);
+        }
+      });
+    });
+    return projects;
   }
 } 

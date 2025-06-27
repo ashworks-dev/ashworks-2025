@@ -1,0 +1,384 @@
+<!-- Edit Mode Header -->
+<!-- <div class="edit-mode-header" *ngIf="isEditMode">
+  <div class="edit-controls">
+    <h2>Edit Mode - Video Projects</h2>
+    <div class="edit-actions">
+      <button class="publish-button" 
+              [disabled]="!hasUnsavedChanges || isPublishing"
+              (click)="publishChanges()">
+        <i class="fas" [class.fa-spinner]="isPublishing" [class.fa-save]="!isPublishing"></i>
+        {{ isPublishing ? 'Publishing...' : 'Publish Changes' }}
+      </button>
+      <span class="unsaved-indicator" *ngIf="hasUnsavedChanges">
+        <i class="fas fa-exclamation-triangle"></i>
+        Unsaved changes
+      </span>
+    </div>
+  </div>
+  <p class="edit-instructions">
+    Click on any project to edit its details. Add media content and update project information.
+    Click "Publish Changes" when you're ready to save and update the site.
+  </p>
+</div> -->
+
+<!-- Loading State -->
+<section *ngIf="loading" class="loading-section">
+  <div class="loading-container">
+    <div class="loading-spinner"></div>
+    <p class="loading-text">Verifying access...</p>
+  </div>
+</section>
+
+<!-- Token Valid Success Message -->
+<section *ngIf="!loading && accessGranted && !errorMessage && videoProjects.length === 0" class="success-message-section">
+  <div class="success-container">
+    <div class="success-icon">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <h2 class="success-title">Access Granted!</h2>
+    <p class="success-message">
+      Your token is valid. You now have access to view the complete portfolio and showreels.
+    </p>
+  </div>
+</section>
+
+<!-- Error Message -->
+<section *ngIf="!loading && errorMessage" class="error-message-section">
+  <div class="error-container">
+    <div class="error-icon">
+      <i class="fas fa-exclamation-triangle"></i>
+    </div>
+    <h2 class="error-title">Access Denied</h2>
+    <p class="error-message">{{ errorMessage }}</p>
+    <p class="error-help">
+      The URL or token appears to be invalid. Please check your link or request a new access token.
+    </p>
+    <button class="retry-button" (click)="openShowreelForm()">
+      <i class="fas fa-envelope"></i>
+      Request New Access
+    </button>
+  </div>
+</section>
+
+<!-- Protected Showreel Section -->
+<section *ngIf="accessGranted && videoProjects.length > 0" class="showreels-section" id="showreels">
+  <div class="background-effects">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="mesh-overlay"></div>
+  </div>
+
+  <div class="section-content">
+    <h2 class="gradient-text showreel-title">Portfolio</h2>
+    <p class="showreel-description">
+      A curated collection of my professional work across various industries. From corporate training to emotional storytelling, 
+      these showreels demonstrate the quality and versatility of my video production services.
+    </p>
+    
+    <div class="showreel-nav">
+      <button 
+        *ngFor="let video of videos" 
+        class="showReelBtn" 
+        [class.active]="activeTabId === video.id"
+        (click)="setActiveTab(video.id)">
+        {{ video.title }}
+      </button>
+    </div>
+
+    <div class="showreel-container">
+      <div *ngFor="let video of videos" 
+           class="videocont2" 
+           [class.active]="activeTabId === video.id"
+           [id]="'vf-' + video.id">
+        <div class="video-header">
+          <h3 class="video-title">{{ video.title }}</h3>
+          <div class="video-meta">
+            <span class="meta-item" *ngFor="let meta of video.meta">
+              <i class="fas fa-{{ meta.icon }}"></i> {{ meta.text }}
+            </span>
+          </div>
+        </div>
+        <p class="video-description" *ngIf="video.description">{{ video.description }}</p>
+        <div class="video-wrapper">
+          <video 
+            controls 
+            preload="metadata"
+            class="video-player"
+            poster="assets/images/video-placeholder.jpg">
+            <source [src]="video.src" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <!-- Loading indicator -->
+          <div class="video-loading" *ngIf="isVideoLoading">
+            <div class="loading-spinner"></div>
+            <span class="loading-text">Loading video...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Selected Work Preview -->
+<section *ngIf="accessGranted && videoProjects.length > 0" class="work-preview">
+  <div class="project-info-blurb">
+    <p>
+      <strong>Note:</strong> Many of these projects may contain sensitive content, are often part of larger projects, or I'm often performing videography only, 
+      so preview videos are limited. I can provide full video samples upon request for some projects. The projects listed represent a comprehensive portfolio of video production work 
+      across various industries and applications.
+    </p>
+  </div>
+  <div class="project-grid">
+    <div class="project-row" 
+         *ngFor="let project of videoProjects.slice(0, 6); let i = index" 
+         [class.expanded]="expandedProjects[i]">
+      <div class="project-image-container">
+        <div [class]="getProjectImageClass(project, i)" 
+             [style.background-image]="project.posterImage ? 'url(' + project.posterImage + ')' : ''">
+          <i class="fas fa-video fa-2x" *ngIf="!project.posterImage"></i>
+        </div>
+      </div>
+      <div class="project-content">
+        <div class="project-header">
+          <div>
+            <h4>{{ project.project_name }}</h4>
+            <span class="project-date">{{ project.year }}</span>
+          </div>
+        </div>
+        
+        <p class="project-description">{{ project.description }}</p>
+        
+        <div class="project-specs">
+          <span class="spec">{{ project.type }}</span>
+          <span class="spec" *ngIf="project.year">{{ project.year }}</span>
+        </div>
+        <div class="expandable-content" *ngIf="expandedProjects[i]">
+          <!-- Additional Media Section -->
+          <div class="additional-media" *ngIf="hasMedia(project)">
+            <h5>Additional Content</h5>
+            
+            <!-- Images -->
+            <div class="media-section" *ngIf="getMediaByType(project, 'image').length > 0">
+              <h6>Images</h6>
+              <div class="media-grid">
+                <div class="media-item" *ngFor="let media of getMediaByType(project, 'image')">
+                  <img [src]="media.url" [alt]="media.title || 'Project image'" class="media-image">
+                  <div class="media-caption" *ngIf="media.title">{{ media.title }}</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Videos -->
+            <div class="media-section" *ngIf="getMediaByType(project, 'video').length > 0">
+              <h6>Videos</h6>
+              <div class="media-grid">
+                <div class="media-item" *ngFor="let media of getMediaByType(project, 'video')">
+                  <video controls class="media-video">
+                    <source [src]="media.url" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <div class="media-caption" *ngIf="media.title">{{ media.title }}</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Websites -->
+            <div class="media-section" *ngIf="getMediaByType(project, 'website').length > 0">
+              <h6>Related Links</h6>
+              <div class="media-links">
+                <a [href]="media.url" 
+                   target="_blank" 
+                   class="media-link" 
+                   *ngFor="let media of getMediaByType(project, 'website')">
+                  <i class="fas fa-external-link-alt"></i>
+                  {{ media.title || 'View Project' }}
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Placeholder for when no additional media is available -->
+          <div class="no-media" *ngIf="!hasMedia(project)">
+            <p>Additional content will be added soon.</p>
+          </div>
+        </div>
+      </div>
+      <div class="project-actions">
+        <button class="expand-button" (click)="toggleProject(i)">
+          <i class="fas" [class.fa-chevron-down]="!expandedProjects[i]" [class.fa-chevron-up]="expandedProjects[i]"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="project-row additional-row" 
+         *ngFor="let project of videoProjects.slice(6); let i = index" 
+         [class.show]="showAllProjects"
+         [class.expanded]="expandedProjects[i + 6]">
+      <div class="project-image-container">
+        <div [class]="getProjectImageClass(project, i + 6)" 
+             [style.background-image]="project.posterImage ? 'url(' + project.posterImage + ')' : ''">
+          <i class="fas fa-video fa-2x" *ngIf="!project.posterImage"></i>
+        </div>
+      </div>
+      <div class="project-content">
+        <div class="project-header">
+          <div>
+            <h4>{{ project.project_name }}</h4>
+            <span class="project-date">{{ project.year }}</span>
+          </div>
+        </div>
+        
+        <p class="project-description">{{ project.description }}</p>
+        
+        <div class="project-specs">
+          <span class="spec">{{ project.type }}</span>
+          <span class="spec" *ngIf="project.year">{{ project.year }}</span>
+        </div>
+        <div class="expandable-content" *ngIf="expandedProjects[i + 6]">
+          <!-- Additional Media Section -->
+          <div class="additional-media" *ngIf="hasMedia(project)">
+            <h5>Additional Content</h5>
+            
+            <!-- Images -->
+            <div class="media-section" *ngIf="getMediaByType(project, 'image').length > 0">
+              <h6>Images</h6>
+              <div class="media-grid">
+                <div class="media-item" *ngFor="let media of getMediaByType(project, 'image')">
+                  <img [src]="media.url" [alt]="media.title || 'Project image'" class="media-image">
+                  <div class="media-caption" *ngIf="media.title">{{ media.title }}</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Videos -->
+            <div class="media-section" *ngIf="getMediaByType(project, 'video').length > 0">
+              <h6>Videos</h6>
+              <div class="media-grid">
+                <div class="media-item" *ngFor="let media of getMediaByType(project, 'video')">
+                  <video controls class="media-video">
+                    <source [src]="media.url" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <div class="media-caption" *ngIf="media.title">{{ media.title }}</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Websites -->
+            <div class="media-section" *ngIf="getMediaByType(project, 'website').length > 0">
+              <h6>Related Links</h6>
+              <div class="media-links">
+                <a [href]="media.url" 
+                   target="_blank" 
+                   class="media-link" 
+                   *ngFor="let media of getMediaByType(project, 'website')">
+                  <i class="fas fa-external-link-alt"></i>
+                  {{ media.title || 'View Project' }}
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Placeholder for when no additional media is available -->
+          <div class="no-media" *ngIf="!hasMedia(project)">
+            <p>Additional content will be added soon.</p>
+          </div>
+        </div>
+      </div>
+      <div class="project-actions">
+        <button class="expand-button" (click)="toggleProject(i + 6)">
+          <i class="fas" [class.fa-chevron-down]="!expandedProjects[i + 6]" [class.fa-chevron-up]="expandedProjects[i + 6]"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="show-more-container" *ngIf="videoProjects.length > 6">
+    <button class="show-more-button" (click)="toggleProjects()">
+      {{ showAllProjects ? 'Show Less' : 'View More Projects' }}
+    </button>
+  </div>
+</section>
+
+<!-- Access Denied Message -->
+<section *ngIf="!loading && !hasToken && !errorMessage" class="access-message-section" id="access-message">
+  <!-- Background Elements -->
+  <div class="orb-container">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Large Camera Icon -->
+  <svg class="camera-icon" viewBox="0 0 24 24" width="600" height="600">
+    <path fill="currentColor" d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z"/>
+  </svg>
+
+  <div class="content-container">
+    <h2 class="title">Welcome to My Showreels!</h2>
+    <div class="message">
+      Thanks for your interest in my work! My showreels feature selected projects that showcase the quality and professionalism I bring to every production.
+      <div class="sub-message">
+        Due to the confidential nature of my corporate client work, these showreels require special access. Please request a private link below.
+      </div>
+    </div>
+    <button class="access-button" (click)="openShowreelForm()">
+      <svg class="play-icon" viewBox="0 0 24 24" width="24" height="24">
+        <path fill="currentColor" d="M8 5v14l11-7z"/>
+      </svg>
+      Request Showreel Access
+    </button>
+  </div>
+</section>
+
+<!-- Showreel Access Request Modal -->
+<div class="modal" [class.show]="showShowreelModal">
+  <div class="modal-content">
+    <h3>Request Showreel Access</h3>
+    <button class="close-button" (click)="closeShowreelForm()">
+      <i class="fas fa-times"></i>
+    </button>
+    
+    <div *ngIf="!showShowreelSuccessMessage">
+      <form (ngSubmit)="onShowreelSubmit($event)" class="quote-form">
+        <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY-HERE">
+        <input type="hidden" name="subject" value="Showreel Access Request">
+        
+        <div class="form-group">
+          <label for="showreel_name">Name</label>
+          <input type="text" id="showreel_name" name="name" required placeholder="Your name">
+        </div>
+        
+        <div class="form-group">
+          <label for="showreel_email">Email</label>
+          <input type="email" id="showreel_email" name="email" required placeholder="your@email.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="showreel_company">Company (optional)</label>
+          <input type="text" id="showreel_company" name="company" placeholder="Your company name">
+        </div>
+        
+        <div class="form-group">
+          <label for="showreel_message">Message (optional)</label>
+          <textarea id="showreel_message" name="message" placeholder="Tell us about your interest in our work"></textarea>
+        </div>
+        
+        <button type="submit" class="submit-button">
+          <i class="fas fa-paper-plane"></i>
+          Request Access
+        </button>
+      </form>
+    </div>
+    
+    <div *ngIf="showShowreelSuccessMessage" class="success-message">
+      <i class="fas fa-check-circle"></i>
+      <h4>Request Sent Successfully!</h4>
+      <p>Thank you for your interest. I'll review your request and send you a private link to access the showreels.</p>
+      <button class="submit-button" (click)="closeShowreelForm()">
+        Close
+      </button>
+    </div>
+  </div>
+</div>

@@ -136,6 +136,10 @@
   margin: 0 auto
   padding: 0 1rem
 
+  .ai-full-width
+    grid-column: 1 / -1
+    margin-top: 2rem
+
 .service-card
   position: relative
   border-radius: 12px
@@ -171,6 +175,41 @@
       border-color: rgba(78, 205, 196, 0.4)
       background: linear-gradient(180deg, rgba(78, 205, 196, 0.2), rgba(13, 16, 23, 0.9))
 
+  // AI card - orange/pink tint
+  &:nth-child(4), &.ai-full-width
+    background: linear-gradient(180deg, rgba(255, 107, 136, 0.15), rgba(13, 16, 23, 0.9))
+    border: 1px solid rgba(255, 107, 136, 0.3)
+
+    &:hover
+      border-color: rgba(255, 107, 136, 0.4)
+      background: linear-gradient(180deg, rgba(255, 107, 136, 0.2), rgba(13, 16, 23, 0.9))
+
+  &.ai-full-width
+    display: flex
+    flex-direction: row
+    align-items: stretch
+    
+    .service-icon.ai-service
+      flex: 0 0 33.333%
+      height: auto
+      min-height: 200px
+      
+      .ai-icon
+        color: #2dd4bf
+        transition: opacity 0.8s ease-in-out
+        animation: aiIconPulse 2s ease-in-out infinite
+        opacity: 0
+      
+      .ai-video
+        transition: opacity 0.8s ease-in-out
+        opacity: 1
+    
+    .service-content
+      flex: 1
+      display: flex
+      flex-direction: column
+      justify-content: center
+
   &:hover
     transform: translateY(-5px)
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4)
@@ -178,6 +217,26 @@
 .service-icon
   position: relative
   overflow: hidden
+
+  &.ai-service
+    position: relative
+    height: 240px
+    
+    .ai-icon
+      color: #FF6B88
+      transition: all 0.3s ease
+      z-index: 2
+    
+    .ai-video
+      transition: opacity 0.3s ease
+    
+    &:hover
+      .ai-icon
+        opacity: 0
+        transform: translate(-50%, -50%) scale(0.8)
+      
+      .ai-video
+        opacity: 1
 
 .service-image
   width: 100%
@@ -209,6 +268,10 @@
 
   &.production-title
     color: #2DD4BF !important
+    font-weight: 700
+
+  &.ai-title
+    color: #FF6B88 !important
     font-weight: 700
 
 .service-description
@@ -426,6 +489,14 @@
   to
     transform: rotate(360deg)
 
+@keyframes aiIconPulse
+  0%, 100%
+    transform: translate(-50%, -50%) scale(1)
+    opacity: 1
+  50%
+    transform: translate(-50%, -50%) scale(1.1)
+    opacity: 0.8
+
 // Media Queries
 @media (max-width: 768px)
   .hero-content
@@ -437,6 +508,17 @@
   
   .service-cards-container
     grid-template-columns: 1fr
+    
+    .ai-full-width
+      flex-direction: column
+      
+      .service-icon.ai-service
+        flex: none
+        width: 100%
+        min-height: 200px
+      
+      .service-content
+        flex: none
   
   .showreel-title
     font-size: 2rem

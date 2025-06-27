@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Editor v2 - Frameworks Site</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+        }
+
+        .controls {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        .btn-success {
+            background: #27ae60;
+        }
+
+        .btn-success:hover {
+            background: #229954;
+        }
+
+        .btn-warning {
+            background: #f39c12;
+        }
+
+        .btn-warning:hover {
+            background: #e67e22;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .btn-small {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            display: none;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .clients-container {
+            display: grid;
+            gap: 20px;
+        }
+
+        .client-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .client-header {
+            background: #34495e;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .client-header h3 {
+            margin: 0;
+        }
+
+        .client-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .projects-list {
+            padding: 20px;
+        }
+
+        .project-item {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .project-type {
+            background: #3498db;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .project-year {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .project-description {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .project-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* Media Management Styles */
+        .media-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .media-section h4 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .media-item {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 10px;
+            position: relative;
+        }
+
+        .media-item.poster {
+            border: 2px solid #27ae60;
+            background: #f0fff4;
+        }
+
+        .media-preview {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .media-info {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .media-actions {
+            display: flex;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .media-type-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #3498db;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 10px;
+        }
+
+        .media-type-badge.website {
+            background: #e74c3c;
+        }
+
+        .media-type-badge.video {
+            background: #f39c12;
+        }
+
+        .poster-indicator {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background: #27ae60;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 10px;
+        }
+
+        .add-media-section {
+            margin-top: 20px;
+        }
+
+        .media-tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+        }
+
+        .media-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+
+        .media-tab.active {
+            border-bottom-color: #3498db;
+            color: #3498db;
+        }
+
+        .media-tab-content {
+            display: none;
+        }
+
+        .media-tab-content.active {
+            display: block;
+        }
+
+        .upload-area {
+            border: 2px dashed #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .upload-area:hover {
+            border-color: #3498db;
+        }
+
+        .upload-area.dragover {
+            border-color: #3498db;
+            background: #f7f9fc;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Project Editor v2</h1>
+            <p>Enhanced project editor with multiple media support and poster image selection</p>
+        </div>
+
+        <div class="status" id="status"></div>
+
+        <div class="controls">
+            <div class="stats" id="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalClients">0</div>
+                    <div class="stat-label">Total Clients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalProjects">0</div>
+                    <div class="stat-label">Total Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalVideos">0</div>
+                    <div class="stat-label">Video Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalWeb">0</div>
+                    <div class="stat-label">Web Projects</div>
+                </div>
+            </div>
+
+            <input type="text" class="search-box" id="searchBox" placeholder="Search clients or projects...">
+            
+            <button class="btn btn-success" onclick="loadProjects()">Load Projects</button>
+            <button class="btn" onclick="addNewClient()">Add New Client</button>
+            <button class="btn btn-warning" onclick="saveProjects()">Save Projects</button>
+            <button class="btn btn-success" onclick="publishProjects()">Publish to Angular</button>
+            <button class="btn" onclick="exportData()">Export JSON</button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+
+        <div class="clients-container" id="clientsContainer">
+            <div class="empty-state">
+                <h3>No projects loaded</h3>
+                <p>Click "Load Projects" to get started</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client Modal -->
+    <div id="clientModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="clientModalTitle">Add New Client</h2>
+                <span class="close" onclick="closeModal('clientModal')">&times;</span>
+            </div>
+            <form id="clientForm">
+                <div class="form-group">
+                    <label for="clientName">Client Name</label>
+                    <input type="text" id="clientName" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Save Client</button>
+                    <button type="button" class="btn" onclick="closeModal('clientModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="projectModalTitle">Add New Project</h2>
+                <span class="close" onclick="closeModal('projectModal')">&times;</span>
+            </div>
+            <form id="projectForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="projectName">Project Name</label>
+                        <input type="text" id="projectName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectType">Type</label>
+                        <select id="projectType" required>
+                            <option value="Video">Video</option>
+                            <option value="Web">Web</option>
+                            <option value="Video/Web">Video/Web</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="projectYear">Year</label>
+                        <input type="text" id="projectYear" placeholder="e.g., 2024 or 2021-2023">
+                    </div>
+                    <div class="form-group">
+                        <label for="projectClient">Client</label>
+                        <select id="projectClient" required>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="projectDescription">Description</label>
+                    <textarea id="projectDescription" required></textarea>
+                </div>
+
+                <!-- Media Management Section -->
+                <div class="media-section">
+                    <h4>Media Management</h4>
+                    
+                    <!-- Current Media Display -->
+                    <div id="currentMedia" class="media-grid">
+                        <!-- Media items will be displayed here -->
+                    </div>
+
+                    <!-- Add Media Section -->
+                    <div class="add-media-section">
+                        <div class="media-tabs">
+                            <div class="media-tab active" onclick="switchMediaTab('images')">Images</div>
+                            <div class="media-tab" onclick="switchMediaTab('videos')">Videos</div>
+                            <div class="media-tab" onclick="switchMediaTab('websites')">Websites</div>
+                        </div>
+
+                        <!-- Images Tab -->
+                        <div id="imagesTab" class="media-tab-content active">
+                            <div class="upload-area" onclick="document.getElementById('imageFiles').click()">
+                                <p>Click to upload or drag and drop images</p>
+                                <input type="file" id="imageFiles" class="file-input" accept="image/*" multiple>
+                            </div>
+                        </div>
+
+                        <!-- Videos Tab -->
+                        <div id="videosTab" class="media-tab-content">
+                            <div class="form-group">
+                                <label>Video URL</label>
+                                <input type="url" id="videoUrl" placeholder="https://example.com/video.mp4">
+                            </div>
+                            <div class="form-group">
+                                <label>Video Title (optional)</label>
+                                <input type="text" id="videoTitle" placeholder="Video title">
+                            </div>
+                            <button type="button" class="btn btn-small" onclick="addVideo()">Add Video</button>
+                        </div>
+
+                        <!-- Websites Tab -->
+                        <div id="websitesTab" class="media-tab-content">
+                            <div class="form-group">
+                                <label>Website URL</label>
+                                <input type="url" id="websiteUrl" placeholder="https://example.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Website Title (optional)</label>
+                                <input type="text" id="websiteTitle" placeholder="Website title">
+                            </div>
+                            <button type="button" class="btn btn-small" onclick="addWebsite()">Add Website</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Save Project</button>
+                    <button type="button" class="btn" onclick="closeModal('projectModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let projectsData = { projects: [] };
+        let currentEditingProject = null;
+        let currentEditingClient = null;
+        let currentMedia = [];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProjects();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            // Search functionality
+            document.getElementById('searchBox').addEventListener('input', function(e) {
+                filterProjects(e.target.value);
+            });
+
+            // File upload drag and drop
+            const uploadArea = document.querySelector('.upload-area');
+            const imageFiles = document.getElementById('imageFiles');
+
+            uploadArea.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+
+            uploadArea.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+            });
+
+            uploadArea.addEventListener('drop', function(e) {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleMultipleImageUpload(files);
+                }
+            });
+
+            imageFiles.addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    handleMultipleImageUpload(e.target.files);
+                }
+            });
+
+            // Form submissions
+            document.getElementById('clientForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                saveClient();
+            });
+
+            document.getElementById('projectForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                saveProject();
+            });
+        }
+
+        function switchMediaTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.media-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update tab content
+            document.querySelectorAll('.media-tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(tabName + 'Tab').classList.add('active');
+        }
+
+        async function handleMultipleImageUpload(files) {
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                if (file.type.startsWith('image/')) {
+                    await uploadImage(file);
+                }
+            }
+        }
+
+        async function uploadImage(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const response = await fetch('/api/upload-image', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    addMediaItem({
+                        type: 'image',
+                        url: result.url,
+                        title: file.name
+                    });
+                    showStatus(`Image uploaded: ${file.name}`, 'success');
+                } else {
+                    showStatus(`Error uploading ${file.name}: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                console.error('Error uploading image:', error);
+                showStatus(`Error uploading ${file.name}: ${error.message}`, 'error');
+            }
+        }
+
+        function addVideo() {
+            const url = document.getElementById('videoUrl').value.trim();
+            const title = document.getElementById('videoTitle').value.trim();
+            
+            if (!url) {
+                showStatus('Please enter a video URL', 'error');
+                return;
+            }
+
+            addMediaItem({
+                type: 'video',
+                url: url,
+                title: title || 'Video'
+            });
+
+            document.getElementById('videoUrl').value = '';
+            document.getElementById('videoTitle').value = '';
+        }
+
+        function addWebsite() {
+            const url = document.getElementById('websiteUrl').value.trim();
+            const title = document.getElementById('websiteTitle').value.trim();
+            
+            if (!url) {
+                showStatus('Please enter a website URL', 'error');
+                return;
+            }
+
+            addMediaItem({
+                type: 'website',
+                url: url,
+                title: title || 'Website'
+            });
+
+            document.getElementById('websiteUrl').value = '';
+            document.getElementById('websiteTitle').value = '';
+        }
+
+        function addMediaItem(mediaItem) {
+            currentMedia.push(mediaItem);
+            renderMediaGrid();
+        }
+
+        function removeMediaItem(index) {
+            currentMedia.splice(index, 1);
+            renderMediaGrid();
+        }
+
+        function setAsPoster(index) {
+            // Remove poster flag from all items
+            currentMedia.forEach(item => delete item.isPoster);
+            // Set the selected item as poster
+            currentMedia[index].isPoster = true;
+            renderMediaGrid();
+        }
+
+        function renderMediaGrid() {
+            const container = document.getElementById('currentMedia');
+            
+            if (currentMedia.length === 0) {
+                container.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #666;">No media added yet</p>';
+                return;
+            }
+
+            container.innerHTML = currentMedia.map((media, index) => `
+                <div class="media-item ${media.isPoster ? 'poster' : ''}">
+                    ${media.isPoster ? '<div class="poster-indicator">Poster</div>' : ''}
+                    <div class="media-type-badge ${media.type}">${media.type}</div>
+                    
+                    ${media.type === 'image' ? 
+                        `<img src="${media.url}" alt="${media.title}" class="media-preview">` :
+                        media.type === 'video' ?
+                        `<div class="media-preview" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: #666; font-size: 24px;">🎥</span>
+                        </div>` :
+                        `<div class="media-preview" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: #666; font-size: 24px;">🌐</span>
+                        </div>`
+                    }
+                    
+                    <div class="media-info">
+                        <strong>${media.title}</strong><br>
+                        <small>${media.url}</small>
+                    </div>
+                    
+                    <div class="media-actions">
+                        ${!media.isPoster ? 
+                            `<button class="btn btn-small btn-success" onclick="setAsPoster(${index})">Set as Poster</button>` : 
+                            ''
+                        }
+                        <button class="btn btn-small btn-danger" onclick="removeMediaItem(${index})">Remove</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function loadProjects() {
+            showLoading(true);
+            try {
+                const response = await fetch('/api/projects');
+                const data = await response.json();
+                
+                if (data.projects) {
+                    projectsData = data;
+                    renderProjects();
+                    updateStats();
+                    showStatus('Projects loaded successfully', 'success');
+                } else {
+                    projectsData = { projects: [] };
+                    renderProjects();
+                    showStatus('No projects found', 'error');
+                }
+            } catch (error) {
+                console.error('Error loading projects:', error);
+                showStatus('Error loading projects: ' + error.message, 'error');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        async function saveProjects() {
+            showLoading(true);
+            try {
+                const response = await fetch('/api/projects', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(projectsData)
+                });
+                
+                const result = await response.json();
+                if (result.success) {
+                    showStatus('Projects saved successfully', 'success');
+                } else {
+                    showStatus('Error saving projects: ' + result.error, 'error');
+                }
+            } catch (error) {
+                console.error('Error saving projects:', error);
+                showStatus('Error saving projects: ' + error.message, 'error');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        async function publishProjects() {
+            showLoading(true);
+            try {
+                const response = await fetch('/api/publish', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(projectsData)
+                });
+                
+                const result = await response.json();
+                if (result.success) {
+                    showStatus('Projects published to Angular successfully', 'success');
+                } else {
+                    showStatus('Error publishing projects: ' + result.error, 'error');
+                }
+            } catch (error) {
+                console.error('Error publishing projects:', error);
+                showStatus('Error publishing projects: ' + error.message, 'error');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        function renderProjects() {
+            const container = document.getElementById('clientsContainer');
+            
+            if (projectsData.projects.length === 0) {
+                container.innerHTML = '<div class="empty-state"><h3>No projects loaded</h3><p>Click "Load Projects" to get started</p></div>';
+                return;
+            }
+
+            container.innerHTML = projectsData.projects.map((clientProject, clientIndex) => `
+                <div class="client-card">
+                    <div class="client-header">
+                        <h3>${clientProject.client}</h3>
+                        <div class="client-controls">
+                            <button class="btn btn-small" onclick="addProjectToClient(${clientIndex})">Add Project</button>
+                            <button class="btn btn-small btn-warning" onclick="editClient(${clientIndex})">Edit</button>
+                            <button class="btn btn-small btn-danger" onclick="deleteClient(${clientIndex})">Delete</button>
+                        </div>
+                    </div>
+                    <div class="projects-list">
+                        ${clientProject.projects.map((project, projectIndex) => `
+                            <div class="project-item">
+                                <div class="project-header">
+                                    <div>
+                                        <div class="project-title">
+                                            ${project.project_name}
+                                            <span class="project-type">${project.type}</span>
+                                        </div>
+                                        <div class="project-year">${project.year || 'No year specified'}</div>
+                                    </div>
+                                    <div class="project-controls">
+                                        <button class="btn btn-small" onclick="editProject(${clientIndex}, ${projectIndex})">Edit</button>
+                                        <button class="btn btn-small btn-danger" onclick="deleteProject(${clientIndex}, ${projectIndex})">Delete</button>
+                                    </div>
+                                </div>
+                                <div class="project-description">${project.description}</div>
+                                ${project.media && project.media.length > 0 ? `
+                                    <div class="project-media">
+                                        <strong>Media (${project.media.length} items):</strong>
+                                        <div class="media-grid">
+                                            ${project.media.slice(0, 3).map(media => `
+                                                <div class="media-item ${media.isPoster ? 'poster' : ''}">
+                                                    ${media.isPoster ? '<div class="poster-indicator">Poster</div>' : ''}
+                                                    <div class="media-type-badge ${media.type}">${media.type}</div>
+                                                    ${media.type === 'image' ? 
+                                                        `<img src="${media.url}" alt="${media.title || 'Media'}" class="media-preview">` :
+                                                        `<div class="media-preview" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                                                            <span style="color: #666; font-size: 24px;">${media.type === 'video' ? '🎥' : '🌐'}</span>
+                                                        </div>`
+                                                    }
+                                                    <div class="media-info">${media.title || 'Untitled'}</div>
+                                                </div>
+                                            `).join('')}
+                                            ${project.media.length > 3 ? `<div class="media-item"><div class="media-info">+${project.media.length - 3} more</div></div>` : ''}
+                                        </div>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateStats() {
+            const totalClients = projectsData.projects.length;
+            const totalProjects = projectsData.projects.reduce((sum, client) => sum + client.projects.length, 0);
+            const totalVideos = projectsData.projects.reduce((sum, client) => 
+                sum + client.projects.filter(p => p.type === 'Video').length, 0);
+            const totalWeb = projectsData.projects.reduce((sum, client) => 
+                sum + client.projects.filter(p => p.type === 'Web' || p.type === 'Video/Web').length, 0);
+
+            document.getElementById('totalClients').textContent = totalClients;
+            document.getElementById('totalProjects').textContent = totalProjects;
+            document.getElementById('totalVideos').textContent = totalVideos;
+            document.getElementById('totalWeb').textContent = totalWeb;
+        }
+
+        function filterProjects(searchTerm) {
+            const clientCards = document.querySelectorAll('.client-card');
+            
+            clientCards.forEach(card => {
+                const clientName = card.querySelector('h3').textContent.toLowerCase();
+                const projectItems = card.querySelectorAll('.project-item');
+                let hasVisibleProjects = false;
+
+                projectItems.forEach(item => {
+                    const projectName = item.querySelector('.project-title').textContent.toLowerCase();
+                    const projectDesc = item.querySelector('.project-description').textContent.toLowerCase();
+                    
+                    const matches = clientName.includes(searchTerm.toLowerCase()) ||
+                                  projectName.includes(searchTerm.toLowerCase()) ||
+                                  projectDesc.includes(searchTerm.toLowerCase());
+                    
+                    item.style.display = matches ? 'block' : 'none';
+                    if (matches) hasVisibleProjects = true;
+                });
+
+                card.style.display = hasVisibleProjects || clientName.includes(searchTerm.toLowerCase()) ? 'block' : 'none';
+            });
+        }
+
+        function addNewClient() {
+            document.getElementById('clientModalTitle').textContent = 'Add New Client';
+            document.getElementById('clientName').value = '';
+            currentEditingClient = null;
+            document.getElementById('clientModal').style.display = 'block';
+        }
+
+        function editClient(clientIndex) {
+            const client = projectsData.projects[clientIndex];
+            document.getElementById('clientModalTitle').textContent = 'Edit Client';
+            document.getElementById('clientName').value = client.client;
+            currentEditingClient = clientIndex;
+            document.getElementById('clientModal').style.display = 'block';
+        }
+
+        function saveClient() {
+            const clientName = document.getElementById('clientName').value.trim();
+            if (!clientName) return;
+
+            if (currentEditingClient !== null) {
+                // Edit existing client
+                projectsData.projects[currentEditingClient].client = clientName;
+            } else {
+                // Add new client
+                projectsData.projects.push({
+                    client: clientName,
+                    projects: []
+                });
+            }
+
+            renderProjects();
+            updateStats();
+            closeModal('clientModal');
+            showStatus('Client saved successfully', 'success');
+        }
+
+        function deleteClient(clientIndex) {
+            if (confirm('Are you sure you want to delete this client and all their projects?')) {
+                projectsData.projects.splice(clientIndex, 1);
+                renderProjects();
+                updateStats();
+                showStatus('Client deleted successfully', 'success');
+            }
+        }
+
+        function addProjectToClient(clientIndex) {
+            document.getElementById('projectModalTitle').textContent = 'Add New Project';
+            document.getElementById('projectForm').reset();
+            currentMedia = [];
+            renderMediaGrid();
+            currentEditingProject = null;
+            currentEditingClient = clientIndex;
+            
+            // Populate client dropdown
+            const clientSelect = document.getElementById('projectClient');
+            clientSelect.innerHTML = projectsData.projects.map((client, index) => 
+                `<option value="${index}" ${index === clientIndex ? 'selected' : ''}>${client.client}</option>`
+            ).join('');
+            
+            document.getElementById('projectModal').style.display = 'block';
+        }
+
+        function editProject(clientIndex, projectIndex) {
+            const project = projectsData.projects[clientIndex].projects[projectIndex];
+            
+            document.getElementById('projectModalTitle').textContent = 'Edit Project';
+            document.getElementById('projectName').value = project.project_name;
+            document.getElementById('projectType').value = project.type;
+            document.getElementById('projectYear').value = project.year || '';
+            document.getElementById('projectDescription').value = project.description;
+            
+            // Load existing media
+            currentMedia = project.media || [];
+            renderMediaGrid();
+            
+            // Populate client dropdown
+            const clientSelect = document.getElementById('projectClient');
+            clientSelect.innerHTML = projectsData.projects.map((client, index) => 
+                `<option value="${index}" ${index === clientIndex ? 'selected' : ''}>${client.client}</option>`
+            ).join('');
+            
+            currentEditingProject = { clientIndex, projectIndex };
+            document.getElementById('projectModal').style.display = 'block';
+        }
+
+        function saveProject() {
+            const projectName = document.getElementById('projectName').value.trim();
+            const projectType = document.getElementById('projectType').value;
+            const projectYear = document.getElementById('projectYear').value.trim();
+            const projectDescription = document.getElementById('projectDescription').value.trim();
+            const clientIndex = parseInt(document.getElementById('projectClient').value);
+
+            if (!projectName || !projectDescription) return;
+
+            const projectData = {
+                project_name: projectName,
+                type: projectType,
+                year: projectYear || null,
+                description: projectDescription,
+                media: currentMedia
+            };
+
+            if (currentEditingProject !== null) {
+                // Edit existing project
+                const { clientIndex: oldClientIndex, projectIndex } = currentEditingProject;
+                projectsData.projects[oldClientIndex].projects[projectIndex] = projectData;
+                
+                // Move to new client if changed
+                if (oldClientIndex !== clientIndex) {
+                    projectsData.projects[clientIndex].projects.push(projectData);
+                    projectsData.projects[oldClientIndex].projects.splice(projectIndex, 1);
+                    
+                    // Remove empty client
+                    if (projectsData.projects[oldClientIndex].projects.length === 0) {
+                        projectsData.projects.splice(oldClientIndex, 1);
+                    }
+                }
+            } else {
+                // Add new project
+                projectsData.projects[clientIndex].projects.push(projectData);
+            }
+
+            renderProjects();
+            updateStats();
+            closeModal('projectModal');
+            showStatus('Project saved successfully', 'success');
+        }
+
+        function deleteProject(clientIndex, projectIndex) {
+            if (confirm('Are you sure you want to delete this project?')) {
+                projectsData.projects[clientIndex].projects.splice(projectIndex, 1);
+                
+                // Remove client if no projects left
+                if (projectsData.projects[clientIndex].projects.length === 0) {
+                    projectsData.projects.splice(clientIndex, 1);
+                }
+                
+                renderProjects();
+                updateStats();
+                showStatus('Project deleted successfully', 'success');
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.style.display = 'block';
+            
+            setTimeout(() => {
+                status.style.display = 'none';
+            }, 5000);
+        }
+
+        function showLoading(show) {
+            document.getElementById('loading').style.display = show ? 'block' : 'none';
+        }
+
+        function exportData() {
+            const dataStr = JSON.stringify(projectsData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'projects.json';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html> 

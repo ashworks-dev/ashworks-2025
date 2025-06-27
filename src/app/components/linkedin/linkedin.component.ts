@@ -17,6 +17,7 @@ export class LinkedInComponent {
   endorsements: Endorsement[];
   contact: any;
   aboutMe: AboutMe;
+  aiAdoption = this.resumeService.aiAdoption;
 
   constructor(private resumeService: ResumeService) {
     this.summary = this.resumeService.summary;

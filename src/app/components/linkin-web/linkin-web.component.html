@@ -1,0 +1,198 @@
+<div class="linkedin-resume">
+  <!-- Print Button -->
+  <div class="print-button-container">
+    <button class="print-button" (click)="printResume()">
+      <i class="fas fa-print"></i>
+      Print Resume
+    </button>
+  </div>
+
+  <!-- Simple Header -->
+  <header class="resume-header">
+    <h1>Ashley Norriss</h1>
+    <div class="header-subtitle">Senior Web Developer</div>
+    <div class="header-contact">
+      <span><i class="fas fa-envelope"></i> {{ contact.email }}</span>
+      <span><i class="fas fa-phone"></i> {{ contact.phone }}</span>
+      <span><i class="fas fa-map-marker-alt"></i> {{ contact.location }}</span>
+      <span><i class="fas fa-globe"></i> <a href="https://ashworks.com.au" target="_blank">ashworks.com.au</a></span>
+      <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ash-norriss-2033621b/" target="_blank">LinkedIn</a></span>
+    </div>
+  </header>
+
+  <!-- Summary -->
+  <section class="resume-section">
+    <h3>Professional Summary</h3>
+    <p class="summary">{{ summary }}</p>
+  </section>
+
+  <!-- Experience -->
+  <section class="resume-section">
+    <h3>Professional Experience</h3>
+    <div class="experience-container">
+      <div class="experience-item" *ngFor="let exp of experiences">
+        <div class="experience-header">
+          <div class="role-info">
+            <h4>{{ exp.position }}</h4>
+            <div class="company">{{ exp.company }}</div>
+            <div class="location" *ngIf="exp.location">{{ exp.location }}</div>
+          </div>
+          <div class="period">{{ exp.period }}</div>
+        </div>
+        <div class="company-description" *ngIf="exp.companyDescription">
+          <p>{{ exp.companyDescription }}</p>
+        </div>
+        <ul class="experience-details">
+          <li *ngFor="let detail of exp.description" [ngClass]="{'section-header': detail.startsWith('SECTION_HEADER:')}">
+            {{ detail.startsWith('SECTION_HEADER:') ? detail.replace('SECTION_HEADER:', '') : detail }}
+          </li>
+        </ul>
+        <div class="achievements" *ngIf="exp.achievements">
+          <h5>Key Achievements:</h5>
+          <ul>
+            <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Adoption -->
+  <section class="resume-section">
+    <h3>AI Adoption</h3>
+    <p class="ai-adoption">{{ aiAdoption }}</p>
+  </section>
+
+  <!-- Skills -->
+  <section class="resume-section">
+    <h3>Skills & Expertise</h3>
+    <div class="skills-container">
+      <div class="skill-category" *ngFor="let category of skills">
+        <h4>{{ category.category }}</h4>
+        <div class="subcategories">
+          <div class="subcategory" *ngFor="let subcategory of category.subcategories">
+            <h5>{{ subcategory.name }}</h5>
+            <div class="skill-tags">
+              <div *ngFor="let item of subcategory.items" class="skill-tag" [class.primary-skill]="item.isPrimary">
+                {{ item.name.includes('(') ? item.name.split('(')[0].trim() : item.name }}
+                <span *ngIf="item.name.includes('(')" class="years">({{ item.name.split('(')[1].replace(')', '') }})</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="resume-section">
+    <h3>Key Projects</h3>
+    <div class="projects-container">
+      <div class="project-item" *ngFor="let project of projects">
+        <div class="project-header">
+          <h4>{{ project.title }}</h4>
+          <span class="period">{{ project.period }}</span>
+        </div>
+        <p>{{ project.webDescription || project.description }}</p>
+        <div class="project-tech">
+          <div class="tech-stack">
+            <div class="tech-icon" *ngFor="let tech of project.technologies" [title]="tech.name">
+              <i [class]="tech.icon"></i>
+              <span class="tech-name">{{ tech.name }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- R&D Projects -->
+  <section class="resume-section">
+    <h3>Technical R&D</h3>
+    <div class="projects-container">
+      <div class="project-item" *ngFor="let project of rndProjects">
+        <div class="project-header">
+          <h4>{{ project.title }}</h4>
+          <span class="period">{{ project.period }}</span>
+        </div>
+        <p>{{ project.description }}</p>
+        <div class="project-tech">
+          <div class="tech-stack">
+            <div class="tech-icon" *ngFor="let tech of project.technologies" [title]="tech.name">
+              <i [class]="tech.icon"></i>
+              <span class="tech-name">{{ tech.name }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards -->
+  <section class="resume-section">
+    <h3>Awards & Recognition</h3>
+    <ul class="awards-list">
+      <li *ngFor="let award of awards">{{ award }}</li>
+    </ul>
+  </section>
+
+  <!-- Endorsements -->
+  <section class="resume-section">
+    <h3>Professional Endorsements</h3>
+    <div class="endorsements-container">
+      <div class="endorsement-item" *ngFor="let endorsement of endorsements">
+        <blockquote>{{ endorsement.text }}</blockquote>
+        <div class="endorsement-author">
+          <strong>{{ endorsement.author }}</strong>
+          <div>{{ endorsement.position }}</div>
+          <div class="endorsement-contact" *ngIf="endorsement.email">
+            <a href="mailto:{{ endorsement.email }}">{{ endorsement.email }}</a>
+          </div>
+          <div class="endorsement-contact" *ngIf="endorsement.phone">
+            <a href="tel:{{ endorsement.phone }}">{{ endorsement.phone }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section class="resume-section">
+    <h3>About Me</h3>
+    <div class="about-me">
+      <p class="summary">{{ aboutMe.summary }}</p>
+      
+      <div class="strengths">
+        <h4>Key Strengths</h4>
+        <ul>
+          <li *ngFor="let strength of aboutMe.strengths">{{ strength }}</li>
+        </ul>
+      </div>
+
+      <div class="work-style">
+        <h4>Work Style</h4>
+        <ul>
+          <li *ngFor="let style of aboutMe.workStyle">{{ style }}</li>
+        </ul>
+      </div>
+
+      <div class="key-achievements">
+        <h4>Key Achievements</h4>
+        <ul>
+          <li *ngFor="let achievement of aboutMe.keyAchievements">{{ achievement }}</li>
+        </ul>
+      </div>
+
+      <div class="personal-background">
+        <h4>Personal Background</h4>
+        <p>{{ aboutMe.personalBackground.story }}</p>
+        <p>{{ aboutMe.personalBackground.family }}</p>
+      </div>
+
+      <div class="career-objectives">
+        <h4>Career Objectives</h4>
+        <p [innerHTML]="aboutMe.careerObjectives"></p>
+      </div>
+    </div>
+  </section>
+</div> 

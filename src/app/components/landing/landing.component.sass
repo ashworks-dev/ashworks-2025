@@ -363,6 +363,16 @@
     .tech-stack
       border-top: 1px solid rgba(45, 212, 191, 0.3)
 
+  // AI Service specific styles
+  .service-icon.ai-service
+    .ai-icon
+      color: #2dd4bf
+      transition: opacity 0.8s ease-in-out
+      animation: aiIconPulse 2s ease-in-out infinite
+    
+    .ai-video
+      transition: opacity 0.8s ease-in-out
+
   .service-icon
     position: relative
     height: 240px
@@ -440,6 +450,14 @@
     background: linear-gradient(45deg, rgba(45, 212, 191, 0.3), rgba(52, 211, 153, 0.3))
   50%
     background: linear-gradient(225deg, rgba(45, 212, 191, 0.3), rgba(52, 211, 153, 0.3))
+
+@keyframes aiIconPulse
+  0%, 100%
+    transform: translate(-50%, -50%) scale(1)
+    opacity: 1
+  50%
+    transform: translate(-50%, -50%) scale(1.1)
+    opacity: 0.8
 
 .work-preview
   background: linear-gradient(180deg, rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.95))

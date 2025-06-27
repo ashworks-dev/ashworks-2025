@@ -13,11 +13,14 @@ import { AppComponent } from './app.component';
 import { VideoComponent } from './components/video/video.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { LinkedInComponent } from './components/linkedin/linkedin.component';
+import { LinkinWebComponent } from './components/linkin-web/linkin-web.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { ClientLoginComponent } from './components/client-login/client-login.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ThankYouComponent } from './components/thank-you/thank-you.component';
+import { LinkedinVideoComponent } from './components/linkedin-video/linkedin-video.component';
+import { ShowreelsComponent } from './components/showreels/showreels.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +28,14 @@ import { ThankYouComponent } from './components/thank-you/thank-you.component';
     VideoComponent,
     ResumeComponent,
     LinkedInComponent,
+    LinkinWebComponent,
     LandingComponent,
     ClientLoginComponent,
     NavComponent,
     FooterComponent,
-    ThankYouComponent
+    ThankYouComponent,
+    LinkedinVideoComponent,
+    ShowreelsComponent
   ],
   imports: [
     BrowserModule,

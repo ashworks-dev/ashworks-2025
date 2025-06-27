@@ -15,7 +15,7 @@
         <img src="assets/images/aw-circle.svg" alt="ashworks logo" class="brand-logo">
         ashworks
       </span>
-      <span class="title">Developer & Videographer</span>
+      <span class="title">Creative technology services</span>
     </h1>
     
     <div class="subtitle">
@@ -61,7 +61,6 @@
 
 <!-- Service Pillars Section -->
 <section class="services-overview">
-  <h2 class="section-title">What I Do</h2>
   <div class="service-cards-container">
     <div class="service-card">
       <div class="service-icon corporate-video">
@@ -110,13 +109,16 @@
       </div>
     </div>
 
-    <div class="service-card">
-      <div class="service-icon">
+    <div class="service-card" #aiServiceCard>
+      <div class="service-icon ai-service">
         <img src="assets/images/codehtml.jpg" alt="Background reference" class="service-image full-width" style="opacity: 0;">
-        <i class="fas fa-robot fa-4x" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+        <i class="fas fa-robot fa-4x ai-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; opacity: 1;"></i>
+        <video class="ai-video" loop muted preload="auto" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; z-index: 1;">
+          <source src="assets/ai-1.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="service-content">
-        <h3>AI ... what's next?</h3>
+        <h3>AI ... ?</h3>
         <p>Beyond the hype, fancy images and scary job replacement fears I'm exploring the cutting edge of AI technology to solve real business challenges. Currently prototyping and developing custom AI solutions, from automated content generation to intelligent learning systems. Diving into advanced image and video generation, and the latest in open source models with ComfyUI. Always looking for new projects to work on where real world applications are a priority, not just the click bait fancy AI stuff. Beyond UGC, CapCut editors and iPhone videographers ... it isn't quite there yet, but why not get ready for where AI fits into your business.</p>
       </div>
       <div class="button-container">
@@ -184,8 +186,8 @@
     </div>
 
     <div class="project-card web-dev">
-      <div class="project-image placeholder gradient-4">
-        <i class="fas fa-robot fa-2x"></i>
+      <div class="project-image">
+        <img src="assets/images/sbai.png" alt="AI-Powered Courseware Generator interface" class="project-image full-width">
       </div>
       <div class="service-content">
         <div class="project-info">

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener, ElementRef } from '@angular/core';
 import { IMediaElement } from '@videogular/ngx-videogular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
@@ -23,12 +23,14 @@ interface Video {
 })
 export class VideoComponent implements OnInit {
   @ViewChild('media', { static: true }) media!: IMediaElement;
+  @ViewChild('aiServiceCard', { static: false }) aiServiceCard!: ElementRef;
   videoError = false;
   showAllProjects = false;
   showQuoteModal = false;
   showShowreelModal = false;
   showSuccessMessage = false;
   showShowreelSuccessMessage = false;
+  aiVideoVisible = false;
   videos: Video[] = [
     {
       id: 0,
@@ -161,6 +163,42 @@ export class VideoComponent implements OnInit {
   onWindowScroll() {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.isDevNoteHidden = currentScroll > this.scrollThreshold;
+    this.checkAiServiceCardVisibility();
+  }
+
+  checkAiServiceCardVisibility(): void {
+    if (this.aiServiceCard) {
+      const rect = this.aiServiceCard.nativeElement.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Trigger when the card is 50% visible
+      if (rect.top < windowHeight * 0.5 && rect.bottom > windowHeight * 0.5) {
+        if (!this.aiVideoVisible) {
+          this.aiVideoVisible = true;
+          // Add a small delay to make the transition more dramatic
+          setTimeout(() => {
+            const aiIcon = this.aiServiceCard.nativeElement.querySelector('.ai-icon');
+            const aiVideo = this.aiServiceCard.nativeElement.querySelector('.ai-video') as HTMLVideoElement;
+            
+            if (aiIcon) aiIcon.style.opacity = '0';
+            if (aiVideo) {
+              aiVideo.style.opacity = '1';
+              // Ensure video is muted to comply with autoplay policies
+              aiVideo.muted = true;
+              // Try to play the video
+              const playPromise = aiVideo.play();
+              if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                  console.log('Video play failed:', error);
+                  // If autoplay fails, we can still show the video frame
+                  // The video will play when user interacts with the page
+                });
+              }
+            }
+          }, 500);
+        }
+      }
+    }
   }
 
   @HostListener('window:keydown', ['$event'])
