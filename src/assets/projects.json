@@ -4,29 +4,17 @@
       "client": "Department of Education (Vic)",
       "projects": [
         {
-          "description": "Comprehensive project across 50+ schools, involving over 90 interviews with students, teachers, and administration staff to explore inclusive aspects of today's classrooms in both urban and rural Victoria.",
+          "project_name": "Inclusive Classrooms",
+          "type": "Video",
+          "year": "2019 - 2020",
+          "description": "Comprehensive project across 50+ schools, involving over 90 interviews with students, teachers, and administration staff to explore inclusive aspects of today's classrooms in both urban and rural Victoria. As big as this project was and due to the nature of working with children I can only showcase a very limited sample.",
           "featured": true,
           "media": [
-            {
-              "title": "vlcsnap-2024-01-09-12h09m36s077.png",
-              "type": "image",
-              "url": "/assets/images/vlcsnap-2024-01-09-12h09m36s077_20250625_161940_optimized.jpg"
-            },
-            {
-              "title": "Screenshot 2024-01-09 at 11.12.24 am.png",
-              "type": "image",
-              "url": "/assets/images/Screenshot_2024-01-09_at_11.12.24_am_20250625_161944_optimized.jpg"
-            },
             {
               "isPoster": true,
               "title": "Screenshot 2024-01-09 at 11.10.31 am.png",
               "type": "image",
               "url": "/assets/images/Screenshot_2024-01-09_at_11.10.31_am_20250625_161947_optimized.jpg"
-            },
-            {
-              "title": "Screenshot 2024-01-09 at 11.07.41 am.png",
-              "type": "image",
-              "url": "/assets/images/Screenshot_2024-01-09_at_11.07.41_am_20250625_161949_optimized.jpg"
             },
             {
               "title": "Screenshot 2024-01-09 at 11.02.35 am.png",
@@ -48,12 +36,12 @@
               "type": "image",
               "url": "/assets/images/Screenshot_2024-01-09_at_11.13.46_am_20250625_162007_optimized.jpg"
             }
-          ],
-          "project_name": "Inclusive Classrooms",
-          "type": "Video",
-          "year": "2019 - 2020"
+          ]
         },
         {
+          "project_name": "Professional Development",
+          "type": "Video",
+          "year": "2020",
           "description": "Three-day road trip to produce 8 videos at multiple schools across Victoria, interviewing teachers for insights on Personal Development.",
           "featured": false,
           "media": [
@@ -67,16 +55,8 @@
               "title": "vlcsnap-2024-01-09-12h15m25s323.png",
               "type": "image",
               "url": "/assets/images/vlcsnap-2024-01-09-12h15m25s323_20250625_162141_optimized.jpg"
-            },
-            {
-              "title": "vlcsnap-2024-01-09-12h15m36s863.png",
-              "type": "image",
-              "url": "/assets/images/vlcsnap-2024-01-09-12h15m36s863_20250625_162146_optimized.jpg"
             }
-          ],
-          "project_name": "Professional Development",
-          "type": "Video",
-          "year": "2020"
+          ]
         },
         {
           "description": "One-day shoot at DET, capturing interviews and b-roll of key players at work. Managed solo as cameraman.",
@@ -167,6 +147,24 @@
           "project_name": "Whole school approach to teaching literacy",
           "type": "Video",
           "year": "2020"
+        },
+        {
+          "description": "Single page AngularJS app to support teachers in assessing what media they could safely use in their work. The tool was hosted internally and contained a self-contained data set they could query. The data set could also be edited online to make updates easy.",
+          "featured": false,
+          "media": [],
+          "project_name": "Copyright Query",
+          "technologies": [
+            {
+              "icon": "fab fa-angular",
+              "name": "AngularJS"
+            },
+            {
+              "icon": "fas fa-database",
+              "name": "Data Management"
+            }
+          ],
+          "type": "Web",
+          "year": "2021"
         }
       ]
     },
@@ -255,6 +253,16 @@
             }
           ],
           "project_name": "ACU 360 Virtual Tour",
+          "technologies": [
+            {
+              "icon": "fab fa-angular",
+              "name": "Angular"
+            },
+            {
+              "icon": "fas fa-code",
+              "name": "Web Development"
+            }
+          ],
           "type": "Video/Web",
           "year": "2020"
         },
@@ -282,6 +290,34 @@
           "project_name": "Student Services",
           "type": "Video",
           "year": "2022"
+        },
+        {
+          "description": "Five2Study is a responsive educational website built to support Australian students and parents with curated study resources across subjects and year levels. The site was designed in Webflow for visual clarity and accessibility, then developed using custom HTML, CSS, and JavaScript, ensuring fast performance and full control over the codebase.\n\nA highlight feature is the interactive referencing tool on the Academic Writing > Referencing page, built with React. It allows users to quickly generate academic citations (APA, MLA, Harvard, etc.) via a user-friendly, form-based interface—making it easier for students to produce properly formatted references.\n\nThis project blends visually driven design with hand-coded precision, offering a lightweight, fast-loading, and highly accessible educational experience. https://five2study.com.au/",
+          "featured": false,
+          "media": [
+            {
+              "title": "Five 2 Study website",
+              "type": "website",
+              "url": "https://five2study.com.au/"
+            }
+          ],
+          "project_name": "Five 2 Study Website",
+          "type": "Web",
+          "year": "2025"
+        },
+        {
+          "description": "Service2Campus is a student-focused support website developed to help university students access key services, information, and campus resources with ease. The site was designed in Webflow to achieve a clean, approachable visual style, then developed using custom HTML, CSS, and JavaScript for lightweight performance and precise control.",
+          "featured": false,
+          "media": [
+            {
+              "title": "Service 2 Study website",
+              "type": "website",
+              "url": "https://service2campus.com.au/"
+            }
+          ],
+          "project_name": "Service 2 Study",
+          "type": "Web",
+          "year": "2025"
         }
       ]
     },
@@ -653,6 +689,16 @@
             }
           ],
           "project_name": "360 Virtual Stores",
+          "technologies": [
+            {
+              "icon": "fab fa-angular",
+              "name": "Angular"
+            },
+            {
+              "icon": "fas fa-code",
+              "name": "Web Development"
+            }
+          ],
           "type": "Video/Web",
           "year": "2020"
         },
@@ -685,6 +731,32 @@
           "project_name": "Difficult Customers at the Register",
           "type": "Video",
           "year": "2022"
+        },
+        {
+          "description": "Developing an AI-powered system for Coles that automatically generates interactive training modules in the Adapt Framework. The system processes existing eLearning content or AI-generated storyboards through a sophisticated pipeline: initially using LLMs to parse and generate intermediate data files, followed by an extensive storyboard-to-courseware processor. Features include review capabilities, block and text editing, image upload functionality, and comprehensive user and process/build queue management. The final output can be previewed within the tool or exported to the Adapt Authoring tool for further refinement.",
+          "featured": true,
+          "media": [],
+          "project_name": "AI Courseware Generator",
+          "technologies": [
+            {
+              "icon": "fas fa-robot",
+              "name": "AI/LLM"
+            },
+            {
+              "icon": "fab fa-python",
+              "name": "Python"
+            },
+            {
+              "icon": "fab fa-angular",
+              "name": "Angular"
+            },
+            {
+              "icon": "fas fa-graduation-cap",
+              "name": "eLearning"
+            }
+          ],
+          "type": "Web",
+          "year": "2024-present"
         }
       ]
     },
@@ -844,12 +916,40 @@
         {
           "description": "Developed interactive intranet portals on SharePoint with media-rich interactions and dynamic features.",
           "project_name": "NAB Portals",
+          "technologies": [
+            {
+              "icon": "fab fa-angular",
+              "name": "Angular"
+            },
+            {
+              "icon": "fas fa-share-alt",
+              "name": "SharePoint"
+            },
+            {
+              "icon": "fas fa-code",
+              "name": "Web Development"
+            }
+          ],
           "type": "Web",
           "year": "2015-2016"
         },
         {
           "description": "Award-winning site focused on home and work ergonomics.",
           "project_name": "NAB Hybrid Working",
+          "technologies": [
+            {
+              "icon": "fab fa-angular",
+              "name": "Angular"
+            },
+            {
+              "icon": "fas fa-share-alt",
+              "name": "SharePoint"
+            },
+            {
+              "icon": "fas fa-code",
+              "name": "Web Development"
+            }
+          ],
           "type": "Web",
           "year": 2020
         }
@@ -971,24 +1071,39 @@
           "year": "2019"
         },
         {
-          "description": "asdasd",
+          "description": "Developed a sophisticated web-based career development tool that processed extensive data entirely in the browser: nearly 500 job roles and 800 training resources stored in a flat database file. The application featured interactive charts and data visualization to help staff compare their current role with potential future roles. All data processing, filtering, and visualization was handled client-side with no backend requirements, demonstrating efficient browser-based data management. The tool automatically compiled personalized training catalogs based on role comparisons, helping employees plan their career progression.",
           "featured": false,
           "media": [],
-          "project_name": "Onboarding 360",
-          "type": "Video/Web",
-          "year": "2019"
-        }
-      ]
-    },
-    {
-      "client": "Suncorp",
-      "projects": [
+          "project_name": "Career Compass",
+          "technologies": [
+            {
+              "icon": "fas fa-bolt",
+              "name": "Flash"
+            },
+            {
+              "icon": "fas fa-code",
+              "name": "Web Development"
+            }
+          ],
+          "type": "Web",
+          "year": "2014"
+        },
         {
           "description": "Management communication videos and 360° virtual tours of offices.",
           "featured": false,
           "media": [],
-          "project_name": "Management Communications",
-          "type": "Video",
+          "project_name": "360 Tour: Management Communications",
+          "technologies": [
+            {
+              "icon": "fab fa-angular",
+              "name": "Angular"
+            },
+            {
+              "icon": "fas fa-code",
+              "name": "Web Development"
+            }
+          ],
+          "type": "Web",
           "year": "2018"
         }
       ]
@@ -997,20 +1112,125 @@
       "client": "Melba NDIS",
       "projects": [
         {
+          "description": "Three day shoot at various Melba offices in Melbourne and Ballarat. Interviews and b-roll with staff, support and wonderful clients.",
+          "featured": false,
+          "media": [],
           "project_name": "NDIS Landscape",
           "type": "Video",
-          "year": "2025",
-          "description": "Three day shoot and edit at various Melba offices and support centres. Interviews with staff and clients and b-roll. Coverage of the financial and human aspects of the services they provide",
-          "featured": false,
-          "media": []
+          "year": "2025"
         },
         {
-          "project_name": "Financial Management",
-          "type": "Video",
-          "year": "2025",
           "description": "Quick half day corporate interviews.",
           "featured": false,
-          "media": []
+          "media": [],
+          "project_name": "Financial Management",
+          "type": "Video",
+          "year": "2025"
+        }
+      ]
+    },
+    {
+      "client": "Liberate Learning",
+      "projects": [
+        {
+          "description": "A comprehensive web-based lesson planning tool that helps teachers create, organize, and share lesson plans. Features include curriculum mapping, resource management, and collaborative planning capabilities via an interactive calendar. A PHP/Laravel backend with an Angular frontend and a modified Wordpress marketplace. Project was about two months from beta testing when the project was cancelled due to a company merger.",
+          "featured": false,
+          "media": [],
+          "project_name": "Lesson Planner",
+          "technologies": [
+            {
+              "icon": "fab fa-angular",
+              "name": "Angular"
+            },
+            {
+              "icon": "fab fa-php",
+              "name": "PHP"
+            },
+            {
+              "icon": "fab fa-laravel",
+              "name": "Laravel"
+            },
+            {
+              "icon": "fab fa-wordpress",
+              "name": "WordPress"
+            },
+            {
+              "icon": "fas fa-database",
+              "name": "Database"
+            },
+            {
+              "icon": "fas fa-users",
+              "name": "Collaboration"
+            },
+            {
+              "icon": "fas fa-graduation-cap",
+              "name": "Education"
+            }
+          ],
+          "type": "Web",
+          "year": "2022-2024"
+        }
+      ]
+    },
+    {
+      "client": "Monash University",
+      "projects": [
+        {
+          "description": "Developed a web-based application for Monash University and Western Sydney University to promote campus safety, wrapped in iOS and Android native containers. The project gained significant media attention and was promoted across various news outlets. The application featured interactive safety resources, emergency contact information, and reporting tools. Built with a responsive web application core, then packaged for mobile platforms to ensure consistent functionality across all devices while maintaining native app store presence.",
+          "featured": true,
+          "media": [],
+          "project_name": "Respect Now Always",
+          "technologies": [
+            {
+              "icon": "fab fa-apple",
+              "name": "iOS"
+            },
+            {
+              "icon": "fab fa-android",
+              "name": "Android"
+            },
+            {
+              "icon": "fas fa-mobile-alt",
+              "name": "Mobile"
+            },
+            {
+              "icon": "fas fa-newspaper",
+              "name": "Media Coverage"
+            }
+          ],
+          "type": "Web",
+          "year": "2022"
+        }
+      ]
+    },
+    {
+      "client": "Australian Multicultural Foundation",
+      "projects": [
+        {
+          "description": "Developed a comprehensive anti-bullying platform for the Australian Multicultural Foundation, consisting of 15 iOS and 15 Android mobile applications in multiple languages, each with supporting web versions. The project involved converting a web-based application into native mobile platforms, requiring careful management of multiple app store submissions and updates. Handled complex logistics of publishing and maintaining applications across different languages and platforms, ensuring consistent user experience and content delivery. The platform provided resources and tools to help parents and educators address online bullying in culturally sensitive ways.",
+          "featured": true,
+          "media": [],
+          "project_name": "Cyberparent",
+          "technologies": [
+            {
+              "icon": "fab fa-apple",
+              "name": "iOS"
+            },
+            {
+              "icon": "fab fa-android",
+              "name": "Android"
+            },
+            {
+              "icon": "fas fa-globe",
+              "name": "Multilingual"
+            },
+            {
+              "icon": "fab fa-mobile-alt",
+              "name": "Mobile"
+            }
+          ],
+          "type": "Web",
+          "year": "2016"
         }
       ]
     }

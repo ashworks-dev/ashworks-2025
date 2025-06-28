@@ -136,7 +136,7 @@
   margin: 0 auto
   padding: 0 1rem
 
-  .ai-full-width
+  .ai-full-width, .package-full-width
     grid-column: 1 / -1
     margin-top: 2rem
 
@@ -184,12 +184,21 @@
       border-color: rgba(255, 107, 136, 0.4)
       background: linear-gradient(180deg, rgba(255, 107, 136, 0.2), rgba(13, 16, 23, 0.9))
 
-  &.ai-full-width
+  // Package card - gold/yellow tint
+  &.package-full-width
+    background: linear-gradient(180deg, rgba(255, 215, 0, 0.15), rgba(13, 16, 23, 0.9))
+    border: 1px solid rgba(255, 215, 0, 0.3)
+
+    &:hover
+      border-color: rgba(255, 215, 0, 0.4)
+      background: linear-gradient(180deg, rgba(255, 215, 0, 0.2), rgba(13, 16, 23, 0.9))
+
+  &.ai-full-width, &.package-full-width
     display: flex
     flex-direction: row
     align-items: stretch
     
-    .service-icon.ai-service
+    .service-icon.ai-service, .service-icon.package-service
       flex: 0 0 33.333%
       height: auto
       min-height: 200px
@@ -272,6 +281,10 @@
 
   &.ai-title
     color: #FF6B88 !important
+    font-weight: 700
+
+  &.package-title
+    color: #FFD700 !important
     font-weight: 700
 
 .service-description
@@ -1054,7 +1067,36 @@
   
   strong
     color: rgba(255, 255, 255, 0.95)
-    font-weight: 500 
+    font-weight: 500
+
+.ld-header
+  color: #ffffff
+  font-size: 2rem
+  font-weight: 600
+  text-align: center
+  margin: 3rem auto 1.5rem
+  max-width: 800px
+  padding: 0 2rem
+  position: relative
+  z-index: 2
+
+  // Corporate Video heading - blue theme
+  &.corporate-video-header
+    color: #4C9EFF !important
+    text-shadow: 0 0 20px rgba(76, 158, 255, 0.3)
+
+  // Express Video heading - teal theme  
+  &.express-video-header
+    color: #2DD4BF !important
+    text-shadow: 0 0 20px rgba(45, 212, 191, 0.3)
+
+.industry-impact
+  margin-top: 1.5rem
+  color: rgba(255, 255, 255, 0.8)
+  font-size: 1rem
+  line-height: 1.7
+  text-align: left
+  padding: 0 1rem
 
 .contact-section
   padding: 6rem 2rem

@@ -91,6 +91,7 @@ export class VideoComponent implements OnInit {
   loading = false;
   isVideoLoading = false;
   activeTabId: number = 0;
+  showRates = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -101,6 +102,11 @@ export class VideoComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       const token = params['token'];
+      const rates = params['rates'];
+      
+      // Check if rates should be shown
+      this.showRates = rates === 'true' || rates === '1' || rates === 'show';
+      
       if (token) {
         this.loading = true;
         this.apiService.verifyToken(token).subscribe({

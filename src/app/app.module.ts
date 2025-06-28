@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ThankYouComponent } from './components/thank-you/thank-you.component';
 import { LinkedinVideoComponent } from './components/linkedin-video/linkedin-video.component';
 import { ShowreelsComponent } from './components/showreels/showreels.component';
+import { LinkedinAllComponent } from './components/linkedin-all/linkedin-all.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ShowreelsComponent } from './components/showreels/showreels.component';
     FooterComponent,
     ThankYouComponent,
     LinkedinVideoComponent,
-    ShowreelsComponent
+    ShowreelsComponent,
+    LinkedinAllComponent
   ],
   imports: [
     BrowserModule,

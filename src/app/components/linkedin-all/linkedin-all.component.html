@@ -23,7 +23,7 @@
   <!-- Simple Header -->
   <header class="resume-header">
     <h1>Ashley Norriss</h1>
-    <div class="header-subtitle">Senior Web Developer</div>
+    <div class="header-subtitle">Creative Technologist</div>
     <div class="header-contact">
       <span><i class="fas fa-envelope"></i> {{ contact.email }}</span>
       <span><i class="fas fa-phone"></i> {{ contact.phone }}</span>
@@ -100,18 +100,39 @@
   <!-- Projects -->
   <section class="resume-section">
     <h3>Key Projects</h3>
-    <div class="projects-container">
-      <div class="project-item" *ngFor="let project of projects">
-        <div class="project-header">
-          <h4>{{ project.title }}</h4>
-          <span class="period">{{ project.period }}</span>
-        </div>
-        <p>{{ project.webDescription || project.description }}</p>
-        <div class="project-tech">
-          <div class="tech-stack">
-            <div class="tech-icon" *ngFor="let tech of project.technologies" [title]="tech.name">
+    <div class="project-list small-font">
+      <!-- Web Projects -->
+      <div class="project-group" *ngIf="getWebProjects().length > 0">
+        <div class="project-group-header">Web Development</div>
+        <div class="project-list-item" *ngFor="let project of getWebProjects()">
+          <div class="project-info">
+            <span class="project-year">{{ project.year }}</span>
+            <div class="project-main-row">
+              <span class="project-client">{{ project.client }}</span>
+              <span class="project-name">{{ project.project_name }}</span>
+            </div>
+          </div>
+          <div class="project-tech" *ngIf="project.technologies">
+            <span *ngFor="let tech of project.technologies" class="tech-icon" [title]="tech.name">
               <i [class]="tech.icon"></i>
               <span class="tech-name">{{ tech.name }}</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Separator -->
+      <div class="project-separator" *ngIf="getWebProjects().length > 0 && getVideoProjects().length > 0"></div>
+
+      <!-- Video Projects -->
+      <div class="project-group" *ngIf="getVideoProjects().length > 0">
+        <div class="project-group-header">Video Production</div>
+        <div class="project-list-item" *ngFor="let project of getVideoProjects()">
+          <div class="project-info">
+            <span class="project-year">{{ project.year }}</span>
+            <div class="project-main-row">
+              <span class="project-client">{{ project.client }}</span>
+              <span class="project-name">{{ project.project_name }}</span>
             </div>
           </div>
         </div>
@@ -208,4 +229,4 @@
       </div>
     </div>
   </section>
-</div> 
+</div>

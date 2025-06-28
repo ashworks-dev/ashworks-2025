@@ -1,0 +1,842 @@
+// Modern Creative Web Developer Resume Styles
+.linkedin-resume
+  max-width: 794px
+  width: 794px
+  margin: 80px auto 0 auto
+  padding: 2.5rem
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+  line-height: 1.6
+  color: #1a1a1a
+  background: white
+  min-height: 1123px
+  box-sizing: border-box
+  position: relative
+
+  // Creative accent elements
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    height: 4px
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c)
+    z-index: 1
+
+  // Print button
+  .print-button-container
+    text-align: right
+    margin-bottom: 2.5rem
+    
+    .print-button
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+      color: white
+      border: none
+      padding: 0.75rem 1.5rem
+      border-radius: 8px
+      cursor: pointer
+      font-size: 0.9rem
+      font-weight: 500
+      display: inline-flex
+      align-items: center
+      gap: 0.5rem
+      transition: all 0.3s ease
+      box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3)
+      
+      &:hover
+        transform: translateY(-1px)
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4)
+      
+      @media print
+        display: none
+
+  // Simple header styling
+  .resume-header
+    text-align: center
+    margin-bottom: 2.5rem
+    padding-bottom: 2rem
+    border-bottom: 2px solid #e2e8f0
+    
+    h1
+      font-size: 2.5rem
+      font-weight: 800
+      color: #2d3748
+      margin: 0 0 0.5rem 0
+      letter-spacing: -0.05em
+    
+    .header-subtitle
+      font-size: 1.3rem
+      font-weight: 600
+      color: #667eea
+      margin-bottom: 1rem
+      letter-spacing: -0.025em
+    
+    .header-contact
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      gap: 1.5rem
+      font-size: 0.95rem
+      color: #718096
+      font-weight: 500
+      
+      span
+        display: flex
+        align-items: center
+        gap: 0.5rem
+        
+        &:before
+          content: "•"
+          color: #667eea
+          font-weight: bold
+        
+        &:first-child:before
+          display: none
+        
+        a
+          color: #667eea
+          text-decoration: none
+          font-weight: 600
+          transition: color 0.3s ease
+          
+          &:hover
+            color: #2d3748
+            text-decoration: underline
+
+  // Section styling with creative elements
+  .resume-section
+    margin-bottom: 2.5rem
+    position: relative
+    
+    h3
+      font-size: 1.4rem
+      font-weight: 700
+      color: #2d3748
+      margin: 0 0 1.5rem 0
+      padding-bottom: 0.75rem
+      border-bottom: 2px solid #e2e8f0
+      text-transform: none
+      letter-spacing: -0.025em
+      position: relative
+      
+      &::after
+        content: ''
+        position: absolute
+        bottom: -2px
+        left: 0
+        width: 60px
+        height: 2px
+        background: linear-gradient(90deg, #667eea, #764ba2)
+    
+    .summary
+      font-size: 1.05rem
+      line-height: 1.7
+      color: #4a5568
+      margin: 0
+      font-weight: 400
+
+  // Portfolio link
+  .portfolio-link-container
+    text-align: center
+    margin-bottom: 2rem
+    
+    .portfolio-button
+      background: #2d3748
+      color: white
+      border: 1px solid #2d3748
+      padding: 0.75rem 1.5rem
+      border-radius: 4px
+      font-size: 1rem
+      font-weight: 600
+      cursor: pointer
+      display: inline-flex
+      align-items: center
+      gap: 0.5rem
+      margin-bottom: 0.5rem
+      
+      &:hover
+        background: #4a5568
+        border-color: #4a5568
+      
+      i
+        font-size: 1rem
+    
+    .portfolio-url
+      font-size: 0.7rem
+      color: #718096
+      font-family: monospace
+      margin-top: 0.25rem
+
+  // Experience section with modern cards
+  .experience-container
+    .experience-item
+      margin-bottom: 1.5rem
+      padding: 1.5rem
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%)
+      border-radius: 12px
+      border-left: 4px solid #667eea
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05)
+      transition: all 0.3s ease
+      
+      &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1)
+      
+      &:last-child
+        margin-bottom: 0
+      
+      .experience-header
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        margin-bottom: 1rem
+        
+        .role-info
+          h4
+            font-size: 1.25rem
+            font-weight: 700
+            color: #2d3748
+            margin: 0 0 0.5rem 0
+            letter-spacing: -0.025em
+          
+          .company
+            font-size: 1.1rem
+            font-weight: 600
+            color: #667eea
+            margin-bottom: 0.25rem
+            
+          .location
+            font-size: 0.9rem
+            color: #718096
+            font-weight: 500
+        
+        .period
+          font-size: 0.9rem
+          color: #718096
+          font-weight: 600
+          text-align: right
+          min-width: 120px
+          background: #667eea
+          color: white
+          padding: 0.25rem 0.75rem
+          border-radius: 20px
+          font-size: 0.8rem
+      
+      .company-description
+        margin-bottom: 1rem
+        
+        p
+          font-size: 0.95rem
+          color: #4a5568
+          font-style: italic
+          margin: 0
+      
+      .experience-details
+        list-style: none
+        padding: 0
+        margin: 0 0 1rem 0
+        
+        li
+          position: relative
+          padding-left: 1.75rem
+          margin-bottom: 0.75rem
+          font-size: 0.95rem
+          color: #4a5568
+          
+          &:before
+            content: "▸"
+            position: absolute
+            left: 0
+            color: #667eea
+            font-weight: bold
+          
+          &.section-header
+            font-weight: 700
+            color: #2d3748
+            font-size: 1.1rem
+            margin-top: 1.5rem
+            margin-bottom: 1rem
+            padding-left: 0
+            
+            &:before
+              content: none
+      
+      .achievements
+        margin-top: 1rem
+        
+        h5
+          font-size: 1rem
+          font-weight: 600
+          color: #2d3748
+          margin: 0 0 0.75rem 0
+        
+        ul
+          list-style: none
+          padding: 0
+          margin: 0
+          
+          li
+            position: relative
+            padding-left: 1.5rem
+            margin-bottom: 0.5rem
+            font-size: 0.9rem
+            color: #4a5568
+            
+            &:before
+              content: "✓"
+              position: absolute
+              left: 0
+              color: #667eea
+              font-weight: bold
+
+  // AI Adoption section
+  .ai-adoption
+    font-size: 1rem
+    line-height: 1.7
+    color: #4a5568
+    margin: 0
+    font-weight: 400
+
+  // Skills section with modern tags
+  .skills-container
+    .skill-category
+      margin-bottom: 2rem
+      
+      h4
+        font-size: 1.2rem
+        font-weight: 700
+        color: #2d3748
+        margin: 0 0 1rem 0
+        padding-bottom: 0.5rem
+        border-bottom: 1px solid #e2e8f0
+        letter-spacing: -0.025em
+      
+      .subcategories
+        .subcategory
+          margin-bottom: 1.5rem
+          
+          h5
+            font-size: 1rem
+            font-weight: 600
+            color: #4a5568
+            margin: 0 0 0.75rem 0
+            
+          .skill-tags
+            display: flex
+            flex-wrap: wrap
+            gap: 0.5rem
+            
+            .skill-tag
+              background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%)
+              color: #4a5568
+              padding: 0.5rem 1rem
+              border-radius: 25px
+              font-size: 0.85rem
+              font-weight: 500
+              border: 1px solid #e2e8f0
+              display: flex
+              align-items: center
+              gap: 0.25rem
+              transition: all 0.3s ease
+              
+              &:hover
+                transform: translateY(-1px)
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+              
+              &.primary-skill
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+                color: white
+                border-color: #667eea
+                box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3)
+              
+              .years
+                font-size: 0.75rem
+                opacity: 0.8
+              
+              // Print-friendly styles
+              @media print
+                background: #f7fafc !important
+                color: #2d3748 !important
+                border: 2px solid #e2e8f0 !important
+                box-shadow: none !important
+                transform: none !important
+                
+                &.primary-skill
+                  background: #718096 !important
+                  color: white !important
+                  border: 2px solid #718096 !important
+                  font-weight: 700 !important
+
+  // Projects section with modern cards
+  .projects-container
+    .project-item
+      margin-bottom: 2rem
+      padding: 1.5rem
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%)
+      border-radius: 12px
+      border-left: 4px solid #667eea
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05)
+      transition: all 0.3s ease
+      
+      &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1)
+      
+      .project-header
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        margin-bottom: 1rem
+        gap: 1rem
+        
+        h4
+          font-size: 1.2rem
+          font-weight: 700
+          color: #2d3748
+          margin: 0
+          letter-spacing: -0.025em
+          flex: 1
+          min-width: 0
+        
+        .period
+          font-size: 0.85rem
+          color: #718096
+          font-weight: 600
+          background: #667eea
+          color: white
+          padding: 0.25rem 0.75rem
+          border-radius: 20px
+          white-space: nowrap
+          flex-shrink: 0
+          width: fit-content
+          max-width: 120px
+      
+      .project-meta
+        display: flex
+        gap: 1rem
+        margin-bottom: 1rem
+        flex-wrap: wrap
+        
+        .client
+          font-size: 0.9rem
+          color: #4a5568
+          font-weight: 600
+          background: #f7fafc
+          padding: 0.25rem 0.75rem
+          border-radius: 15px
+          border: 1px solid #e2e8f0
+        
+        .project-type
+          font-size: 0.85rem
+          color: #718096
+          font-weight: 500
+          background: #edf2f7
+          padding: 0.25rem 0.75rem
+          border-radius: 15px
+          border: 1px solid #e2e8f0
+      
+      p
+        font-size: 0.95rem
+        color: #4a5568
+        line-height: 1.6
+        margin: 0 0 1rem 0
+      
+      .project-tech
+        margin-top: 0.2rem
+        display: flex
+        flex-wrap: wrap
+        gap: 0.5rem
+        .tech-icon
+          display: inline-flex
+          align-items: center
+          gap: 0.25rem
+          font-size: 0.95em
+          color: #9ca3af
+          background: #f8fafc
+          border-radius: 6px
+          padding: 0.1rem 0.5rem 0.1rem 0.3rem
+          opacity: 0.7
+          i
+            font-size: 1em
+            color: #9ca3af
+          .tech-name
+            font-size: 0.85em
+            color: #6b7280
+            margin-left: 0.15em
+
+  // Awards section
+  .awards-list
+    list-style: none
+    padding: 0
+    margin: 0
+    
+    li
+      position: relative
+      padding-left: 1.75rem
+      margin-bottom: 0.75rem
+      font-size: 0.95rem
+      color: #4a5568
+      
+      &:before
+        content: "🏆"
+        position: absolute
+        left: 0
+        font-size: 1rem
+
+  // Endorsements section with modern styling
+  .endorsements-container
+    .endorsement-item
+      margin-bottom: 2rem
+      padding: 1.5rem
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%)
+      border-radius: 12px
+      border-left: 4px solid #667eea
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05)
+      transition: all 0.3s ease
+      
+      &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1)
+      
+      blockquote
+        font-size: 1rem
+        line-height: 1.7
+        color: #4a5568
+        margin: 0 0 1.5rem 0
+        font-style: italic
+        position: relative
+        padding-left: 2rem
+        
+        &:before
+          content: '"'
+          position: absolute
+          left: 0
+          top: -0.5rem
+          font-size: 3rem
+          color: #667eea
+          font-family: serif
+          line-height: 1
+      
+      .endorsement-author
+        strong
+          font-size: 1rem
+          font-weight: 600
+          color: #2d3748
+          display: block
+          margin-bottom: 0.25rem
+        
+        div
+          font-size: 0.9rem
+          color: #4a5568
+          margin-bottom: 0.25rem
+        
+        .endorsement-contact
+          font-size: 0.85rem
+          color: #667eea
+          
+          a
+            color: #667eea
+            text-decoration: none
+            
+            &:hover
+              text-decoration: underline
+
+  // About Me section with modern layout
+  .about-me
+    .summary
+      font-size: 1rem
+      line-height: 1.7
+      color: #4a5568
+      margin: 0 0 2rem 0
+    
+    .strengths, .work-style, .key-achievements, .personal-background, .career-objectives
+      margin-bottom: 2rem
+      
+      h4
+        font-size: 1.1rem
+        font-weight: 700
+        color: #2d3748
+        margin: 0 0 1rem 0
+        padding-bottom: 0.5rem
+        border-bottom: 1px solid #e2e8f0
+        letter-spacing: -0.025em
+      
+      ul
+        list-style: none
+        padding: 0
+        margin: 0
+        
+        li
+          position: relative
+          padding-left: 1.75rem
+          margin-bottom: 0.75rem
+          font-size: 0.95rem
+          color: #4a5568
+          
+          &:before
+            content: "▸"
+            position: absolute
+            left: 0
+            color: #667eea
+            font-weight: bold
+      
+      p
+        font-size: 1rem
+        line-height: 1.7
+        color: #4a5568
+        margin: 0
+
+// Print styles optimized for creative theme
+@media print
+  // Global page break prevention
+  *
+    page-break-inside: auto !important
+    break-inside: auto !important
+    page-break-after: auto !important
+    break-after: auto !important
+    page-break-before: auto !important
+    break-before: auto !important
+  
+  .linkedin-resume
+    padding: 0
+    max-width: none
+    width: 210mm
+    min-height: 297mm
+    margin: 0
+    box-sizing: border-box
+    page-break-inside: auto
+    break-inside: auto
+    
+    &::before
+      height: 2px
+    
+    // Remove page breaks
+    .resume-section
+      margin-bottom: 2rem
+      page-break-inside: auto
+      break-inside: auto
+      page-break-after: auto
+      break-after: auto
+      
+      h3
+        font-size: 1.2rem
+        margin-bottom: 1rem
+        page-break-after: avoid
+        break-after: avoid
+        
+        &::after
+          width: 40px
+    
+    .experience-container .experience-item
+      margin-bottom: 1.5rem
+      padding: 1rem
+      box-shadow: none
+      border: 1px solid #e2e8f0
+      page-break-inside: auto
+      break-inside: auto
+      
+      .experience-header
+        .role-info h4
+          font-size: 1.1rem
+        
+        .company
+          font-size: 1rem
+        
+        .period
+          font-size: 0.75rem
+          padding: 0.2rem 0.6rem
+    
+    .projects-container .project-item
+      margin-bottom: 1.5rem
+      padding: 1rem
+      box-shadow: none
+      border: 1px solid #e2e8f0
+      page-break-inside: auto
+      break-inside: auto
+      
+      .project-header h4
+        font-size: 1rem
+    
+    .endorsements-container .endorsement-item
+      margin-bottom: 1.5rem
+      padding: 1rem
+      box-shadow: none
+      border: 1px solid #e2e8f0
+      page-break-inside: auto
+      break-inside: auto
+    
+    // Portfolio link for print - text only
+    .portfolio-link-container
+      text-align: left
+      margin-bottom: 1rem
+      
+      .portfolio-link
+        background: none
+        color: #2d3748
+        text-decoration: underline
+        padding: 0
+        border-radius: 0
+        font-size: 0.9rem
+        font-weight: 400
+        display: inline
+        box-shadow: none
+        
+        &:hover
+          transform: none
+          box-shadow: none
+          text-decoration: underline
+          color: #2d3748
+        
+        i
+          display: none
+
+// Responsive design for creative theme
+@media (max-width: 768px)
+  .linkedin-resume
+    padding: 1.5rem
+    width: 100%
+    max-width: 100%
+    
+    .experience-container .experience-item
+      .experience-header
+        flex-direction: column
+        align-items: flex-start
+        gap: 0.5rem
+        
+        .period
+          text-align: left
+          min-width: auto
+    
+    .projects-container .project-item
+      .project-header
+        flex-direction: column
+        align-items: flex-start
+        gap: 0.5rem
+        
+        .period
+          text-align: left
+    
+    .skills-container .skill-category .subcategories .subcategory .skill-tags
+      justify-content: flex-start
+
+// Project list with compact layout
+.project-list
+  .project-group
+    margin-bottom: 1.5rem
+    
+    &:last-child
+      margin-bottom: 0
+    
+    .project-group-header
+      font-size: 1.1rem
+      font-weight: 700
+      color: #2d3748
+      margin-bottom: 1rem
+      padding-bottom: 0.5rem
+      border-bottom: 2px solid #e2e8f0
+      position: relative
+      
+      &::after
+        content: ''
+        position: absolute
+        bottom: -2px
+        left: 0
+        width: 40px
+        height: 2px
+        background: linear-gradient(90deg, #667eea, #764ba2)
+  
+  .project-separator
+    height: 2px
+    background: linear-gradient(90deg, #e2e8f0, #667eea, #e2e8f0)
+    margin: 2rem 0
+    border-radius: 1px
+    opacity: 0.6
+  
+  .project-list-item
+    margin-bottom: 0.75rem
+    padding: 0.75rem
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%)
+    border-radius: 8px
+    border-left: 3px solid #667eea
+    transition: all 0.3s ease
+    
+    &:hover
+      transform: translateY(-1px)
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+    
+    &:last-child
+      margin-bottom: 0
+    
+    .project-info
+      display: flex
+      align-items: center
+      gap: 1rem
+      flex-wrap: nowrap
+      
+      .project-year
+        font-size: 0.7rem
+        color: #9ca3af
+        font-weight: 500
+        background: #f8fafc
+        color: #6b7280
+        padding: 0.15rem 0.4rem
+        border-radius: 8px
+        white-space: nowrap
+        min-width: 50px
+        text-align: center
+        border: 1px solid #e5e7eb
+        flex-shrink: 0
+      
+      .project-main-row
+        display: flex
+        width: 100%
+        .project-client, .project-name
+          width: 50%
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+      
+      .project-type
+        font-size: 0.8rem
+        color: #718096
+        font-weight: 500
+        background: #edf2f7
+        padding: 0.2rem 0.6rem
+        border-radius: 12px
+        border: 1px solid #e2e8f0
+        white-space: nowrap
+        flex-shrink: 0
+
+.project-list.small-font
+  font-size: 0.92rem
+  .project-list-item
+    font-size: 0.92rem
+    padding: 0.5rem 0.75rem
+    .project-info
+      gap: 0.7rem
+      .project-year, .project-type
+        font-size: 0.75rem
+      .project-client, .project-name
+        font-size: 0.85rem
+  .project-tech
+    margin-top: 0.2rem
+    display: flex
+    flex-wrap: wrap
+    gap: 0.5rem
+    .tech-icon
+      display: inline-flex
+      align-items: center
+      gap: 0.25rem
+      font-size: 0.95em
+      color: #9ca3af
+      background: #f8fafc
+      border-radius: 6px
+      padding: 0.1rem 0.5rem 0.1rem 0.3rem
+      opacity: 0.7
+      i
+        font-size: 1em
+        color: #9ca3af
+      .tech-name
+        font-size: 0.85em
+        color: #6b7280
+        margin-left: 0.15em 

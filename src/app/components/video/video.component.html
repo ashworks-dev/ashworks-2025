@@ -15,7 +15,7 @@
         <img src="assets/images/aw-circle.svg" alt="ashworks logo" class="brand-logo">
         ashworks
       </span>
-      <span class="title">Video Production Services</span>
+      <span class="title">Video Solutions</span>
     </h1>
     
     <div class="subtitle">
@@ -28,7 +28,7 @@
     </p>
 
     <div class="cta-group">
-      <button class="cta-primary" (click)="openQuoteForm()">Get a Quote</button>
+      <button class="cta-primary" (click)="openQuoteForm()">Book a free consultation</button>
       <button class="cta-secondary" (click)="scrollToSection('access-message')">View Production Reel</button>
     </div>
   </div>
@@ -41,7 +41,7 @@
 
 <!-- Client Showcase Section -->
 <section class="client-showcase">
-  <h2>I've Worked With...</h2>
+  <h2>Trusted by ...</h2>
   <div class="timeline-subtitle">2016 - Present</div>
   <div class="client-grid">
     <div class="client-pill">Coles Supermarkets</div>
@@ -60,8 +60,14 @@
     <div class="client-pill">RMIT</div>
     <div class="client-pill">Monash University</div>
   </div>
+  <h3 class="ld-header corporate-video-header">Corporate Video</h3>
   <div class="career-blurb">
-    After two decades of crafting digital solutions, I expanded into video production, combining technical precision with creative storytelling. Since then, I've had the privilege of producing impactful video content for these outstanding organizations.
+    Our niche in training, promotional, and corporate videos have made a significant impact across diverse industries including healthcare, education, finance, retail, manufacturing, government, utilities, and professional services. From safety training and compliance procedures to customer service scenarios, leadership development, and technical skill building.
+  </div>
+  
+  <h3 class="ld-header express-video-header">Express Video Services</h3>
+  <div class="career-blurb">
+    Need fast, professional video content for social media, marketing campaigns, event coverage, or product launches? We offer flexible videography and editing solutions perfect for quick turnaround projects. From interviews and testimonials to b-roll footage, we can deliver same-day footage handover or complete editing with titles, music, and engaging cuts for social media and web promotions. Competitive rates for small businesses looking for professional video without the agency overhead.
   </div>
 </section>
 
@@ -76,12 +82,12 @@
         <h3 class="service-title videography-title">Videography</h3>
         <p class="service-description">Basic shoot day rate includes:</p>
         <ul class="service-list">
-          <li>Professional Camera Setup</li>
-          <li>Basic Lighting Kit (think news reports)</li>
-          <li>Basic  Audio</li>
+          <li>Professional but lightweight camera setup</li>
+          <li>Basic Lighting Kit</li>
+          <li>Basic Audio</li>
           <li>Limited B-Roll</li>
         </ul>
-        <div class="rate-indicator">
+        <div class="rate-indicator" *ngIf="showRates">
           <span class="rate">From $500 per half day</span>
           <span class="note bold">Shoot day rate only - editing available separately</span>
         </div>
@@ -96,7 +102,7 @@
         <h3 class="service-title professional-title">Professional</h3>
         <p class="service-description">Full professional kit includes:</p>
         <ul class="service-list">
-          <li>Proessional camera Setups, multiple cameras if needed</li>
+          <li>Professional camera setups, multiple cameras if needed</li>
           <li>Advanced lighting for professional interviews</li>
           <li>Professional audio, wired and wireless, multiple speakers and backup audio</li>
           <li>Client monitors onsite for live feeds</li>
@@ -104,7 +110,7 @@
 
           <li>Dedicated B-Roll and photography cameras, so we can quickly switch to b-roll on demand</li>
         </ul>
-        <div class="rate-indicator">
+        <div class="rate-indicator" *ngIf="showRates">
           <span class="rate">$700 - $1,500 per day</span>
           <span class="note bold">Shoot day rate only - editing available separately</span>
         </div>
@@ -127,7 +133,7 @@
           <li>Motion Graphics</li>
           <li>Audio Post-Production</li>
         </ul>
-        <div class="rate-indicator">
+        <div class="rate-indicator" *ngIf="showRates">
           <span class="rate">$80 per hour</span>
           <span class="note bold">Pre and post-production services</span>
         </div>
@@ -145,6 +151,21 @@
       <div class="service-content">
         <h3 class="service-title ai-title">AI Video</h3>
         <p class="service-description">Beyond the hype of subscription AI services, I'm developing custom local models that integrate seamlessly with real-world video production workflows. This approach allows for client branding consistency, element editing, and workflow automation while maintaining full control over the creative process and data security. Using ComfyUI and local tools and models, I'm exploring creating consistent avatars, performances, and posing that would be impossible to achieve through prompts alone.</p>
+      </div>
+    </div>
+
+    <div class="service-card package-full-width">
+      <div class="service-icon package-service">
+        <img src="assets/images/b24-2.png" alt="Package deal background" class="service-image full-width">
+        <i class="fas fa-star fa-4x package-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; opacity: 1; color: #FFD700;"></i>
+      </div>
+      <div class="service-content">
+        <h3 class="service-title package-title">Starter Package Deal</h3>
+        <p class="service-description">Perfect for businesses needing professional video content with a complete solution. This package includes a brainstorming meeting, half-day shoot with professional equipment, and either a 30-60 second social media video or longer-form content for interviews, testimonials, or product demos. Ideal for product launches, company updates, event coverage, or promotional campaigns. Everything you need for impactful content in one convenient package.</p>
+        <div class="rate-indicator">
+          <span class="rate">$2,000</span>
+          <span class="note bold">Half-day shoot + 30-60 second social media edit. **Some limitations apply</span>
+        </div>
       </div>
     </div>
   </div>

@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ResumeService, Experience, Skill, Project, Endorsement, AboutMe } from '../../services/resume.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-linkin-web',
   templateUrl: './linkin-web.component.html',
   styleUrls: ['./linkin-web.component.sass']
 })
-export class LinkinWebComponent {
+export class LinkinWebComponent implements OnInit {
   today = new Date();
   summary: string;
   experiences: Experience[];
@@ -18,8 +20,16 @@ export class LinkinWebComponent {
   contact: any;
   aboutMe: AboutMe;
   aiAdoption: string;
+  accessGranted = false;
+  errorMessage = '';
+  loading = false;
 
-  constructor(private resumeService: ResumeService) {
+  constructor(
+    private resumeService: ResumeService,
+    private route: ActivatedRoute,
+    private apiService: ApiService,
+    private router: Router
+  ) {
     // Use webSummary from resume service for web development focus
     this.summary = this.resumeService.webSummary;
     
@@ -39,6 +49,29 @@ export class LinkinWebComponent {
     
     // Create custom aboutMe data that downplays video role
     this.aboutMe = this.createWebDevAboutMe();
+  }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      const token = params['token'];
+      if (token) {
+        this.loading = true;
+        this.apiService.verifyToken(token).subscribe({
+          next: (response) => {
+            console.log('Token verification response:', response);
+            this.accessGranted = true;
+            this.loading = false;
+          },
+          error: (error) => {
+            console.error('Token verification error:', error);
+            this.errorMessage = 'Access denied. Please check your token.';
+            this.loading = false;
+          }
+        });
+      } else {
+        this.errorMessage = 'Access token required.';
+      }
+    });
   }
 
   private createWebDevAboutMe(): AboutMe {

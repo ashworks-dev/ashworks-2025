@@ -5,6 +5,7 @@ import { ResumeComponent } from './components/resume/resume.component';
 import { LinkedInComponent } from './components/linkedin/linkedin.component';
 import { LinkinWebComponent } from './components/linkin-web/linkin-web.component';
 import { LinkedinVideoComponent } from './components/linkedin-video/linkedin-video.component';
+import { LinkedinAllComponent } from './components/linkedin-all/linkedin-all.component';
 import { ShowreelsComponent } from './components/showreels/showreels.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { ClientLoginComponent } from './components/client-login/client-login.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'linkedin', component: LinkedInComponent },
   { path: 'linkedin-web', component: LinkinWebComponent },
   { path: 'linkedin-video', component: LinkedinVideoComponent },
+  { path: 'linkedin-all', component: LinkedinAllComponent },
   { path: 'showreels', component: ShowreelsComponent },
   { path: 'client-login', component: ClientLoginComponent },
   { path: 'thank-you', component: ThankYouComponent }

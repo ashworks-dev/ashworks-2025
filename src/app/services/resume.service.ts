@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { PROJECT_DATA } from './project-data';
 
 export interface Experience {
   company: string;
@@ -79,7 +78,7 @@ export interface AboutMe {
   providedIn: 'root'
 })
 export class ResumeService {
-  summary = `20+ years building web and eLearning applications, with expertise spanning front-end development, backend systems, and cloud infrastructure. Complemented by 8+ years of successful video production that has delivered 200+ corporate and training videos for major Australian organizations. Entirely self-taught, I've demonstrated a unique ability to master complex emerging technologies, from AI and machine learning to advanced video production techniques. My journey from traditional web development to becoming a sought-after video producer showcases my adaptability and commitment to growth. Currently focused on AI integration and video production, I combine technical expertise with creative problem-solving to deliver innovative solutions that meet real business needs. My success in both technical development and video production reflects my ability to rapidly grasp and implement cutting-edge technologies while maintaining a practical, business-focused approach.`;
+  summary = `20+ years building web and eLearning applications, with expertise spanning front-end development, backend systems, and cloud infrastructure. Complemented by 8+ years of successful video production that has delivered 200+ corporate and training videos for major Australian organizations. Entirely self-taught, I've demonstrated a unique ability to master complex emerging technologies, from modern frameworks, passing trends, AI to advanced video production techniques. My journey from traditional web development to becoming a sought-after video producer showcases my adaptability and commitment to growth. I combine technical expertise with creative problem-solving to deliver innovative solutions that meet real business needs. My success in both technical development and video production reflects my ability to rapidly grasp and implement cutting-edge technologies while maintaining a practical, business-focused approach.`;
   
   webSummary = 'Experienced Senior Web Developer with over 20 years of expertise in modern web technologies, backend frameworks and platforms. Specialised in creating L&D solutions, websites, tools and applications using Angular, React, Node.js, cloud technologies, elearning authoring tools and more recently a revival in Python to jump onto the AI technology boom and now a heavy user of AI coding tools. Proven track record of delivering high-quality digital solutions for enterprise clients, with strong focus on performance optimization, accessibility, and emerging web technologies. With addtional skills in media asset production and professional corporate video production for seven years, where I blend my technical expertise with my passion for creative media I\'ve delivered engaging, high-quality web and video content for businesses and educational institutions.';
   
@@ -644,8 +643,6 @@ export class ResumeService {
     careerObjectives: `To continue evolving as both a technical developer and video producer, leveraging emerging technologies like AI to create innovative solutions. I aim to maintain my position as a trusted partner for major Australian organizations while exploring new opportunities in AI integration and advanced video production techniques. My goal is to demonstrate that technical expertise and creative vision can coexist, delivering exceptional results that exceed client expectations.`
   };
 
-  detailedProjects: ClientProject[] = [...PROJECT_DATA.projects];
-
   constructor() { }
 
   getProjects(includeLinkedInDescription: boolean = false): Project[] {
@@ -655,27 +652,5 @@ export class ResumeService {
         ? project.linkedinDescription 
         : project.description
     }));
-  }
-
-  getDetailedProjects(): ClientProject[] {
-    return this.detailedProjects;
-  }
-
-  getProjectsByClient(clientName: string): DetailedProject[] {
-    const client = this.detailedProjects.find(cp => cp.client === clientName);
-    return client ? client.projects : [];
-  }
-
-  getProjectsByYear(year: number): DetailedProject[] {
-    const projects: DetailedProject[] = [];
-    this.detailedProjects.forEach(clientProject => {
-      clientProject.projects.forEach((project: DetailedProject) => {
-        const projectYear = typeof project.year === 'number' ? project.year : parseInt(project.year?.toString() || '0');
-        if (projectYear === year) {
-          projects.push(project);
-        }
-      });
-    });
-    return projects;
   }
 } 

@@ -1,4 +1,17 @@
-<div class="linkedin-resume">
+<!-- Loading State -->
+<div *ngIf="loading" class="text-center py-8">
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<!-- Error Message -->
+<div *ngIf="errorMessage" class="text-center py-8 text-red-600">
+  {{ errorMessage }}
+</div>
+
+<!-- Protected Content -->
+<div class="linkedin-resume" *ngIf="accessGranted">
   <!-- Print Button -->
   <div class="print-button-container">
     <button class="print-button" (click)="printResume()">

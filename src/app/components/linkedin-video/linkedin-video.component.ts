@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ResumeService, Experience, Skill, Project, Endorsement, AboutMe } from '../../services/resume.service';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 interface ProjectData {
   client: string;
@@ -33,11 +34,16 @@ export class LinkedinVideoComponent implements OnInit {
   aiAdoption: string;
   keyClients: string[];
   showPortfolio: boolean = true;
+  accessGranted = false;
+  errorMessage = '';
+  loading = false;
 
   constructor(
     private resumeService: ResumeService,
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private apiService: ApiService,
+    private router: Router
   ) {
     // Check for port parameter
     this.route.queryParams.subscribe(params => {
@@ -109,7 +115,27 @@ export class LinkedinVideoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadProjectHistory();
+    this.route.queryParams.subscribe(params => {
+      const token = params['token'];
+      if (token) {
+        this.loading = true;
+        this.apiService.verifyToken(token).subscribe({
+          next: (response) => {
+            console.log('Token verification response:', response);
+            this.accessGranted = true;
+            this.loading = false;
+            this.loadProjectHistory();
+          },
+          error: (error) => {
+            console.error('Token verification error:', error);
+            this.errorMessage = 'Access denied. Please check your token.';
+            this.loading = false;
+          }
+        });
+      } else {
+        this.errorMessage = 'Access token required.';
+      }
+    });
   }
 
   loadProjectHistory() {
