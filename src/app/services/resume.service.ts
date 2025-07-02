@@ -93,18 +93,20 @@ export class ResumeService {
       period: '2013–Present',
       location: 'Melbourne, Australia',
       description: [
-        'Produced 200+ corporate and training videos for major Australian organizations including Coles, NAB, Powercor, and Department of Health.',
-        'Developed custom web applications and interactive 360° virtual tours using Angular, Three.js, and modern web technologies.',
+        'Personally invested in my own equipment and video production services to deliver 200+ corporate and training videos for major Australian organizations including Coles, NAB, Powercor, and Department of Health.',
+        'Developed custom web sites, web portalsß, mobile applications and interactive tools and 360° virtual tours using Angular, Three.js, and modern web technologies along with hundreds of general elearning courses in Storyline, Lectora an other authoring tools over a decade.',
         'Specialized in safety training videos, customer service scenarios, and educational content with professional actors and complex technical scenarios.',
         'Created comprehensive video production workflows from pre-production planning through post-production delivery.',
-        'Integrated video content with web platforms for interactive training experiences and virtual tours.'
+        'Led a small team for a two year (part time) project to develop a PHP/Larvel/Angular Lesson Planner platform for teachers to create, organize, share and market their lesson plans. Incuded a lesson editor (with plans to integrate AI), calendar scheduling, resource management, and collaborative planning capabilities along with transaction management via Stripe. The project was cancelled due to a company merger.',
+        'Protoyped an AI based storyboard to courseware generation system for Coles using LLMs and a custom pipeline, and later focused on the storyboard to Adapt courseware generator alone. Basically provide doummets, AI genreates a storyboard and then creates a fully working elearning course for reapid deployment. The AI aspect was moved up house to a larger team.',
+        'AI R&D into complex image generation using AI (open source models, ComfyUI, APIs), including video generation and audio generation. Focus was on AI asset generation, mainly custom avatars in client based locations e.g. a supermarket, where composition of real world assets needed to be blended with AI assets for production pipelines for consistancy and non desctructive editing was key. Addtionally, an AI consultant for integrating AI into the businesses processes and workflows.',
       ],
       achievements: [
-        'Delivered 50+ safety training videos for Powercor covering critical high-voltage procedures',
-        'Created 360° virtual tours for ACU campuses during COVID-19 travel restrictions',
-        'Developed AI-powered courseware generation system for Coles training content',
-        'Produced rapid-response hand hygiene training during COVID-19 pandemic'
-      ],
+        'Planned, shot and edited over 200+ training, marketing and promotional videos for major Australian organizations',
+        'Created interactive360° virtual tours for ACU, NAB, Suncorp and the  Dept of Health',
+        'Developed an extensive Lesson Planner tool for teachers to create, organize, share and market their lesson plans',
+        'Developed AI-powered courseware generation system for Coles training content, and later a storyboard to Adapt courseware generator',
+              ],
       companyDescription: 'Leading eLearning company specializing in corporate training solutions, where I serve as a senior developer and technical advisor providing expertise in web development, video production, and emerging technologies.'
     },
     {
@@ -182,6 +184,36 @@ export class ResumeService {
       ]
     },
     {
+      title: 'Lesson Planner',
+      description: 'A comprehensive web-based lesson planning tool that helps teachers create, organize, and share lesson plans. Features include curriculum mapping, resource management, and collaborative planning capabilities via an interactive calendar. A PHP/Laravel backend with an Angular frontend and a modified Wordpress marketplace. Project was about two months from beta testing when the project was cancelled due to a company merger.',
+      linkedinDescription: 'Developed a comprehensive web-based lesson planning tool with curriculum mapping, resource management, and collaborative planning capabilities. Built with a PHP/Laravel backend and Angular frontend, featuring an interactive calendar for team collaboration.',
+      period: '2022-2024',
+      technologies: [
+        { icon: 'fab fa-angular', name: 'Angular' },
+        { icon: 'fab fa-php', name: 'PHP' },
+        { icon: 'fab fa-laravel', name: 'Laravel' },
+        { icon: 'fab fa-wordpress', name: 'WordPress' },
+        { icon: 'fas fa-database', name: 'Database' },
+        { icon: 'fas fa-users', name: 'Collaboration' },
+        { icon: 'fas fa-graduation-cap', name: 'Education' }
+      ]
+    },
+ 
+    {
+      title: 'Australian Catholic University (ACU)',
+      description: 'Comprehensive video production and virtual tour project for ACU, spanning multiple campuses and initiatives. Created immersive virtual tours showcasing campus facilities and key locations throughout Melbourne CBD, designed to attract international students during COVID-19 travel restrictions. Produced a series of promotional and training videos featuring student testimonials, campus life, and educational programs. The project combined on-location presenter video with 360° photography, shot during challenging pandemic conditions. The content highlighted campus facilities, student life, and Melbourne\'s vibrant city culture, providing prospective international students with a comprehensive virtual experience of both university life and the surrounding city.',
+      webDescription: 'Comprehensive virtual tour project for ACU, spanning multiple campuses and initiatives. Based on the interactive 360 platform I developed, it delviered immersive virtual tours showcasing campus facilities and key tourist locations throughout Melbourne CBD, designed to attract international students during COVID-19 travel restrictions. The project combined on-location presenter video with 360° photography, shot during challenging pandemic conditions. The content highlighted campus facilities, student life, and Melbourne\'s vibrant city culture, providing prospective international students with a comprehensive virtual experience of both university life and the surrounding city.',
+      linkedinDescription: 'Created immersive virtual tours and promotional videos for ACU, showcasing campus facilities and Melbourne CBD locations for international students during COVID-19. Combined on-location presenter video with 360° photography to provide a comprehensive virtual experience of university life.',
+      period: '2020-2024',
+      technologies: [
+        { icon: 'fab fa-angular', name: 'Angular' },
+        { icon: 'fas fa-camera', name: '360° Video' },
+        { icon: 'fas fa-video', name: 'Video Production' },
+        { icon: 'fas fa-map-marked-alt', name: 'Virtual Tour' },
+        { icon: 'fas fa-graduation-cap', name: 'Education' }
+      ]
+    },
+    {
       title: 'National Australia Bank (NAB)',
       description: 'Long-term collaboration (2018-2023) delivering both video production and custom web development solutions. Video production focused on customer relations content, including: professional actor-based scenarios, initiative launches, and a comprehensive 360° virtual tour of NAB\'s new Sydney offices. Web development focused on creating custom applications integrated with NAB\'s SharePoint environment, including: interactive training portals, compliance tracking systems, and team collaboration tools. Projects required strict security compliance, complex SharePoint integration, and adherence to NAB\'s design and development standards.',
       webDescription: 'Long-term collaboration delivering custom web development solutions and video production. Over many years I created 360° virtual tours, data rich SharePoint-integrated applications, bespoke web portals and compliance tracking systems while maintaining strict security standards.',
@@ -220,35 +252,7 @@ export class ResumeService {
         { icon: 'fas fa-camera', name: '360° Video' }
       ]
     },
-    {
-      title: 'Australian Catholic University (ACU)',
-      description: 'Comprehensive video production and virtual tour project for ACU, spanning multiple campuses and initiatives. Created immersive virtual tours showcasing campus facilities and key locations throughout Melbourne CBD, designed to attract international students during COVID-19 travel restrictions. Produced a series of promotional and training videos featuring student testimonials, campus life, and educational programs. The project combined on-location presenter video with 360° photography, shot during challenging pandemic conditions. The content highlighted campus facilities, student life, and Melbourne\'s vibrant city culture, providing prospective international students with a comprehensive virtual experience of both university life and the surrounding city.',
-      webDescription: 'Comprehensive virtual tour project for ACU, spanning multiple campuses and initiatives. Based on the interactive 360 platform I developed, it delviered immersive virtual tours showcasing campus facilities and key tourist locations throughout Melbourne CBD, designed to attract international students during COVID-19 travel restrictions. The project combined on-location presenter video with 360° photography, shot during challenging pandemic conditions. The content highlighted campus facilities, student life, and Melbourne\'s vibrant city culture, providing prospective international students with a comprehensive virtual experience of both university life and the surrounding city.',
-      linkedinDescription: 'Created immersive virtual tours and promotional videos for ACU, showcasing campus facilities and Melbourne CBD locations for international students during COVID-19. Combined on-location presenter video with 360° photography to provide a comprehensive virtual experience of university life.',
-      period: '2020-2024',
-      technologies: [
-        { icon: 'fab fa-angular', name: 'Angular' },
-        { icon: 'fas fa-camera', name: '360° Video' },
-        { icon: 'fas fa-video', name: 'Video Production' },
-        { icon: 'fas fa-map-marked-alt', name: 'Virtual Tour' },
-        { icon: 'fas fa-graduation-cap', name: 'Education' }
-      ]
-    },
-    {
-      title: 'Lesson Planner',
-      description: 'A comprehensive web-based lesson planning tool that helps teachers create, organize, and share lesson plans. Features include curriculum mapping, resource management, and collaborative planning capabilities via an interactive calendar. A PHP/Laravel backend with an Angular frontend and a modified Wordpress marketplace. Project was about two months from beta testing when the project was cancelled due to a company merger.',
-      linkedinDescription: 'Developed a comprehensive web-based lesson planning tool with curriculum mapping, resource management, and collaborative planning capabilities. Built with a PHP/Laravel backend and Angular frontend, featuring an interactive calendar for team collaboration.',
-      period: '2022-2024',
-      technologies: [
-        { icon: 'fab fa-angular', name: 'Angular' },
-        { icon: 'fab fa-php', name: 'PHP' },
-        { icon: 'fab fa-laravel', name: 'Laravel' },
-        { icon: 'fab fa-wordpress', name: 'WordPress' },
-        { icon: 'fas fa-database', name: 'Database' },
-        { icon: 'fas fa-users', name: 'Collaboration' },
-        { icon: 'fas fa-graduation-cap', name: 'Education' }
-      ]
-    },
+    
     {
       title: 'Department of Education Inclusion',
       description: 'Comprehensive video series (2021-2022) covering multiple educational initiatives: 50+ videos on inclusive classroom practices, teaching strategies, and professional development. Project included 140+ interviews with teachers, principals, staff, and students across 20 schools, plus additional content on innovative teaching methodologies and professional development programs. The project spanned three months of shooting and six months of editing, resulting in a rich library of educational resources.',
@@ -260,6 +264,35 @@ export class ResumeService {
         { icon: 'fas fa-microphone', name: 'Interviews' },
         { icon: 'fas fa-film', name: 'Documentary' },
         { icon: 'fas fa-graduation-cap', name: 'Education' }
+      ]
+    },
+    {
+      title: 'Five2Study',
+      description: 'A responsive educational website developed for Australian Catholic University (ACU) to support Australian students and parents with curated study resources across subjects and year levels. The initial design and layouts were created in Webflow for visual clarity and accessibility, then developed using custom HTML, CSS, and JavaScript, ensuring fast performance and full control over the codebase. A highlight feature is the interactive referencing tool on the Academic Writing > Referencing page, built with React. It allows users to quickly generate academic citations (APA, MLA, Harvard, etc.) via a user-friendly, form-based interface—making it easier for students to produce properly formatted references. This project blends visually driven design with hand-coded precision, offering a lightweight, fast-loading, and highly accessible educational experience.',
+      linkedinDescription: 'Developed a responsive educational website for Australian Catholic University with curated study resources and an interactive React-based referencing tool for academic citations. Initial design and layouts created in Webflow, then built with custom HTML/CSS/JavaScript for optimal performance and accessibility.',
+      period: '2025',
+      link: 'https://five2study.com.au/',
+      technologies: [
+        { icon: 'fab fa-react', name: 'React' },
+        { icon: 'fab fa-html5', name: 'HTML5' },
+        { icon: 'fab fa-css3-alt', name: 'CSS3' },
+        { icon: 'fab fa-js-square', name: 'JavaScript' },
+        { icon: 'fas fa-graduation-cap', name: 'Education' },
+        { icon: 'fas fa-mobile-alt', name: 'Responsive' }
+      ]
+    },
+    {
+      title: 'Service2Campus',
+      description: 'A student-focused support website developed for Australian Catholic University (ACU) to help university students access key services, information, and campus resources with ease. The initial design and layouts were created in Webflow to achieve a clean, approachable visual style, then developed using custom HTML, CSS, and JavaScript for lightweight performance and precise control. The platform provides comprehensive guidance for students navigating university life, including information about campus services, academic support, and student resources.',
+      linkedinDescription: 'Developed a student-focused support website for Australian Catholic University using Webflow for initial design and layouts, then built with custom HTML/CSS/JavaScript. The platform helps university students access key services, information, and campus resources with an intuitive, lightweight interface.',
+      period: '2025',
+      link: 'https://service2campus.com.au/',
+      technologies: [
+        { icon: 'fab fa-html5', name: 'HTML5' },
+        { icon: 'fab fa-css3-alt', name: 'CSS3' },
+        { icon: 'fab fa-js-square', name: 'JavaScript' },
+        { icon: 'fas fa-university', name: 'Student Services' },
+        { icon: 'fas fa-mobile-alt', name: 'Responsive' }
       ]
     },
     {

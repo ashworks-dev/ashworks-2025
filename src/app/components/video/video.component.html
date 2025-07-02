@@ -3,7 +3,7 @@
   <!-- Subtle video background with overlay -->
   <div class="topVideo">
     <vg-player class="background-video w-background-video w-background-video-atom">
-      <video [vgMedia]="$any(media)" #media id="singleVideo" autoplay loop="true" [muted]="true" preload="auto" data-object-fit="cover">
+      <video [vgMedia]="$any(media)" #media id="singleVideo" autoplay loop="true" [muted]="true" preload="auto" data-object-fit="cover" aria-hidden="true">
         <source src="https://ashnet.com.au/video/sitebg.mp4" type="video/mp4">
       </video>
     </vg-player>
@@ -28,8 +28,8 @@
     </p>
 
     <div class="cta-group">
-      <button class="cta-primary" (click)="openQuoteForm()">Book a free consultation</button>
-      <button class="cta-secondary" (click)="scrollToSection('access-message')">View Production Reel</button>
+      <button class="cta-primary" (click)="openQuoteForm()" aria-label="Book a free consultation for video services">Book a free consultation</button>
+      <button class="cta-secondary" (click)="scrollToSection('access-message')" aria-label="View production reel">View Production Reel</button>
     </div>
   </div>
 
@@ -41,7 +41,7 @@
 
 <!-- Client Showcase Section -->
 <section class="client-showcase">
-  <h2>Trusted by ...</h2>
+  <h2>Trusted by Industry Leaders</h2>
   <div class="timeline-subtitle">2016 - Present</div>
   <div class="client-grid">
     <div class="client-pill">Coles Supermarkets</div>
@@ -72,15 +72,16 @@
 </section>
 
 <!-- Services Section -->
-<section class="services-overview">
+<section class="services-overview" itemscope itemtype="https://schema.org/Service">
+  <h2>Video Production Services</h2>
   <div class="service-cards-container">
-    <div class="service-card">
+    <article class="service-card" itemscope itemtype="https://schema.org/Service">
       <div class="service-icon videography">
-        <img src="assets/images/corp-p-500.png" alt="Videography services" class="service-image full-width">
+        <img src="assets/images/corp-p-500.png" alt="Professional videography services with camera setup" class="service-image full-width">
       </div>
       <div class="service-content">
-        <h3 class="service-title videography-title">Videography</h3>
-        <p class="service-description">Basic shoot day rate includes:</p>
+        <h3 class="service-title videography-title" itemprop="name">Videography</h3>
+        <p class="service-description" itemprop="description">Basic shoot day rate includes:</p>
         <ul class="service-list">
           <li>Professional but lightweight camera setup</li>
           <li>Basic Lighting Kit</li>
@@ -92,22 +93,21 @@
           <span class="note bold">Shoot day rate only - editing available separately</span>
         </div>
       </div>
-    </div>
+    </article>
 
-    <div class="service-card">
+    <article class="service-card" itemscope itemtype="https://schema.org/Service">
       <div class="service-icon professional">
-        <img src="assets/images/b2-1.png" alt="Professional video services" class="service-image full-width">
+        <img src="assets/images/b2-1.png" alt="Full professional video production with advanced equipment" class="service-image full-width">
       </div>
       <div class="service-content">
-        <h3 class="service-title professional-title">Professional</h3>
-        <p class="service-description">Full professional kit includes:</p>
+        <h3 class="service-title professional-title" itemprop="name">Professional</h3>
+        <p class="service-description" itemprop="description">Full professional kit includes:</p>
         <ul class="service-list">
           <li>Professional camera setups, multiple cameras if needed</li>
           <li>Advanced lighting for professional interviews</li>
           <li>Professional audio, wired and wireless, multiple speakers and backup audio</li>
           <li>Client monitors onsite for live feeds</li>
           <li>Teleprompter</li>  
-
           <li>Dedicated B-Roll and photography cameras, so we can quickly switch to b-roll on demand</li>
         </ul>
         <div class="rate-indicator" *ngIf="showRates">
@@ -115,15 +115,15 @@
           <span class="note bold">Shoot day rate only - editing available separately</span>
         </div>
       </div>
-    </div>
+    </article>
 
-    <div class="service-card">
+    <article class="service-card" itemscope itemtype="https://schema.org/Service">
       <div class="service-icon production">
-        <img src="assets/images/IMG_1865-854x480-1-p-500.png" alt="Production services" class="service-image full-width">
+        <img src="assets/images/IMG_1865-854x480-1-p-500.png" alt="Complete video production management services" class="service-image full-width">
       </div>
       <div class="service-content">
-        <h3 class="service-title production-title">Production</h3>
-        <p class="service-description">Full production management and services:</p>
+        <h3 class="service-title production-title" itemprop="name">Production</h3>
+        <p class="service-description" itemprop="description">Full production management and services:</p>
         <ul class="service-list">
           <li>Project Planning</li>
           <li>Script Development</li>
@@ -138,49 +138,50 @@
           <span class="note bold">Pre and post-production services</span>
         </div>
       </div>
-    </div>
+    </article>
 
-    <div class="service-card ai-full-width" #aiServiceCard>
+    <article class="service-card ai-full-width" #aiServiceCard itemscope itemtype="https://schema.org/Service">
       <div class="service-icon ai-service">
-        <img src="assets/images/codehtml.jpg" alt="Background reference" class="service-image full-width" style="opacity: 0;">
-        <i class="fas fa-robot fa-4x ai-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; opacity: 1;"></i>
-        <video class="ai-video" loop muted autoplay preload="auto" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; z-index: 1;">
+        <img src="assets/images/codehtml.jpg" alt="AI video production background" class="service-image full-width" style="opacity: 0;">
+        <i class="fas fa-robot fa-4x ai-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; opacity: 1;" aria-hidden="true"></i>
+        <video class="ai-video" loop muted autoplay preload="auto" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; z-index: 1;" aria-hidden="true">
           <source src="assets/ai-1.mp4" type="video/mp4">
         </video>
       </div>
       <div class="service-content">
-        <h3 class="service-title ai-title">AI Video</h3>
-        <p class="service-description">Beyond the hype of subscription AI services, I'm developing custom local models that integrate seamlessly with real-world video production workflows. This approach allows for client branding consistency, element editing, and workflow automation while maintaining full control over the creative process and data security. Using ComfyUI and local tools and models, I'm exploring creating consistent avatars, performances, and posing that would be impossible to achieve through prompts alone.</p>
+        <h3 class="service-title ai-title" itemprop="name">AI Video</h3>
+        <p class="service-description" itemprop="description">Beyond the hype of subscription AI services, I'm developing custom local models that integrate seamlessly with real-world video production workflows. This approach allows for client branding consistency, element editing, and workflow automation while maintaining full control over the creative process and data security. Using ComfyUI and local tools and models, I'm exploring creating consistent avatars, performances, and posing that would be impossible to achieve through prompts alone.</p>
       </div>
-    </div>
+    </article>
 
-    <div class="service-card package-full-width">
+    <article class="service-card package-full-width" itemscope itemtype="https://schema.org/Service">
       <div class="service-icon package-service">
-        <img src="assets/images/b24-2.png" alt="Package deal background" class="service-image full-width">
-        <i class="fas fa-star fa-4x package-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; opacity: 1; color: #FFD700;"></i>
+        <img src="assets/images/b24-2.png" alt="Starter package deal background" class="service-image full-width">
+        <i class="fas fa-star fa-4x package-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; opacity: 1; color: #FFD700;" aria-hidden="true"></i>
       </div>
       <div class="service-content">
-        <h3 class="service-title package-title">Starter Package Deal</h3>
-        <p class="service-description">Perfect for businesses needing professional video content with a complete solution. This package includes a brainstorming meeting, half-day shoot with professional equipment, and either a 30-60 second social media video or longer-form content for interviews, testimonials, or product demos. Ideal for product launches, company updates, event coverage, or promotional campaigns. Everything you need for impactful content in one convenient package.</p>
+        <h3 class="service-title package-title" itemprop="name">Starter Package Deal</h3>
+        <p class="service-description" itemprop="description">Perfect for businesses needing professional video content with a complete solution. This package includes a brainstorming meeting, half-day shoot with professional equipment, and either a 30-60 second social media video or longer-form content for interviews, testimonials, or product demos. Ideal for product launches, company updates, event coverage, or promotional campaigns. Everything you need for impactful content in one convenient package.</p>
         <div class="rate-indicator">
           <span class="rate">$2,000</span>
           <span class="note bold">Half-day shoot + 30-60 second social media edit. **Some limitations apply</span>
         </div>
       </div>
-    </div>
+    </article>
   </div>
 </section>
 
 <!-- Loading State -->
-<div *ngIf="loading" class="text-center py-8">
+<div *ngIf="loading" class="text-center py-8" role="status" aria-live="polite">
   <div class="spinner-border text-primary" role="status">
-    <span class="sr-only">Loading...</span>
+    <span class="sr-only">Loading video portfolio...</span>
   </div>
 </div>
 
 <!-- Error Message -->
-<div *ngIf="errorMessage" class="text-center py-8 text-red-600">
-  {{ errorMessage }}
+<div *ngIf="errorMessage" class="text-center py-8 text-red-600" role="alert">
+  <h2>Access Error</h2>
+  <p>{{ errorMessage }}</p>
 </div>
 
 <!-- Protected Showreel Section -->

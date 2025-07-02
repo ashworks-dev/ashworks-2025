@@ -1,59 +1,67 @@
 <!-- Loading State -->
-<div *ngIf="loading" class="text-center py-8">
+<div *ngIf="loading" class="text-center py-8" role="status" aria-live="polite">
   <div class="spinner-border text-primary" role="status">
-    <span class="sr-only">Loading...</span>
+    <span class="sr-only">Loading combined resume content...</span>
   </div>
 </div>
 
 <!-- Error Message -->
-<div *ngIf="errorMessage" class="text-center py-8 text-red-600">
-  {{ errorMessage }}
+<div *ngIf="errorMessage" class="text-center py-8 text-red-600" role="alert">
+  <h2>Access Error</h2>
+  <p>{{ errorMessage }}</p>
 </div>
 
 <!-- Protected Content -->
-<div class="linkedin-resume" *ngIf="accessGranted">
+<main class="linkedin-resume" *ngIf="accessGranted" itemscope itemtype="https://schema.org/Person">
   <!-- Print Button -->
   <div class="print-button-container">
-    <button class="print-button" (click)="printResume()">
-      <i class="fas fa-print"></i>
+    <button class="print-button" (click)="printResume()" aria-label="Print combined resume">
+      <i class="fas fa-print" aria-hidden="true"></i>
       Print Resume
     </button>
   </div>
 
   <!-- Simple Header -->
   <header class="resume-header">
-    <h1>Ashley Norriss</h1>
-    <div class="header-subtitle">Creative Technologist</div>
+    <h1 itemprop="name">Ashley Norriss</h1>
+    <div class="header-subtitle" itemprop="jobTitle">Creative Technologist</div>
     <div class="header-contact">
-      <span><i class="fas fa-envelope"></i> {{ contact.email }}</span>
-      <span><i class="fas fa-phone"></i> {{ contact.phone }}</span>
-      <span><i class="fas fa-map-marker-alt"></i> {{ contact.location }}</span>
-      <span><i class="fas fa-globe"></i> <a href="https://ashworks.com.au" target="_blank">ashworks.com.au</a></span>
-      <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ash-norriss-2033621b/" target="_blank">LinkedIn</a></span>
+      <span itemprop="email"><i class="fas fa-envelope" aria-hidden="true"></i> {{ contact.email }}</span>
+      <span itemprop="telephone"><i class="fas fa-phone" aria-hidden="true"></i> {{ contact.phone }}</span>
+      <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i> 
+        <span itemprop="addressLocality">{{ contact.location }}</span>
+      </span>
+      <span><i class="fas fa-globe" aria-hidden="true"></i> <a href="https://ashworks.com.au" target="_blank" itemprop="url">ashworks.com.au</a></span>
+      <span><i class="fab fa-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/ash-norriss-2033621b/" target="_blank">LinkedIn Profile</a></span>
     </div>
   </header>
 
   <!-- Summary -->
   <section class="resume-section">
-    <h3>Professional Summary</h3>
-    <p class="summary">{{ summary }}</p>
+    <h2>Professional Summary</h2>
+    <p class="summary" itemprop="description">{{ summary }}</p>
   </section>
 
   <!-- Experience -->
   <section class="resume-section">
-    <h3>Professional Experience</h3>
+    <h2>Professional Experience</h2>
     <div class="experience-container">
-      <div class="experience-item" *ngFor="let exp of experiences">
+      <article class="experience-item" *ngFor="let exp of experiences" itemscope itemtype="https://schema.org/JobPosting">
         <div class="experience-header">
           <div class="role-info">
-            <h4>{{ exp.position }}</h4>
-            <div class="company">{{ exp.company }}</div>
-            <div class="location" *ngIf="exp.location">{{ exp.location }}</div>
+            <h3 itemprop="title">{{ exp.position }}</h3>
+            <div class="company" itemprop="hiringOrganization" itemscope itemtype="https://schema.org/Organization">
+              <span itemprop="name">{{ exp.company }}</span>
+            </div>
+            <div class="location" *ngIf="exp.location" itemprop="jobLocation" itemscope itemtype="https://schema.org/Place">
+              <span itemprop="addressLocality">{{ exp.location }}</span>
+            </div>
           </div>
-          <div class="period">{{ exp.period }}</div>
+          <div class="period" itemprop="datePosted">{{ exp.period }}</div>
         </div>
         <div class="company-description" *ngIf="exp.companyDescription">
-          <p>{{ exp.companyDescription }}</p>
+          <p itemprop="description">{{ exp.companyDescription }}</p>
         </div>
         <ul class="experience-details">
           <li *ngFor="let detail of exp.description" [ngClass]="{'section-header': detail.startsWith('SECTION_HEADER:')}">
@@ -61,30 +69,30 @@
           </li>
         </ul>
         <div class="achievements" *ngIf="exp.achievements">
-          <h5>Key Achievements:</h5>
+          <h4>Key Achievements:</h4>
           <ul>
             <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
           </ul>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
   <!-- AI Adoption -->
   <section class="resume-section">
-    <h3>AI Adoption</h3>
+    <h2>AI Adoption</h2>
     <p class="ai-adoption">{{ aiAdoption }}</p>
   </section>
 
   <!-- Skills -->
   <section class="resume-section">
-    <h3>Skills & Expertise</h3>
+    <h2>Skills & Expertise</h2>
     <div class="skills-container">
       <div class="skill-category" *ngFor="let category of skills">
-        <h4>{{ category.category }}</h4>
+        <h3>{{ category.category }}</h3>
         <div class="subcategories">
           <div class="subcategory" *ngFor="let subcategory of category.subcategories">
-            <h5>{{ subcategory.name }}</h5>
+            <h4>{{ subcategory.name }}</h4>
             <div class="skill-tags">
               <div *ngFor="let item of subcategory.items" class="skill-tag" [class.primary-skill]="item.isPrimary">
                 {{ item.name.includes('(') ? item.name.split('(')[0].trim() : item.name }}
@@ -99,26 +107,26 @@
 
   <!-- Projects -->
   <section class="resume-section">
-    <h3>Key Projects</h3>
+    <h2>Key Projects</h2>
     <div class="project-list small-font">
       <!-- Web Projects -->
       <div class="project-group" *ngIf="getWebProjects().length > 0">
-        <div class="project-group-header">Web Development</div>
-        <div class="project-list-item" *ngFor="let project of getWebProjects()">
+        <h3 class="project-group-header">Web Development</h3>
+        <article class="project-list-item" *ngFor="let project of getWebProjects()" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-info">
-            <span class="project-year">{{ project.year }}</span>
+            <span class="project-year" itemprop="dateCreated">{{ project.year }}</span>
             <div class="project-main-row">
-              <span class="project-client">{{ project.client }}</span>
-              <span class="project-name">{{ project.project_name }}</span>
+              <span class="project-client" itemprop="creator">{{ project.client }}</span>
+              <span class="project-name" itemprop="name">{{ project.project_name }}</span>
             </div>
           </div>
           <div class="project-tech" *ngIf="project.technologies">
             <span *ngFor="let tech of project.technologies" class="tech-icon" [title]="tech.name">
-              <i [class]="tech.icon"></i>
+              <i [class]="tech.icon" aria-hidden="true"></i>
               <span class="tech-name">{{ tech.name }}</span>
             </span>
           </div>
-        </div>
+        </article>
       </div>
 
       <!-- Separator -->
@@ -126,107 +134,107 @@
 
       <!-- Video Projects -->
       <div class="project-group" *ngIf="getVideoProjects().length > 0">
-        <div class="project-group-header">Video Production</div>
-        <div class="project-list-item" *ngFor="let project of getVideoProjects()">
+        <h3 class="project-group-header">Video Production</h3>
+        <article class="project-list-item" *ngFor="let project of getVideoProjects()" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-info">
-            <span class="project-year">{{ project.year }}</span>
+            <span class="project-year" itemprop="dateCreated">{{ project.year }}</span>
             <div class="project-main-row">
-              <span class="project-client">{{ project.client }}</span>
-              <span class="project-name">{{ project.project_name }}</span>
+              <span class="project-client" itemprop="creator">{{ project.client }}</span>
+              <span class="project-name" itemprop="name">{{ project.project_name }}</span>
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- R&D Projects -->
   <section class="resume-section">
-    <h3>Technical R&D</h3>
+    <h2>Technical R&D</h2>
     <div class="projects-container">
-      <div class="project-item" *ngFor="let project of rndProjects">
+      <article class="project-item" *ngFor="let project of rndProjects" itemscope itemtype="https://schema.org/CreativeWork">
         <div class="project-header">
-          <h4>{{ project.title }}</h4>
-          <span class="period">{{ project.period }}</span>
+          <h3 itemprop="name">{{ project.title }}</h3>
+          <span class="period" itemprop="dateCreated">{{ project.period }}</span>
         </div>
-        <p>{{ project.description }}</p>
+        <p itemprop="description">{{ project.description }}</p>
         <div class="project-tech">
           <div class="tech-stack">
             <div class="tech-icon" *ngFor="let tech of project.technologies" [title]="tech.name">
-              <i [class]="tech.icon"></i>
+              <i [class]="tech.icon" aria-hidden="true"></i>
               <span class="tech-name">{{ tech.name }}</span>
             </div>
           </div>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
   <!-- Awards -->
   <section class="resume-section">
-    <h3>Awards & Recognition</h3>
+    <h2>Awards & Recognition</h2>
     <ul class="awards-list">
-      <li *ngFor="let award of awards">{{ award }}</li>
+      <li *ngFor="let award of awards" itemscope itemtype="https://schema.org/Award">{{ award }}</li>
     </ul>
   </section>
 
   <!-- Endorsements -->
   <section class="resume-section">
-    <h3>Professional Endorsements</h3>
+    <h2>Professional Endorsements</h2>
     <div class="endorsements-container">
-      <div class="endorsement-item" *ngFor="let endorsement of endorsements">
-        <blockquote>{{ endorsement.text }}</blockquote>
-        <div class="endorsement-author">
-          <strong>{{ endorsement.author }}</strong>
-          <div>{{ endorsement.position }}</div>
+      <article class="endorsement-item" *ngFor="let endorsement of endorsements" itemscope itemtype="https://schema.org/Review">
+        <blockquote itemprop="reviewBody">{{ endorsement.text }}</blockquote>
+        <div class="endorsement-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <strong itemprop="name">{{ endorsement.author }}</strong>
+          <div itemprop="jobTitle">{{ endorsement.position }}</div>
           <div class="endorsement-contact" *ngIf="endorsement.email">
-            <a href="mailto:{{ endorsement.email }}">{{ endorsement.email }}</a>
+            <a href="mailto:{{ endorsement.email }}" itemprop="email">{{ endorsement.email }}</a>
           </div>
           <div class="endorsement-contact" *ngIf="endorsement.phone">
-            <a href="tel:{{ endorsement.phone }}">{{ endorsement.phone }}</a>
+            <a href="tel:{{ endorsement.phone }}" itemprop="telephone">{{ endorsement.phone }}</a>
           </div>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
   <!-- About Me -->
   <section class="resume-section">
-    <h3>About Me</h3>
+    <h2>About Me</h2>
     <div class="about-me">
-      <p class="summary">{{ aboutMe.summary }}</p>
+      <p class="summary" itemprop="description">{{ aboutMe.summary }}</p>
       
       <div class="strengths">
-        <h4>Key Strengths</h4>
+        <h3>Key Strengths</h3>
         <ul>
           <li *ngFor="let strength of aboutMe.strengths">{{ strength }}</li>
         </ul>
       </div>
 
       <div class="work-style">
-        <h4>Work Style</h4>
+        <h3>Work Style</h3>
         <ul>
           <li *ngFor="let style of aboutMe.workStyle">{{ style }}</li>
         </ul>
       </div>
 
       <div class="key-achievements">
-        <h4>Key Achievements</h4>
+        <h3>Key Achievements</h3>
         <ul>
           <li *ngFor="let achievement of aboutMe.keyAchievements">{{ achievement }}</li>
         </ul>
       </div>
 
       <div class="personal-background">
-        <h4>Personal Background</h4>
+        <h3>Personal Background</h3>
         <p>{{ aboutMe.personalBackground.story }}</p>
         <p>{{ aboutMe.personalBackground.family }}</p>
       </div>
 
       <div class="career-objectives">
-        <h4>Career Objectives</h4>
+        <h3>Career Objectives</h3>
         <p [innerHTML]="aboutMe.careerObjectives"></p>
       </div>
     </div>
   </section>
-</div>
+</main>

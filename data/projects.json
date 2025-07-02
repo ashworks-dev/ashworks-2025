@@ -4,9 +4,6 @@
       "client": "Department of Education (Vic)",
       "projects": [
         {
-          "project_name": "Inclusive Classrooms",
-          "type": "Video",
-          "year": "2019 - 2020",
           "description": "Comprehensive project across 50+ schools, involving over 90 interviews with students, teachers, and administration staff to explore inclusive aspects of today's classrooms in both urban and rural Victoria. As big as this project was and due to the nature of working with children I can only showcase a very limited sample.",
           "featured": true,
           "media": [
@@ -36,12 +33,12 @@
               "type": "image",
               "url": "/assets/images/Screenshot_2024-01-09_at_11.13.46_am_20250625_162007_optimized.jpg"
             }
-          ]
+          ],
+          "project_name": "Inclusive Classrooms",
+          "type": "Video",
+          "year": "2019 - 2020"
         },
         {
-          "project_name": "Professional Development",
-          "type": "Video",
-          "year": "2020",
           "description": "Three-day road trip to produce 8 videos at multiple schools across Victoria, interviewing teachers for insights on Personal Development.",
           "featured": false,
           "media": [
@@ -56,7 +53,10 @@
               "type": "image",
               "url": "/assets/images/vlcsnap-2024-01-09-12h15m25s323_20250625_162141_optimized.jpg"
             }
-          ]
+          ],
+          "project_name": "Professional Development",
+          "type": "Video",
+          "year": "2020"
         },
         {
           "description": "One-day shoot at DET, capturing interviews and b-roll of key players at work. Managed solo as cameraman.",
@@ -299,6 +299,16 @@
               "title": "Five 2 Study website",
               "type": "website",
               "url": "https://five2study.com.au/"
+            },
+            {
+              "title": "vet-1.png",
+              "type": "image",
+              "url": "/assets/images/vet-1_20250702_110733_optimized.jpg"
+            },
+            {
+              "title": "vet-2.png",
+              "type": "image",
+              "url": "/assets/images/vet-2_20250702_110737_optimized.jpg"
             }
           ],
           "project_name": "Five 2 Study Website",
@@ -313,6 +323,11 @@
               "title": "Service 2 Study website",
               "type": "website",
               "url": "https://service2campus.com.au/"
+            },
+            {
+              "title": "vet-1.png",
+              "type": "image",
+              "url": "/assets/images/vet-1_20250702_110748_optimized.jpg"
             }
           ],
           "project_name": "Service 2 Study",
@@ -1065,7 +1080,24 @@
         {
           "description": "Insurance fraud training with professional actors in staged scenarios across multiple locations.",
           "featured": false,
-          "media": [],
+          "media": [
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-12h37m01s660.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h37m01s660_20250702_110923_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h36m06s184.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h36m06s184_20250702_110925_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h36m00s446.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h36m00s446_20250702_110934_optimized.jpg"
+            }
+          ],
           "project_name": "Insurance Fraud Training",
           "type": "Video",
           "year": "2019"
@@ -1073,18 +1105,25 @@
         {
           "description": "Developed a sophisticated web-based career development tool that processed extensive data entirely in the browser: nearly 500 job roles and 800 training resources stored in a flat database file. The application featured interactive charts and data visualization to help staff compare their current role with potential future roles. All data processing, filtering, and visualization was handled client-side with no backend requirements, demonstrating efficient browser-based data management. The tool automatically compiled personalized training catalogs based on role comparisons, helping employees plan their career progression.",
           "featured": false,
-          "media": [],
-          "project_name": "Career Compass",
-          "technologies": [
+          "media": [
             {
-              "icon": "fas fa-bolt",
-              "name": "Flash"
+              "isPoster": true,
+              "title": "Suncorp compass 1.JPG",
+              "type": "image",
+              "url": "/assets/images/Suncorp_compass_1_20250702_110824_optimized.jpg"
             },
             {
-              "icon": "fas fa-code",
-              "name": "Web Development"
+              "title": "Suncorp compass 13.JPG",
+              "type": "image",
+              "url": "/assets/images/Suncorp_compass_13_20250702_110829_optimized.jpg"
+            },
+            {
+              "title": "Suncorp compass 14 2.JPG",
+              "type": "image",
+              "url": "/assets/images/Suncorp_compass_14_2_20250702_110833_optimized.jpg"
             }
           ],
+          "project_name": "Career Compass",
           "type": "Web",
           "year": "2014"
         },
@@ -1105,6 +1144,14 @@
           ],
           "type": "Web",
           "year": "2018"
+        },
+        {
+          "description": "Various videos shoot in Melbourne and Queensland covering mainly managment techniques. Some shoots involved hired actors, shot in office and call centres.",
+          "featured": false,
+          "media": [],
+          "project_name": "Various",
+          "type": "Video",
+          "year": "2019-2022"
         }
       ]
     },
@@ -1135,40 +1182,55 @@
         {
           "description": "A comprehensive web-based lesson planning tool that helps teachers create, organize, and share lesson plans. Features include curriculum mapping, resource management, and collaborative planning capabilities via an interactive calendar. A PHP/Laravel backend with an Angular frontend and a modified Wordpress marketplace. Project was about two months from beta testing when the project was cancelled due to a company merger.",
           "featured": false,
-          "media": [],
-          "project_name": "Lesson Planner",
-          "technologies": [
+          "media": [
             {
-              "icon": "fab fa-angular",
-              "name": "Angular"
+              "isPoster": true,
+              "title": "lp-2.png",
+              "type": "image",
+              "url": "/assets/images/lp-2_20250702_110959_optimized.jpg"
             },
             {
-              "icon": "fab fa-php",
-              "name": "PHP"
+              "title": "lp-4.png",
+              "type": "image",
+              "url": "/assets/images/lp-4_20250702_111003_optimized.jpg"
             },
             {
-              "icon": "fab fa-laravel",
-              "name": "Laravel"
+              "title": "lp-1.png",
+              "type": "image",
+              "url": "/assets/images/lp-1_20250702_111006_optimized.jpg"
             },
             {
-              "icon": "fab fa-wordpress",
-              "name": "WordPress"
-            },
-            {
-              "icon": "fas fa-database",
-              "name": "Database"
-            },
-            {
-              "icon": "fas fa-users",
-              "name": "Collaboration"
-            },
-            {
-              "icon": "fas fa-graduation-cap",
-              "name": "Education"
+              "title": "lp-3.png",
+              "type": "image",
+              "url": "/assets/images/lp-3_20250702_111009_optimized.jpg"
             }
           ],
+          "project_name": "Lesson Planner",
           "type": "Web",
           "year": "2022-2024"
+        },
+        {
+          "description": "After Effects project of the many elearning projects Liberate arraged in a massive video wall where the camera flys around the various sections promoting the vast and varied content the business has produced.",
+          "featured": false,
+          "media": [],
+          "project_name": "Video Wall Promo",
+          "type": "Video",
+          "year": "2015"
+        },
+        {
+          "description": "Various in house professional interviews and social media edits.",
+          "featured": false,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "ieetest-medium.jpg",
+              "type": "image",
+              "url": "/assets/images/ieetest-medium_20250702_112229_optimized.jpg"
+            }
+          ],
+          "project_name": "Various",
+          "type": "Video",
+          "year": "2019 - present"
         }
       ]
     },
@@ -1209,28 +1271,107 @@
         {
           "description": "Developed a comprehensive anti-bullying platform for the Australian Multicultural Foundation, consisting of 15 iOS and 15 Android mobile applications in multiple languages, each with supporting web versions. The project involved converting a web-based application into native mobile platforms, requiring careful management of multiple app store submissions and updates. Handled complex logistics of publishing and maintaining applications across different languages and platforms, ensuring consistent user experience and content delivery. The platform provided resources and tools to help parents and educators address online bullying in culturally sensitive ways.",
           "featured": true,
-          "media": [],
-          "project_name": "Cyberparent",
-          "technologies": [
+          "media": [
             {
-              "icon": "fab fa-apple",
-              "name": "iOS"
-            },
-            {
-              "icon": "fab fa-android",
-              "name": "Android"
-            },
-            {
-              "icon": "fas fa-globe",
-              "name": "Multilingual"
-            },
-            {
-              "icon": "fab fa-mobile-alt",
-              "name": "Mobile"
+              "isPoster": true,
+              "title": "s01-02-phone.png",
+              "type": "image",
+              "url": "/assets/images/s01-02-phone_20250702_111229_optimized.jpg"
             }
           ],
+          "project_name": "Cyberparent",
           "type": "Web",
           "year": "2016"
+        }
+      ]
+    },
+    {
+      "client": "Smart Recovery Australia",
+      "projects": [
+        {
+          "description": "15 videos covering various group management techniques in a variety of sometimes difficult scenarios. Staged meetings, with staff as actors in deep and emotional conversations. A couple of whiteboard explainers thrown in as we had time.",
+          "featured": true,
+          "media": [
+            {
+              "isPoster": true,
+              "title": "vlcsnap-2024-01-09-12h42m23s202.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h42m23s202_20250702_112553_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h44m05s319.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h44m05s319_20250702_112600_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h43m22s119.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h43m22s119_20250702_112613_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-12h44m35s076.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-12h44m35s076_20250702_112623_optimized.jpg"
+            }
+          ],
+          "project_name": "Inhouse counsellor training",
+          "type": "Video",
+          "year": "2023"
+        }
+      ]
+    },
+    {
+      "client": "Aust Association of Social Workers",
+      "projects": [
+        {
+          "project_name": "Councellor Training",
+          "type": "Video",
+          "year": "2023",
+          "description": "With hired actors and single boardroom to work with we shot seveal scenarios faking a home, sit on couch style interviews, an office and a meeting room all in the same boardroom over three days",
+          "featured": true,
+          "media": [
+            {
+              "title": "vlcsnap-2024-01-09-13h50m35s319.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-13h50m35s319_20250702_113319_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-13h44m36s238.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-13h44m36s238_20250702_113329_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-14h16m04s203.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-14h16m04s203_20250702_113335_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-13h39m47s051.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-13h39m47s051_20250702_113340_optimized.jpg"
+            },
+            {
+              "title": "aasw1.jpg",
+              "type": "image",
+              "url": "/assets/images/aasw1_20250702_113400_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-13h39m05s026.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-13h39m05s026_20250702_113406_optimized.jpg"
+            },
+            {
+              "title": "vlcsnap-2024-01-09-14h15m24s456.png",
+              "type": "image",
+              "url": "/assets/images/vlcsnap-2024-01-09-14h15m24s456_20250702_113414_optimized.jpg"
+            },
+            {
+              "type": "image",
+              "url": "/assets/images/aaswposter_20250702_120223_optimized.jpg",
+              "title": "aaswposter.png",
+              "isPoster": true
+            }
+          ]
         }
       ]
     }

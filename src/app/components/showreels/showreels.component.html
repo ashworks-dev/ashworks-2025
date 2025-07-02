@@ -22,7 +22,7 @@
 </div> -->
 
 <!-- Loading State -->
-<section *ngIf="loading" class="loading-section">
+<section *ngIf="loading" class="loading-section" role="status" aria-live="polite">
   <div class="loading-container">
     <div class="loading-spinner"></div>
     <p class="loading-text">Verifying access...</p>
@@ -33,7 +33,7 @@
 <section *ngIf="!loading && accessGranted && !errorMessage && videoProjects.length === 0" class="success-message-section">
   <div class="success-container">
     <div class="success-icon">
-      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-check-circle" aria-hidden="true"></i>
     </div>
     <h2 class="success-title">Access Granted!</h2>
     <p class="success-message">
@@ -43,25 +43,25 @@
 </section>
 
 <!-- Error Message -->
-<section *ngIf="!loading && errorMessage" class="error-message-section">
+<section *ngIf="!loading && errorMessage" class="error-message-section" role="alert">
   <div class="error-container">
     <div class="error-icon">
-      <i class="fas fa-exclamation-triangle"></i>
+      <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
     </div>
     <h2 class="error-title">Access Denied</h2>
     <p class="error-message">{{ errorMessage }}</p>
     <p class="error-help">
       The URL or token appears to be invalid. Please check your link or request a new access token.
     </p>
-    <button class="retry-button" (click)="openShowreelForm()">
-      <i class="fas fa-envelope"></i>
+    <button class="retry-button" (click)="openShowreelForm()" aria-label="Request new access to portfolio">
+      <i class="fas fa-envelope" aria-hidden="true"></i>
       Request New Access
     </button>
   </div>
 </section>
 
 <!-- Protected Showreel Section -->
-<section *ngIf="accessGranted && videoProjects.length > 0" class="showreels-section" id="showreels">
+<section *ngIf="accessGranted && videoProjects.length > 0" class="showreels-section" id="showreels" itemscope itemtype="https://schema.org/VideoGallery">
   <div class="background-effects">
     <div class="gradient-orb orb-1"></div>
     <div class="gradient-orb orb-2"></div>
@@ -70,58 +70,69 @@
   </div>
 
   <div class="section-content">
-    <h2 class="gradient-text showreel-title">Portfolio</h2>
-    <p class="showreel-description">
+    <h1 class="gradient-text showreel-title" itemprop="name">Portfolio</h1>
+    <p class="showreel-description" itemprop="description">
       A curated collection of my professional work across various industries. From corporate training to emotional storytelling, 
       these showreels demonstrate the quality and versatility of my video production services.
     </p>
     
-    <div class="showreel-nav">
+    <div class="portfolio-disclaimer">
+      <p class="disclaimer-text">
+        <strong>Private Portfolio Access:</strong> This is a private portfolio intended for invited clients and collaborators only. By continuing to view this content, 
+        you acknowledge that you have been granted authorized access and understand that the materials contained herein are confidential and proprietary. 
+        Please respect the sensitive nature of this work and do not share, reproduce, or distribute any content without explicit permission.
+      </p>
+    </div>
+    
+    <nav class="showreel-nav" role="navigation" aria-label="Portfolio categories">
       <button 
         *ngFor="let video of videos" 
         class="showReelBtn" 
         [class.active]="activeTabId === video.id"
-        (click)="setActiveTab(video.id)">
+        (click)="setActiveTab(video.id)"
+        [attr.aria-label]="'View ' + video.title + ' portfolio'">
         {{ video.title }}
       </button>
-    </div>
+    </nav>
 
     <div class="showreel-container">
-      <div *ngFor="let video of videos" 
+      <article *ngFor="let video of videos" 
            class="videocont2" 
            [class.active]="activeTabId === video.id"
-           [id]="'vf-' + video.id">
+           [id]="'vf-' + video.id"
+           itemscope itemtype="https://schema.org/VideoObject">
         <div class="video-header">
-          <h3 class="video-title">{{ video.title }}</h3>
+          <h2 class="video-title" itemprop="name">{{ video.title }}</h2>
           <div class="video-meta">
             <span class="meta-item" *ngFor="let meta of video.meta">
-              <i class="fas fa-{{ meta.icon }}"></i> {{ meta.text }}
+              <i class="fas fa-{{ meta.icon }}" aria-hidden="true"></i> {{ meta.text }}
             </span>
           </div>
         </div>
-        <p class="video-description" *ngIf="video.description">{{ video.description }}</p>
+        <p class="video-description" *ngIf="video.description" itemprop="description">{{ video.description }}</p>
         <div class="video-wrapper">
           <video 
             controls 
             preload="metadata"
             class="video-player"
-            poster="assets/images/video-placeholder.jpg">
+            poster="assets/images/video-placeholder.jpg"
+            itemprop="contentUrl">
             <source [src]="video.src" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <!-- Loading indicator -->
-          <div class="video-loading" *ngIf="isVideoLoading">
+          <div class="video-loading" *ngIf="isVideoLoading" role="status" aria-live="polite">
             <div class="loading-spinner"></div>
             <span class="loading-text">Loading video...</span>
           </div>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- Selected Work Preview -->
-<section *ngIf="accessGranted && videoProjects.length > 0" class="work-preview">
+<section *ngIf="accessGranted && videoProjects.length > 0" class="work-preview" itemscope itemtype="https://schema.org/CreativeWork">
   <div class="project-info-blurb">
     <p>
       <strong>Note:</strong> Many of these projects may contain sensitive content, are often part of larger projects, or I'm often performing videography only, 
@@ -130,68 +141,71 @@
     </p>
   </div>
   <div class="project-grid">
-    <div class="project-row" 
+    <article class="project-row" 
          *ngFor="let project of videoProjects.slice(0, 6); let i = index" 
-         [class.expanded]="expandedProjects[i]">
+         [class.expanded]="expandedProjects[i]"
+         itemscope itemtype="https://schema.org/CreativeWork">
       <div class="project-image-container">
         <div [class]="getProjectImageClass(project, i)" 
-             [style.background-image]="project.posterImage ? 'url(' + project.posterImage + ')' : ''">
-          <i class="fas fa-video fa-2x" *ngIf="!project.posterImage"></i>
+             [style.background-image]="project.posterImage ? 'url(' + project.posterImage + ')' : ''"
+             [attr.aria-label]="'Project image for ' + project.project_name">
+          <i class="fas fa-video fa-2x" *ngIf="!project.posterImage" aria-hidden="true"></i>
         </div>
       </div>
       <div class="project-content">
         <div class="project-header">
           <div>
-            <h4>{{ project.project_name }}</h4>
-            <span class="project-date">{{ project.year }}</span>
+            <h3 itemprop="name">{{ project.project_name }}</h3>
+            <span class="project-date" itemprop="dateCreated">{{ project.year }}</span>
           </div>
         </div>
         
-        <p class="project-description">{{ project.description }}</p>
+        <p class="project-description" itemprop="description">{{ project.description }}</p>
         
         <div class="project-specs">
-          <span class="spec">{{ project.type }}</span>
+          <span class="spec" itemprop="genre">{{ project.type }}</span>
           <span class="spec" *ngIf="project.year">{{ project.year }}</span>
         </div>
         <div class="expandable-content" *ngIf="expandedProjects[i]">
           <!-- Additional Media Section -->
           <div class="additional-media" *ngIf="hasMedia(project)">
-            <h5>Additional Content</h5>
+            <h4>Additional Content</h4>
             
             <!-- Images -->
             <div class="media-section" *ngIf="getMediaByType(project, 'image').length > 0">
-              <h6>Images</h6>
+              <h5>Images</h5>
               <div class="media-grid">
-                <div class="media-item" *ngFor="let media of getMediaByType(project, 'image')">
-                  <img [src]="media.url" [alt]="media.title || 'Project image'" class="media-image">
-                  <div class="media-caption" *ngIf="media.title">{{ media.title }}</div>
-                </div>
+                <figure class="media-item" *ngFor="let media of getMediaByType(project, 'image')">
+                  <img [src]="media.url" [alt]="media.title || 'Project image for ' + project.project_name" class="media-image">
+                  <figcaption class="media-caption" *ngIf="media.title">{{ media.title }}</figcaption>
+                </figure>
               </div>
             </div>
             
             <!-- Videos -->
             <div class="media-section" *ngIf="getMediaByType(project, 'video').length > 0">
-              <h6>Videos</h6>
+              <h5>Videos</h5>
               <div class="media-grid">
-                <div class="media-item" *ngFor="let media of getMediaByType(project, 'video')">
+                <figure class="media-item" *ngFor="let media of getMediaByType(project, 'video')">
                   <video controls class="media-video">
                     <source [src]="media.url" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
-                  <div class="media-caption" *ngIf="media.title">{{ media.title }}</div>
-                </div>
+                  <figcaption class="media-caption" *ngIf="media.title">{{ media.title }}</figcaption>
+                </figure>
               </div>
             </div>
             
             <!-- Websites -->
             <div class="media-section" *ngIf="getMediaByType(project, 'website').length > 0">
-              <h6>Related Links</h6>
+              <h5>Related Links</h5>
               <div class="media-links">
                 <a [href]="media.url" 
                    target="_blank" 
                    class="media-link" 
-                   *ngFor="let media of getMediaByType(project, 'website')">
-                  <i class="fas fa-external-link-alt"></i>
+                   *ngFor="let media of getMediaByType(project, 'website')"
+                   [attr.aria-label]="'Visit ' + (media.title || 'project website')">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                   {{ media.title || 'View Project' }}
                 </a>
               </div>
@@ -209,71 +223,74 @@
           <i class="fas" [class.fa-chevron-down]="!expandedProjects[i]" [class.fa-chevron-up]="expandedProjects[i]"></i>
         </button>
       </div>
-    </div>
+    </article>
 
-    <div class="project-row additional-row" 
+    <article class="project-row additional-row" 
          *ngFor="let project of videoProjects.slice(6); let i = index" 
          [class.show]="showAllProjects"
-         [class.expanded]="expandedProjects[i + 6]">
+         [class.expanded]="expandedProjects[i + 6]"
+         itemscope itemtype="https://schema.org/CreativeWork">
       <div class="project-image-container">
         <div [class]="getProjectImageClass(project, i + 6)" 
-             [style.background-image]="project.posterImage ? 'url(' + project.posterImage + ')' : ''">
-          <i class="fas fa-video fa-2x" *ngIf="!project.posterImage"></i>
+             [style.background-image]="project.posterImage ? 'url(' + project.posterImage + ')' : ''"
+             [attr.aria-label]="'Project image for ' + project.project_name">
+          <i class="fas fa-video fa-2x" *ngIf="!project.posterImage" aria-hidden="true"></i>
         </div>
       </div>
       <div class="project-content">
         <div class="project-header">
           <div>
-            <h4>{{ project.project_name }}</h4>
-            <span class="project-date">{{ project.year }}</span>
+            <h3 itemprop="name">{{ project.project_name }}</h3>
+            <span class="project-date" itemprop="dateCreated">{{ project.year }}</span>
           </div>
         </div>
         
-        <p class="project-description">{{ project.description }}</p>
+        <p class="project-description" itemprop="description">{{ project.description }}</p>
         
         <div class="project-specs">
-          <span class="spec">{{ project.type }}</span>
+          <span class="spec" itemprop="genre">{{ project.type }}</span>
           <span class="spec" *ngIf="project.year">{{ project.year }}</span>
         </div>
         <div class="expandable-content" *ngIf="expandedProjects[i + 6]">
           <!-- Additional Media Section -->
           <div class="additional-media" *ngIf="hasMedia(project)">
-            <h5>Additional Content</h5>
+            <h4>Additional Content</h4>
             
             <!-- Images -->
             <div class="media-section" *ngIf="getMediaByType(project, 'image').length > 0">
-              <h6>Images</h6>
+              <h5>Images</h5>
               <div class="media-grid">
-                <div class="media-item" *ngFor="let media of getMediaByType(project, 'image')">
-                  <img [src]="media.url" [alt]="media.title || 'Project image'" class="media-image">
-                  <div class="media-caption" *ngIf="media.title">{{ media.title }}</div>
-                </div>
+                <figure class="media-item" *ngFor="let media of getMediaByType(project, 'image')">
+                  <img [src]="media.url" [alt]="media.title || 'Project image for ' + project.project_name" class="media-image">
+                  <figcaption class="media-caption" *ngIf="media.title">{{ media.title }}</figcaption>
+                </figure>
               </div>
             </div>
             
             <!-- Videos -->
             <div class="media-section" *ngIf="getMediaByType(project, 'video').length > 0">
-              <h6>Videos</h6>
+              <h5>Videos</h5>
               <div class="media-grid">
-                <div class="media-item" *ngFor="let media of getMediaByType(project, 'video')">
+                <figure class="media-item" *ngFor="let media of getMediaByType(project, 'video')">
                   <video controls class="media-video">
                     <source [src]="media.url" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
-                  <div class="media-caption" *ngIf="media.title">{{ media.title }}</div>
-                </div>
+                  <figcaption class="media-caption" *ngIf="media.title">{{ media.title }}</figcaption>
+                </figure>
               </div>
             </div>
             
             <!-- Websites -->
             <div class="media-section" *ngIf="getMediaByType(project, 'website').length > 0">
-              <h6>Related Links</h6>
+              <h5>Related Links</h5>
               <div class="media-links">
                 <a [href]="media.url" 
                    target="_blank" 
                    class="media-link" 
-                   *ngFor="let media of getMediaByType(project, 'website')">
-                  <i class="fas fa-external-link-alt"></i>
+                   *ngFor="let media of getMediaByType(project, 'website')"
+                   [attr.aria-label]="'Visit ' + (media.title || 'project website')">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                   {{ media.title || 'View Project' }}
                 </a>
               </div>
@@ -291,7 +308,7 @@
           <i class="fas" [class.fa-chevron-down]="!expandedProjects[i + 6]" [class.fa-chevron-up]="expandedProjects[i + 6]"></i>
         </button>
       </div>
-    </div>
+    </article>
   </div>
   
   <div class="show-more-container" *ngIf="videoProjects.length > 6">

@@ -58,7 +58,7 @@ export class ShowreelsComponent implements OnInit {
     {
       id: 0,
       title: '2023 Showreel',
-      src: 'https://ashnet.com.au/video/framed-showreel-1-nok.mp4',
+      src: 'http://cdn.ashworks.com.au/video/framed-showreel-1-nok.mp4',
       meta: [
         { icon: 'clock', text: '2:45' },
         { icon: 'film', text: 'Highlights' }
@@ -67,7 +67,7 @@ export class ShowreelsComponent implements OnInit {
     {
       id: 1,
       title: 'Coles and ACU',
-      src: 'https://ashnet.com.au/video/pf-1.mp4',
+      src: 'https://cdn.ashworks.com.au/video/pf-1.mp4',
       meta: [
         { icon: 'building', text: 'Corporate' },
         { icon: 'graduation-cap', text: 'Education' },
@@ -78,7 +78,7 @@ export class ShowreelsComponent implements OnInit {
     {
       id: 2,
       title: 'Dept. of Health & PowerCor',
-      src: 'https://ashnet.com.au/video/pf-2.mp4',
+      src: 'https://cdn.ashworks.com.au/video/pf-2.mp4',
       meta: [
         { icon: 'shield-alt', text: 'Safety Training' },
         { icon: 'hard-hat', text: 'Technical' },
@@ -89,7 +89,7 @@ export class ShowreelsComponent implements OnInit {
     {
       id: 3,
       title: 'Banking and Finance',
-      src: 'https://ashnet.com.au/video/pf-3.mp4',
+      src: 'https://cdn.ashworks.com.au/video/pf-3.mp4',
       meta: [
         { icon: 'chart-line', text: 'Finance' },
         { icon: 'theater-masks', text: 'Customer Scenarios' }
@@ -99,7 +99,7 @@ export class ShowreelsComponent implements OnInit {
     {
       id: 4,
       title: 'Social Work & Therapy',
-      src: 'https://ashnet.com.au/video/pf-4.mp4',
+      src: 'https://cdn.ashworks.com.au/video/pf-4.mp4',
       meta: [
         { icon: 'heart', text: 'Health & Wellbeing' },
         { icon: 'theater-masks', text: 'Client Scenarios' }
